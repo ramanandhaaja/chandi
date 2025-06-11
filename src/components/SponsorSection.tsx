@@ -13,14 +13,14 @@ const SponsorSection: React.FC<SponsorSectionProps> = ({
   // Sample sponsor logos - each represents a different sponsor
   // In a real application, these would likely come from a database or CMS
   const sponsors = [
-    { id: 1, name: 'Sponsor 1', logo: '/placeholder.svg' },
-    { id: 2, name: 'Sponsor 2', logo: '/placeholder.svg' },
-    { id: 3, name: 'Sponsor 3', logo: '/placeholder.svg' },
-    { id: 4, name: 'Sponsor 4', logo: '/placeholder.svg' },
-    { id: 5, name: 'Sponsor 5', logo: '/placeholder.svg' },
-    { id: 6, name: 'Sponsor 6', logo: '/placeholder.svg' },
-    { id: 7, name: 'Sponsor 7', logo: '/placeholder.svg' },
-    { id: 8, name: 'Sponsor 8', logo: '/placeholder.svg' },
+    { id: 1, name: 'Sponsor 1', logo: '/images/sponsor-section/sponsor1.png' },
+    { id: 2, name: 'Sponsor 2', logo: '/images/sponsor-section/sponsor2.png' },
+    { id: 3, name: 'Sponsor 3', logo: '/images/sponsor-section/sponsor3.png' },
+    { id: 4, name: 'Sponsor 4', logo: '/images/sponsor-section/sponsor4.png' },
+    { id: 5, name: 'Sponsor 5', logo: '/images/sponsor-section/sponsor5.png' },
+    { id: 6, name: 'Sponsor 6', logo: '/images/sponsor-section/sponsor6.png' },
+    { id: 7, name: 'Sponsor 7', logo: '/images/sponsor-section/sponsor7.png' },
+    { id: 8, name: 'Sponsor 8', logo: '/images/sponsor-section/sponsor8.png' },
   ];
 
   return (
@@ -46,7 +46,7 @@ const SponsorSection: React.FC<SponsorSectionProps> = ({
             >
               <div className="relative w-full h-full flex items-center justify-center">
                 <Image
-                  src="/placeholder.svg"
+                  src={sponsor.logo}
                   alt={sponsor.name}
                   width={120}
                   height={40}
