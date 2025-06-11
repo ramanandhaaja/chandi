@@ -29,7 +29,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         <div className="flex flex-col justify-between md:flex-row md:mx-4 items-center ">
           {/* Left Column - Title */}
           <div className="md:w-[400px] w-full mb-10 md:mb-0">
-            <h2 className="text-5xl md:text-6xl lg:text-[87px] leading-[1.2] mb-6">
+            <h2 className="text-5xl md:text-6xl lg:text-[87px] leading-[1.2] mb-6 text-black">
               {title}
             </h2>
           </div>
