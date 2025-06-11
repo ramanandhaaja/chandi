@@ -16,7 +16,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   ],
 }) => {
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-24 bg-white">
+    <section className="py-20 px-4 sm:px-6 md:px-12 lg:px-24 bg-white overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header with Line */}
         <div className="flex items-center mb-10">
@@ -26,18 +26,18 @@ const AboutSection: React.FC<AboutSectionProps> = ({
           </h3>
         </div>
 
-        <div className="flex flex-col justify-between md:flex-row md:mx-4 items-center ">
+        <div className="flex flex-col justify-between md:flex-row md:mx-4 items-center w-full">
           {/* Left Column - Title */}
-          <div className="md:w-[400px] w-full mb-10 md:mb-0">
-            <h2 className="text-5xl md:text-6xl lg:text-[87px] leading-[1.2] mb-6 text-black">
+          <div className="w-full md:max-w-[400px] mb-10 md:mb-0">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[87px] leading-[1.2] mb-6 text-black">
               {title}
             </h2>
           </div>
 
           {/* Right Column - Description */}
-          <div className="md:w-1/2 w-full space-y-6">
+          <div className="w-full sm:max-w-md md:max-w-2xl space-y-6">
             {description.map((paragraph, index) => (
-              <p key={index} className="text-[#1F1F1F]">
+              <p key={index} className="text-[#1F1F1F] break-words whitespace-normal">
                 {paragraph}
               </p>
             ))}
@@ -45,8 +45,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         </div>
 
         {/* Image Gallery */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-7 gap-6 items-center w-full">
-          <div className="relative w-full h-40 md:h-52 rounded-xl overflow-hidden sm:col-span-3">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-7 gap-6 items-center w-full overflow-x-hidden">
+          <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-3">
             <Image
               src="/images/about-section/about-img-1.png"
               alt="Cultural Performance"
@@ -55,7 +55,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
               className="hover:scale-105 transition-transform duration-500 rounded-xl"
             />
           </div>
-          <div className="relative w-full h-40 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
+          <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
             <Image
               src="/images/about-section/about-img-2.png"
               alt="Traditional Textile"
@@ -64,7 +64,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
               className="hover:scale-105 transition-transform duration-500 rounded-xl"
             />
           </div>
-          <div className="relative w-full h-40 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
+          <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
             <Image
               src="/images/about-section/about-img-3.png"
               alt="Cultural Food"
@@ -73,7 +73,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
               className="hover:scale-105 transition-transform duration-500 rounded-xl"
             />
           </div>
-          <div className="relative w-full h-40 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
+          <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
             <Image
               src="/images/about-section/about-img-4.png"
               alt="Traditional Dance"
@@ -82,7 +82,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
               className="hover:scale-105 transition-transform duration-500 rounded-xl"
             />
           </div>
-          <div className="relative w-full h-40 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
+          <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
             <Image
               src="/images/about-section/about-img-5.png"
               alt="Placeholder Image"

@@ -62,18 +62,18 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({
         <div className="absolute inset-0 bg-gradient-to-t from-[#7a5e29] to-[#9D7935]/60" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 lg:px-24">
         {/* Section Header with Line */}
-        <div className="flex items-center  mb-10">
+        <div className="flex items-center mb-8 mt-4 sm:mt-8 sm:mb-10">
           <div className="w-10 h-1 bg-white mr-4 rounded-full"></div>
           <h3 className="text-base font-medium tracking-wide text-white">
             {subtitle}
           </h3>
         </div>
 
-        <div className="mb-16">
+        <div className="mb-10 sm:mb-16">
           {/* Title */}
-          <h2 className="text-5xl md:text-6xl lg:text-7xl leading-tight mb-10 text-white whitespace-pre-line">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-10 text-white whitespace-pre-line">
             {title}
           </h2>
         </div>
@@ -96,9 +96,9 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({
             {speakers.map((speaker, index) => (
               <div
                 key={index}
-                className={`flex-shrink-0 ${
-                  index === 2 ? "w-72 h-96" : "w-60 h-80"
-                }`}
+                className={
+  `flex-shrink-0 w-44 h-64 sm:w-60 sm:h-80 md:w-72 md:h-96${index === 2 ? ' md:w-80 md:h-[28rem]' : ''}`
+}
               >
                 <div className="relative w-full h-full rounded-2xl overflow-hidden">
                   <Image
@@ -122,7 +122,7 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({
 
       {/* Footer */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
-        <div className="mt-8 flex items-center">
+        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-0">
           <p className="text-white font-medium">20+ Speakers</p>
           <div className="flex-grow h-px bg-white opacity-50 mx-6"></div>
           <button className="flex items-center text-white hover:text-gray-200 transition-colors">
