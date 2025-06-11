@@ -34,29 +34,29 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
       </div>
 
       <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
-        {/* Left side - Profile Image */}
-        <div className="relative w-full max-w-[866px] mx-auto">
-          {/* Profile Image */}
-          <div className="relative w-full h-full">
-            <Image
-              src="/images/profile-section/profile-img.png"
-              alt="Minister of Culture"
-              fill
-              priority
-              className="object-cover"
-            />
-            {/* Bottom transparent gold gradient overlay (only left image section) */}
-            <div
-              className="pointer-events-none absolute left-0 bottom-0 w-full"
-              style={{
-                height: "400px",
-                background:
-                  "linear-gradient(180deg, rgba(157,121,53,0) 0%, rgba(157,121,53,0.85) 90%, #9D7935 100%)",
-                zIndex: 30,
-              }}
-            />
-          </div>
-        </div>
+  {/* Left side - Profile Image */}
+  <div className="relative w-full lg:w-1/2 overflow-hidden flex flex-col justify-end items-start">
+    {/* Profile Image */}
+    <div className="relative w-full h-[600px] lg:h-screen">
+      <Image
+        src="/images/profile-section/profile-img.png"
+        alt="Minister of Culture"
+        fill
+        priority
+        className="object-cover w-full"
+      />
+      {/* Bottom transparent gold gradient overlay (only left image section) */}
+      <div
+        className="pointer-events-none absolute left-0 bottom-0 w-full"
+      style={{
+        height: "400px",
+        background:
+          "linear-gradient(180deg, rgba(157,121,53,0) 0%, rgba(157,121,53,0.85) 90%, #9D7935 100%)",
+        zIndex: 30,
+      }}
+    />
+  </div>
+</div>
 
         {/* Right side - Content */}
         <div className="w-full lg:w-1/2 p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col justify-center">
