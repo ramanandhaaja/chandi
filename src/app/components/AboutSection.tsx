@@ -15,13 +15,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({
     "You'll have the chance to explore real-world cultural initiatives, witness inspiring performances, and connect with others who are driving change in the cultural landscape. Be part of the conversation that's shaping the future of our communities.",
   ],
 }) => {
-  const images = [
-    "/images/about-img-1.png",
-    "/images/about-img-2.png",
-    "/images/about-img-3.png",
-    "/images/about-img-4.png",
-    "/images/about-img-5.png",
-  ];
   return (
     <section className="py-20 px-6 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto">
