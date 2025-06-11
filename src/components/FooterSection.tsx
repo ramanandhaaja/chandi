@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const FooterSection: React.FC = () => {
   return (
@@ -14,13 +15,15 @@ const FooterSection: React.FC = () => {
             <div className="flex flex-col items-start w-full md:w-[35%] mb-6 md:mb-0">
               {/* Logo with text */}
               <div className="flex items-center mb-8">
-                <Image
-                  src="/images/footer/logo.png"
-                  alt="Kementerian Kebudayaan"
-                  width={403}
-                  height={86}
-                  className="mr-4"
-                />
+                <Link href="/">
+                  <Image
+                    src="/images/footer/logo.png"
+                    alt="Kementerian Kebudayaan"
+                    width={403}
+                    height={86}
+                    className="mr-4"
+                  />
+                </Link>
               </div>
             </div>
 
@@ -36,7 +39,7 @@ const FooterSection: React.FC = () => {
                 <a href="#" className="text-black hover:text-[#6D1A36]">
                   Summit Info
                 </a>
-                <a href="#" className="text-black hover:text-[#6D1A36]">
+                <a href="/register" className="text-black hover:text-[#6D1A36]">
                   Registration
                 </a>
               </div>
@@ -93,7 +96,10 @@ const FooterSection: React.FC = () => {
               >
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                   <g transform="scale(0.8) translate(5,5)">
-                    <path fill="#fff" d="M16 3C9.373 3 4 8.373 4 15c0 2.492.83 4.794 2.237 6.677L4 29l7.537-2.201A12.94 12.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.692 0-3.326-.333-4.84-.98l-.345-.145-4.476 1.308 1.29-4.36-.223-.354A9.97 9.97 0 0 1 6 15c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.074-7.295c-.277-.139-1.638-.81-1.892-.902-.254-.093-.439-.139-.624.139-.184.277-.713.902-.873 1.088-.161.185-.323.208-.6.07-.277-.139-1.17-.431-2.23-1.375-.823-.734-1.379-1.64-1.542-1.917-.161-.278-.017-.428.122-.566.126-.126.277-.323.415-.484.139-.162.185-.277.277-.462.092-.185.046-.347-.023-.485-.07-.139-.624-1.507-.855-2.064-.225-.541-.454-.468-.624-.477-.161-.007-.347-.009-.531-.009a1.02 1.02 0 0 0-.74.347c-.254.277-.97.949-.97 2.31 0 1.36.993 2.677 1.132 2.861.139.185 1.953 2.987 4.74 4.067.663.286 1.18.457 1.583.585.665.212 1.27.182 1.748.111.533-.08 1.638-.669 1.87-1.315.231-.646.231-1.2.162-1.315-.07-.115-.254-.185-.531-.324z"/>
+                    <path
+                      fill="#fff"
+                      d="M16 3C9.373 3 4 8.373 4 15c0 2.492.83 4.794 2.237 6.677L4 29l7.537-2.201A12.94 12.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.692 0-3.326-.333-4.84-.98l-.345-.145-4.476 1.308 1.29-4.36-.223-.354A9.97 9.97 0 0 1 6 15c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.074-7.295c-.277-.139-1.638-.81-1.892-.902-.254-.093-.439-.139-.624.139-.184.277-.713.902-.873 1.088-.161.185-.323.208-.6.07-.277-.139-1.17-.431-2.23-1.375-.823-.734-1.379-1.64-1.542-1.917-.161-.278-.017-.428.122-.566.126-.126.277-.323.415-.484.139-.162.185-.277.277-.462.092-.185.046-.347-.023-.485-.07-.139-.624-1.507-.855-2.064-.225-.541-.454-.468-.624-.477-.161-.007-.347-.009-.531-.009a1.02 1.02 0 0 0-.74.347c-.254.277-.97.949-.97 2.31 0 1.36.993 2.677 1.132 2.861.139.185 1.953 2.987 4.74 4.067.663.286 1.18.457 1.583.585.665.212 1.27.182 1.748.111.533-.08 1.638-.669 1.87-1.315.231-.646.231-1.2.162-1.315-.07-.115-.254-.185-.531-.324z"
+                    />
                   </g>
                 </svg>
               </a>
@@ -130,8 +136,7 @@ const FooterSection: React.FC = () => {
           <div className="py-14 rounded-2xl md:w-1/2">
             <div className="text-left mb-10">
               <h2 className="text-3xl md:text-4xl font-light text-white mb-3">
-                Interested in at the Culture Summit
-                or have any questions?
+                Interested in at the Culture Summit or have any questions?
               </h2>
             </div>
           </div>
@@ -141,22 +146,22 @@ const FooterSection: React.FC = () => {
               Just send us your contact email and we will contact you.
             </p>
             <div className="flex flex-row">
-            <input
-              type="email"
-              placeholder="YOUR EMAIL"
-              className="bg-white/80 text-gray-800 placeholder:text-gray-400 px-6 py-3 rounded-l-full flex-1 w-full outline-none"
-            />
-            <button className="bg-white/20 hover:bg-white/40 transition-colors py-3 px-6 rounded-r-full flex items-center justify-center">
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path
-                  d="M5 12h14M13 6l6 6-6 6"
-                  stroke="#fff"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+              <input
+                type="email"
+                placeholder="YOUR EMAIL"
+                className="bg-white/80 text-gray-800 placeholder:text-gray-400 px-6 py-3 rounded-l-full flex-1 w-full outline-none"
+              />
+              <button className="bg-white/20 hover:bg-white/40 transition-colors py-3 px-6 rounded-r-full flex items-center justify-center">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path
+                    d="M5 12h14M13 6l6 6-6 6"
+                    stroke="#fff"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>

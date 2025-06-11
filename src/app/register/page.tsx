@@ -11,7 +11,7 @@ export default function RegisterPage() {
   return (
     <div className="relative overflow-hidden bg-white">
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[url('/images/register/pattern-bg.png')] bg-no-repeat bg-cover opacity-10 z-0"></div>
+      <div className="absolute inset-0 bg-[url('/images/register/bg.png')] bg-no-repeat bg-right bg-contain opacity-10 z-0"></div>
 
       {/* Main content */}
       <div className="relative z-10 py-16 md:py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
