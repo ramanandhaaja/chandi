@@ -1,88 +1,246 @@
-import React from 'react';
+"use client";
 
-interface WhoSectionProps {
+import React from "react";
+import Image from "next/image";
+
+interface EventSectionProps {
   title?: string;
   subtitle?: string;
 }
 
-const WhoSection: React.FC<WhoSectionProps> = ({
-  title = 'Who Should Attend',
-  subtitle = 'For Whom?',
+const EventSection: React.FC<EventSectionProps> = ({
+  title = "Discover the Full Summit Agenda",
+  subtitle = "Event agenda",
 }) => {
+  // Sample agenda data
+  // Multi-day agenda data
+  const agendaDays = [
+    {
+      tab: "Kickoff",
+      session: "Day 1: Main Conference",
+      items: [
+        {
+          time: "09.30–10.30 AM",
+          title: "Opening Remarks",
+          description:
+            "Welcome to the CHANDI 2023 Summit. Kick off the day with an introduction from the event organizers and a sneak peek of what's in store.",
+        },
+        {
+          time: "10.30–11.30 AM",
+          title:
+            "Keynote Address: Shaping the Future of Culture Through Innovation",
+          description:
+            "By Dr. Emma Parker, Chief Cultural Analyst at InnovateX Labs. Discover the profound influence of cultural movements on communities and global society.",
+          speakers: [
+            {
+              name: "Dr. Emma Parker",
+              role: "CEO, Culture Connect Summit",
+              image: "/placeholder.svg",
+            },
+          ],
+        },
+        {
+          time: "12.30–01.30 AM",
+          title: "Panel Discussion: Culture in Action: Real-World Expressions",
+          description:
+            "An engaging conversation about the impact of cultural diversity in various sectors such as education, arts, and community development, featuring insights from cultural leaders.",
+          speakers: [
+            {
+              name: "Sara Williams",
+              role: "Cultural Strategist, InnovateCulture",
+              image: "/placeholder.svg",
+            },
+            {
+              name: "Ravi Singh",
+              role: "Lead Cultural Engineer, MedCulture Solutions",
+              image: "/placeholder.svg",
+            },
+            {
+              name: "James Turner",
+              role: "Senior Cultural Scientist, Quantum Culture",
+              image: "/placeholder.svg",
+            },
+            {
+              name: "Emily Roberts",
+              role: "Director, Cultural Applications",
+              image: "/placeholder.svg",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      tab: "Main Day",
+      session: "Day 2 : Deep Dive Sessions",
+      items: [
+        {
+          time: "09.30–10.30 AM",
+          title: "Morning Networking Coffee",
+          description:
+            "Catch up with fellow attendees over coffee before diving into another exciting day of learning.",
+        },
+        {
+          time: "11.30–12.30 PM",
+          title: "Keynote Address: The Fusion of Culture and Technology",
+          description:
+            "By John Mitchell, Co-Founder & CEO at Culture Connect. Discover how cultural diversity and collaboration can foster innovative ideas at the upcoming Culture Summit.",
+          speakers: [
+            {
+              name: "John Mitchell",
+              role: "Co-Founder at Culture Corp",
+              image: "/placeholder.svg",
+            },
+          ],
+        },
+        {
+          time: "2.30–04.30 PM",
+          title:
+            "Panel Discussion: Culture and Transformation in the Age of Industry 4.0",
+          description:
+            "Panelists discuss how cultural trends are shaping the future of the Culture Summit and its impact on society.",
+          speakers: [
+            {
+              name: "Dr. Lisa White",
+              role: "Chief Innovation Officer, CultureFlow",
+              image: "/placeholder.svg",
+            },
+            {
+              name: "Mark Johnson",
+              role: "Director, Cultural Solutions, RoboCulture",
+              image: "/placeholder.svg",
+            },
+            {
+              name: "Priya Patel",
+              role: "Head, Cultural Transformation",
+              image: "/placeholder.svg",
+            },
+            {
+              name: "David Collins",
+              role: "VP, Cultural Automation & Robotics",
+              image: "/placeholder.svg",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      tab: "Sumup",
+      session: "Day 3 : Networking Day",
+      items: [
+        {
+          time: "09.30–11.30 AM",
+          title: "Workshop: Driving ROI with Data",
+          description:
+            "Discover how organizations can leverage cultural insights to enhance teamwork, boost employee satisfaction, and foster innovation.",
+        },
+        {
+          time: "02.30–03.30 PM",
+          title: "Fireside Chat: The Future of Culture",
+          description:
+            "Join Olivia Reynolds, Principal Engineer at AlphaTech, as she explores the significance of cultural diversity in shaping innovative consumer experiences at the upcoming Culture Summit.",
+          speakers: [
+            {
+              name: "Olivia Reynolds",
+              role: "Cultural Engineer at Alpha Culture",
+              image: "/placeholder.svg",
+            },
+          ],
+        },
+        {
+          time: "04.30–05.30 PM",
+          title: "Closing Remarks & Thank You",
+          description:
+            "A final wrap-up of the CHANDI 2025 Summit, with acknowledgments to all speakers, sponsors, and attendees. Looking forward to seeing you next year!",
+        },
+      ],
+    },
+  ];
+
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-24 bg-white">
-  <div className="max-w-7xl mx-auto">
-    {/* Section Header with Line */}
-    <div className="flex items-center mb-10">
-      <div className="w-10 h-1 bg-[#0D0D0D] mr-4 rounded-full"></div>
-      <h3 className="text-base font-medium tracking-wide text-[#0D0D0D]">{subtitle}</h3>
-    </div>
+    <section className="py-20 px-6 md:px-12 lg:px-24 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header - Centered with line */}
+        <div className="flex flex-col items-center mb-8">
+          <div className="flex items-center">
+            <div className="w-10 h-1 bg-black mr-4 rounded-full"></div>
+            <h3 className="text-sm font-medium text-black">{subtitle}</h3>
+          </div>
+        </div>
 
-    <div className="flex flex-col md:flex-row md:items-start md:gap-16 items-start">
-      {/* Left Column - Title */}
-      <div className="md:w-full mb-10 md:mb-0">
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-[#0D0D0D] whitespace-pre-line">
-          {title}
-        </h2>
-      </div>
-    </div>
+        {/* Main Title - Centered */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-black">{title}</h2>
+        </div>
 
-    {/* Attendee Categories */}
-    <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center w-full">
-      {/* Business Man */}
-      <div className="bg-white rounded-full border border-solid border-[#D49300] p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg">
-        <div className="w-16 h-16 flex items-center justify-center mb-4">
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
-            <path d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-5-2v2H9V4h6zM8 8h12v3H4V8h4zm-4 11v-6h16v6H4z"/>
-          </svg>
-        </div>
-        <p className="text-center font-medium">Business Man</p>
+        {agendaDays.map((day, dayIdx) => (
+          <React.Fragment key={dayIdx}>
+            {/* Day Tab - Matching the image */}
+            <div className="mb-12">
+              <div className="flex w-full overflow-hidden rounded-lg">
+                <div className="bg-[#D2AF6D] text-black py-4 px-10 font-medium">
+                  {day.tab}
+                </div>
+                <div className="bg-[#F2F2F2] text-[#333333] py-4 px-10 flex-grow">
+                  {day.session}
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              {/* Timeline items */}
+              {day.items.map((item, index) => (
+                <div
+                  key={index}
+                  className="mb-16 flex flex-col md:flex-row md:items-start relative z-10"
+                >
+                  {/* Time column */}
+                  <div className="md:w-[115px] lg:w-[150px] md:mr-10 mb-4 md:mb-0">
+                    <p className="text-gray-700 text-base md:text-lg font-medium md:text-right">
+                      {item.time}
+                    </p>
+                  </div>
+                  {/* Content column */}
+                  <div className="md:flex-1 bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm mb-5 leading-relaxed">
+                      {item.description}
+                    </p>
+                    {/* Speakers grid */}
+                    {item.speakers && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
+                        {item.speakers.map((speaker, idx) => (
+                          <div key={idx} className="flex items-center">
+                            <div className="relative w-14 h-14 rounded-full overflow-hidden mr-4 border border-gray-100">
+                              <Image
+                                src={speaker.image}
+                                alt={speaker.name}
+                                fill
+                                className="object-cover"
+                              />
+                            </div>
+                            <div>
+                              <p className="font-medium text-sm text-gray-800">
+                                {speaker.name}
+                              </p>
+                              <p className="text-gray-500 text-xs">
+                                {speaker.role}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </React.Fragment>
+        ))}
       </div>
-      
-      {/* Investors */}
-      <div className="bg-white rounded-3xl p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
-        <div className="w-16 h-16 flex items-center justify-center mb-4">
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
-            <path d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-1 14H4V6h16v12zM8 8h8v2H8zm0 4h8v2H8z"/>
-          </svg>
-        </div>
-        <p className="text-center text-gray-500 font-medium">Investors</p>
-      </div>
-      
-      {/* Founder */}
-      <div className="bg-white rounded-3xl p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
-        <div className="w-16 h-16 flex items-center justify-center mb-4">
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
-            <path d="M19 8h-1.81c-.45-.78-1.07-1.45-1.82-1.96l.93-.93c.39-.39.39-1.02 0-1.41a.9959.9959 0 0 0-1.41 0l-1.47 1.47C12.96 5.06 12.49 5 12 5s-.96.06-1.41.17L9.11 3.7a.9959.9959 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41l.93.93C7.88 6.55 7.26 7.22 6.81 8H5c-.55 0-1 .45-1 1s.45 1 1 1h1.09c-.05.33-.09.66-.09 1v1H5c-.55 0-1 .45-1 1s.45 1 1 1h1v1c0 .34.04.67.09 1H5c-.55 0-1 .45-1 1s.45 1 1 1h1.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H19c.55 0 1-.45 1-1s-.45-1-1-1h-1.09c.05-.33.09-.66.09-1v-1h1c.55 0 1-.45 1-1s-.45-1-1-1h-1v-1c0-.34-.04-.67-.09-1H19c.55 0 1-.45 1-1s-.45-1-1-1zm-6 8h-2c-.55 0-1-.45-1-1s.45-1 1-1h2c.55 0 1 .45 1 1s-.45 1-1 1zm0-4h-2c-.55 0-1-.45-1-1s.45-1 1-1h2c.55 0 1 .45 1 1s-.45 1-1 1z"/>
-          </svg>
-        </div>
-        <p className="text-center text-gray-500 font-medium">Founder</p>
-      </div>
-      
-      {/* Developers */}
-      <div className="bg-white rounded-3xl p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
-        <div className="w-16 h-16 flex items-center justify-center mb-4">
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
-            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
-          </svg>
-        </div>
-        <p className="text-center text-gray-500 font-medium">Developers</p>
-      </div>
-    </div>
-    
-    {/* Description Box */}
-    <div className="mt-12 border border-gray-200 rounded-lg p-8 text-center">
-      <p className="text-gray-700 leading-relaxed">
-        Dive deeper into the transformative power of the Culture Summit, a pivotal event designed to
-        cultivate collaboration among teams, enhance employee engagement, spark innovative ideas, and
-        ensure organizations stay ahead in an ever-evolving business landscape. This summit serves as a
-        platform for sharing insights, fostering connections, and igniting a culture of creativity that
-        empowers employees to thrive and contribute to the company&apos;s success.
-      </p>
-    </div>
-  </div>
-</section>
+    </section>
   );
 };
 
-export default WhoSection;
+export default EventSection;

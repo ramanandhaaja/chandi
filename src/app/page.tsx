@@ -5,6 +5,7 @@ import WhoSection from './components/WhoSection';
 import SpeakerSection from './components/SpeakerSection';
 import ProfileSection from './components/ProfileSection';
 import VenueSection from './components/VenueSection';
+import EventSection from './components/EventSection';
 
 export default function Home() {
   return (
@@ -29,6 +30,9 @@ export default function Home() {
 
       {/* Venue Section */}
       <VenueSection />  
+
+      {/* Event Section */}
+      <EventSection />
 
     </>
   );
