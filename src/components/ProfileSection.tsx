@@ -35,7 +35,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
 
       <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
         {/* Left side - Profile Image */}
-        <div className="relative w-full max-w-[966px] mx-auto">
+        <div className="relative w-full max-w-[866px] mx-auto">
           {/* Profile Image */}
           <div className="relative w-full h-full">
             <Image
@@ -44,6 +44,16 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
               fill
               priority
               className="object-cover"
+            />
+            {/* Bottom transparent gold gradient overlay (only left image section) */}
+            <div
+              className="pointer-events-none absolute left-0 bottom-0 w-full"
+              style={{
+                height: "400px",
+                background:
+                  "linear-gradient(180deg, rgba(157,121,53,0) 0%, rgba(157,121,53,0.85) 90%, #9D7935 100%)",
+                zIndex: 30,
+              }}
             />
           </div>
         </div>

@@ -17,7 +17,7 @@ const VenueSection: React.FC<VenueSectionProps> = ({
       {/* Gold background */}
       <div className="absolute -inset-1 z-0 blur-xs">
         <Image
-          src="/images/speakers-section/speaker-bg.png"
+          src="/images/venue-section/bg.png"
           alt="pattern"
           fill
           className="object-fit opacity-80"
@@ -53,9 +53,9 @@ const VenueSection: React.FC<VenueSectionProps> = ({
         {/* Main Venue Gallery */}
         <div className="w-full flex flex-col md:flex-row gap-6 mt-8">
           {/* Left: Large image */}
-          <div className="relative w-full md:w-3/4 aspect-[4/2.1] rounded-2xl overflow-hidden">
+          <div className="relative w-full md:w-3/4 aspect-[4/2.1] overflow-hidden">
             <Image
-              src="/placeholder.svg"
+              src="/images/venue-section/venue1.png"
               alt="Istana Tampak Siring"
               fill
               className="object-cover"
@@ -65,14 +65,14 @@ const VenueSection: React.FC<VenueSectionProps> = ({
           {/* Right: 4 stacked images */}
           <div className="hidden md:flex flex-col w-1/4 gap-4">
             {[
-              "/placeholder.svg",
-              "/placeholder.svg",
-              "/placeholder.svg",
-              "/placeholder.svg",
+              "/images/venue-section/venue2.png",
+              "/images/venue-section/venue3.png",
+              "/images/venue-section/venue4.png",
+              "/images/venue-section/venue5.png",
             ].map((img, i) => (
               <div
                 key={i}
-                className="relative w-full aspect-[4/2.1] rounded-2xl overflow-hidden"
+                className="relative w-full aspect-[4/2.1] overflow-hidden"
               >
                 <Image
                   src={img}
