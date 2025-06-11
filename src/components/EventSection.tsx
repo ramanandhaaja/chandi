@@ -35,7 +35,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Dr. Emma Parker",
               role: "CEO, Culture Connect Summit",
-              image: "/placeholder.svg",
+              image: "/images/event-section/profile1.png",
             },
           ],
         },
@@ -48,22 +48,22 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Sara Williams",
               role: "Cultural Strategist, InnovateCulture",
-              image: "/placeholder.svg",
+              image: "/images/event-section/profile2.png",
             },
             {
               name: "Ravi Singh",
               role: "Lead Cultural Engineer, MedCulture Solutions",
-              image: "/placeholder.svg",
+              image: "/images/event-section/profile3.png",
             },
             {
               name: "James Turner",
               role: "Senior Cultural Scientist, Quantum Culture",
-              image: "/placeholder.svg",
+              image: "/images/event-section/profile4.png",
             },
             {
               name: "Emily Roberts",
               role: "Director, Cultural Applications",
-              image: "/placeholder.svg",
+              image: "/images/event-section/profile5.png",
             },
           ],
         },
@@ -88,7 +88,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "John Mitchell",
               role: "Co-Founder at Culture Corp",
-              image: "/placeholder.svg",
+              image: "/images/event-section/profile6.png",
             },
           ],
         },
@@ -102,22 +102,22 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Dr. Lisa White",
               role: "Chief Innovation Officer, CultureFlow",
-              image: "/placeholder.svg",
+              image: "/images/event-section/profile7.png",
             },
             {
               name: "Mark Johnson",
               role: "Director, Cultural Solutions, RoboCulture",
-              image: "/placeholder.svg",
+              image: "/images/event-section/profile8.png",
             },
             {
               name: "Priya Patel",
               role: "Head, Cultural Transformation",
-              image: "/placeholder.svg",
+              image: "/images/event-section/profile9.png",
             },
             {
               name: "David Collins",
               role: "VP, Cultural Automation & Robotics",
-              image: "/placeholder.svg",
+              image: "/images/event-section/profile10.png",
             },
           ],
         },
@@ -142,7 +142,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Olivia Reynolds",
               role: "Cultural Engineer at Alpha Culture",
-              image: "/placeholder.svg",
+              image: "/images/event-section/profile11.png",
             },
           ],
         },
