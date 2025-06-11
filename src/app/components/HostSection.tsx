@@ -22,27 +22,27 @@ const HostSection: React.FC<HostSectionProps> = ({
     {
       name: 'Jonathan Reid',
       role: 'Cultural Director',
-      image: '/placeholder.svg'
+      image: '/images/host-section/host1.png'
     },
     {
       name: 'Maya Chen',
       role: 'Community Engagement',
-      image: '/placeholder.svg'
+      image: '/images/host-section/host2.png'
     },
     {
       name: 'David Okafor',
       role: 'Innovation Lead',
-      image: '/placeholder.svg'
+      image: '/images/host-section/host3.png'
     },
     {
       name: 'Sophia Martinez',
       role: 'Heritage Specialist',
-      image: '/placeholder.svg'
+      image: '/images/host-section/host4.png'
     }
   ]
 }) => {
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-24 bg-white">
+    <section className="py-20 px-6 md:px-12 lg:px-24 bg-white bg-[url('/images/host-section/bg.png')] bg-no-repeat bg-right bg-contain">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center">
           {/* Left Column - Title and Description */}
