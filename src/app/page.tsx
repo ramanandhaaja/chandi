@@ -6,6 +6,9 @@ import SpeakerSection from './components/SpeakerSection';
 import ProfileSection from './components/ProfileSection';
 import VenueSection from './components/VenueSection';
 import EventSection from './components/EventSection';
+import SponsorSection from './components/SponsorSection';
+import FAQSection from './components/FAQSection';
+import HostSection from './components/HostSection';
 
 export default function Home() {
   return (
@@ -34,6 +37,16 @@ export default function Home() {
       {/* Event Section */}
       <EventSection />
 
+      {/* Sponsor Section */}
+      <SponsorSection />
+
+      {/* FAQ Section */}
+      <FAQSection />
+
+      {/* Host Section */}
+      <HostSection />
+
+      
     </>
   );
 }
