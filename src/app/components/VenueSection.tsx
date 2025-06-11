@@ -13,10 +13,19 @@ const VenueSection: React.FC<VenueSectionProps> = ({
   subtitle = "Venue",
 }) => {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-20 relative ">
       {/* Gold background */}
-      <div className="absolute inset-0 bg-amber-700 opacity-80 z-0"></div>
-
+      <div className="absolute -inset-1 z-0 blur-xs">
+        <Image
+          src="/images/speakers-section/speaker-bg.png"
+          alt="pattern"
+          fill
+          className="object-fit opacity-80"
+          quality={100}
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#7a5e29] to-[#9D7935]/60" />
+      </div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         {/* Section Header with Line */}
         <div className="flex items-center mb-10">
@@ -36,7 +45,9 @@ const VenueSection: React.FC<VenueSectionProps> = ({
         {/* Summit and Venue Name */}
         <div className="mb-4">
           <p className="text-white text-sm opacity-80 mb-1">Summit</p>
-          <p className="text-white text-xl font-semibold">Istana Tampak Siring</p>
+          <p className="text-white text-xl font-semibold">
+            Istana Tampak Siring
+          </p>
         </div>
 
         {/* Main Venue Gallery */}
