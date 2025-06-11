@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Bella Queta";
+  src: url("/fonts/Bella-Queta.ttf") format("truetype"),
+    url("/fonts/Bella-Queta.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

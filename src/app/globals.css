@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -10,8 +10,8 @@
 :root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Montserrat', Arial, sans-serif;
-  --font-mono: monospace;
+  --font-sans: "Plus Jakarta Sans", Arial, sans-serif;
+  --font-mono: "Plus Jakarta Sans", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,7 +24,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
 }
 
 /* Custom styles can be added here if needed */
