@@ -40,6 +40,11 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({
       role: "Senior Cultural Strategist",
       image: "/images/speakers-section/speaker-4.png",
     },
+    {
+      name: "Samantha Hayes",
+      role: "Senior Cultural Analyst",
+      image: "/images/speakers-section/speaker-5.png",
+    },
   ];
 
   return (
