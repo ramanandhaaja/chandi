@@ -9,6 +9,7 @@ import EventSection from './components/EventSection';
 import SponsorSection from './components/SponsorSection';
 import FAQSection from './components/FAQSection';
 import HostSection from './components/HostSection';
+import FooterSection from './components/FooterSection';
 
 export default function Home() {
   return (
@@ -46,7 +47,8 @@ export default function Home() {
       {/* Host Section */}
       <HostSection />
 
-      
+      {/* Footer Section */}
+      <FooterSection />
     </>
   );
 }
