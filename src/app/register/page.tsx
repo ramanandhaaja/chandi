@@ -11,7 +11,7 @@ export default function RegisterPage() {
   return (
     <div className="relative overflow-hidden bg-white">
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[url('/images/register/bg.png')] bg-no-repeat bg-right bg-contain opacity-10 z-0"></div>
+      <div className="absolute inset-0 bg-[url('/images/register/bg.png')] bg-no-repeat bg-right z-0"></div>
 
       {/* Main content */}
       <div className="relative z-10 py-16 md:py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
@@ -66,25 +66,25 @@ export default function RegisterPage() {
 
         {/* Registration Form */}
         <div className="max-w-4xl mx-auto mt-16">
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-6 z-10">
             {/* First Name */}
             <div>
               <input
                 type="text"
                 placeholder="First Name*"
-                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D]"
+                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
                 required
               />
             </div>
 
             {/* Last Name */}
             <div>
-              <input
-                type="text"
-                placeholder="Last Name*"
-                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D]"
-                required
-              />
+            <input
+            type="text"
+            placeholder="Last Name*"
+            className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
+            required
+          />
             </div>
 
             {/* Email */}
@@ -92,7 +92,7 @@ export default function RegisterPage() {
               <input
                 type="email"
                 placeholder="Email*"
-                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D]"
+                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
                 required
               />
             </div>
@@ -102,7 +102,7 @@ export default function RegisterPage() {
               <input
                 type="tel"
                 placeholder="Phone No*"
-                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D]"
+                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
                 required
               />
             </div>
@@ -111,7 +111,7 @@ export default function RegisterPage() {
             <div>
               <div className="relative">
                 <select
-                  className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg bg-white appearance-none focus:outline-none focus:ring-1 focus:ring-[#D2AF6D]"
+                  className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg bg-white appearance-none focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
                 >
@@ -147,7 +147,7 @@ export default function RegisterPage() {
             <div>
               <div className="relative">
                 <select
-                  className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg bg-white appearance-none focus:outline-none focus:ring-1 focus:ring-[#D2AF6D]"
+                  className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg bg-white appearance-none focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
                   value={positionType}
                   onChange={(e) => setPositionType(e.target.value)}
                 >
@@ -184,7 +184,7 @@ export default function RegisterPage() {
               <input
                 type="text"
                 placeholder="Organization / Institution"
-                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D]"
+                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
               />
             </div>
 
@@ -193,7 +193,7 @@ export default function RegisterPage() {
               <textarea
                 placeholder="Message"
                 rows={5}
-                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D]"
+                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
               ></textarea>
             </div>
 

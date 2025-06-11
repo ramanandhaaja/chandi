@@ -54,7 +54,7 @@ const WhoSection: React.FC<WhoSectionProps> = ({
                 className="w-10 h-10"
               />
             </div>
-            <p className="text-center font-medium">Business Man</p>
+            <p className="text-center text-gray-500 font-medium">Business Man</p>
           </div>
 
           {/* Investors */}
