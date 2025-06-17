@@ -1,5 +1,4 @@
 import Image from "next/image";
-import EmailIcon from "../../../public/email.svg";
 
 const ContactsOption = () => {
   return (

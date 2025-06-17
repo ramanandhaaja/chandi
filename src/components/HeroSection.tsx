@@ -1,5 +1,8 @@
-import React from "react";
+"use client"
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { getItems } from "../lib/api";
 interface HeroSectionProps {
   title?: string[];
   subtitle?: string;
@@ -9,12 +12,53 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  title = ["BRIDGING CULTURES", "INSPIRING INNOVATION"],
-  subtitle = "CHANDI 2025 Summit",
-  date = "14th October 2025",
-  location = "Bali, Indonesia",
-  scrollText = "Scroll to Explore",
+  title,
+  subtitle,
+  date,
+  location,
+  scrollText,
 }) => {
+  // State for fetched data
+  const [heroData, setHeroData] = useState<{
+    title?: string[];
+    subtitle?: string;
+    date?: string;
+    location?: string;
+    scrollText?: string;
+  } | null>(null);
+
+  useEffect(() => {
+    async function fetchHeroData() {
+      try {
+        const items = await getItems("hero_landingpage");
+        if (items && items.length > 0) {
+          // Assuming the collection fields match the prop names
+          setHeroData({
+            title: Array.isArray(items[0].title)
+              ? items[0].title
+              : typeof items[0].title === "string"
+              ? items[0].title.split("\n")
+              : undefined,
+            subtitle: items[0].subtitle,
+            date: items[0].left_caption,
+            location: items[0].right_caption,
+            scrollText: "Scroll to Explore",
+          });
+        }
+      } catch (error) {
+        console.error("Failed to fetch hero data:", error);
+      }
+    }
+    fetchHeroData();
+  }, []);
+
+  // Use fetched data if available, otherwise fallback to defaults
+  const displayTitle = heroData?.title || title;
+  const displaySubtitle = heroData?.subtitle || subtitle;
+  const displayDate = heroData?.date || date;
+  const displayLocation = heroData?.location || location;
+  const displayScrollText = heroData?.scrollText || scrollText;
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Hero Section with Background */}
@@ -49,33 +93,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold  mb-8 leading-tight text-white drop-shadow-md">
-            {title.map((line, index) => (
-              <div
-                key={index}
-                className={`transition-all duration-700 hover:tracking-[0.15em] ${
-                  index < title.length - 1 ? "mb-3" : ""
-                }`}
-              >
-                {line}
-              </div>
-            ))}
+            {displayTitle}
           </h1>
 
           {/* Summit Title */}
           <div className=" mb-20">
             <h2 className="text-2xl md:text-[35px] font-medium tracking-tighter text-white/90 drop-shadow-sm">
-              {subtitle}
+              {displaySubtitle}
             </h2>
           </div>
 
           {/* Date and Location with Line */}
           <div className="w-[70vw] flex items-center justify-between mt-16">
             <div className="text-left text-[24px] font-light text-white/90 transition-all duration-500 hover:text-white hover:translate-x-[-5px]">
-              {date}
+              {displayDate}
             </div>
             <div className="flex-1 mx-6 h-px bg-white opacity-70"></div>
             <div className="text-right text-[24px] font-light text-white/90 transition-all duration-500 hover:text-white hover:translate-x-[5px]">
-              {location}
+              {displayLocation}
             </div>
           </div>
         </div>
@@ -83,7 +118,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Scroll Indicator - Now relative to the content container */}
         <div className="mt-auto pt-12 flex flex-col items-center">
           <div className="text-[24px] font-light mb-3 text-white/80 transition-all duration-500 hover:text-white">
-            {scrollText}
+            {displayScrollText}
           </div>
           <div className="animate-bounce transition-transform">
             <svg

@@ -1,14 +1,14 @@
 "use client";
 
-import { useState } from "react";
+//import { useState } from "react";
 import FooterSection from "@/components/FooterSection";
 import RegisterOption from "@/components/register/RegisterOption";
 import HeroAlternative from "@/components/HeroAlternative";
 import RegistrationForm from "@/components/register/RegistrationForm";
 
 export default function RegisterPage() {
-  const [country, setCountry] = useState("");
-  const [positionType, setPositionType] = useState("");
+  //const [country, setCountry] = useState("");
+  //const [positionType, setPositionType] = useState("");
 
   return (
     <div className="relative overflow-hidden ">
