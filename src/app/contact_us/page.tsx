@@ -1,7 +1,7 @@
 import FooterSection from "@/components/FooterSection";
 import HeroAlternative from "@/components/HeroAlternative";
-import ContactsOption from "@/components/contact-us/ContactsOption";
-import Faq from "@/components/contact-us/Faq";
+import ContactsOption from "@/components/contact_us/ContactsOption";
+import Faq from "@/components/contact_us/Faq";
 
 export default function ContactUsPage() {
   return (

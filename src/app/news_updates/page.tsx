@@ -1,8 +1,8 @@
 import HeroAlternative from "@/components/HeroAlternative";
 import FooterSection from "@/components/FooterSection";
-import PressReleaseSection from "@/components/news&updates/PressRelease";
-import PhotoSection from "@/components/news&updates/Photo";
-import VideoGallerySection from "@/components/news&updates/VideoGallery";
+import PressReleaseSection from "@/components/news_updates/PressRelease";
+import PhotoSection from "@/components/news_updates/Photo";
+import VideoGallerySection from "@/components/news_updates/VideoGallery";
 
 export default function NewsAndUpdatesPage() {
   return (
