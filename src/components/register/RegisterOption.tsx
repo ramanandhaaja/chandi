@@ -10,15 +10,13 @@ const RegisterOption = () => {
           <div className="w-16 h-16 flex items-center justify-center mb-4">
             <Image
               src="/money.svg"
-              alt="Delegasi Negara"
+              alt="Delegasi ]"
               className="w-10 h-10 object-contain"
               width={16}
               height={16}
             />
           </div>
-          <p className="text-center text-gray-500 font-medium">
-            Delegasi Negara
-          </p>
+          <p className="text-center text-gray-500 font-medium">Delegasi</p>
         </div>
 
         {/* Business Man */}
