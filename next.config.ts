@@ -14,6 +14,12 @@ const nextConfig: NextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  // Exclude API routes that require environment variables not available during build
+  experimental: {
+    // Skip building the create-stream API route during deployment
+    // This prevents build failures due to missing environment variables
+    serverComponentsExternalPackages: ['@mux/mux-node'],
+  },
 };
 
 export default nextConfig;

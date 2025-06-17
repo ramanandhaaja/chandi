@@ -13,8 +13,8 @@ export default function RegisterPage() {
 
   return (
     <div className="relative overflow-hidden ">
-    {/* Header Section */}
-    <HeaderSection />
+      {/* Header Section */}
+      <HeaderSection />
       {/* Hero Section */}
       <HeroAlternative
         title="Register And Attend"
