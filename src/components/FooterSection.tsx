@@ -49,9 +49,9 @@ const FooterSection: React.FC = () => {
                 <Link href="/stream" className="text-black hover:text-[#6D1A36]">
                   Live Streaming
                 </Link>
-                <a href="#" className="text-black hover:text-[#6D1A36]">
+                <Link href="/news_updates" className="text-black hover:text-[#6D1A36]">
                   News & Updates
-                </a>
+                </Link>
                 <a href="#" className="text-black hover:text-[#6D1A36]">
                   Cultural Showcase
                 </a>
@@ -60,9 +60,9 @@ const FooterSection: React.FC = () => {
                 <h3 className="text-xs font-semibold text-gray-500 mb-3 tracking-widest uppercase">
                   Contact
                 </h3>
-                <a href="#" className="text-black hover:text-[#6D1A36]">
+                <Link href="/contact_us" className="text-black hover:text-[#6D1A36]">
                   Contact & Help Desk
-                </a>
+                </Link>
               </div>
             </div>
           </div>

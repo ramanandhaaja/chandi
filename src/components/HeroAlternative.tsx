@@ -4,7 +4,7 @@ const Hero = ({ title, subtitle }: { title: string; subtitle: string }) => {
   return (
     <div className="  overflow-hidden">
       {/* Background pattern */}
-      <div className="relative h-[640px] overflow-hidden">
+      <div className="relative h-[640px] overflow-hidden pt-20">
         {/* Hero Section with Background */}
         <div className="absolute inset-0 z-0">
           {/* Pattern overlay using Tailwind's built-in utilities */}

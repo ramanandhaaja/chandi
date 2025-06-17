@@ -1,3 +1,4 @@
+import HeaderSection from '@/components/HeaderSection';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import GallerySection from '@/components/GallerySection';
@@ -14,6 +15,12 @@ import FooterSection from '@/components/FooterSection';
 export default function Home() {
   return (
     <>
+
+    {/* Header Section */}
+      <HeaderSection />
+      
+      
+      
       {/* Hero Section */}
       <HeroSection />
       

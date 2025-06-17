@@ -3,10 +3,13 @@ import FooterSection from "@/components/FooterSection";
 import PressReleaseSection from "@/components/news_updates/PressRelease";
 import PhotoSection from "@/components/news_updates/Photo";
 import VideoGallerySection from "@/components/news_updates/VideoGallery";
+import HeaderSection from "@/components/HeaderSection";
 
 export default function NewsAndUpdatesPage() {
   return (
     <>
+    {/* Header Section */}
+    <HeaderSection />
       <HeroAlternative
         title="News and Updates"
         subtitle="Stay updated with the latest happenings in Indonesia! 

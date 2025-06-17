@@ -5,6 +5,7 @@ import FooterSection from "@/components/FooterSection";
 import RegisterOption from "@/components/register/RegisterOption";
 import HeroAlternative from "@/components/HeroAlternative";
 import RegistrationForm from "@/components/register/RegistrationForm";
+import HeaderSection from "@/components/HeaderSection";
 
 export default function RegisterPage() {
   //const [country, setCountry] = useState("");
@@ -12,6 +13,8 @@ export default function RegisterPage() {
 
   return (
     <div className="relative overflow-hidden ">
+    {/* Header Section */}
+    <HeaderSection />
       {/* Hero Section */}
       <HeroAlternative
         title="Register And Attend"

@@ -3,12 +3,7 @@ import { notFound } from "next/navigation";
 import MuxPlayer from "@mux/mux-player-react";
 import FooterSection from "@/components/FooterSection";
 
-interface PageProps {
-  params: { playbackId: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
-export default function StreamPage({ params }: PageProps) {
+export default function StreamPage({ params }: { params: { playbackId: string } }) {
   const { playbackId } = params;
 
   if (!playbackId) {

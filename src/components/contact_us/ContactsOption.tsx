@@ -15,7 +15,7 @@ const ContactsOption = () => {
         />
       </div>
       <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 items-center w-full">
-        <div className="rounded-3xl flex flex-col items-center justify-center transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
+        <div className="bg-[#FCFAF5] rounded-3xl flex flex-col items-center justify-center transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
           <div className="w-[630px] h-[314px] flex items-center justify-center mb-4">
             <div className="flex flex-col space-y-4 justify-center items-center text-[#9D7935]">
               <p className="text-center font-medium">Whatsapp Chat</p>

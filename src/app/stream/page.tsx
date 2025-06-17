@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import FooterSection from "@/components/FooterSection";
+import HeaderSection from "@/components/HeaderSection";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -21,7 +22,9 @@ export default function Home() {
 
   return (
     <div className="bg-[#9D7935]">
-      <main className=" w-full min-h-screen flex flex-col items-center justify-center text-black overflow-auto pt-12">
+    {/* Header Section */}
+    <HeaderSection />
+      <main className=" w-full min-h-screen flex flex-col items-center justify-center text-black overflow-auto pt-24">
         
         {/* Live Stream Preview Box */}
         <div

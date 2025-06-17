@@ -79,7 +79,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative z-10 flex flex-col items-center justify-start min-h-screen px-6 pt-20 pb-12 text-white text-center">
         <div className="flex-1 flex flex-col items-center justify-center ">
           {/* Logo/Icon */}
-          <div className="mb-16 transform transition-all duration-700 hover:scale-110">
+          <div className="mb-16 mt-16 transform transition-all duration-700 hover:scale-110">
             <div className="w-20 h-20 mx-auto">
               <Image
                 src={"/chandi-logo.svg"}
