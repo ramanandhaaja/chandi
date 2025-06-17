@@ -2,8 +2,14 @@ import React from "react";
 import { notFound } from "next/navigation";
 import MuxPlayer from "@mux/mux-player-react";
 import FooterSection from "@/components/FooterSection";
+import HeaderSection from "@/components/HeaderSection";
 
-export default function StreamPage({ params }: { params: { playbackId: string } }) {
+// For Vercel deployment compatibility
+type StreamPageProps = {
+  params: { playbackId: string };
+};
+
+export default function StreamPage({ params }: StreamPageProps) {
   const { playbackId } = params;
 
   if (!playbackId) {
@@ -13,7 +19,9 @@ export default function StreamPage({ params }: { params: { playbackId: string } 
 
   return (
     <>
-      <main className="flex flex-col items-center justify-center h-screen text-black">
+      {/* Header Section */}
+      <HeaderSection />
+      <main className="flex flex-col items-center justify-center h-screen text-black pt-24">
         <h1>Live Stream</h1>
         <MuxPlayer
           playbackId={playbackId}

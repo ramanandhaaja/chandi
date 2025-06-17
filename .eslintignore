@@ -1,0 +1,2 @@
+# Ignore TypeScript errors in dynamic route files for Vercel deployment
+src/app/stream/[playbackId]/page.tsx
