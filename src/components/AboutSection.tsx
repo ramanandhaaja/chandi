@@ -1,20 +1,42 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { getItems, getImageURL } from "../lib/api";
 
-interface AboutSectionProps {
+interface AboutSectionData {
+  breadcrumb?: string;
   title?: string;
   subtitle?: string;
-  description?: string[];
+  images?: { id: number; about_landingpage_id: number; directus_files_id: string }[];
 }
 
-const AboutSection: React.FC<AboutSectionProps> = ({
-  title = "Where the future is Made",
-  subtitle = "About CHANDI",
-  description = [
-    "The CHANDI 2025 Summit is the ultimate gathering for culture enthusiasts, community leaders, and innovators to delve into the world of art, heritage, and the future of cultural expressions. This summit offers a unique opportunity to hear from top experts, engage in insightful discussions, and explore groundbreaking cultural innovations. Whether you're a festival organizer, artist, or cultural advocate.",
-    "You'll have the chance to explore real-world cultural initiatives, witness inspiring performances, and connect with others who are driving change in the cultural landscape. Be part of the conversation that's shaping the future of our communities.",
-  ],
-}) => {
+const AboutSection: React.FC = () => {
+  const [aboutData, setAboutData] = useState<AboutSectionData | null>(null);
+
+  useEffect(() => {
+    async function fetchAboutData() {
+      try {
+        const items = await getItems("about_landingpage", { fields: "*,images.*" });
+        console.log(items);
+        if (items && items.length > 0) {
+          setAboutData({
+            breadcrumb: items[0].breadcrumb,
+            title: items[0].title,
+            subtitle: items[0].subtitle,
+            images: items[0].images,
+          });
+        }
+      } catch (error) {
+        console.error("Failed to fetch about section data:", error);
+      }
+    }
+    fetchAboutData();
+  }, []);
+
+  const displayBreadcrumb = aboutData?.breadcrumb;
+  const displayTitle = aboutData?.title || "Where the future is Made";
+  const displaySubtitle = aboutData?.subtitle || "About CHANDI";
+
   return (
     <section className="py-20 px-4 sm:px-6 md:px-12 lg:px-24 bg-white overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
@@ -22,7 +44,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         <div className="flex items-center mb-10">
           <div className="w-10 h-1 bg-[#0D0D0D] mr-4 rounded-full"></div>
           <h3 className="text-base font-medium tracking-wide text-[#0D0D0D]">
-            {subtitle}
+          {displayBreadcrumb}
           </h3>
         </div>
 
@@ -30,67 +52,34 @@ const AboutSection: React.FC<AboutSectionProps> = ({
           {/* Left Column - Title */}
           <div className="w-full md:max-w-[400px] mb-10 md:mb-0">
             <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[87px] leading-[1.2] mb-6 text-black">
-              {title}
+              {displayTitle}
             </h2>
           </div>
 
           {/* Right Column - Description */}
           <div className="w-full sm:max-w-md md:max-w-2xl space-y-6">
-            {description.map((paragraph, index) => (
-              <p key={index} className="text-[#1F1F1F] break-words whitespace-normal">
-                {paragraph}
-              </p>
-            ))}
+              <p className="text-[#1F1F1F] break-words whitespace-normal" dangerouslySetInnerHTML={{ __html: displaySubtitle || '' }} />
+            
           </div>
         </div>
 
         {/* Image Gallery */}
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-7 gap-6 items-center w-full overflow-x-hidden">
-          <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-3">
-            <Image
-              src="/images/about-section/about-img-1.png"
-              alt="Cultural Performance"
-              fill
-              style={{ objectFit: "cover" }}
-              className="hover:scale-105 transition-transform duration-500 rounded-xl"
-            />
-          </div>
-          <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
-            <Image
-              src="/images/about-section/about-img-2.png"
-              alt="Traditional Textile"
-              fill
-              style={{ objectFit: "cover" }}
-              className="hover:scale-105 transition-transform duration-500 rounded-xl"
-            />
-          </div>
-          <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
-            <Image
-              src="/images/about-section/about-img-3.png"
-              alt="Cultural Food"
-              fill
-              style={{ objectFit: "cover" }}
-              className="hover:scale-105 transition-transform duration-500 rounded-xl"
-            />
-          </div>
-          <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
-            <Image
-              src="/images/about-section/about-img-4.png"
-              alt="Traditional Dance"
-              fill
-              style={{ objectFit: "cover" }}
-              className="hover:scale-105 transition-transform duration-500 rounded-xl"
-            />
-          </div>
-          <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-1">
-            <Image
-              src="/images/about-section/about-img-5.png"
-              alt="Placeholder Image"
-              fill
-              style={{ objectFit: "cover" }}
-              className="hover:scale-105 transition-transform duration-500 rounded-xl"
-            />
-          </div>
+          {aboutData?.images?.map((img, idx) => (
+            <div key={img.id} className={
+              idx === 0
+                ? "relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-3"
+                : "relative w-full h-40 sm:h-48 md:h-52 rounded-xl overflow-hidden sm:col-span-1"
+            }>
+              <Image
+                src={img.directus_files_id ? getImageURL(img.directus_files_id) : "/images/placeholder.svg"}
+                alt={`About Gallery Image ${idx + 1}`}
+                fill
+                style={{ objectFit: "cover" }}
+                className="hover:scale-105 transition-transform duration-500 rounded-xl"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

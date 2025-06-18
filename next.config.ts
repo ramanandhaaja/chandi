@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    domains: ['directus.codefoundry.online'],
+  },
   // Ignore TypeScript errors during build for Vercel deployment
   typescript: {
     // !! WARN !! 

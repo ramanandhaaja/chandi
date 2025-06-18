@@ -103,7 +103,7 @@ const HeaderSection: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-800 hover:text-[#D2AF6D] focus:outline-none"
+              className="text-gray-800 hover:text-[#D2AF6D] focus:outline-none -ml-8"
             >
               <svg
                 className="h-6 w-6"
@@ -144,7 +144,7 @@ const HeaderSection: React.FC = () => {
               Home
             </Link>
             <Link
-              href="/live"
+              href="/stream"
               className="text-gray-800 hover:text-[#D2AF6D] font-medium py-2"
             >
               Live

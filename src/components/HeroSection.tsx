@@ -1,27 +1,33 @@
 "use client"
 
 import React, { useEffect, useState } from "react";
+import { getImageURL } from "../lib/api";
 import Image from "next/image";
 import { getItems } from "../lib/api";
 interface HeroSectionProps {
   title?: string[];
   subtitle?: string;
-  date?: string;
-  location?: string;
+  caption?:string;
+  background?:string;
+  logo?:string;
   scrollText?: string;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
+  caption,
+  background,
+  logo,
   scrollText,
 }) => {
   // State for fetched data
   const [heroData, setHeroData] = useState<{
     title?: string[];
     subtitle?: string;
-    date?: string;
-    location?: string;
+    caption?:string;
+    background?:string;
+    logo?:string;
     scrollText?: string;
   } | null>(null);
 
@@ -32,12 +38,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         if (items && items.length > 0) {
           // Assuming the collection fields match the prop names
           setHeroData({
-            title: Array.isArray(items[0].title)
-              ? items[0].title
-              : typeof items[0].title === "string"
-              ? items[0].title.split("\n")
-              : undefined,
+            title: items[0].title,
             subtitle: items[0].subtitle,
+            caption:items[0].caption,
+            background:items[0].background,
+            logo:items[0].logo,
             scrollText: "Scroll to Explore",
           });
         }
@@ -51,7 +56,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   // Use fetched data if available, otherwise fallback to defaults
   const displayTitle = heroData?.title || title;
   const displaySubtitle = heroData?.subtitle || subtitle;
+  const displayCaption = heroData?.caption || caption;
+  const displayBackground = heroData?.background || background;
+  const displayLogo = heroData?.logo || logo;
   const displayScrollText = heroData?.scrollText || scrollText;
+  
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -60,7 +69,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Pattern overlay using Tailwind's built-in utilities */}
         <div className="absolute inset-0 ">
           <Image
-            src="/images/hero-section/hero-img.png"
+            src={
+              displayBackground
+                ? getImageURL(displayBackground)
+                : "/images/hero-section/hero-img.png"
+            }
             alt="Pattern"
             fill
             className="object-cover"
@@ -73,16 +86,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative z-10 flex flex-col items-center justify-start min-h-screen px-6 pt-20 pb-12 text-white text-center">
         <div className="flex-1 flex flex-col items-center justify-center ">
           {/* Logo/Icon */}
-          <div className="mb-10 mt-16 transform transition-all duration-700 hover:scale-110">
+          <div className="mb-10 mt-16 ">
             <div className="w-20 h-20 mx-auto">
               <Image
-                src={"/chandi_single_logo.png"}
+              src={
+                displayBackground
+                  ? getImageURL(displayLogo)
+                  : "/chandi_single_logo.png"
+              }
                 alt="logo"
                 width={82}
                 height={106}
               ></Image>
             </div>
-            <div className="figtree-regular pt-8 text-2xl md:text-[35px] font-light text-white/90">CHANDI Summit 2025</div>
+            <div className="figtree-regular pt-8 text-2xl md:text-[35px] font-light text-white/90">{displayCaption}</div>
             
           </div>
 
@@ -94,7 +111,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {/* Summit Title */}
           <div className=" mb-20">
             <h2 className="figtree-regular text-2xl md:text-[35px] font-medium tracking-tighter text-white/90 drop-shadow-sm">
-              {displaySubtitle}
+              {displaySubtitle} 
             </h2>
           </div>
         </div>
