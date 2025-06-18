@@ -14,8 +14,6 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
-  date,
-  location,
   scrollText,
 }) => {
   // State for fetched data
@@ -40,8 +38,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               ? items[0].title.split("\n")
               : undefined,
             subtitle: items[0].subtitle,
-            date: items[0].left_caption,
-            location: items[0].right_caption,
             scrollText: "Scroll to Explore",
           });
         }
@@ -55,8 +51,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   // Use fetched data if available, otherwise fallback to defaults
   const displayTitle = heroData?.title || title;
   const displaySubtitle = heroData?.subtitle || subtitle;
-  const displayDate = heroData?.date || date;
-  const displayLocation = heroData?.location || location;
   const displayScrollText = heroData?.scrollText || scrollText;
 
   return (
@@ -79,15 +73,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative z-10 flex flex-col items-center justify-start min-h-screen px-6 pt-20 pb-12 text-white text-center">
         <div className="flex-1 flex flex-col items-center justify-center ">
           {/* Logo/Icon */}
-          <div className="mb-16 mt-16 transform transition-all duration-700 hover:scale-110">
+          <div className="mb-12 mt-16 transform transition-all duration-700 hover:scale-110">
             <div className="w-20 h-20 mx-auto">
               <Image
-                src={"/chandi-logo.svg"}
+                src={"/chandi_single_logo.png"}
                 alt="logo"
                 width={76}
                 height={91}
               ></Image>
             </div>
+            <div className="pt-8 text-[24px] font-light text-white/90">CHANDI Summit 2025</div>
             {/* <div className="absolute inset-0 bg-black opacity-30 z-0"></div> */}
           </div>
 
@@ -102,21 +97,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {displaySubtitle}
             </h2>
           </div>
-
-          {/* Date and Location with Line */}
-          <div className="w-[70vw] flex items-center justify-between mt-16">
-            <div className="text-left text-[24px] font-light text-white/90 transition-all duration-500 hover:text-white hover:translate-x-[-5px]">
-              {displayDate}
-            </div>
-            <div className="flex-1 mx-6 h-px bg-white opacity-70"></div>
-            <div className="text-right text-[24px] font-light text-white/90 transition-all duration-500 hover:text-white hover:translate-x-[5px]">
-              {displayLocation}
-            </div>
-          </div>
         </div>
 
         {/* Scroll Indicator - Now relative to the content container */}
-        <div className="mt-auto pt-12 flex flex-col items-center">
+        <div className="mt-auto pt-4 flex flex-col items-center">
           <div className="text-[24px] font-light mb-3 text-white/80 transition-all duration-500 hover:text-white">
             {displayScrollText}
           </div>

@@ -26,7 +26,7 @@ const Hero = ({ title, subtitle }: { title: string; subtitle: string }) => {
             <div className="mb-16 transform transition-all duration-700 hover:scale-110">
               <div className="w-20 h-20 mx-auto">
                 <Image
-                  src={"/chandi-logo.svg"}
+                  src={"/chandi_single_logo.png"}
                   alt="logo"
                   width={76}
                   height={91}
