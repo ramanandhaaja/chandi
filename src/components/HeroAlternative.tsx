@@ -36,7 +36,7 @@ const Hero = ({ title, subtitle }: { title: string; subtitle: string }) => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold  mb-8 leading-tight text-white drop-shadow-md">
+            <h1 className="kunire-grotesk text-4xl sm:text-5xl md:text-7xl font-bold  mb-8 leading-tight text-white drop-shadow-md">
               {title}
             </h1>
 

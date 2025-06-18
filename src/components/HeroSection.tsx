@@ -82,18 +82,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 height={106}
               ></Image>
             </div>
-            <div className="pt-8 text-2xl md:text-[35px] font-light text-white/90">CHANDI Summit 2025</div>
-            {/* <div className="absolute inset-0 bg-black opacity-30 z-0"></div> */}
+            <div className="figtree-regular pt-8 text-2xl md:text-[35px] font-light text-white/90">CHANDI Summit 2025</div>
+            
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold  mb-8 leading-tight text-white drop-shadow-md">
+          <h1 className="kunire-grotesk text-4xl sm:text-5xl md:text-7xl font-bold  mb-8 leading-tight text-white drop-shadow-md">
             {displayTitle}
           </h1>
 
           {/* Summit Title */}
           <div className=" mb-20">
-            <h2 className="text-2xl md:text-[35px] font-medium tracking-tighter text-white/90 drop-shadow-sm">
+            <h2 className="figtree-regular text-2xl md:text-[35px] font-medium tracking-tighter text-white/90 drop-shadow-sm">
               {displaySubtitle}
             </h2>
           </div>
