@@ -73,16 +73,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative z-10 flex flex-col items-center justify-start min-h-screen px-6 pt-20 pb-12 text-white text-center">
         <div className="flex-1 flex flex-col items-center justify-center ">
           {/* Logo/Icon */}
-          <div className="mb-12 mt-16 transform transition-all duration-700 hover:scale-110">
+          <div className="mb-10 mt-16 transform transition-all duration-700 hover:scale-110">
             <div className="w-20 h-20 mx-auto">
               <Image
                 src={"/chandi_single_logo.png"}
                 alt="logo"
-                width={76}
-                height={91}
+                width={82}
+                height={106}
               ></Image>
             </div>
-            <div className="pt-8 text-[24px] font-light text-white/90">CHANDI Summit 2025</div>
+            <div className="pt-8 text-2xl md:text-[35px] font-light text-white/90">CHANDI Summit 2025</div>
             {/* <div className="absolute inset-0 bg-black opacity-30 z-0"></div> */}
           </div>
 

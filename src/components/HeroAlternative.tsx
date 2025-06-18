@@ -28,8 +28,8 @@ const Hero = ({ title, subtitle }: { title: string; subtitle: string }) => {
                 <Image
                   src={"/chandi_single_logo.png"}
                   alt="logo"
-                  width={76}
-                  height={91}
+                  width={82}
+                  height={106}
                 ></Image>
               </div>
               {/* <div className="absolute inset-0 bg-black opacity-30 z-0"></div> */}
