@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { getImageURL } from "../lib/api";
 import Image from "next/image";
 import { getItems } from "../lib/api";
+import { useLanguage } from "../lib/LanguageContext";
+
 interface HeroSectionProps {
   title?: string[];
   subtitle?: string;
@@ -62,8 +64,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const displayScrollText = heroData?.scrollText || scrollText;
   
 
+  // Use global language context
+  
+  const { language, setLanguage } = useLanguage();
+
   return (
     <div className="relative min-h-screen overflow-hidden">
+      {/* Language Switch Button */}
+      <div className="fixed bottom-6 left-6 z-20">
+        <div className="flex bg-[#D1D3CF] rounded-full px-6 py-2 shadow-lg">
+          <button
+            className={`text-lg font-semibold mr-3 transition-all duration-200 ${language === 'en-US' ? 'underline text-black' : 'text-[#766C6C]'}`}
+            onClick={() => setLanguage('en-US')}
+          >
+            EN
+          </button>
+          <button
+            className={`text-lg font-semibold transition-all duration-200 ${language === 'id-ID' ? 'underline text-black' : 'text-[#766C6C]'}`}
+            onClick={() => setLanguage('id-ID')}
+          >
+            ID
+          </button>
+        </div>
+      </div>
+
       {/* Hero Section with Background */}
       <div className="absolute inset-0 z-0">
         {/* Pattern overlay using Tailwind's built-in utilities */}

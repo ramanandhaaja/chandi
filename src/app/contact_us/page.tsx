@@ -1,8 +1,8 @@
+import FAQSection from "@/components/FAQSection";
 import FooterSection from "@/components/FooterSection";
 import HeaderSection from "@/components/HeaderSection";
 import HeroAlternative from "@/components/HeroAlternative";
 import ContactsOption from "@/components/contact_us/ContactsOption";
-import Faq from "@/components/contact_us/Faq";
 
 export default function ContactUsPage() {
   return (
@@ -17,7 +17,7 @@ export default function ContactUsPage() {
       />
       {/* Contacts Option Section */}
       <ContactsOption />
-      <Faq />
+      <FAQSection/>
       <FooterSection />
     </>
   );

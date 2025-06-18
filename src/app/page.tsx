@@ -16,10 +16,8 @@ export default function Home() {
   return (
     <>
 
-    {/* Header Section */}
+      {/* Header Section */}
       <HeaderSection />
-      
-      
       
       {/* Hero Section */}
       <HeroSection />
