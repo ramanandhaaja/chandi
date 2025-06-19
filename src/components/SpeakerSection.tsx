@@ -40,7 +40,6 @@ const SpeakerSection: React.FC = () => {
         const items = await getItems("speaker_landingpage", {
           fields: "*,translations.*,speakers.*",
         });
-        console.log(items);
         if (items && items.length > 0) {
           setSpeakerData({
             translations: items[0].translations,
@@ -80,7 +79,7 @@ const SpeakerSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#7a5e29] to-[#9D7935]/60" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto relative z-10 px-6 sm:px-0 md:px-0 lg:px-0">
         {/* Section Header with Line */}
         <div className="flex items-center mb-8 mt-4 sm:mt-8 sm:mb-10">
           <div className="w-10 h-1 bg-white mr-4 rounded-full"></div>
