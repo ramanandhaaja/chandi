@@ -19,6 +19,7 @@ interface HeroSectionProps {
   caption?: string;
   background?: string;
   logo?: string;
+  image_right?: string;
   scrollText?: string;
   translations?: HeroSectionTranslation[];
 }
@@ -28,8 +29,8 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
   subtitle,
   caption,
   background,
+  image_right,
   logo,
-  scrollText,
 }) => {
   // State for fetched data
   const [heroData, setHeroData] = useState<{
@@ -37,6 +38,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
     subtitle?: string;
     caption?: string;
     background?: string;
+    image_right?: string;
     logo?: string;
     scrollText?: string;
     translations?: HeroSectionTranslation[];
@@ -53,6 +55,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
           setHeroData({
             background: items[0].background,
             logo: items[0].logo,
+            image_right: items[0].image_right,
             scrollText: "Scroll to Explore",
             translations: items[0].translations,
           });
@@ -82,30 +85,43 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
   const displayCaption = translation?.caption || heroData?.caption || caption;
   const displayBackground = heroData?.background || background;
   const displayLogo = heroData?.logo || logo;
-  const displayScrollText = heroData?.scrollText || scrollText;
+  const displayImageRight = heroData?.image_right || image_right;
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-[#F3F2E8] font-sans">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-[#CD9F00] opacity-70 pointer-events-none" />
+      <div className="absolute inset-0 z-10 opacity-70">
         <Image
           src={
             displayBackground
               ? getImageURL(displayBackground)
-              : "/images/hero-section/hero-img.png"
+              : "placeholder.svg"
           }
           alt="Pattern"
           fill
           className="object-cover"
           priority
         />
-        {/* Decorative overlay pattern if you have one */}
-        {/* <div className="absolute inset-0 bg-[url('/images/hero-section/overlay-pattern.png')] bg-repeat opacity-60" /> */}
       </div>
+      {/* Color Overlay */}
+      
+      {/* Right-side Main Visual (between overlay and content) */}
+      {displayImageRight && (
+        <Image
+          src={getImageURL(displayImageRight)}
+          alt="Right Side Visual"
+          height={800}
+          width={800}
+          className="absolute right-[-140px] top-0 h-[800px] w-auto z-20"
+          style={{ objectFit: "contain" }}
+          priority
+        />
+      )}
 
       {/* Language Switch Button */}
       <div className="absolute bottom-6 left-6 z-20">
-        <div className="flex bg-[#D1D3CF] rounded-full px-4 py-1 shadow-lg border border-[#E5E5E5]">
+        <div className="flex bg-white rounded-full px-4 py-1 shadow-lg border border-[#E5E5E5]">
           <button
             className={`text-xs md:text-sm font-semibold mr-2 transition-all duration-200 ${
               language === "en-US" ? "underline text-black" : "text-[#766C6C]"
@@ -126,7 +142,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col h-screen">
+      <div className="relative z-10 flex flex-col h-screen z-40 pt-20">
         <div className="flex flex-1">
           {/* Left: Logo and Texts */}
           <div className="flex flex-col justify-start pl-8 md:pl-20 pt-14 md:mt-20 w-full md:w-3/5 lg:w-1/2">
@@ -147,21 +163,33 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
                 />
               </div>
               {/* Caption */}
-              <div className="figtree-regular text-lg md:text-[40px] text-white font-light max-w-[290px] break-words">
-                {displayCaption}
+              <div className="kunire-grotesk text-lg md:text-[40px] text-[#4A2F1E] font-light max-w-[390px] leading-[1]">
+                CHANDI <br />
+                SUMMIT 2025
+              </div>
+              <div className="h-2"></div>
+              <div className="figtree-regular  text-lg md:text-[18px] text-[#4A2F1E] font-light max-w-[300px] leading-[1]">
+              Culture, Heritage, Art, Narrative,
+              Diplomacy, and Innovation
               </div>
             </div>
 
             {/* Main Heading */}
-            <h1 className="kunire-grotesk font-bold text-[2.2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4.1rem] leading-[1.07] text-left mb-4">
-              {displayTitle}
+            <h1 className="absolute figtree-regular font-bold text-[2.2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[110px] leading-[0.8] text-left mb-4 mt-72">
+              <span style={{ color: "#97311A" }}>CULTURE</span>{" "}
+              <span style={{ color: "#948B48" }}>FOR</span> <br />
+              <span style={{ color: "#4A2F1E", marginLeft: "300px" }}>
+                THE
+              </span>{" "}
+              <span style={{ color: "#CD9F00" }}>FUTURE</span>
             </h1>
+            <span className="absolute right-[-30px] mt-96 w-[480px] text-left bg-[#ECE8DA] rounded-full px-8 py-3 text-[#3B2D2C] text-[31.2px] font-semibold shadow-md">
+              {displaySubtitle}
+            </span>
           </div>
           {/* Right: Date Pill */}
           <div className="hidden md:flex items-end w-2/5 lg:w-1/2 pr-10 pb-16 justify-end">
-            <span className="bg-[#ECE8DA] rounded-full px-8 py-3 text-[#3B2D2C] text-[31.2px] font-semibold shadow-md">
-              {displaySubtitle}
-            </span>
+            {/* Right image moved to correct stacking order above */}
           </div>
         </div>
         {/* For extra spacing at the bottom if needed */}
