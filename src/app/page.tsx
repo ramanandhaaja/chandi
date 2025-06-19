@@ -11,6 +11,7 @@ import SponsorSection from "@/components/SponsorSection";
 import FAQSection from "@/components/FAQSection";
 import HostSection from "@/components/HostSection";
 import FooterSection from "@/components/FooterSection";
+import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
       <HeaderSection />
 
       {/* Hero Section */}
-      <HeroAlternative2 />
+      <HeroSection />
 
       {/* About Section */}
       <AboutSection />
