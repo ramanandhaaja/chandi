@@ -51,9 +51,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         if (items && items.length > 0) {
           // Assuming the collection fields match the prop names
           setHeroData({
-            title: items[0].title,
-            subtitle: items[0].subtitle,
-            caption: items[0].caption,
             background: items[0].background,
             logo: items[0].logo,
             scrollText: "Scroll to Explore",
@@ -83,7 +80,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const displayBackground = heroData?.background || background;
   const displayLogo = heroData?.logo || logo;
   const displayScrollText = heroData?.scrollText || scrollText;
-
+ 
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Language Switch Button */}
