@@ -23,7 +23,7 @@ interface HeroSectionProps {
   translations?: HeroSectionTranslation[];
 }
 
-export const HeroSection2: React.FC<HeroSectionProps> = ({
+const HeroAlternative2: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
   caption,
@@ -171,4 +171,4 @@ export const HeroSection2: React.FC<HeroSectionProps> = ({
   );
 };
 
-export default HeroSection2;
+export default HeroAlternative2;

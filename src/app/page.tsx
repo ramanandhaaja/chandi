@@ -1,5 +1,5 @@
 import HeaderSection from "@/components/HeaderSection";
-import HeroSection2 from "@/components/HeroAlternative-2";
+import HeroAlternative2 from "@/components/HeroAlternative2";
 import AboutSection from "@/components/AboutSection";
 import GallerySection from "@/components/GallerySection";
 import WhoSection from "@/components/WhoSection";
@@ -19,7 +19,7 @@ export default function Home() {
       <HeaderSection />
 
       {/* Hero Section */}
-      <HeroSection2 />
+      <HeroAlternative2 />
 
       {/* About Section */}
       <AboutSection />
