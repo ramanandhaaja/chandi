@@ -1,46 +1,64 @@
-import React from 'react';
-import Image from 'next/image';
+"use client";
 
-interface Host {
-  name: string;
-  role: string;
-  image: string;
-}
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { getItems, getImageURL } from "../lib/api";
+import { useLanguage } from "../lib/LanguageContext";
 
-interface HostSectionProps {
+interface HostSectionTranslation {
+  languages_code: string;
+  breadcrumb?: string;
   title?: string;
   subtitle?: string;
-  description?: string;
-  hosts?: Host[];
 }
 
-const HostSection: React.FC<HostSectionProps> = ({
-  title = 'Meet Our Hosts:',
-  subtitle = 'Our Host',
-  description = 'The CHANDI 2025 Summit is organized by a group of enthusiastic cultural pioneers and community leaders. Our hosts are committed to shaping the future of culture by uniting the most creative thinkers in art, heritage, and social innovation.',
-  hosts = [
-    {
-      name: 'Jonathan Reid',
-      role: 'Cultural Director',
-      image: '/images/host-section/host1.png'
-    },
-    {
-      name: 'Maya Chen',
-      role: 'Community Engagement',
-      image: '/images/host-section/host2.png'
-    },
-    {
-      name: 'David Okafor',
-      role: 'Innovation Lead',
-      image: '/images/host-section/host3.png'
-    },
-    {
-      name: 'Sophia Martinez',
-      role: 'Heritage Specialist',
-      image: '/images/host-section/host4.png'
+interface HostSectionData {
+  breadcrumb?: string;
+  title?: string;
+  subtitle?: string;
+  translations?: HostSectionTranslation[];
+  images?: {
+    id: number;
+    about_landingpage_id: number;
+    directus_files_id: string;
+  }[];
+}
+
+const HostSection: React.FC = () => {
+  const [hostData, setHostData] = useState<HostSectionData | null>(null);
+  // Use global language context
+  const { language } = useLanguage();
+  useEffect(() => {
+    async function fetchAboutData() {
+      try {
+        const items = await getItems("host_landingpage", {
+          fields: "*,images.*,translations.*",
+        });
+
+        if (items && items.length > 0) {
+          setHostData({
+            translations: items[0].translations,
+            images: items[0].images,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching about data:", error);
+      }
     }
-  ]
-}) => {
+    fetchAboutData();
+  }, []);
+
+  let translation: HostSectionTranslation | undefined = undefined;
+  if (hostData?.translations && Array.isArray(hostData.translations)) {
+    translation = hostData.translations.find(
+      (t) => t.languages_code === language
+    );
+  }
+
+  const displayBreadcrumb = translation?.breadcrumb || hostData?.breadcrumb;
+  const displayTitle = translation?.title || hostData?.title || "";
+  const displaySubtitle = translation?.subtitle || hostData?.subtitle || "";
+
   return (
     <section className="py-20 px-6 md:px-12 lg:px-24 bg-white bg-[url('/images/host-section/bg.png')] bg-no-repeat bg-right bg-contain">
       <div className="max-w-7xl mx-auto">
@@ -49,70 +67,89 @@ const HostSection: React.FC<HostSectionProps> = ({
           <div className="md:w-2/5 w-full mb-10 md:mb-0">
             {/* Section Label with Line */}
             <div className="flex items-center mb-4">
-              <div className="w-10 h-0.5 bg-black mr-3"></div>
-              <p className="text-sm font-medium text-black">{subtitle}</p>
+            <div className="w-10 h-1 bg-black mr-4 rounded-full"></div>
+              <p className="text-sm font-medium text-black">
+                {displayBreadcrumb}
+              </p>
             </div>
 
             {/* Main Title */}
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
-              {title}
+              {displayTitle}
             </h2>
 
             {/* Description */}
             <p className="text-base text-black leading-relaxed">
-              {description}
+              <span dangerouslySetInnerHTML={{ __html: displaySubtitle }} />
             </p>
           </div>
 
           {/* Right Column - Custom Host Images Grid */}
           <div className="md:w-3/5 w-full">
             <div className="grid grid-cols-2 gap-6 md:gap-8">
-              
-              
               {/* Right column - contains top-right and bottom-right images with vertical offset */}
               <div className="flex flex-col justify-between space-y-3 md:space-y-4 pt-8 md:pt-12">
                 {/* Top right image - Smaller */}
                 <div className="relative rounded-2xl overflow-hidden h-[180px] md:h-[200px] w-full">
-                  <Image
-                    src={hosts[1]?.image || '/placeholder.svg'}
-                    alt={hosts[1]?.name || 'Host 2'}
-                    fill
-                    className="object-cover rounded-2xl"
-                  />
+                  {hostData?.images && hostData.images[0] && (
+                    <Image
+                      src={
+                        getImageURL(hostData.images[0].directus_files_id) ||
+                        "/placeholder.svg"
+                      }
+                      alt="Host 1"
+                      fill
+                      className="object-cover rounded-2xl"
+                    />
+                  )}
                 </div>
-                
+
                 {/* Bottom right image - Larger, taller */}
                 <div className="relative rounded-2xl overflow-hidden h-[240px] md:h-[350px] w-full">
-                  <Image
-                    src={hosts[3]?.image || '/placeholder.svg'}
-                    alt={hosts[3]?.name || 'Host 4'}
-                    fill
-                    className="object-cover rounded-2xl"
-                  />
+                  {hostData?.images && hostData.images[1] && (
+                    <Image
+                      src={
+                        getImageURL(hostData.images[1].directus_files_id) ||
+                        "/placeholder.svg"
+                      }
+                      alt="Host 2"
+                      fill
+                      className="object-cover rounded-2xl"
+                    />
+                  )}
                 </div>
               </div>
-
 
               {/* Left column - contains top-left and bottom-left images */}
               <div className="flex flex-col space-y-3 md:space-y-4">
                 {/* Top left image - Larger, taller */}
                 <div className="relative rounded-2xl overflow-hidden h-[240px] md:h-[350px] w-full">
-                  <Image
-                    src={hosts[0]?.image || '/placeholder.svg'}
-                    alt={hosts[0]?.name || 'Host 1'}
-                    fill
-                    className="object-cover rounded-2xl"
-                  />
+                  {hostData?.images && hostData.images[2] && (
+                    <Image
+                      src={
+                        getImageURL(hostData.images[2].directus_files_id) ||
+                        "/placeholder.svg"
+                      }
+                      alt="Host 3"
+                      fill
+                      className="object-cover rounded-2xl"
+                    />
+                  )}
                 </div>
-                
+
                 {/* Bottom left image - Smaller */}
                 <div className="relative rounded-2xl overflow-hidden h-[180px] md:h-[200px] w-full">
-                  <Image
-                    src={hosts[2]?.image || '/placeholder.svg'}
-                    alt={hosts[2]?.name || 'Host 3'}
-                    fill
-                    className="object-cover rounded-2xl"
-                  />
+                  {hostData?.images && hostData.images[3] && (
+                    <Image
+                      src={
+                        getImageURL(hostData.images[3].directus_files_id) ||
+                        "/placeholder.svg"
+                      }
+                      alt="Host 4"
+                      fill
+                      className="object-cover rounded-2xl"
+                    />
+                  )}
                 </div>
               </div>
             </div>
