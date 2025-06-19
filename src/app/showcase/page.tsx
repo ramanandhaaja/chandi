@@ -12,7 +12,7 @@ export default function Home() {
       <HeaderSection />
 
       <HeroAlternative
-        title="Cultural Showcase"
+        title="CULTURAL SHOWCASE"
         subtitle="Explore the vibrant world of Indonesia through our 'Cultural Showcase' page! Here, you'll find a rich tapestry of local traditions, artistic expressions, and community celebrations. Immerse yourself in the colorful festivals, traditional crafts, and the unique stories that highlight the essence of Indonesian culture."
       />
 

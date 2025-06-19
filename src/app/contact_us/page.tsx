@@ -10,7 +10,7 @@ export default function ContactUsPage() {
       {/* Header Section */}
       <HeaderSection />
       <HeroAlternative
-        title="Contact Us"
+        title="CONTACT US"
         subtitle="Have questions or need assistance? Reach out to us! Our friendly team is here to help you with 
         any inquiries you may have. Whether you need support or just want to say hello, 
         we’d love to hear from you. Contact us today!"

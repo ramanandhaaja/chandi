@@ -39,7 +39,7 @@ export default function NewsAndUpdatesPage() {
       {/* Header Section */}
       <HeaderSection />
       <HeroAlternative
-        title="News and Updates"
+        title="NEWS AND UPDATES"
         subtitle="Stay updated with the latest happenings in Indonesia! 
         Our 'News and Update' section brings you the freshest insights into cultural events, art showcases, and community initiatives. 
         Dive into the dynamic blend of tradition and innovation that shapes Indonesia today."

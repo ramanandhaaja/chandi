@@ -88,7 +88,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
   const displayImageRight = heroData?.image_right || image_right;
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-[#F3F2E8] font-sans">
+    <div className="relative lg:min-h-screen w-full overflow-hidden bg-[#F3F2E8] font-sans">
       {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-[#CD9F00] opacity-70 pointer-events-none" />
       <div className="absolute inset-0 z-10 opacity-70">
@@ -113,7 +113,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
           alt="Right Side Visual"
           height={800}
           width={800}
-          className="absolute right-[-140px] top-0 h-[800px] w-auto z-20"
+          className="hidden md:block absolute right-[-140px] top-0 h-[800px] w-auto z-20"
           style={{ objectFit: "contain" }}
           priority
         />
@@ -142,10 +142,10 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col h-screen z-40 pt-20">
+      <div className="relative flex flex-col lg:h-screen z-40 pt-20 md:pt-10">
         <div className="flex flex-1">
           {/* Left: Logo and Texts */}
-          <div className="flex flex-col justify-start pl-8 md:pl-20 pt-14 md:mt-20 w-full md:w-3/5 lg:w-1/2">
+          <div className="flex flex-col justify-start md:pl-20 pt-14 md:mt-20 w-full md:w-3/5 lg:w-1/2">
             <div className=" pb-14 flex flex-col items-center text-center">
               {/* Logo */}
               <div className="w-20 h-20 md:w-28 md:h-28 mb-4">
@@ -175,15 +175,15 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Main Heading */}
-            <h1 className="absolute figtree-regular font-bold text-[2.2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[110px] leading-[0.8] text-left mb-4 mt-72">
-              <span style={{ color: "#97311A" }}>CULTURE</span>{" "}
+            <h1 className="lg:absolute figtree-regular font-bold text-[2.2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[110px] leading-[1.2] lg:leading-[0.8] text-left mb-4 mt-0 ml-12 lg:ml-0 lg:mt-72">
+              <span className="pl-6 sm:pl-0" style={{ color: "#97311A" }}>CULTURE</span>{" "}
               <span style={{ color: "#948B48" }}>FOR</span> <br />
-              <span style={{ color: "#4A2F1E", marginLeft: "300px" }}>
+              <span className="ml-[100px] sm:ml-[300px]" style={{ color: "#4A2F1E" }}>
                 THE
               </span>{" "}
               <span style={{ color: "#CD9F00" }}>FUTURE</span>
             </h1>
-            <span className="absolute right-[-30px] mt-96 w-[480px] text-left bg-[#ECE8DA] rounded-full px-8 py-3 text-[#3B2D2C] text-[31.2px] font-semibold shadow-md">
+            <span className="lg:absolute ml-40 lg:right-[-30px] mb-20 lg:mt-96 w-[480px] lg:text-left bg-[#ECE8DA] rounded-full px-8 py-3 text-[#3B2D2C] text-[18px] sm:text-[31.2px] font-semibold shadow-md">
               {displaySubtitle}
             </span>
           </div>

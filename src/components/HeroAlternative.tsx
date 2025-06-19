@@ -8,9 +8,10 @@ const Hero = ({ title, subtitle }: { title: string; subtitle: string }) => {
         {/* Hero Section with Background */}
         <div className="absolute inset-0 z-0">
           {/* Pattern overlay using Tailwind's built-in utilities */}
-          <div className="absolute inset-0 ">
+          <div className="absolute inset-0 z-0 bg-[#CD9F00] opacity-70 pointer-events-none" />
+          <div className="absolute inset-0 opacity-70">
             <Image
-              src="/images/hero-section/hero-img.png"
+              src="/bg_cloud.png"
               alt="Pattern"
               fill
               className="object-cover"
@@ -26,7 +27,7 @@ const Hero = ({ title, subtitle }: { title: string; subtitle: string }) => {
             <div className="mb-8 sm:mb-16 transform transition-all duration-700 hover:scale-110">
               <div className="w-14 h-14 sm:w-20 sm:h-20 mx-auto">
                 <Image
-                  src={"/chandi_single_logo.png"}
+                  src={"/chandi_single_logo_color.png"}
                   alt="logo"
                   width={82}
                   height={106}
@@ -36,13 +37,27 @@ const Hero = ({ title, subtitle }: { title: string; subtitle: string }) => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="kunire-grotesk text-2xl sm:text-4xl md:text-7xl font-bold mb-4 sm:mb-8 leading-tight text-white drop-shadow-md">
-              {title}
+            <h1 className="figtree-regular text-2xl sm:text-4xl md:text-7xl font-bold mb-4 sm:mb-8 leading-tight text-white drop-shadow-md">
+              {(() => {
+  const words = title.split(" ");
+  const colors = ["#97311A", "#948B48", "#4A2F1E", "#CD9F00"];
+  return (
+    <>
+      {words.map((word, idx) =>
+        idx < 4 ? (
+          <span key={idx} style={{ color: colors[idx], marginRight: "0.25em" }}>{word}</span>
+        ) : (
+          <span key={idx} style={{ marginRight: "0.25em" }}>{word}</span>
+        )
+      )}
+    </>
+  );
+})()}
             </h1>
 
             {/* Summit Title */}
             <div className="w-full max-w-[572px] mb-10 sm:mb-20">
-              <h2 className="text-sm sm:text-base text-white/90 drop-shadow-sm">
+              <h2 className="text-sm sm:text-base text-[#210000] drop-shadow-sm">
                 {subtitle}
               </h2>
             </div>

@@ -17,7 +17,7 @@ export default function RegisterPage() {
       <HeaderSection />
       {/* Hero Section */}
       <HeroAlternative
-        title="Register And Attend"
+        title="REGISTER AND ATTEND"
         subtitle="Sign up now to explore Indonesia's fascinating heritage through 
         an engaging virtual tour. Immerse yourself in its colorful cultural displays and breathtaking artistic expressions, 
         blending age-old traditions with contemporary innovation—all from the comfort of your own home."
