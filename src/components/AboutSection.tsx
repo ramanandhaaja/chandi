@@ -27,7 +27,7 @@ const AboutSection: React.FC = () => {
   const [aboutData, setAboutData] = useState<AboutSectionData | null>(null);
   // Use global language context
   const { language } = useLanguage();
-
+ 
   useEffect(() => {
     async function fetchAboutData() {
       try {
@@ -37,7 +37,6 @@ const AboutSection: React.FC = () => {
         
         if (items && items.length > 0) {
           setAboutData({
-            breadcrumb: items[0].breadcrumb,
             translations: items[0].translations,
             images: items[0].images,
           });

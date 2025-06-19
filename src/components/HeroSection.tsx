@@ -6,13 +6,21 @@ import Image from "next/image";
 import { getItems } from "../lib/api";
 import { useLanguage } from "../lib/LanguageContext";
 
+interface HeroSectionTranslation {
+  languages_code: string;
+  title?: string;
+  subtitle?: string;
+  caption?: string;
+}
+
 interface HeroSectionProps {
   title?: string[];
   subtitle?: string;
-  caption?:string;
-  background?:string;
-  logo?:string;
+  caption?: string;
+  background?: string;
+  logo?: string;
   scrollText?: string;
+  translations?: HeroSectionTranslation[];
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
@@ -27,25 +35,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [heroData, setHeroData] = useState<{
     title?: string[];
     subtitle?: string;
-    caption?:string;
-    background?:string;
-    logo?:string;
+    caption?: string;
+    background?: string;
+    logo?: string;
     scrollText?: string;
+    translations?: HeroSectionTranslation[];
   } | null>(null);
 
   useEffect(() => {
     async function fetchHeroData() {
       try {
-        const items = await getItems("hero_landingpage");
+        const items = await getItems("hero_landingpage", {
+                  fields: "*,images.*,translations.*",
+                });
         if (items && items.length > 0) {
           // Assuming the collection fields match the prop names
           setHeroData({
-            title: items[0].title,
-            subtitle: items[0].subtitle,
-            caption:items[0].caption,
-            background:items[0].background,
-            logo:items[0].logo,
+            background: items[0].background,
+            logo: items[0].logo,
             scrollText: "Scroll to Explore",
+            translations: items[0].translations,
           });
         }
       } catch (error) {
@@ -55,19 +64,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     fetchHeroData();
   }, []);
 
-  // Use fetched data if available, otherwise fallback to defaults
-  const displayTitle = heroData?.title || title;
-  const displaySubtitle = heroData?.subtitle || subtitle;
-  const displayCaption = heroData?.caption || caption;
+  // Use global language context
+  const { language, setLanguage } = useLanguage();
+
+  // Find translation for current language
+  let translation: HeroSectionTranslation | undefined = undefined;
+  if (heroData?.translations && Array.isArray(heroData.translations)) {
+    translation = heroData.translations.find((t: HeroSectionTranslation) => t.languages_code === language);
+  }
+
+  // Use translation if available, otherwise fallback to heroData or props
+  const displayTitle = translation?.title || heroData?.title || title;
+  const displaySubtitle = translation?.subtitle || heroData?.subtitle || subtitle;
+  const displayCaption = translation?.caption || heroData?.caption || caption;
   const displayBackground = heroData?.background || background;
   const displayLogo = heroData?.logo || logo;
   const displayScrollText = heroData?.scrollText || scrollText;
-  
-
-  // Use global language context
-  
-  const { language, setLanguage } = useLanguage();
-
+ 
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Language Switch Button */}

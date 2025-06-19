@@ -28,7 +28,7 @@ const GallerySection = () => {
         const items = await getItems("gallery_landingpage", {
           fields: "*,images.*,translations.*",
         });
-        console.log(items);
+        
         if (items && items.length > 0) {
           setGalleryData(items); // Now galleryData is an array
         }
