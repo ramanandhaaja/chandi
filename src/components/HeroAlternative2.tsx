@@ -130,7 +130,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
         <div className="flex flex-1">
           {/* Left: Logo and Texts */}
           <div className="flex flex-col justify-start pl-8 md:pl-20 pt-14 md:mt-20 w-full md:w-3/5 lg:w-1/2">
-            <div className=" py-6 flex flex-col items-center text-center">
+            <div className=" pb-14 flex flex-col items-center text-center">
               {/* Logo */}
               <div className="w-20 h-20 md:w-28 md:h-28 mb-4">
                 <Image
