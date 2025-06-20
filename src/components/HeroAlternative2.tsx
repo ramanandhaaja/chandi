@@ -43,15 +43,16 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
     scrollText?: string;
     translations?: HeroSectionTranslation[];
   } | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchHeroData() {
+      setLoading(true);
       try {
         const items = await getItems("hero_landingpage", {
           fields: "*,images.*,translations.*",
         });
         if (items && items.length > 0) {
-          // Assuming the collection fields match the prop names
           setHeroData({
             background: items[0].background,
             logo: items[0].logo,
@@ -62,6 +63,8 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
         }
       } catch (error) {
         console.error("Failed to fetch hero data:", error);
+      } finally {
+        setLoading(false);
       }
     }
     fetchHeroData();
@@ -87,7 +90,14 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
   const displayLogo = heroData?.logo || logo;
   const displayImageRight = heroData?.image_right || image_right;
 
-  return (
+  return loading ? (
+  <div className="relative lg:min-h-screen w-full flex items-center justify-center bg-[#F3F2E8]">
+    <div className="flex flex-col items-center justify-center w-full h-full">
+      <div className="w-12 h-12 border-4 border-[#CD9F00] border-t-transparent rounded-full animate-spin mb-4"></div>
+      <span className="text-lg text-[#CD9F00] font-semibold animate-pulse">Loading...</span>
+    </div>
+  </div>
+) : (
     <div className="relative lg:min-h-screen w-full overflow-hidden bg-[#F3F2E8] font-sans">
       {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-[#CD9F00] opacity-70 pointer-events-none" />
@@ -139,6 +149,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
             ID
           </button>
         </div>
+        
       </div>
 
       {/* Content Container */}
@@ -178,7 +189,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
             <h1 className="lg:absolute figtree-regular font-bold text-[2.2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[110px] leading-[1.2] lg:leading-[0.8] text-left mb-4 mt-0 ml-12 lg:ml-0 lg:mt-72">
               <span className="pl-6 sm:pl-0" style={{ color: "#97311A" }}>CULTURE</span>{" "}
               <span style={{ color: "#948B48" }}>FOR</span> <br />
-              <span className="ml-[100px] sm:ml-[300px]" style={{ color: "#4A2F1E" }}>
+              <span className="ml-[100px] sm:ml-[200px]" style={{ color: "#4A2F1E" }}>
                 THE
               </span>{" "}
               <span style={{ color: "#CD9F00" }}>FUTURE</span>

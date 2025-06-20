@@ -52,9 +52,9 @@ const FooterSection: React.FC = () => {
                 <Link href="/news_updates" className="text-black hover:text-[#6D1A36]">
                   News & Updates
                 </Link>
-                <a href="#" className="text-black hover:text-[#6D1A36]">
+                <Link href="/showcase" className="text-black hover:text-[#6D1A36]">
                   Cultural Showcase
-                </a>
+                </Link>
               </div>
               <div className="flex flex-col gap-3">
                 <h3 className="text-xs font-semibold text-gray-500 mb-3 tracking-widest uppercase">
