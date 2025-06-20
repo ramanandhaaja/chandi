@@ -16,60 +16,38 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
   const [activeDay, setActiveDay] = useState(1);
   const [activeTitle, setActiveTitle] = useState(0);
   const [isGridView, setIsGridView] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const NavLeftBtn = ({
-    showControlsBtn = true,
-  }: {
-    showControlsBtn?: boolean;
-  }) => {
-    return (
-      showControlsBtn && (
-        <>
-          <button
-            className="text-white hover:bg-[#8A6A2F] cursor-pointer p-2"
-            onClick={() => {
-              if (activeTitle > 0) {
-                setActiveTitle(activeTitle - 1);
-              }
-            }}
-          >
-            <Image
-              src="/left-arrow.svg"
-              alt="left-arrow"
-              width={24}
-              height={24}
-            />
-          </button>
-        </>
-      )
-    );
+  const mobileStyles = {
+    navButton: "p-3 min-w-[44px] min-h-[44px] flex items-center justify-center",
+    activeNavItem: "bg-[#8A6A2F] text-white",
+    navItem: "text-white hover:bg-[#8A6A2F]/70",
   };
 
-  const NavRightBtn = ({
-    showControlsBtn = true,
+  const NavButton = ({
+    direction,
+    onClick,
+    disabled,
   }: {
-    showControlsBtn?: boolean;
-  }) => {
-    return (
-      showControlsBtn && (
-        <button
-          className="text-white  hover:bg-[#8A6A2F] cursor-pointer p-2 "
-          onClick={() => {
-            if (activeTitle < content.length - 1) {
-              setActiveTitle(activeTitle + 1);
-            }
-          }}
-        >
-          <Image
-            src="/right-arrow.svg"
-            alt="right-arrow"
-            width={24}
-            height={24}
-          />
-        </button>
-      )
-    );
-  };
+    direction: "left" | "right";
+    onClick: () => void;
+    disabled?: boolean;
+  }) => (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`${mobileStyles.navButton} ${disabled ? "opacity-50" : ""}`}
+      aria-label={direction === "left" ? "Previous" : "Next"}
+    >
+      <Image
+        src={`/${direction}-arrow.svg`}
+        alt={`${direction} arrow`}
+        width={24}
+        height={24}
+      />
+    </button>
+  );
 
   const ViewOptionBtn = ({
     showControlsBtn = true,
@@ -107,24 +85,30 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
   };
 
   return (
-    <main
-      className={`w-full bg-[#4A2F1E] min-h-screen text-black overflow-auto pt-24 pb-24 md:px-12 lg:px-24`}
-    >
-      <div className="mx-auto flex flex-col md:flex-row gap-8 md:gap-16">
+    <main className={`w-full bg-[#4A2F1E] `}>
+      <div className="mx-auto w-full max-w-[1500px] flex flex-col md:flex-row gap-8 md:gap-18 lg:gap-20 pt-8 px-4 md:px-8 lg:px-12 xl:px-16 py-12 lg:py-16">
         {/* Left Column - Header and Image Navigation */}
         <div className="md:w-1/4 w-full space-y-8">
-          <div className="space-y-2">
+          {/* Mobile Menu Overlay */}
+          {isMenuOpen && (
+            <div
+              className="md:hidden fixed inset-0 bg-black/70 z-30"
+              onClick={() => setIsMenuOpen(false)}
+            ></div>
+          )}
+
+          <div className="space-y-4 p-4 md:p-0 text-center md:text-left">
             <h2 className="text-3xl md:text-5xl font-bold text-white">
               Gallery
             </h2>
 
             {/* Day selection tabs */}
-            <div className="flex gap-4">
+            <div className="flex justify-center md:justify-start gap-4 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0">
               {[1, 2, 3].map((day) => (
                 <button
                   key={day}
                   onClick={() => setActiveDay(day)}
-                  className={`text-lg py-2 text-white transition-all cursor-pointer ${
+                  className={`whitespace-nowrap text-lg py-2 px-3 text-white transition-all ${
                     activeDay === day ? "font-bold underline" : "opacity-70"
                   }`}
                 >
@@ -132,19 +116,55 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
                 </button>
               ))}
             </div>
-            <div className="border-b border-white py-2"></div>
+            <div className="border-b border-white/30"></div>
           </div>
 
-          {/* Image Navigation List */}
-          <div className="flex flex-col space-y-2">
+          {/* Dropdown Menu - Mobile Only */}
+          <div className="md:hidden px-4 mb-4 ">
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="w-full flex justify-between items-center bg-[#4A2F1E] text-white py-3 px-4 rounded-lg border border-white/30"
+            >
+              <span>{content[activeTitle]?.title || "Select Image"}</span>
+              <span className="transform transition-transform duration-200">
+                {isDropdownOpen ? "▲" : "▼"}
+              </span>
+            </button>
+
+            {/* Dropdown Content */}
+            {isDropdownOpen && (
+              <div className="absolute z-10 w-[calc(100%-2rem)] mt-1 bg-[#4A2F1E] border border-[#8A6A2F] rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                {content.map((item, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setActiveTitle(index);
+                      setIsDropdownOpen(false);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className={`w-full text-left py-3 px-4 text-white transition-all ${
+                      activeTitle === index
+                        ? "bg-black/30 font-semibold"
+                        : "hover:bg-black/30"
+                    }`}
+                  >
+                    {item.title}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Desktop Navigation List - Hidden on mobile */}
+          <div className="hidden md:block space-y-2">
             {content.map((item, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTitle(index)}
-                className={`text-left py-3 hover:bg-black/20 hover:px-6 hover:rounded-lg text-white transition-all cursor-pointer ${
+                className={`w-full text-left py-3 px-4 text-white transition-all ${
                   activeTitle === index
-                    ? "bg-black/20 px-6 font-semibold rounded-lg"
-                    : "opacity-70"
+                    ? "bg-black/30 font-semibold rounded-lg"
+                    : "opacity-70 hover:opacity-100"
                 }`}
               >
                 {item.title}
@@ -158,7 +178,7 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
           {isGridView ? (
             // Grid View
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
                 {content.map((item, index) => (
                   <div
                     key={index}
@@ -195,28 +215,64 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
             </>
           ) : (
             // Single View
-            <div className="relative h-[calc(100vh-6rem)] w-full rounded-lg overflow-hidden">
-              <Image
-                src={content[activeTitle]?.imageUrl || ""}
-                alt={content[activeTitle]?.title || ""}
-                fill
-                style={{ objectFit: "cover" }}
-                sizes="100vw"
-                priority
-              />
+            <div className="relative w-full">
+              {/* Mobile - Horizontal Scroll */}
+              <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory h-[70vh] no-scrollbar">
+                {content.map((item, index) => (
+                  <div
+                    key={index}
+                    className="w-full flex-shrink-0 snap-start relative aspect-video"
+                  >
+                    <Image
+                      src={item.imageUrl}
+                      alt={item.title}
+                      fill
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: "center",
+                      }}
+                      sizes="100vw"
+                      priority={index === 0}
+                    />
+                  </div>
+                ))}
+                <div className="bg-[#4A2F1E]/30 p-2 absolute bottom-2 right-2">
+                  <ViewOptionBtn isGridView={isGridView} />
+                </div>
+              </div>
 
-              {/* Overlay Controls */}
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-white text-sm md:text-base bg-[#4A2F1E] p-2 -pl-4">
+              {/* Desktop - Single Image with Navigation */}
+              <div className="hidden md:block relative w-full aspect-video rounded-lg overflow-hidden">
+                <Image
+                  src={content[activeTitle]?.imageUrl || ""}
+                  alt={content[activeTitle]?.title || ""}
+                  fill
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
+                  sizes="80vw"
+                  priority
+                />
+              </div>
+
+              {/* Desktop Navigation Controls */}
+              <div className="hidden md:flex absolute bottom-4 left-1/2 -translate-x-1/2">
+                <div className="flex items-center gap-2 bg-[#4A2F1E]/80 px-4 py-2 rounded-full">
+                  <NavButton
+                    direction="left"
+                    onClick={() => setActiveTitle(activeTitle - 1)}
+                    disabled={activeTitle === 0}
+                  />
+                  <span className="text-white text-sm">
                     {activeTitle + 1} / {content.length}
                   </span>
-
-                  <div className="flex items-center gap-2 bg-[#4A2F1E]">
-                    <NavLeftBtn />
-                    <NavRightBtn />
-                    <ViewOptionBtn isGridView={isGridView} />
-                  </div>
+                  <NavButton
+                    direction="right"
+                    onClick={() => setActiveTitle(activeTitle + 1)}
+                    disabled={activeTitle === content.length - 1}
+                  />
+                  <ViewOptionBtn isGridView={isGridView} />
                 </div>
               </div>
             </div>
