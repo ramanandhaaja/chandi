@@ -27,12 +27,12 @@ interface ProfileSectionTranslation {
 }
 
 const ProfileSection: React.FC<ProfileSectionProps> = ({
-  title = '',
-  subtitle = '',
-  caption = '',
-  image = '',
-  logo = '',
-  background = '',
+  title = "",
+  subtitle = "",
+  caption = "",
+  image = "",
+  logo = "",
+  background = "",
 }) => {
   const [profileData, setProfileData] = useState<{
     title?: string[];
@@ -46,8 +46,8 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
     position?: string;
   } | null>(null);
 
-   // Use global language context
-    const { language } = useLanguage();
+  // Use global language context
+  const { language } = useLanguage();
 
   useEffect(() => {
     async function fetchProfileData() {
@@ -78,8 +78,6 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
     );
   }
 
-  
-
   // Use translation if available, otherwise fallback to profileData or props
   const displayTitle = translation?.title || profileData?.title || title;
   const displaySubtitle =
@@ -92,13 +90,16 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
   const displayName = translation?.name || profileData?.name || "";
   const displayPosition = translation?.position || profileData?.position || "";
 
-  
   return (
     <section className="relative overflow-hidden bg-[#9D7935] min-h-screen">
       {/* Background Pattern */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
         <Image
-          src={displayBackground ? getImageURL(displayBackground) : "/for-whom-bg.svg"}
+          src={
+            displayBackground
+              ? getImageURL(displayBackground)
+              : "/for-whom-bg.svg"
+          }
           alt="pattern"
           width={800}
           height={1000}
@@ -107,39 +108,56 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
           priority
         />
       </div>
+      
 
       <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
+      <div
+        className="pointer-events-none absolute left-0 top-0 w-full"
+        style={{
+          height: "400px",
+          background:
+            "linear-gradient(180deg, #7a5e29 0%, #7a5e29 10%, rgba(157,121,53,0) 100%)",
+          zIndex: 10,
+        }}
+      />
+      <div
+        className="pointer-events-none absolute left-0 bottom-0 w-full"
+        style={{
+          height: "400px",
+          background:
+            "linear-gradient(180deg, rgba(157,121,53,0) 0%, #97311A 90%, #97311A 100%)",
+          zIndex: 30,
+        }}
+      />
         {/* Left side - Profile Image */}
         <div className="relative w-full lg:w-1/2 overflow-hidden flex flex-col justify-end items-start">
           {/* Profile Image */}
           <div className="relative w-full h-[600px] lg:h-screen">
             <Image
-              src={displayImage ? getImageURL(displayImage) : "/images/profile-section/profile-img.png"}
+              src={
+                displayImage
+                  ? getImageURL(displayImage)
+                  : "/images/profile-section/profile-img.png"
+              }
               alt="Minister of Culture"
               fill
               priority
               className="object-cover w-full"
+              style={{ zIndex: 20 }}
             />
             {/* Bottom transparent gold gradient overlay (only left image section) */}
-            <div
-              className="pointer-events-none absolute left-0 bottom-0 w-full"
-              style={{
-                height: "400px",
-                background:
-                  "linear-gradient(180deg, rgba(157,121,53,0) 0%, rgba(157,121,53,0.85) 90%, #9D7935 100%)",
-                zIndex: 30,
-              }}
-            />
           </div>
         </div>
 
         {/* Right side - Content */}
-        <div className="w-full lg:w-1/2 p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col justify-center">
+        <div className="w-full lg:w-1/2 p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col justify-center z-50">
           {/* Logo/Icon */}
           <div className="mb-6">
             <div className="w-12 h-12 relative mx-auto">
               <Image
-                src={displayLogo ? getImageURL(displayLogo) : "/chandi-logo.svg"}
+                src={
+                  displayLogo ? getImageURL(displayLogo) : "/chandi-logo.svg"
+                }
                 alt="Culture Affairs Logo"
                 width={48}
                 height={48}
@@ -163,7 +181,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
           </p>
 
           {/* Signature */}
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-center z-50">
             <p className="text-white font-medium text-lg">{displayName}</p>
             <p className="text-white/70 text-sm mt-1">{displayPosition}</p>
           </div>

@@ -15,18 +15,27 @@ const VenueSection: React.FC<VenueSectionProps> = ({
   return (
     <section className="py-20 relative ">
       {/* Gold background */}
-      <div className="absolute -inset-1 z-0 blur-xs">
+      <div className="absolute -inset-1 z-0 ">
         <Image
           src="/images/venue-section/bg.png"
           alt="pattern"
           fill
-          className="object-fit opacity-80"
+          className="object-fit opacity-100"
           quality={100}
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#7a5e29] to-[#9D7935]/60" />
       </div>
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
+
+      <div
+        className="pointer-events-none absolute left-0 top-0 w-full"
+        style={{
+          height: "400px",
+          background:
+            "linear-gradient(180deg, #97311A 0%, #97311A 10%, rgba(157,121,53,0) 100%)",
+          zIndex: 10,
+        }}
+      />
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-20">
         {/* Section Header with Line */}
         <div className="flex items-center mb-10">
           <div className="w-10 h-1 bg-white mr-4 rounded-full"></div>

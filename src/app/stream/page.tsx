@@ -21,7 +21,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-[#9D7935]">
+    <div className="bg-[#5B5630]">
     {/* Header Section */}
     <HeaderSection />
       <main className=" w-full min-h-screen flex flex-col items-center justify-center text-black overflow-auto pt-24">
