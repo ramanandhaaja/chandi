@@ -67,7 +67,7 @@ const SpeakerSection: React.FC = () => {
   return (
     <section className="py-20 relative ">
       {/* Gold background */}
-      <div className="absolute -inset-1 z-0 blur-xs">
+      <div className="absolute -inset-1 z-0 ">
         <Image
           src="/images/speakers-section/speaker-bg.png"
           alt="pattern"

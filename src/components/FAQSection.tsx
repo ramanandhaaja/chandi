@@ -57,7 +57,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
           {/* Left: Section Label & Title */}
           <div className="md:w-2/5 w-full mb-10 md:mb-0 h-full flex flex-col justify-center">
             <div className="flex items-center mb-4">
-              <div className="w-10 h-0.5 bg-black mr-3"></div>
+              <div className="w-10 h-1 bg-black mr-4 rounded-full"></div>
               <p className="text-sm font-medium text-black tracking-wide">{subtitle}</p>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold max-w-xs md:max-w-none text-black">

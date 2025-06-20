@@ -28,7 +28,7 @@ const HeaderSection: React.FC = () => {
           <div className="flex-shrink-0">
             <Link href="/">
               <Image
-                src="/chandi_logo.png"
+                src="/chandi_logo_color.png"
                 alt="CHANDI SUMMIT 2025"
                 width={180}
                 height={40}

@@ -46,9 +46,6 @@ export default function Home() {
       {/* Sponsor Section */}
       <SponsorSection />
 
-      {/* FAQ Section */}
-      <FAQSection />
-
       {/* Host Section */}
       <HostSection />
 
