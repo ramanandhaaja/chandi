@@ -12,45 +12,42 @@ import FAQSection from "@/components/FAQSection";
 import HostSection from "@/components/HostSection";
 import FooterSection from "@/components/FooterSection";
 import HeroSection from "@/components/HeroSection";
+import UnderConstructions from "@/components/UnderConstructions";
 
 export default function Home() {
   return (
     <>
-      {/* Header Section */}
+
+      <UnderConstructions/>
+
+      {/* Header Section 
       <HeaderSection />
 
-      {/* Hero Section */}
+     
       <HeroAlternative2 />
 
-      {/* About Section */}
+   
       <AboutSection />
 
-      {/* Gallery Section */}
       <GallerySection />
 
-      {/* Who Section */}
       <WhoSection />
 
-      {/* Speakers Section */}
       <SpeakerSection />
 
-      {/* Profile Section */}
       <ProfileSection />
 
-      {/* Venue Section */}
       <VenueSection />
 
-      {/* Event Section */}
       <EventSection />
 
-      {/* Sponsor Section */}
       <SponsorSection />
 
-      {/* Host Section */}
       <HostSection />
 
-      {/* Footer Section */}
       <FooterSection />
+
+      */}
     </>
   );
 }
