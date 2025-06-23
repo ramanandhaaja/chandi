@@ -163,13 +163,13 @@ const EventSection: React.FC<EventSectionProps> = ({
         <div className="flex flex-col items-center mb-8">
           <div className="flex items-center">
             <div className="w-10 h-1 bg-black mr-4 rounded-full"></div>
-            <h3 className="text-sm font-medium text-black">{subtitle}</h3>
+            <h3 className="text-sm font-medium ">{subtitle}</h3>
           </div>
         </div>
 
         {/* Main Title - Centered */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black">{title}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold ">{title}</h2>
         </div>
 
         {agendaDays.map((day, dayIdx) => (
@@ -177,7 +177,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {/* Day Tab - Matching the image */}
             <div className="mb-12">
               <div className="flex w-full overflow-hidden rounded-lg">
-                <div className="bg-[#D2AF6D] text-black py-4 px-10 font-medium">
+                <div className="bg-[#D2AF6D]  py-4 px-10 font-medium">
                   {day.tab}
                 </div>
                 <div className="bg-[#F2F2F2] text-[#333333] py-4 px-10 flex-grow">

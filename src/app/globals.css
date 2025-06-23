@@ -3,7 +3,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #ffffff;
+  --foreground: #210000;
 }
 
 /* Theme variables */
@@ -16,12 +16,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff;
-    --foreground: #ededed;
+    --background: #fff;
+    --foreground: #f0f0f0;
   }
 }
 
-html, body {
+html,
+body {
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -29,31 +30,31 @@ html, body {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+  font-family: "Figtree Regular", "Plus Jakarta Sans", Arial, sans-serif;
 }
 
 @font-face {
-  font-family: 'Kunire Grotesk';
-  src: url('/fonts/Kunire-Grotesk.otf') format('opentype');
+  font-family: "Kunire Grotesk";
+  src: url("/fonts/Kunire-Grotesk.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 .kunire-grotesk {
-  font-family: 'Kunire Grotesk', 'Plus Jakarta Sans', Arial, sans-serif;
+  font-family: "Kunire Grotesk", "Plus Jakarta Sans", Arial, sans-serif;
 }
 
 @font-face {
-  font-family: 'Figtree Regular';
-  src: url('/fonts/Figtree-Regular.ttf') format('truetype');
+  font-family: "Figtree Regular";
+  src: url("/fonts/Figtree-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 .figtree-regular {
-  font-family: 'Figtree Regular', 'Plus Jakarta Sans', Arial, sans-serif;
+  font-family: "Figtree Regular", "Plus Jakarta Sans", Arial, sans-serif;
 }
 
 /* Custom styles can be added here if needed */

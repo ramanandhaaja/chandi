@@ -67,19 +67,17 @@ const HostSection: React.FC = () => {
           <div className="md:w-2/5 w-full mb-10 md:mb-0">
             {/* Section Label with Line */}
             <div className="flex items-center mb-4">
-            <div className="w-10 h-1 bg-black mr-4 rounded-full"></div>
-              <p className="text-sm font-medium text-black">
-                {displayBreadcrumb}
-              </p>
+              <div className="w-10 h-1 bg-black mr-4 rounded-full"></div>
+              <p className="text-sm font-medium ">{displayBreadcrumb}</p>
             </div>
 
             {/* Main Title */}
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 ">
               {displayTitle}
             </h2>
 
             {/* Description */}
-            <p className="text-base text-black leading-relaxed">
+            <p className="text-base  leading-relaxed">
               <span dangerouslySetInnerHTML={{ __html: displaySubtitle }} />
             </p>
           </div>

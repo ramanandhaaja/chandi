@@ -1,8 +1,6 @@
 import Image from "next/image";
 
-const VideoGallery = ({
-  title = "Videos",
-}) => {
+const VideoGallery = ({ title = "Videos" }) => {
   const images = [
     {
       src: "/images/video/video-1.jpg",
@@ -36,7 +34,7 @@ const VideoGallery = ({
           {/* Left Column - Title and Description */}
           <div className="mb-6 sm:mb-10 md:mb-0 md:w-[30%] w-full">
             {/* Main Title */}
-            <h2 className="text-2xl sm:text-4xl md:text-[72px] mb-4 sm:mb-8 text-black leading-tight break-words">
+            <h2 className="text-2xl sm:text-4xl md:text-[72px] mb-4 sm:mb-8  leading-tight break-words">
               {title}
             </h2>
           </div>

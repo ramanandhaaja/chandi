@@ -23,7 +23,9 @@ interface SponsorSectionData {
 }
 
 const SponsorSection: React.FC = () => {
-  const [sponsorData, setSponsorData] = useState<SponsorSectionData | null>(null);
+  const [sponsorData, setSponsorData] = useState<SponsorSectionData | null>(
+    null
+  );
   // Use global language context
   const { language } = useLanguage();
   useEffect(() => {
@@ -55,8 +57,7 @@ const SponsorSection: React.FC = () => {
   }
 
   const displayBreadcrumb = translation?.breadcrumb || sponsorData?.breadcrumb;
-  const displayTitle =
-    translation?.title || sponsorData?.title || "";
+  const displayTitle = translation?.title || sponsorData?.title || "";
 
   return (
     <section className="py-20 px-6 md:px-12 lg:px-24 bg-white">
@@ -64,11 +65,11 @@ const SponsorSection: React.FC = () => {
         {/* Section Header with Line */}
         <div className="flex items-center mb-8">
           <div className="w-10 h-1 bg-black mr-4 rounded-full"></div>
-          <h3 className="text-sm font-medium text-black">{displayBreadcrumb}</h3>
+          <h3 className="text-sm font-medium ">{displayBreadcrumb}</h3>
         </div>
 
         {/* Main Title */}
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-16 text-black">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-16 ">
           <span dangerouslySetInnerHTML={{ __html: displayTitle }} />
         </h2>
 

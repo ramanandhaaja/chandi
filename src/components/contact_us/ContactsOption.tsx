@@ -45,7 +45,7 @@ const ContactsOption = () => {
 
       {/* Description Box */}
       <div className="bg-[#FCFAF5] relative mt-12 border border-gray-200 rounded-lg p-8 text-center">
-        <p className="w-2/3 mx-auto text-[#1F1F1F] leading-relaxed">
+        <p className="w-2/3 mx-auto  leading-relaxed">
           Dive deeper into the transformative power of the Culture Summit, a
           pivotal event designed to cultivate collaboration among teams, enhance
           employee engagement, spark innovative ideas, and ensure organizations

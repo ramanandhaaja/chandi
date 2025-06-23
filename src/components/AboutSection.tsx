@@ -27,14 +27,14 @@ const AboutSection: React.FC = () => {
   const [aboutData, setAboutData] = useState<AboutSectionData | null>(null);
   // Use global language context
   const { language } = useLanguage();
- 
+
   useEffect(() => {
     async function fetchAboutData() {
       try {
         const items = await getItems("about_landingpage", {
           fields: "*,images.*,translations.*",
         });
-        
+
         if (items && items.length > 0) {
           setAboutData({
             translations: items[0].translations,
@@ -48,7 +48,6 @@ const AboutSection: React.FC = () => {
     fetchAboutData();
   }, []);
 
-  
   let translation: AboutSectionTranslation | undefined = undefined;
   if (aboutData?.translations && Array.isArray(aboutData.translations)) {
     translation = aboutData.translations.find(
@@ -76,7 +75,7 @@ const AboutSection: React.FC = () => {
         <div className="flex flex-col justify-between md:flex-row md:mx-4 items-center w-full">
           {/* Left Column - Title */}
           <div className="w-full md:max-w-[400px] mb-10 md:mb-0">
-            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[87px] leading-[1.2] mb-6 text-black">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[87px] leading-[1.2] mb-6 ">
               {displayTitle}
             </h2>
           </div>

@@ -41,7 +41,7 @@ const PressRelease = () => {
           {/* Left Column - Title and Description */}
           <div className="mb-6 sm:mb-10 md:mb-0">
             {/* Main Title */}
-            <h2 className="text-2xl sm:text-4xl md:text-[72px] mb-4 sm:mb-8 text-black leading-tight break-words">
+            <h2 className="text-2xl sm:text-4xl md:text-[72px] mb-4 sm:mb-8  leading-tight break-words">
               Press
               <br />
               Release
@@ -52,7 +52,10 @@ const PressRelease = () => {
           <div className="md:w-3/5 w-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3 sm:gap-6 md:gap-8">
               {images.map((image, idx) => (
-                <div key={idx} className="flex flex-col gap-2 sm:gap-4 cursor-pointer">
+                <div
+                  key={idx}
+                  className="flex flex-col gap-2 sm:gap-4 cursor-pointer"
+                >
                   <div className="relative rounded-2xl overflow-hidden h-36 sm:h-[180px] md:h-[226px] w-full md:w-[372px] hover:scale-110 transition-all">
                     <Image
                       src={image.src}
@@ -61,7 +64,9 @@ const PressRelease = () => {
                       className="object-cover rounded-2xl"
                     />
                   </div>
-                  <div className="text-base sm:text-xl md:text-2xl text-black">{image.title}</div>
+                  <div className="text-base sm:text-xl md:text-2xl ">
+                    {image.title}
+                  </div>
                 </div>
               ))}
             </div>

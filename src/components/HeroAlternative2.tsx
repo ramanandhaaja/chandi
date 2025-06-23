@@ -91,13 +91,15 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
   const displayImageRight = heroData?.image_right || image_right;
 
   return loading ? (
-  <div className="relative lg:min-h-screen w-full flex items-center justify-center bg-[#F3F2E8]">
-    <div className="flex flex-col items-center justify-center w-full h-full">
-      <div className="w-12 h-12 border-4 border-[#CD9F00] border-t-transparent rounded-full animate-spin mb-4"></div>
-      <span className="text-lg text-[#CD9F00] font-semibold animate-pulse">Loading...</span>
+    <div className="relative lg:min-h-screen w-full flex items-center justify-center bg-[#F3F2E8]">
+      <div className="flex flex-col items-center justify-center w-full h-full">
+        <div className="w-12 h-12 border-4 border-[#CD9F00] border-t-transparent rounded-full animate-spin mb-4"></div>
+        <span className="text-lg text-[#CD9F00] font-semibold animate-pulse">
+          Loading...
+        </span>
+      </div>
     </div>
-  </div>
-) : (
+  ) : (
     <div className="relative lg:min-h-screen w-full overflow-hidden bg-[#F3F2E8] font-sans">
       {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-[#CD9F00] opacity-70 pointer-events-none" />
@@ -115,7 +117,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
         />
       </div>
       {/* Color Overlay */}
-      
+
       {/* Right-side Main Visual (between overlay and content) */}
       {displayImageRight && (
         <Image
@@ -134,7 +136,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
         <div className="flex bg-white rounded-full px-4 py-1 shadow-lg border border-[#E5E5E5]">
           <button
             className={`text-xs md:text-sm font-semibold mr-2 transition-all duration-200 ${
-              language === "en-US" ? "underline text-black" : "text-[#766C6C]"
+              language === "en-US" ? "underline " : "text-[#766C6C]"
             }`}
             onClick={() => setLanguage("en-US")}
           >
@@ -142,14 +144,13 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
           </button>
           <button
             className={`text-xs md:text-sm font-semibold transition-all duration-200 ${
-              language === "id-ID" ? "underline text-black" : "text-[#766C6C]"
+              language === "id-ID" ? "underline " : "text-[#766C6C]"
             }`}
             onClick={() => setLanguage("id-ID")}
           >
             ID
           </button>
         </div>
-        
       </div>
 
       {/* Content Container */}
@@ -180,16 +181,20 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
               </div>
               <div className="h-2"></div>
               <div className="figtree-regular  text-lg md:text-[18px] text-[#4A2F1E] font-light max-w-[300px] leading-[1]">
-              Culture, Heritage, Art, Narrative,
-              Diplomacy, and Innovation
+                Culture, Heritage, Art, Narrative, Diplomacy, and Innovation
               </div>
             </div>
 
             {/* Main Heading */}
             <h1 className="lg:absolute figtree-regular font-bold text-[2.2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[110px] leading-[1.2] lg:leading-[0.8] text-left mb-4 mt-0 ml-12 lg:ml-0 lg:mt-72">
-              <span className="pl-6 sm:pl-0" style={{ color: "#97311A" }}>CULTURE</span>{" "}
+              <span className="pl-6 sm:pl-0" style={{ color: "#97311A" }}>
+                CULTURE
+              </span>{" "}
               <span style={{ color: "#948B48" }}>FOR</span> <br />
-              <span className="ml-[100px] sm:ml-[200px]" style={{ color: "#4A2F1E" }}>
+              <span
+                className="ml-[100px] sm:ml-[200px]"
+                style={{ color: "#4A2F1E" }}
+              >
                 THE
               </span>{" "}
               <span style={{ color: "#CD9F00" }}>FUTURE</span>

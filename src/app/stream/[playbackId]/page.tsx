@@ -17,7 +17,7 @@ const StreamPage = ({ params }: StreamPageProps) => {
 
   return (
     <>
-      <main className="flex flex-col items-center justify-center h-screen text-black">
+      <main className="flex flex-col items-center justify-center h-screen ">
         <h1>Live Stream</h1>
         <MuxPlayer
           playbackId={playbackId}

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { getImageURL } from "../lib/api";
@@ -46,8 +46,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     async function fetchHeroData() {
       try {
         const items = await getItems("hero_landingpage", {
-                  fields: "*,images.*,translations.*",
-                });
+          fields: "*,images.*,translations.*",
+        });
         if (items && items.length > 0) {
           // Assuming the collection fields match the prop names
           setHeroData({
@@ -70,31 +70,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   // Find translation for current language
   let translation: HeroSectionTranslation | undefined = undefined;
   if (heroData?.translations && Array.isArray(heroData.translations)) {
-    translation = heroData.translations.find((t: HeroSectionTranslation) => t.languages_code === language);
+    translation = heroData.translations.find(
+      (t: HeroSectionTranslation) => t.languages_code === language
+    );
   }
 
   // Use translation if available, otherwise fallback to heroData or props
   const displayTitle = translation?.title || heroData?.title || title;
-  const displaySubtitle = translation?.subtitle || heroData?.subtitle || subtitle;
+  const displaySubtitle =
+    translation?.subtitle || heroData?.subtitle || subtitle;
   const displayCaption = translation?.caption || heroData?.caption || caption;
   const displayBackground = heroData?.background || background;
   const displayLogo = heroData?.logo || logo;
   const displayScrollText = heroData?.scrollText || scrollText;
- 
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Language Switch Button */}
       <div className="fixed bottom-6 left-6 z-20">
         <div className="flex bg-[#D1D3CF] rounded-full px-6 py-2 shadow-lg">
           <button
-            className={`text-lg font-semibold mr-3 transition-all duration-200 ${language === 'en-US' ? 'underline text-black' : 'text-[#766C6C]'}`}
-            onClick={() => setLanguage('en-US')}
+            className={`text-lg font-semibold mr-3 transition-all duration-200 ${
+              language === "en-US" ? "underline " : "text-[#766C6C]"
+            }`}
+            onClick={() => setLanguage("en-US")}
           >
             EN
           </button>
           <button
-            className={`text-lg font-semibold transition-all duration-200 ${language === 'id-ID' ? 'underline text-black' : 'text-[#766C6C]'}`}
-            onClick={() => setLanguage('id-ID')}
+            className={`text-lg font-semibold transition-all duration-200 ${
+              language === "id-ID" ? "underline " : "text-[#766C6C]"
+            }`}
+            onClick={() => setLanguage("id-ID")}
           >
             ID
           </button>
@@ -126,18 +133,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="mb-10 mt-16 ">
             <div className="w-20 h-20 mx-auto">
               <Image
-              src={
-                displayBackground
-                  ? getImageURL(displayLogo)
-                  : "/chandi_single_logo.png"
-              }
+                src={
+                  displayBackground
+                    ? getImageURL(displayLogo)
+                    : "/chandi_single_logo.png"
+                }
                 alt="logo"
                 width={82}
                 height={106}
               ></Image>
             </div>
-            <div className="figtree-regular pt-8 text-2xl md:text-[35px] font-light text-white/90">{displayCaption}</div>
-            
+            <div className="pt-8 text-2xl md:text-[35px] font-light text-white/90">
+              {displayCaption}
+            </div>
           </div>
 
           {/* Main Heading */}
@@ -147,8 +155,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Summit Title */}
           <div className=" mb-20">
-            <h2 className="figtree-regular text-2xl md:text-[35px] font-medium tracking-tighter text-white/90 drop-shadow-sm">
-              {displaySubtitle} 
+            <h2 className="text-2xl md:text-[35px] font-medium tracking-tighter text-white/90 drop-shadow-sm">
+              {displaySubtitle}
             </h2>
           </div>
         </div>

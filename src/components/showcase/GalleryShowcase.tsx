@@ -41,16 +41,14 @@ const GalleryShowcase = ({
 
   return (
     <main
-      className={`w-full min-h-screen text-black overflow-auto pt-24 pb-24 md:px-12 lg:px-24`}
+      className={`w-full min-h-screen  overflow-auto pt-24 pb-24 md:px-12 lg:px-24`}
       style={{ backgroundColor: bgColor }}
     >
       <div className=" mx-auto flex flex-col md:flex-row gap-8 md:gap-16">
         {/* Left Column - Header and Video Navigation */}
         <div className="md:w-1/4 w-full space-y-8">
           <div className="space-y-2">
-            <h2 className="text-3xl md:text-5xl font-bold text-white ">
-              {title}
-            </h2>
+            <h2 className="text-3xl md:text-5xl  text-white ">{title}</h2>
 
             <div className=" border-b border-white py-2"></div>
           </div>

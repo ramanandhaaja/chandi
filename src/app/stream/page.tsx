@@ -22,10 +22,9 @@ export default function Home() {
 
   return (
     <div className="bg-[#5B5630]">
-    {/* Header Section */}
-    <HeaderSection />
-      <main className=" w-full min-h-screen flex flex-col items-center justify-center text-black overflow-auto pt-24">
-        
+      {/* Header Section */}
+      <HeaderSection />
+      <main className=" w-full min-h-screen flex flex-col items-center justify-center  overflow-auto pt-24">
         {/* Live Stream Preview Box */}
         <div
           className="mt-8 w-[1080px] h-[608px] min-w-[1080px] min-h-[608px] bg-black shadow-2xl flex items-center justify-center text-white text-3xl font-bold mb-16 mx-auto"
