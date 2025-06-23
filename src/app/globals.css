@@ -14,12 +14,12 @@
   --font-mono: "Plus Jakarta Sans", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #fff;
     --foreground: #f0f0f0;
   }
-}
+} */
 
 html,
 body {
