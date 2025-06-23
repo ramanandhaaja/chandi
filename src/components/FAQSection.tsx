@@ -57,7 +57,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
   };
 
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-24 bg-white">
+    <section className="py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-start md:gap-16 items-start">
           {/* Left: Section Label & Title */}

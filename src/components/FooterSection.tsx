@@ -10,7 +10,7 @@ const FooterSection: React.FC = () => {
       <div className="relative z-10">
         <div className="max-w-8xl mx-auto px-4 md:px-8">
           {/* Main Card */}
-          <div className="bg-white rounded-3xl shadow-md p-6 md:p-12 flex flex-col items-center md:items-stretch gap-y-8">
+          <div className="bg-[#FCFAF5] rounded-3xl shadow-md p-6 md:p-12 flex flex-col items-center md:items-stretch gap-y-8">
             {/* Top Row: Logo and Info Columns */}
             <div className="flex flex-col md:flex-row w-full md:items-start gap-8 md:gap-16">
               {/* Left: Logo */}

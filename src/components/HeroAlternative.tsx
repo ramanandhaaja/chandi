@@ -8,7 +8,7 @@ const Hero = ({ title, subtitle }: { title: string; subtitle: string }) => {
         {/* Hero Section with Background */}
         <div className="absolute inset-0 z-0">
           {/* Pattern overlay using Tailwind's built-in utilities */}
-          <div className="absolute inset-0 z-0 bg-[#CD9F00] opacity-70 pointer-events-none" />
+          <div className="absolute inset-0 z-0 bg-[#CD9F00] opacity-40 pointer-events-none" />
           <div className="absolute inset-0 opacity-70">
             <Image
               src="/bg_cloud.png"

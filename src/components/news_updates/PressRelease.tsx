@@ -35,7 +35,7 @@ const PressRelease = () => {
     },
   ];
   return (
-    <section className="py-10 px-2 sm:py-20 sm:px-6 md:px-12 lg:px-24 bg-white">
+    <section className="py-10 px-2 sm:py-20 sm:px-6 md:px-12 lg:px-24 bg-[#FCFAF5]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:justify-between md:gap-20">
           {/* Left Column - Title and Description */}

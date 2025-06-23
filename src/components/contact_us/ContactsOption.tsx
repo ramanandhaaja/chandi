@@ -2,19 +2,8 @@ import Image from "next/image";
 
 const ContactsOption = () => {
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-24 bg-[#FCFAF5] relative overflow-hidden">
-      <div className="absolute top-0 right-0 bottom-0 z-0">
-        <Image
-          src="/for-whom-bg.svg"
-          alt="pattern"
-          width={800}
-          height={1000}
-          className="object-cover"
-          quality={100}
-          priority
-        />
-      </div>
-      <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 items-center w-full">
+    <section className="py-20 px-6 md:px-12 lg:px-24 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 items-center w-full">
         <div className="bg-[#FCFAF5] rounded-3xl flex flex-col items-center justify-center transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
           <div className="w-[630px] h-[314px] flex items-center justify-center mb-4">
             <div className="flex flex-col space-y-4 justify-center items-center text-[#9D7935]">
@@ -43,7 +32,7 @@ const ContactsOption = () => {
         </div>
       </div>
 
-      {/* Description Box */}
+      {/* Description Box
       <div className="bg-[#FCFAF5] relative mt-12 border border-gray-200 rounded-lg p-8 text-center">
         <p className="w-2/3 mx-auto  leading-relaxed">
           Dive deeper into the transformative power of the Culture Summit, a
@@ -54,7 +43,7 @@ const ContactsOption = () => {
           igniting a culture of creativity that empowers employees to thrive and
           contribute to the company&apos;s success.
         </p>
-      </div>
+      </div> */}
     </section>
   );
 };
