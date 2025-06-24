@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const RegisterOption = () => {
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       {/* Registration Type Selector */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-6 items-center w-full">
         {/* Investors */}
-        <div className="bg-white rounded-3xl p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
+        <div className="bg-[#FCFAF5] rounded-3xl p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
           <div className="w-16 h-16 flex items-center justify-center mb-4">
             <Image
               src="/money.svg"
@@ -20,7 +20,7 @@ const RegisterOption = () => {
         </div>
 
         {/* Business Man */}
-        <div className="bg-white rounded-full border border-solid border-[#D49300] p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg">
+        <div className="bg-[#FCFAF5] rounded-full border border-solid border-[#D49300] p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg">
           <div className="w-16 h-16 flex items-center justify-center mb-4">
             <Image
               src="/suitcase.svg"
@@ -33,7 +33,7 @@ const RegisterOption = () => {
           <p className="text-center text-gray-500 font-medium">Umum</p>
         </div>
         {/* Founder */}
-        <div className="bg-white rounded-3xl p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
+        <div className="bg-[#FCFAF5] rounded-3xl p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
           <div className="w-16 h-16 flex items-center justify-center mb-4">
             <Image
               src="/mic.svg"
@@ -48,7 +48,7 @@ const RegisterOption = () => {
       </div>
 
       {/* Description Box */}
-      <div className="mt-12 border border-gray-200 rounded-2xl p-8 text-center">
+      <div className="mt-12 p-8 text-center">
         <p className="text-gray-700 leading-relaxed">
           Dive deeper into the transformative power of the Culture Summit, a
           pivotal event designed to cultivate collaboration among teams, enhance

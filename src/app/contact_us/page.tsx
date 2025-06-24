@@ -17,7 +17,7 @@ export default function ContactUsPage() {
         we’d love to hear from you. Contact us today!"
       />
       {/* Wrapper div for the background pattern */}
-      <div className="relative bg-[#FCFAF5] overflow-hidden">
+      <div className="relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute top-0 left-0 bottom-0 z-0 ">
           <Image

@@ -6,7 +6,7 @@ const RegistrationForm = () => {
   return (
     <div>
       {/* Registration Form */}
-      <div className="max-w-4xl mx-auto mt-16">
+      <div className="max-w-4xl mx-auto py-20 mb-20">
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6 z-10">
           {/* First Name */}
           <div>
