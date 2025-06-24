@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const HeaderSection: React.FC = () => {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [daysLeft, setDaysLeft] = useState(24); // Initial value from the image
 
@@ -39,37 +41,37 @@ const HeaderSection: React.FC = () => {
 
           {/*middle menu*/}
           <div className="bg-[#F8F7F2] px-6 py-2 hidden md:flex items-center space-x-6">
-            <Link
-              href="/"
-              className="text-gray-800 hover:text-[#D2AF6D] font-medium"
-            >
-              Home
-            </Link>
-            <Link
-              href="/stream"
-              className="text-gray-800 hover:text-[#D2AF6D] font-medium"
-            >
-              Live
-            </Link>
-            <Link
-              href="/news_updates"
-              className="text-gray-800 hover:text-[#D2AF6D] font-medium"
-            >
-              News
-            </Link>
-            <Link
-              href="/showcase"
-              className="text-gray-800 hover:text-[#D2AF6D] font-medium"
-            >
-              Showcase
-            </Link>
-            <Link
-              href="/contact_us"
-              className="text-gray-800 hover:text-[#D2AF6D] font-medium"
-            >
-              Contact
-            </Link>
-          </div>
+  <Link
+    href="/"
+    className={`font-medium hover:text-[#D2AF6D] ${pathname === "/" ? "text-[#D2AF6D]" : "text-gray-800"}`}
+  >
+    Home
+  </Link>
+  <Link
+    href="/stream"
+    className={`font-medium hover:text-[#D2AF6D] ${pathname === "/stream" ? "text-[#D2AF6D]" : "text-gray-800"}`}
+  >
+    Live
+  </Link>
+  <Link
+    href="/news_updates"
+    className={`font-medium hover:text-[#D2AF6D] ${pathname === "/news_updates" ? "text-[#D2AF6D]" : "text-gray-800"}`}
+  >
+    News
+  </Link>
+  <Link
+    href="/showcase"
+    className={`font-medium hover:text-[#D2AF6D] ${pathname === "/showcase" ? "text-[#D2AF6D]" : "text-gray-800"}`}
+  >
+    Showcase
+  </Link>
+  <Link
+    href="/contact_us"
+    className={`font-medium hover:text-[#D2AF6D] ${pathname === "/contact_us" ? "text-[#D2AF6D]" : "text-gray-800"}`}
+  >
+    Contact
+  </Link>
+</div>
 
           {/* Days Counter and Register Button */}
           <div className="hidden md:flex items-center space-x-2">
