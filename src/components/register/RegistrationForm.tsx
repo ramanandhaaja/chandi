@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { apiSignup } from "@/lib/api"; // <-- Add this line
+import Image from "next/image";
 
 function RegistrationForm() {
   const [firstName, setFirstName] = useState("");
@@ -52,12 +53,7 @@ function RegistrationForm() {
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="w-full max-w-4xl p-8">
         <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
-        {success && (
-          <div className="mb-4 text-green-600 text-center">
-            Registration successful!
-          </div>
-        )}
-        {error && <div className="mb-4 text-red-600 text-center">{error}</div>}
+       
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* First Name */}
           <input
@@ -98,9 +94,9 @@ function RegistrationForm() {
           <select
             value={country}
             onChange={(e) => setCountry(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none bg-white"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none appearance-none"
           >
-            <option value="" disabled>
+            <option value="" disabled className="text-[#210000]">
               Select Country
             </option>
             <option value="indonesia">Indonesia</option>
@@ -114,9 +110,9 @@ function RegistrationForm() {
           <select
             value={positionType}
             onChange={(e) => setPositionType(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none bg-white"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none appearance-none"
           >
-            <option value="" disabled>
+            <option value="" disabled className="text-[#210000]">
               Position Type
             </option>
             <option value="executive">Executive</option>
@@ -160,16 +156,32 @@ function RegistrationForm() {
             />
           </div>
         </div>
-
+            {loading && (
+              <div className="mb-4 text-green-600 text-center">
+                <br/>Registering...
+              </div>
+            )}
+            {success && (
+              <div className="mb-4 text-green-600 text-center">
+                <br/>Registration successful!
+              </div>
+            )}
+            {error && <div className="mb-4 text-red-600 text-center">{error}</div>}
         {/* Submit Button */}
         <div className="flex justify-center mt-6">
-          <button
-            onClick={handleRegister}
-            disabled={loading || !firstName || !lastName || !email || !password}
-            className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 font-semibold"
+          <div 
+            onClick={!loading && firstName && lastName && email && password ? handleRegister : undefined}
+            className={`w-full flex justify-center cursor-pointer ${(!firstName || !lastName || !email || !password || loading) ? 'opacity-50' : ''}`}
           >
-            {loading ? "Registering..." : "Register"}
-          </button>
+            <Image
+              src="/images/register/button_submit.png"
+              alt="Register"
+              width={400}
+              height={110}
+              className="object-contain"
+            />
+            
+          </div>
         </div>
       </div>
     </div>
