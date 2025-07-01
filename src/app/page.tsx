@@ -18,10 +18,10 @@ export default function Home() {
   return (
     <>
 
-      {/* Under Construction */}
+      {/* Under Construction 
       <UnderConstructions/>
-      
-      {/* Header Section 
+      */}
+      {/* Header Section */}
       <HeaderSection />
 
      
@@ -47,7 +47,6 @@ export default function Home() {
       <HostSection />
 
       <FooterSection />
-        */}
     </>
   );
 }
