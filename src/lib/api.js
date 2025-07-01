@@ -18,6 +18,24 @@ const getConfig = (params = {}, headers = {}) => ({
   headers: { ...api.defaults.headers.common, ...headers },
 });
 
+// Public user signup for Directus v11
+export async function apiSignup(formData) {
+  try {
+    const response = await api.post("/users/register", {
+      email: formData.email,
+      password: formData.password,
+      first_name: formData.first_name,
+      last_name: formData.last_name,
+      //verification_url: "",
+    });
+    return response.data.data;
+  } catch (error) {
+    console.error("Error signup", error);
+    throw error;
+  }
+}
+
+
 export async function getItem(collection, id, params = {}, headers = {}) {
   try {
     const response = await api.get(

@@ -1,156 +1,179 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { apiSignup } from "@/lib/api"; // <-- Add this line
 
-const RegistrationForm = () => {
+function RegistrationForm() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [country, setCountry] = useState("");
   const [positionType, setPositionType] = useState("");
-  return (
-    <div>
-      {/* Registration Form */}
-      <div className="max-w-4xl mx-auto py-20 mb-20">
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-6 z-10">
-          {/* First Name */}
-          <div>
-            <input
-              type="text"
-              placeholder="First Name*"
-              className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
-              required
-            />
+  const [organization, setOrganization] = useState("");
+  const [message, setMessage] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleRegister = async () => {
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
+    try {
+      await apiSignup({
+        email,
+        password,
+        first_name: firstName,
+        last_name: lastName,
+        // You can add verification_url here if needed
+      });
+      setSuccess(true);
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhone("");
+      setCountry("");
+      setPositionType("");
+      setOrganization("");
+      setMessage("");
+      setPassword("");
+    } catch (err) {
+      let message = "Registration failed. Please try again.";
+      if (err && typeof err === "object" && "message" in err) {
+        message = (err as any).message;
+      }
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (  
+    <div className="min-h-screen flex flex-col items-center justify-center">
+      <div className="w-full max-w-4xl p-8">
+        <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
+        {success && (
+          <div className="mb-4 text-green-600 text-center">
+            Registration successful!
           </div>
+        )}
+        {error && <div className="mb-4 text-red-600 text-center">{error}</div>}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* First Name */}
+          <input
+            type="text"
+            placeholder="First Name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+          />
 
           {/* Last Name */}
-          <div>
-            <input
-              type="text"
-              placeholder="Last Name*"
-              className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
-              required
-            />
-          </div>
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+          />
 
           {/* Email */}
-          <div>
-            <input
-              type="email"
-              placeholder="Email*"
-              className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
-              required
-            />
-          </div>
-
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="off"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+          />
           {/* Phone */}
-          <div>
-            <input
-              type="tel"
-              placeholder="Phone No*"
-              className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
-              required
-            />
-          </div>
-
+          <input
+            type="tel"
+            placeholder="Phone Number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+          />
           {/* Country */}
-          <div>
-            <div className="relative">
-              <select
-                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg bg-white appearance-none focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-              >
-                <option value="" disabled>
-                  Country
-                </option>
-                <option value="indonesia">Indonesia</option>
-                <option value="malaysia">Malaysia</option>
-                <option value="singapore">Singapore</option>
-                <option value="thailand">Thailand</option>
-                <option value="philippines">Philippines</option>
-              </select>
-              <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                <svg
-                  className="w-5 h-5 text-[#B4B4B4]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-
+          <select
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none bg-white"
+          >
+            <option value="" disabled>
+              Select Country
+            </option>
+            <option value="indonesia">Indonesia</option>
+            <option value="malaysia">Malaysia</option>
+            <option value="singapore">Singapore</option>
+            <option value="thailand">Thailand</option>
+            <option value="philippines">Philippines</option>
+            <option value="other">Other</option>
+          </select>
           {/* Position Type */}
-          <div>
-            <div className="relative">
-              <select
-                className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg bg-white appearance-none focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
-                value={positionType}
-                onChange={(e) => setPositionType(e.target.value)}
-              >
-                <option value="" disabled>
-                  Position Type
-                </option>
-                <option value="executive">Executive</option>
-                <option value="manager">Manager</option>
-                <option value="staff">Staff</option>
-                <option value="student">Student</option>
-                <option value="other">Other</option>
-              </select>
-              <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                <svg
-                  className="w-5 h-5 text-[#B4B4B4]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-          </div>
+          <select
+            value={positionType}
+            onChange={(e) => setPositionType(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none bg-white"
+          >
+            <option value="" disabled>
+              Position Type
+            </option>
+            <option value="executive">Executive</option>
+            <option value="manager">Manager</option>
+            <option value="staff">Staff</option>
+            <option value="student">Student</option>
+            <option value="other">Other</option>
+          </select>
 
           {/* Organization */}
           <div className="md:col-span-2">
             <input
               type="text"
               placeholder="Organization / Institution"
-              className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
+              value={organization}
+              onChange={(e) => setOrganization(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+            />
+          </div>
+
+          {/* Password */}
+          <div className="md:col-span-2">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="off"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
             />
           </div>
 
           {/* Message */}
           <div className="md:col-span-2">
             <textarea
-              placeholder="Message"
-              rows={5}
-              className="w-full px-4 py-3 border border-[#B4B4B4] text-[#B4B4B4] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D2AF6D] bg-white"
-            ></textarea>
+              placeholder="Message (Optional)"
+              rows={4}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none resize-vertical"
+            />
           </div>
+        </div>
 
-          {/* Submit Button */}
-          <div className="md:col-span-2 flex justify-center mt-6">
-            <button
-              type="submit"
-              className="bg-[#FCFAF5] hover:bg-[#C29D5C] hover:text-white text-[#9D7935] text-2xl font-semibold py-6 px-12 rounded-2xl transition-colors duration-300 w-full md:w-64 cursor-pointer shadow-lg"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
+        {/* Submit Button */}
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={handleRegister}
+            disabled={loading || !firstName || !lastName || !email || !password}
+            className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 font-semibold"
+          >
+            {loading ? "Registering..." : "Register"}
+          </button>
+        </div>
       </div>
     </div>
   );
-};
+}
 
 export default RegistrationForm;
