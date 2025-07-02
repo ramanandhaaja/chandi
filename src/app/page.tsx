@@ -42,8 +42,9 @@ export default function Home() {
 
       <EventSection />
 
+      {/* Header Section 
       <SponsorSection />
-
+        */}
       <HostSection />
 
       <FooterSection />
