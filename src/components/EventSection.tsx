@@ -16,143 +16,415 @@ const EventSection: React.FC<EventSectionProps> = ({
   // Multi-day agenda data
   const agendaDays = [
     {
-      tab: "Kickoff",
-      session: "Day 1: Main Conference",
+      tab: "Welcoming Dinner Ministerial",
+      session: "2 September 2025 : Bali Beach Lawn Area",
       items: [
         {
-          time: "09.30–10.30 AM",
-          title: "Opening Remarks",
+          time: "17.00 - 18.00",
+          title: "Registration",
           description:
-            "Welcome to the CHANDI 2023 Summit. Kick off the day with an introduction from the event organizers and a sneak peek of what's in store.",
+            "Attendee registration for the Welcoming Dinner Ministerial.",
         },
         {
-          time: "10.30–11.30 AM",
-          title:
-            "Keynote Address: Shaping the Future of Culture Through Innovation",
+          time: "18.00 - 18.10",
+          title: "Balinese Parade",
+          description: "Traditional Balinese parade to commence the evening.",
+        },
+        {
+          time: "18.10 - 18.15",
+          title: "Opening",
           description:
-            "By Dr. Emma Parker, Chief Cultural Analyst at InnovateX Labs. Discover the profound influence of cultural movements on communities and global society.",
+            "Official opening of the Chandi Summit 2025 Welcoming Dinner Ministerial.",
+        },
+        {
+          time: "18.15 - 18.30",
+          title: "Welcome Speech",
+          description: "Welcome address to all attendees.",
           speakers: [
             {
-              name: "Dr. Emma Parker",
-              role: "CEO, Culture Connect Summit",
-              image: "/images/event-section/profile1.png",
+              name: "Dr. Fadli Zon",
+              role: "Minister of Culture of the Republic of Indonesia",
+              image: "/images/event-section/fadli-zon.png", // Update this path if you have a different profile image
             },
           ],
         },
         {
-          time: "12.30–01.30 AM",
-          title: "Panel Discussion: Culture in Action: Real-World Expressions",
+          time: "18.30 - 19.25",
+          title: "Dinner accompanied by live Rindik music",
           description:
-            "An engaging conversation about the impact of cultural diversity in various sectors such as education, arts, and community development, featuring insights from cultural leaders.",
+            "Enjoy dinner with the sounds of traditional Balinese Rindik music.",
+        },
+        {
+          time: "19.25 - 19.55",
+          title: "Kecak performance",
+          description:
+            "Experience the iconic Balinese Kecak dance performance.",
+        },
+        {
+          time: "19.55 - 20.00",
+          title: "Closing",
+          description: "Closing remarks for the evening.",
+        },
+      ],
+    },
+    {
+      tab: "Day 1 : Opening & Ministerial Summit",
+      session: "3 September 2025 : Bali Beach Convention Sanur",
+      items: [
+        {
+          time: "08.00 - 08.55",
+          title: "Registration",
+          description: "Registration for delegates and participants.",
+        },
+        {
+          time: "09.00 - 09.05",
+          title: "Balinese Welcome Dance",
+          description: "Traditional Balinese dance to open the summit.",
+        },
+        {
+          time: "09.05 - 09.10",
+          title: "Opening",
+          description: "Official opening of the Chandi Summit 2025 Day 1.",
+        },
+        {
+          time: "09.10 - 09.20",
+          title: "Chairman’s Report",
+          description:
+            "Prof. Bambang Wibawarta | Secretary General of the Ministry of Culture of the Republic of Indonesia.",
           speakers: [
             {
-              name: "Sara Williams",
-              role: "Cultural Strategist, InnovateCulture",
-              image: "/images/event-section/profile2.png",
+              name: "Prof. Bambang Wibawarta",
+              role: "Secretary General of the Ministry of Culture of the Republic of Indonesia",
+              image: "/images/event-section/bambang-wibawarta.png",
+            },
+          ],
+        },
+        {
+          time: "09.20 - 09.35",
+          title: "Welcome Speech",
+          description:
+            "Welcome speech by Dr. Fadli Zon, Minister of Culture of the Republic of Indonesia.",
+          speakers: [
+            {
+              name: "Dr. Fadli Zon",
+              role: "Minister of Culture of the Republic of Indonesia",
+              image: "/images/event-section/fadli-zon.png",
+            },
+          ],
+        },
+        {
+          time: "09.35 - 09.50",
+          title: "Art Performance: Sound of Nusantara",
+          description: "Cultural art performance.",
+        },
+        {
+          time: "09.50 - 10.35",
+          title: "Keynote Speech",
+          description:
+            "Prabowo Subianto | President of the Republic of Indonesia.",
+          speakers: [
+            {
+              name: "Prabowo Subianto",
+              role: "President of the Republic of Indonesia",
+              image: "/images/event-section/prabowo-subianto.png",
+            },
+          ],
+        },
+        {
+          time: "10.35 - 10.45",
+          title: "Opening Ceremony of CHANDI SUMMIT 2025",
+          description: "Opening Ceremony of CHANDI SUMMIT 2025",
+        },
+        {
+          time: "10.45 - 11.00",
+          title: "Photo Session",
+          description:
+            "Photo session of all ministers at the Bali Beach Convention Pre-Function Area.",
+        },
+        {
+          time: "11.00 - 11.05",
+          title: "President & Ministers Proceed",
+          description:
+            "The President and all Ministers proceed to the opening function.",
+        },
+        {
+          time: "11.05 - 11.10",
+          title: "Balinese Dance",
+          description: "Balinese dance performance.",
+        },
+        {
+          time: "11.10 - 11.40",
+          title:
+            "Keynote Address: Culture as the Key to Future Global Sustainability",
+          description:
+            "Jacques Attali | Economist, Philosopher and Futurist (*TBC).",
+          speakers: [
+            {
+              name: "Jacques Attali",
+              role: "Economist, Philosopher and Futurist (*TBC)",
+              image: "/images/event-section/jacques-attali.png",
+            },
+          ],
+        },
+        {
+          time: "11.40 - 12.10",
+          title:
+            "Keynote Address: The Role of Youth in Fostering Peace Through Culture",
+          description: "Keynote address on youth and peace through culture.",
+        },
+        {
+          time: "12.10 - 12.15",
+          title: "Conclusion of the Opening Session",
+          description: "Conclusion and wrap-up of the opening session.",
+        },
+        {
+          time: "12.15 - 13.15",
+          title: "Lunch",
+          description: "Lunch break for all participants.",
+        },
+        {
+          time: "13.00 - 17.00",
+          title: "Ministerial Summit",
+          description: `• Opening Statement by the Minister of Culture of the Republic of Indonesia\n• Country Statement\n• Bali Cultural Declaration\n• Closing Statement by the Minister of Culture of the Republic of Indonesia\n• Coffee Break: 15.30–16.00`,
+        },
+        {
+          time: "14.00 - 16.00",
+          title: "Panel Discussions",
+          description: `• Panel Discussion 1: Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects\n• Panel Discussion 2: Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post-2030 World\n• Panel Discussion 3: Financing the Future of Culture: Unlocking Investment for Preservation and Innovation\n• Panel Discussion 4: Responding the Climate Risks to Heritage and Fostering Culture-Based Climate Action\n• Coffee Break: 15.30–16.00`,
+        },
+        {
+          time: "17.00 - 19.00",
+          title: "Break for Gala Dinner Preparation",
+          description: "Break for participants to prepare for the Gala Dinner.",
+        },
+        {
+          time: "19.00 - 20.00",
+          title: "Gala Dinner",
+          description: "Gala Dinner for all participants.",
+        },
+        {
+          time: "20.00 - 22.00",
+          title: "Music Performance",
+          description: "Music performance.",
+          speakers: [
+            {
+              name: "Andi Rianto Band",
+              role: "Performer",
+              image: "/images/event-section/andi-rianto.png",
             },
             {
-              name: "Ravi Singh",
-              role: "Lead Cultural Engineer, MedCulture Solutions",
-              image: "/images/event-section/profile3.png",
+              name: "Judika",
+              role: "Performer",
+              image: "/images/event-section/judika.png",
             },
             {
-              name: "James Turner",
-              role: "Senior Cultural Scientist, Quantum Culture",
-              image: "/images/event-section/profile4.png",
+              name: "Lesti Kejora",
+              role: "Performer",
+              image: "/images/event-section/lesti-kejora.png",
             },
             {
-              name: "Emily Roberts",
-              role: "Director, Cultural Applications",
-              image: "/images/event-section/profile5.png",
+              name: "Niki",
+              role: "Performer",
+              image: "/images/event-section/niki.png",
+            },
+            {
+              name: "Joey Alexander",
+              role: "Performer",
+              image: "/images/event-section/joey-alexander.png",
+            },
+            {
+              name: "Michael Anthony Kwok",
+              role: "Performer",
+              image: "/images/event-section/michael-kwok.png",
+            },
+            {
+              name: "Ahmad Dhani",
+              role: "Performer",
+              image: "/images/event-section/ahmad-dhani.png",
+            },
+            {
+              name: "Melly Goeslaw",
+              role: "Performer",
+              image: "/images/event-section/melly-goeslaw.png",
+            },
+            {
+              name: "Once Mekel (TBC)",
+              role: "Performer",
+              image: "/images/event-section/once-mekel.png",
             },
           ],
         },
       ],
     },
     {
-      tab: "Main Day",
-      session: "Day 2 : Deep Dive Sessions",
+      tab: "Gala Dinner & Musical Performance",
+      session: "3 September 2025 | Bali Beach Convention Sanur",
       items: [
         {
-          time: "09.30–10.30 AM",
-          title: "Morning Networking Coffee",
-          description:
-            "Catch up with fellow attendees over coffee before diving into another exciting day of learning.",
+          time: "18.30 - 20.00",
+          title: "Registration by Kiosk",
+          description: "Registration by Kiosk (badge meeting pass mandatory)"
         },
         {
-          time: "11.30–12.30 PM",
-          title: "Keynote Address: The Fusion of Culture and Technology",
-          description:
-            "By John Mitchell, Co-Founder & CEO at Culture Connect. Discover how cultural diversity and collaboration can foster innovative ideas at the upcoming Culture Summit.",
-          speakers: [
-            {
-              name: "John Mitchell",
-              role: "Co-Founder at Culture Corp",
-              image: "/images/event-section/profile6.png",
-            },
-          ],
+          time: "19.30 - 20.00",
+          title: "Door Open",
+          description: "Door Open"
         },
         {
-          time: "2.30–04.30 PM",
-          title:
-            "Panel Discussion: Culture and Transformation in the Age of Industry 4.0",
-          description:
-            "Panelists discuss how cultural trends are shaping the future of the Culture Summit and its impact on society.",
+          time: "20.00 - 20.05",
+          title: "Opening",
+          description: "Opening"
+        },
+        {
+          time: "20.05 - 20.15",
+          title: "Speech",
+          description: "Speech",
           speakers: [
             {
-              name: "Dr. Lisa White",
-              role: "Chief Innovation Officer, CultureFlow",
-              image: "/images/event-section/profile7.png",
-            },
-            {
-              name: "Mark Johnson",
-              role: "Director, Cultural Solutions, RoboCulture",
-              image: "/images/event-section/profile8.png",
-            },
-            {
-              name: "Priya Patel",
-              role: "Head, Cultural Transformation",
-              image: "/images/event-section/profile9.png",
-            },
-            {
-              name: "David Collins",
-              role: "VP, Cultural Automation & Robotics",
-              image: "/images/event-section/profile10.png",
-            },
-          ],
+              name: "Dr. Fadli Zon",
+              role: "Minister of Culture of the Republic of Indonesia",
+              image: "/images/event-section/fadli-zon.png"
+            }
+          ]
         },
-      ],
+        {
+          time: "20.15 - 21.55",
+          title: "Music Performance",
+          description: "Music Performance.",
+speakers: [
+  { name: "Andi Rianto Band", role: "Performer", image: "/images/event-section/andi-rianto.png" },
+  { name: "Judika", role: "Performer", image: "/images/event-section/judika.png" },
+  { name: "Lesti Kejora", role: "Performer", image: "/images/event-section/lesti-kejora.png" },
+  { name: "Niki", role: "Performer", image: "/images/event-section/niki.png" },
+  { name: "Joey Alexander", role: "Performer", image: "/images/event-section/joey-alexander.png" },
+  { name: "Michael Anthony Kwok", role: "Performer", image: "/images/event-section/michael-kwok.png" },
+  { name: "Ahmad Dhani", role: "Performer", image: "/images/event-section/ahmad-dhani.png" },
+  { name: "Melly Goeslaw", role: "Performer", image: "/images/event-section/melly-goeslaw.png" },
+  { name: "Once Mekel (TBC)", role: "Performer", image: "/images/event-section/once-mekel.png" }
+]
+        },
+        {
+          time: "21.55 - 22.00",
+          title: "Closing",
+          description: "Closing"
+        }
+      ]
     },
     {
-      tab: "Sumup",
-      session: "Day 3 : Networking Day",
+      tab: "Day 2 : CHANDI PLENARY",
+      session: "4 September 2025 | Bali Beach Convention Sanur",
       items: [
         {
-          time: "09.30–11.30 AM",
-          title: "Workshop: Driving ROI with Data",
-          description:
-            "Discover how organizations can leverage cultural insights to enhance teamwork, boost employee satisfaction, and foster innovation.",
+          time: "08.00 - 09.00",
+          title: "Registration",
+          description: "Registration"
         },
         {
-          time: "02.30–03.30 PM",
-          title: "Fireside Chat: The Future of Culture",
-          description:
-            "Join Olivia Reynolds, Principal Engineer at AlphaTech, as she explores the significance of cultural diversity in shaping innovative consumer experiences at the upcoming Culture Summit.",
+          time: "09.00 - 12.00",
+          title: "CHANDI PLENARY",
+          description: ""
+        },
+        {
+          time: "09.00 - 10.45",
+          title: "PLENARY 1: Culture for the Future: Heritage, Identity, and Innovation",
+          description: `Keynote Speech: Hashim S. Djojohadikusumo | Chairman of the Board of Trustees of Indonesian Heritage Agency (*TBC)\n(15 minutes)\nQ&A Session`,
           speakers: [
             {
-              name: "Olivia Reynolds",
-              role: "Cultural Engineer at Alpha Culture",
-              image: "/images/event-section/profile11.png",
-            },
-          ],
+              name: "Hashim S. Djojohadikusumo",
+              role: "Chairman of the Board of Trustees of Indonesian Heritage Agency (*TBC)",
+              image: "/images/event-section/hashim-djojohadikusumo.png"
+            }
+          ]
         },
         {
-          time: "04.30–05.30 PM",
-          title: "Closing Remarks & Thank You",
-          description:
-            "A final wrap-up of the CHANDI 2025 Summit, with acknowledgments to all speakers, sponsors, and attendees. Looking forward to seeing you next year!",
+          time: "10.45 - 12.30",
+          title: "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
+          description: `Keynote Speech: Sheikha Al Mayassa bint Hamad bin Khalifa Al Thani | Chairperson of Qatar Museums, Doha Film Institute, Reach Out to Asia and Qatar Leadership Centre (*TBC)\n(15 minutes)\nQ&A Session`,
+          speakers: [
+            {
+              name: "Sheikha Al Mayassa bint Hamad bin Khalifa Al Thani",
+              role: "Chairperson of Qatar Museums, Doha Film Institute, Reach Out to Asia and Qatar Leadership Centre (*TBC)",
+              image: "/images/event-section/sheikha-al-mayassa.png"
+            }
+          ]
         },
-      ],
+        {
+          time: "12.30 - 13.30",
+          title: "Lunch",
+          description: "Lunch"
+        },
+        {
+          time: "13.30 - 15.00",
+          title: "PLENARY 3: Youth Panel",
+          description: `Keynote Speech: Student from Green School Bali\n“Culture, Sustainability and the Future”\n(15 minutes)\nYouth representatives\nQ&A Session`
+        },
+        {
+          time: "15.00 - 15.30",
+          title: "Conclusion and Closing",
+          description: "Conclusion and Closing"
+        },
+        {
+          time: "15.30 - 16.00",
+          title: "Coffee Break, Transfer Parallel Session",
+          description: "Coffee Break, Transfer Parallel Session"
+        },
+        {
+          time: "16.00 - 17.30",
+          title: "Workshops on Cultural Heritage (parallel session)",
+          description: `• Workshop Batik Making\n• Workshop Traditional Dance\n• Workshop Wood Preservation\n• Workshop Keris Making (Javanese Traditional Dagger)\n• Workshop Making Indonesian Traditional Mask`
+        },
+        {
+          time: "17.00 - 19.00",
+          title: "Break",
+          description: "Break"
+        },
+        {
+          time: "19.00",
+          title: "Networking Event: Dangdut on The Beach",
+          description: "Networking Event: Dangdut on The Beach"
+        }
+      ]
+    },
+    {
+      tab: "Day 3 : COLLABORATIVE PROJECTS & STUDY VISITS",
+      session: "4 September 2025 | Bali Beach Convention Sanur",
+      items: [
+        {
+          time: "09.00 - 11.30",
+          title: "Workshop at ISI Bali:",
+          description: `“Future of Intangible Cultural Heritage”\nInvolvement of UNESCO and academics to discuss the preservation of non physical cultural assets (music, dance, cuisine, and rituals)`
+        },
+        {
+          time: "09.00 - 11.30",
+          title: "Workshop at Udayana University Bali:",
+          description: `“Digital Heritage & AI for Culture”\nExploring AI technology for documenting and digitizing cultural heritage`
+        },
+        {
+          time: "11.30 - 13.00",
+          title: "Lunch at ISI Bali",
+          description: "Lunch at ISI Bali"
+        },
+        {
+          time: "11.30 - 13.00",
+          title: "Lunch at Udayana University",
+          description: "Lunch at Udayana University"
+        },
+        {
+          time: "14.00 - 17.00",
+          title: "Study Visit & Future Collaboration Projects (Afternoon Session)",
+          description: `From ISI Bali, participants may choose a study visit to either Green School Bali or Penglipuran Village\nFrom Udayana University, participants may choose a study visit to either Green School Bali or Penglipuran Village`
+        },
+        {
+          time: "17.00",
+          title: "Back to the Bali Beach Convention Hotel by The Meru, Sanur",
+          description: "Back to the Bali Beach Convention Hotel by The Meru, Sanur"
+        },
+        {
+          time: "17.00",
+          title: "End of Program",
+          description: "End of Program"
+        }
+      ]
     },
   ];
 
@@ -191,7 +463,7 @@ const EventSection: React.FC<EventSectionProps> = ({
               {day.items.map((item, index) => (
                 <div
                   key={index}
-                  className="mb-16 flex flex-col md:flex-row md:items-start relative z-10"
+                  className="mb-8 flex flex-col md:flex-row md:items-start relative z-10"
                 >
                   {/* Time column */}
                   <div className="md:w-[115px] lg:w-[150px] md:mr-10 mb-4 md:mb-0">
@@ -204,9 +476,21 @@ const EventSection: React.FC<EventSectionProps> = ({
                     <h3 className="text-lg font-medium text-gray-900 mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-gray-500 text-sm mb-5 leading-relaxed">
-                      {item.description}
-                    </p>
+                    {item.description &&
+                    item.description.trim().startsWith("•") ? (
+                      <div className="text-gray-500 text-sm mb-5 leading-relaxed">
+                        {item.description.split("\n").map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            <br />
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-gray-500 text-sm mb-5 leading-relaxed">
+                        {item.description}
+                      </p>
+                    )}
                     {/* Speakers grid */}
                     {item.speakers && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
