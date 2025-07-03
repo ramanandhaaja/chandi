@@ -22,10 +22,10 @@ const HeaderSection: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 py-4 bg-transparent`}
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 py-2 sm:py-4 bg-transparent`}
     >
-      <div className="max-w-8xl mx-8 px-4 sm:px-6 lg:px-8 bg-[#F8F7F2] rounded-full py-4">
-        <div className="flex items-center justify-between ">
+      <div className="max-w-8xl mt-2 mx-6 sm:mx-4 px-4 sm:px-4 md:px-6 lg:px-8 bg-[#F8F7F2] rounded-full py-4 sm:py-4">
+        <div className="flex items-center justify-between w-full">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
@@ -34,44 +34,56 @@ const HeaderSection: React.FC = () => {
                 alt="CHANDI SUMMIT 2025"
                 width={180}
                 height={40}
-                className="h-10 w-auto"
+                className="h-8 sm:h-10 w-auto"
               />
             </Link>
           </div>
 
           {/*middle menu*/}
           <div className="bg-[#F8F7F2] px-6 py-2 hidden md:flex items-center space-x-6">
-  <Link
-    href="/"
-    className={`font-medium hover:text-[#D2AF6D] ${pathname === "/" ? "text-[#D2AF6D]" : "text-gray-800"}`}
-  >
-    Home
-  </Link>
-  <Link
-    href="/stream"
-    className={`font-medium hover:text-[#D2AF6D] ${pathname === "/stream" ? "text-[#D2AF6D]" : "text-gray-800"}`}
-  >
-    Live
-  </Link>
-  <Link
-    href="/news_updates"
-    className={`font-medium hover:text-[#D2AF6D] ${pathname === "/news_updates" ? "text-[#D2AF6D]" : "text-gray-800"}`}
-  >
-    News
-  </Link>
-  <Link
-    href="/showcase"
-    className={`font-medium hover:text-[#D2AF6D] ${pathname === "/showcase" ? "text-[#D2AF6D]" : "text-gray-800"}`}
-  >
-    Showcase
-  </Link>
-  <Link
-    href="/contact_us"
-    className={`font-medium hover:text-[#D2AF6D] ${pathname === "/contact_us" ? "text-[#D2AF6D]" : "text-gray-800"}`}
-  >
-    Contact
-  </Link>
-</div>
+            <Link
+              href="/"
+              className={`font-medium hover:text-[#D2AF6D] ${
+                pathname === "/" ? "text-[#D2AF6D]" : "text-gray-800"
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              href="/stream"
+              className={`font-medium hover:text-[#D2AF6D] ${
+                pathname === "/stream" ? "text-[#D2AF6D]" : "text-gray-800"
+              }`}
+            >
+              Live
+            </Link>
+            <Link
+              href="/news_updates"
+              className={`font-medium hover:text-[#D2AF6D] ${
+                pathname === "/news_updates"
+                  ? "text-[#D2AF6D]"
+                  : "text-gray-800"
+              }`}
+            >
+              News
+            </Link>
+            <Link
+              href="/showcase"
+              className={`font-medium hover:text-[#D2AF6D] ${
+                pathname === "/showcase" ? "text-[#D2AF6D]" : "text-gray-800"
+              }`}
+            >
+              Showcase
+            </Link>
+            <Link
+              href="/contact_us"
+              className={`font-medium hover:text-[#D2AF6D] ${
+                pathname === "/contact_us" ? "text-[#D2AF6D]" : "text-gray-800"
+              }`}
+            >
+              Contact
+            </Link>
+          </div>
 
           {/* Days Counter and Register Button */}
           <div className="hidden md:flex items-center space-x-2">
@@ -100,15 +112,15 @@ const HeaderSection: React.FC = () => {
               </svg>
             </Link>
           </div>
-
+          
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center justify-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-800 hover:text-[#D2AF6D] focus:outline-none -ml-8"
+              className="text-gray-800 hover:text-[#D2AF6D] focus:outline-none p-1 rounded-full mr-0 sm:mr-1"
             >
               <svg
-                className="h-6 w-6"
+                className="h-5 w-5 sm:h-6 sm:w-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

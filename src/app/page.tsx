@@ -13,6 +13,7 @@ import HostSection from "@/components/HostSection";
 import FooterSection from "@/components/FooterSection";
 import HeroSection from "@/components/HeroSection";
 import UnderConstructions from "@/components/UnderConstructions";
+import ResourcesSection from "@/components/ResourcesSection";
 
 export default function Home() {
   return (
@@ -46,6 +47,8 @@ export default function Home() {
       <SponsorSection />
         */}
       <HostSection />
+
+      <ResourcesSection />
 
       <FooterSection />
     </>
