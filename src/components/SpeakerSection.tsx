@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { getItems, getImageURL } from "../lib/api";
 import { useLanguage } from "../lib/LanguageContext";
+import Link from "next/link";
 
 interface SpeakerSectionTranslation {
   languages_code: string;
@@ -145,9 +146,12 @@ const SpeakerSection: React.FC = () => {
       {/* Footer */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-0">
-          <p className="text-white font-medium">20+ Speakers</p>
+          <p className="text-white font-medium">Speakers</p>
           <div className="flex-grow h-px bg-white opacity-50 mx-6"></div>
-          <button className="flex items-center text-white hover:text-gray-200 transition-colors">
+          <Link
+            href="/speakers"
+            className="flex items-center text-white hover:text-gray-200 transition-colors"
+          >
             See All
             <svg
               className="w-5 h-5 ml-2"
@@ -163,7 +167,7 @@ const SpeakerSection: React.FC = () => {
                 d="M14 5l7 7m0 0l-7 7m7-7H3"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </section>
