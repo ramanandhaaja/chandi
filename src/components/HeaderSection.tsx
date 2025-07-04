@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import "../styles/header-fixes.css";
 
 const HeaderSection: React.FC = () => {
   const pathname = usePathname();
@@ -11,7 +12,7 @@ const HeaderSection: React.FC = () => {
 
   // Calculate days left until the summit
   useEffect(() => {
-    const summitDate = new Date("2025-07-12"); // Set your actual summit date here
+    const summitDate = new Date("2025-09-03"); // Set your actual summit date here
     const today = new Date();
     const diffTime = summitDate.getTime() - today.getTime();
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -24,10 +25,10 @@ const HeaderSection: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 py-2 sm:py-4 bg-transparent`}
     >
-      <div className="max-w-8xl mt-2 mx-6 sm:mx-4 px-4 sm:px-4 md:px-6 lg:px-8 bg-[#F8F7F2] rounded-full py-4 sm:py-4">
+      <div className="max-w-8xl mt-2 mx-8 sm:mx-6 px-4 sm:px-4 md:px-6 lg:px-8 bg-[#F8F7F2] rounded-full py-4 sm:py-4 header-container">
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 logo-container">
             <Link href="/">
               <Image
                 src="/chandi_logo_color.png"
@@ -114,7 +115,7 @@ const HeaderSection: React.FC = () => {
           </div>
           
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center justify-center">
+          <div className="md:hidden flex items-center justify-center mobile-menu-button">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-gray-800 hover:text-[#D2AF6D] focus:outline-none p-1 rounded-full mr-0 sm:mr-1"

@@ -206,6 +206,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "20.00 - 22.00",
           title: "Music Performance",
           description: "Music performance.",
+          /*
           speakers: [
             {
               name: "Andi Rianto Band",
@@ -253,6 +254,7 @@ const EventSection: React.FC<EventSectionProps> = ({
               image: "/images/event-section/once-mekel.png",
             },
           ],
+          */
         },
       ],
     },
@@ -263,17 +265,17 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "18.30 - 20.00",
           title: "Registration by Kiosk",
-          description: "Registration by Kiosk (badge meeting pass mandatory)"
+          description: "Registration by Kiosk (badge meeting pass mandatory)",
         },
         {
           time: "19.30 - 20.00",
           title: "Door Open",
-          description: "Door Open"
+          description: "Door Open",
         },
         {
           time: "20.00 - 20.05",
           title: "Opening",
-          description: "Opening"
+          description: "Opening",
         },
         {
           time: "20.05 - 20.15",
@@ -283,32 +285,69 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Dr. Fadli Zon",
               role: "Minister of Culture of the Republic of Indonesia",
-              image: "/images/event-section/fadli-zon.png"
-            }
-          ]
+              image: "/images/event-section/fadli-zon.png",
+            },
+          ],
         },
         {
           time: "20.15 - 21.55",
           title: "Music Performance",
           description: "Music Performance.",
-speakers: [
-  { name: "Andi Rianto Band", role: "Performer", image: "/images/event-section/andi-rianto.png" },
-  { name: "Judika", role: "Performer", image: "/images/event-section/judika.png" },
-  { name: "Lesti Kejora", role: "Performer", image: "/images/event-section/lesti-kejora.png" },
-  { name: "Niki", role: "Performer", image: "/images/event-section/niki.png" },
-  { name: "Joey Alexander", role: "Performer", image: "/images/event-section/joey-alexander.png" },
-  { name: "Michael Anthony Kwok", role: "Performer", image: "/images/event-section/michael-kwok.png" },
-  { name: "Ahmad Dhani", role: "Performer", image: "/images/event-section/ahmad-dhani.png" },
-  { name: "Melly Goeslaw", role: "Performer", image: "/images/event-section/melly-goeslaw.png" },
-  { name: "Once Mekel (TBC)", role: "Performer", image: "/images/event-section/once-mekel.png" }
-]
+          /*
+          speakers: [
+            {
+              name: "Andi Rianto Band",
+              role: "Performer",
+              image: "/images/event-section/andi-rianto.png",
+            },
+            {
+              name: "Judika",
+              role: "Performer",
+              image: "/images/event-section/judika.png",
+            },
+            {
+              name: "Lesti Kejora",
+              role: "Performer",
+              image: "/images/event-section/lesti-kejora.png",
+            },
+            {
+              name: "Niki",
+              role: "Performer",
+              image: "/images/event-section/niki.png",
+            },
+            {
+              name: "Joey Alexander",
+              role: "Performer",
+              image: "/images/event-section/joey-alexander.png",
+            },
+            {
+              name: "Michael Anthony Kwok",
+              role: "Performer",
+              image: "/images/event-section/michael-kwok.png",
+            },
+            {
+              name: "Ahmad Dhani",
+              role: "Performer",
+              image: "/images/event-section/ahmad-dhani.png",
+            },
+            {
+              name: "Melly Goeslaw",
+              role: "Performer",
+              image: "/images/event-section/melly-goeslaw.png",
+            },
+            {
+              name: "Once Mekel (TBC)",
+              role: "Performer",
+              image: "/images/event-section/once-mekel.png",
+            },
+          ],*/
         },
         {
           time: "21.55 - 22.00",
           title: "Closing",
-          description: "Closing"
-        }
-      ]
+          description: "Closing",
+        },
+      ],
     },
     {
       tab: "Day 2 : CHANDI PLENARY",
@@ -317,73 +356,75 @@ speakers: [
         {
           time: "08.00 - 09.00",
           title: "Registration",
-          description: "Registration"
+          description: "Registration",
         },
         {
           time: "09.00 - 12.00",
           title: "CHANDI PLENARY",
-          description: ""
+          description: "",
         },
         {
           time: "09.00 - 10.45",
-          title: "PLENARY 1: Culture for the Future: Heritage, Identity, and Innovation",
+          title:
+            "PLENARY 1: Culture for the Future: Heritage, Identity, and Innovation",
           description: `Keynote Speech: Hashim S. Djojohadikusumo | Chairman of the Board of Trustees of Indonesian Heritage Agency (*TBC)\n(15 minutes)\nQ&A Session`,
           speakers: [
             {
               name: "Hashim S. Djojohadikusumo",
               role: "Chairman of the Board of Trustees of Indonesian Heritage Agency (*TBC)",
-              image: "/images/event-section/hashim-djojohadikusumo.png"
-            }
-          ]
+              image: "/images/event-section/hashim-djojohadikusumo.png",
+            },
+          ],
         },
         {
           time: "10.45 - 12.30",
-          title: "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
+          title:
+            "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
           description: `Keynote Speech: Sheikha Al Mayassa bint Hamad bin Khalifa Al Thani | Chairperson of Qatar Museums, Doha Film Institute, Reach Out to Asia and Qatar Leadership Centre (*TBC)\n(15 minutes)\nQ&A Session`,
           speakers: [
             {
               name: "Sheikha Al Mayassa bint Hamad bin Khalifa Al Thani",
               role: "Chairperson of Qatar Museums, Doha Film Institute, Reach Out to Asia and Qatar Leadership Centre (*TBC)",
-              image: "/images/event-section/sheikha-al-mayassa.png"
-            }
-          ]
+              image: "/images/event-section/sheikha-al-mayassa.png",
+            },
+          ],
         },
         {
           time: "12.30 - 13.30",
           title: "Lunch",
-          description: "Lunch"
+          description: "Lunch",
         },
         {
           time: "13.30 - 15.00",
           title: "PLENARY 3: Youth Panel",
-          description: `Keynote Speech: Student from Green School Bali\n“Culture, Sustainability and the Future”\n(15 minutes)\nYouth representatives\nQ&A Session`
+          description: `Keynote Speech: Student from Green School Bali\n“Culture, Sustainability and the Future”\n(15 minutes)\nYouth representatives\nQ&A Session`,
         },
         {
           time: "15.00 - 15.30",
           title: "Conclusion and Closing",
-          description: "Conclusion and Closing"
+          description: "Conclusion and Closing",
         },
         {
           time: "15.30 - 16.00",
           title: "Coffee Break, Transfer Parallel Session",
-          description: "Coffee Break, Transfer Parallel Session"
+          description: "Coffee Break, Transfer Parallel Session",
         },
         {
           time: "16.00 - 17.30",
           title: "Workshops on Cultural Heritage (parallel session)",
-          description: `• Workshop Batik Making\n• Workshop Traditional Dance\n• Workshop Wood Preservation\n• Workshop Keris Making (Javanese Traditional Dagger)\n• Workshop Making Indonesian Traditional Mask`
+          description: `• Workshop Batik Making\n• Workshop Traditional Dance\n• Workshop Wood Preservation\n• Workshop Keris Making (Javanese Traditional Dagger)\n• Workshop Making Indonesian Traditional Mask`,
         },
         {
           time: "17.00 - 19.00",
           title: "Break",
-          description: "Break"
+          description: "Break",
         },
         {
           time: "19.00",
           title: "Networking Event: Dangdut on The Beach",
-          description: "Networking Event: Dangdut on The Beach"
-        }
-      ]
+          description: "Networking Event: Dangdut on The Beach",
+        },
+      ],
     },
     {
       tab: "Day 3 : COLLABORATIVE PROJECTS & STUDY VISITS",
@@ -392,39 +433,41 @@ speakers: [
         {
           time: "09.00 - 11.30",
           title: "Workshop at ISI Bali:",
-          description: `“Future of Intangible Cultural Heritage”\nInvolvement of UNESCO and academics to discuss the preservation of non physical cultural assets (music, dance, cuisine, and rituals)`
+          description: `“Future of Intangible Cultural Heritage”\nInvolvement of UNESCO and academics to discuss the preservation of non physical cultural assets (music, dance, cuisine, and rituals)`,
         },
         {
           time: "09.00 - 11.30",
           title: "Workshop at Udayana University Bali:",
-          description: `“Digital Heritage & AI for Culture”\nExploring AI technology for documenting and digitizing cultural heritage`
+          description: `“Digital Heritage & AI for Culture”\nExploring AI technology for documenting and digitizing cultural heritage`,
         },
         {
           time: "11.30 - 13.00",
           title: "Lunch at ISI Bali",
-          description: "Lunch at ISI Bali"
+          description: "Lunch at ISI Bali",
         },
         {
           time: "11.30 - 13.00",
           title: "Lunch at Udayana University",
-          description: "Lunch at Udayana University"
+          description: "Lunch at Udayana University",
         },
         {
           time: "14.00 - 17.00",
-          title: "Study Visit & Future Collaboration Projects (Afternoon Session)",
-          description: `From ISI Bali, participants may choose a study visit to either Green School Bali or Penglipuran Village\nFrom Udayana University, participants may choose a study visit to either Green School Bali or Penglipuran Village`
+          title:
+            "Study Visit & Future Collaboration Projects (Afternoon Session)",
+          description: `From ISI Bali, participants may choose a study visit to either Green School Bali or Penglipuran Village\nFrom Udayana University, participants may choose a study visit to either Green School Bali or Penglipuran Village`,
         },
         {
           time: "17.00",
           title: "Back to the Bali Beach Convention Hotel by The Meru, Sanur",
-          description: "Back to the Bali Beach Convention Hotel by The Meru, Sanur"
+          description:
+            "Back to the Bali Beach Convention Hotel by The Meru, Sanur",
         },
         {
           time: "17.00",
           title: "End of Program",
-          description: "End of Program"
-        }
-      ]
+          description: "End of Program",
+        },
+      ],
     },
   ];
 

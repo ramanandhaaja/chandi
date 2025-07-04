@@ -7,39 +7,15 @@ import { FaFilePdf } from "react-icons/fa";
 const resources = [
   {
     title: "Booklet CHANDI Summit 2025",
-    subtitle: "Booklet CHANDI SUMMIT 2025_300625",
-    size: "2.5 MB",
-    url: "#",
+    subtitle: "Booklet CHANDI SUMMIT 2025_300625.pdf",
+    size: "22.5 MB",
+    url: "/files/Booklet CHANDI SUMMIT 2025_300625.pdf",
   },
   {
-    title: "Agenda CHANDI Summit 2025",
-    subtitle: "Booklet CHANDI SUMMIT 2025_300625",
-    size: "1.2 MB",
-    url: "#",
-  },
-  {
-    title: "Speaker List CHANDI Summit 2025",
-    subtitle: "2025_300626_Speaker_List_Chandi_Summit_C...",
-    size: "1.0 MB",
-    url: "#",
-  },
-  {
-    title: "Exhibitor Information CHANDI Summit...",
-    subtitle: "Exhibitor_Info_Chandi_Summit_Participants",
-    size: "2.8 MB",
-    url: "#",
-  },
-  {
-    title: "Participant Feedback CHANDI Summit...",
-    subtitle: "2025_300628_Feedback_Chandi_Summit_Atten...",
-    size: "1.5 MB",
-    url: "#",
-  },
-  {
-    title: "Sponsorship Details CHANDI Summit...",
-    subtitle: "00629_Sponsorship_Chandi_Summit_Partner_O...",
-    size: "2.0 MB",
-    url: "#",
+    title: "Terms of Reference & Agenda",
+    subtitle: "FIN_TOR&AGENDA_CHANDI2025.pdf",
+    size: "1 MB",
+    url: "/files/FIN_TOR&AGENDA_CHANDI2025.pdf",
   },
 ];
 
@@ -85,6 +61,8 @@ const ResourcesSection: React.FC = () => {
                   <a
                     href={res.url}
                     download
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-200 hover:bg-yellow-400 transition"
                   >
                     <HiDownload className="text-xl text-neutral-700 group-hover:text-white" />

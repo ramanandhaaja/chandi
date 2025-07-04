@@ -1,30 +1,22 @@
-import Image from "next/image";
+"use client";
 
 const VideoGallery = ({ title = "Videos" }) => {
-  const images = [
+  const videos = [
     {
-      src: "/images/video/video-1.jpg",
-      alt: "Press Release 1",
+      id: "dqteOrebYCc",
+      title: "CHANDI Summit Video 1",
     },
     {
-      src: "/images/video/video-2.jpg",
-      alt: "Press Release 2",
+      id: "vexU_rSSSSM",
+      title: "CHANDI Summit Video 2",
     },
     {
-      src: "/images/video/video-3.jpg",
-      alt: "Press Release 3",
+      id: "gG78Es9ZPa8",
+      title: "CHANDI Summit Video 3",
     },
     {
-      src: "/images/video/video-4.jpg",
-      alt: "Press Release 4",
-    },
-    {
-      src: "/images/video/video-5.jpg",
-      alt: "Press Release 5",
-    },
-    {
-      src: "/images/video/video-6.jpg",
-      alt: "Press Release 6",
+      id: "iryrcXxogh8",
+      title: "CHANDI Summit Video 4",
     },
   ];
   return (
@@ -39,17 +31,18 @@ const VideoGallery = ({ title = "Videos" }) => {
             </h2>
           </div>
 
-          {/* Right Column - Custom Host Images Grid */}
+          {/* Right Column - YouTube Videos Grid */}
           <div className="md:w-3/5 w-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3 sm:gap-6">
-              {images.map((image, idx) => (
+              {videos.map((video, idx) => (
                 <div key={idx} className="cursor-pointer">
-                  <div className="relative rounded-2xl overflow-hidden h-36 sm:h-[180px] md:h-[226px] w-full md:w-[372px] hover:scale-110 transition-all">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-cover rounded-2xl"
+                  <div className="relative rounded-2xl overflow-hidden w-full aspect-video hover:shadow-lg transition-all">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full rounded-2xl"
                     />
                   </div>
                 </div>
