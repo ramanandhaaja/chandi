@@ -95,13 +95,13 @@ const RegisterOption = () => {
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto px-4">
           <div 
             onClick={() => handleDelegationTypeClick("domestic")}
-            className={`${delegationType === "domestic" ? "border-2 border-[#A51C30] text-[#A51C30]" : "border border-[#A51C30] text-[#A51C30]"} bg-white rounded-xl py-6 px-8 text-center font-medium cursor-pointer transition-all hover:shadow-md flex items-center justify-center h-16`}
+            className={`${delegationType === "domestic" ? "border-2 border-[#D49300] text-[#D49300]" : "border border-[#E9D7B6] text-[#D49300]"} bg-white rounded-xl py-6 px-8 text-center font-medium cursor-pointer transition-all hover:shadow-md flex items-center justify-center h-16`}
           >
             <span className="text-lg">Domestic</span>
           </div>
           <div 
             onClick={() => handleDelegationTypeClick("international")}
-            className={`${delegationType === "international" ? "border-2 border-[#A51C30] text-[#A51C30]" : "border border-[#A51C30] text-[#A51C30]"} bg-white rounded-xl py-6 px-8 text-center font-medium cursor-pointer transition-all hover:shadow-md flex items-center justify-center h-16`}
+            className={`${delegationType === "international" ? "border-2 border-[#D49300] text-[#D49300]" : "border border-[#E9D7B6] text-[#D49300]"} bg-white rounded-xl py-6 px-8 text-center font-medium cursor-pointer transition-all hover:shadow-md flex items-center justify-center h-16`}
           >
             <span className="text-lg">International</span>
           </div>

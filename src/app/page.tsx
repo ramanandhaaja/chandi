@@ -46,8 +46,8 @@ export default function Home() {
 
       {/* Header Section 
       <SponsorSection />
-        */}
-      <HostSection />
+        
+      <HostSection />*/}
 
       <ResourcesSection />
 

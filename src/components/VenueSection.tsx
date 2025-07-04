@@ -55,7 +55,7 @@ const VenueSection: React.FC<VenueSectionProps> = ({
         <div className="mb-4">
           <p className="text-white text-sm opacity-80 mb-1">Summit</p>
           <p className="text-white text-xl font-semibold">
-            Istana Tampak Siring
+          Bali Beach Convention by The Meru
           </p>
         </div>
 
@@ -64,8 +64,8 @@ const VenueSection: React.FC<VenueSectionProps> = ({
           {/* Left: Large image */}
           <div className="relative w-full md:w-3/4 aspect-[4/2.1] overflow-hidden">
             <Image
-              src="/images/venue-section/venue1.png"
-              alt="Istana Tampak Siring"
+              src="/images/venue-section/venue1.jpg"
+              alt="Bali Beach Convention by The Meru"
               fill
               className="object-cover"
               priority
@@ -74,10 +74,10 @@ const VenueSection: React.FC<VenueSectionProps> = ({
           {/* Right: 4 stacked images */}
           <div className="hidden md:flex flex-col w-1/4 gap-4">
             {[
-              "/images/venue-section/venue2.png",
-              "/images/venue-section/venue3.png",
-              "/images/venue-section/venue4.png",
-              "/images/venue-section/venue5.png",
+              "/images/venue-section/venue2.jpg",
+              "/images/venue-section/venue3.jpg",
+              "/images/venue-section/venue4.jpg",
+              "/images/venue-section/venue5.jpg",
             ].map((img, i) => (
               <div
                 key={i}
@@ -94,7 +94,7 @@ const VenueSection: React.FC<VenueSectionProps> = ({
           </div>
         </div>
 
-        {/* Footer */}
+        {/* Footer 
         <div className="mt-8 flex items-center">
           <p className="text-white font-medium">20+ Speakers</p>
           <div className="flex-grow h-px bg-white opacity-50 mx-6"></div>
@@ -116,6 +116,7 @@ const VenueSection: React.FC<VenueSectionProps> = ({
             </svg>
           </button>
         </div>
+        */}
       </div>
     </section>
   );

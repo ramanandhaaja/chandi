@@ -2,6 +2,14 @@
 
 import React from "react";
 import Image from "next/image";
+import ProfileImagePlaceholder from "./common/ProfileImagePlaceholder";
+
+interface SpeakerProps {
+  name: string;
+  role: string;
+  image: string;
+  useTie?: boolean;
+}
 
 interface EventSectionProps {
   title?: string;
@@ -12,9 +20,23 @@ const EventSection: React.FC<EventSectionProps> = ({
   title = "Discover the Full Summit Agenda",
   subtitle = "Event agenda",
 }) => {
+  // Type definition for agenda items
+  interface AgendaItem {
+    time: string;
+    title: string;
+    description: string;
+    speakers?: SpeakerProps[];
+  }
+
+  interface AgendaDay {
+    tab: string;
+    session: string;
+    items: AgendaItem[];
+  }
+
   // Sample agenda data
   // Multi-day agenda data
-  const agendaDays = [
+  const agendaDays: AgendaDay[] = [
     {
       tab: "Welcoming Dinner Ministerial",
       session: "2 September 2025 : Bali Beach Lawn Area",
@@ -69,7 +91,7 @@ const EventSection: React.FC<EventSectionProps> = ({
     },
     {
       tab: "Day 1 : Opening & Ministerial Summit",
-      session: "3 September 2025 : Bali Beach Convention Sanur",
+      session: "3 September 2025 : Bali Beach Convention by The Meru",
       items: [
         {
           time: "08.00 - 08.55",
@@ -194,7 +216,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "17.00 - 19.00",
-          title: "Break for Gala Dinner Preparation",
+          title: "Break for Dinner",
           description: "Break for participants to prepare for the Gala Dinner.",
         },
         {
@@ -259,8 +281,8 @@ const EventSection: React.FC<EventSectionProps> = ({
       ],
     },
     {
-      tab: "Gala Dinner & Musical Performance",
-      session: "3 September 2025 | Bali Beach Convention Sanur",
+      tab: "Musical Performance",
+      session: "3 September 2025 | Bali Beach Convention by The Meru",
       items: [
         {
           time: "18.30 - 20.00",
@@ -351,7 +373,7 @@ const EventSection: React.FC<EventSectionProps> = ({
     },
     {
       tab: "Day 2 : CHANDI PLENARY",
-      session: "4 September 2025 | Bali Beach Convention Sanur",
+      session: "4 September 2025 | Bali Beach Convention by The Meru",
       items: [
         {
           time: "08.00 - 09.00",
@@ -428,7 +450,7 @@ const EventSection: React.FC<EventSectionProps> = ({
     },
     {
       tab: "Day 3 : COLLABORATIVE PROJECTS & STUDY VISITS",
-      session: "4 September 2025 | Bali Beach Convention Sanur",
+      session: "4 September 2025 | Bali Beach Convention by The Meru",
       items: [
         {
           time: "09.00 - 11.30",
@@ -540,12 +562,32 @@ const EventSection: React.FC<EventSectionProps> = ({
                         {item.speakers.map((speaker, idx) => (
                           <div key={idx} className="flex items-center">
                             <div className="relative w-14 h-14 rounded-full overflow-hidden mr-4 border border-gray-100">
-                              <Image
-                                src={speaker.image}
-                                alt={speaker.name}
-                                fill
-                                className="object-cover"
-                              />
+                              {speaker.image ? (
+                                <>
+                                  <div className="absolute inset-0 z-0">
+                                    <ProfileImagePlaceholder 
+                                      initials={speaker.name.split(' ').map(n => n[0]).join('')}
+                                      useTie={speaker.useTie} 
+                                    />
+                                  </div>
+                                  <Image
+                                    src={speaker.image}
+                                    alt={speaker.name}
+                                    fill
+                                    className="object-cover z-10 relative"
+                                    onError={(e) => {
+                                      // Hide the image on error, showing only the placeholder
+                                      const target = e.target as HTMLImageElement;
+                                      target.style.display = 'none';
+                                    }}
+                                  />
+                                </>
+                              ) : (
+                                <ProfileImagePlaceholder 
+                                  initials={speaker.name.split(' ').map(n => n[0]).join('')}
+                                  useTie={speaker.useTie} 
+                                />
+                              )}
                             </div>
                             <div>
                               <p className="font-medium text-sm text-gray-800">
