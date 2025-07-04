@@ -1,12 +1,34 @@
 import Image from "next/image";
+import { useState } from "react";
+
+type OptionType = "delegation" | "public" | "press" | "speaker";
+type DelegationType = "domestic" | "international" | null;
 
 const RegisterOption = () => {
+  const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
+  const [delegationType, setDelegationType] = useState<DelegationType>(null);
+
+  const handleOptionClick = (option: OptionType) => {
+    setSelectedOption(option);
+    // Reset delegation type when switching between options
+    if (option !== "delegation") {
+      setDelegationType(null);
+    }
+  };
+  
+  const handleDelegationTypeClick = (type: DelegationType) => {
+    setDelegationType(type);
+  };
+
   return (
     <div className="max-w-7xl mx-auto">
       {/* Registration Type Selector */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 items-center w-full">
         {/* Investors */}
-        <div className="bg-[#FCFAF5] rounded-3xl p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
+        <div 
+          onClick={() => handleOptionClick("delegation")}
+          className={`bg-[#FCFAF5] ${selectedOption === "delegation" ? "rounded-full border border-solid border-[#D49300]" : "rounded-3xl border border-solid border-[#E9D7B6]"} p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg cursor-pointer`}
+        >
           <div className="w-16 h-16 flex items-center justify-center mb-4">
             <Image
               src="/images/register/delegation.png"
@@ -20,7 +42,10 @@ const RegisterOption = () => {
         </div>
 
         {/* Business Man */}
-        <div className="bg-[#FCFAF5] rounded-full border border-solid border-[#D49300] p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg">
+        <div 
+          onClick={() => handleOptionClick("public")}
+          className={`bg-[#FCFAF5] ${selectedOption === "public" ? "rounded-full border border-solid border-[#D49300]" : "rounded-3xl border border-solid border-[#E9D7B6]"} p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg cursor-pointer`}
+        >
           <div className="w-16 h-16 flex items-center justify-center mb-4">
             <Image
               src="/images/register/public.png"
@@ -33,7 +58,10 @@ const RegisterOption = () => {
           <p className="text-center text-gray-500 font-medium">Public</p>
         </div>
         {/* Founder */}
-        <div className="bg-[#FCFAF5] rounded-3xl p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
+        <div 
+          onClick={() => handleOptionClick("press")}
+          className={`bg-[#FCFAF5] ${selectedOption === "press" ? "rounded-full border border-solid border-[#D49300]" : "rounded-3xl border border-solid border-[#E9D7B6]"} p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg cursor-pointer`}
+        >
           <div className="w-16 h-16 flex items-center justify-center mb-4">
             <Image
               src="/images/register/press.png"
@@ -45,7 +73,10 @@ const RegisterOption = () => {
           </div>
           <p className="text-center text-gray-500 font-medium">Press</p>
         </div>
-        <div className="bg-[#FCFAF5] rounded-3xl p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg border border-solid border-[#E9D7B6]">
+        <div 
+          onClick={() => handleOptionClick("speaker")}
+          className={`bg-[#FCFAF5] ${selectedOption === "speaker" ? "rounded-full border border-solid border-[#D49300]" : "rounded-3xl border border-solid border-[#E9D7B6]"} p-8 flex flex-col items-center justify-center aspect-square transition-all hover:shadow-lg cursor-pointer`}
+        >
           <div className="w-16 h-16 flex items-center justify-center mb-4">
             <Image
               src="/images/register/speaker.png"
@@ -58,6 +89,24 @@ const RegisterOption = () => {
           <p className="text-center text-gray-500 font-medium">Speaker</p>
         </div>
       </div>
+
+      {/* Delegation Type Options */}
+      {selectedOption === "delegation" && (
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto px-4">
+          <div 
+            onClick={() => handleDelegationTypeClick("domestic")}
+            className={`${delegationType === "domestic" ? "border-2 border-[#A51C30] text-[#A51C30]" : "border border-[#A51C30] text-[#A51C30]"} bg-white rounded-xl py-6 px-8 text-center font-medium cursor-pointer transition-all hover:shadow-md flex items-center justify-center h-16`}
+          >
+            <span className="text-lg">Domestic</span>
+          </div>
+          <div 
+            onClick={() => handleDelegationTypeClick("international")}
+            className={`${delegationType === "international" ? "border-2 border-[#A51C30] text-[#A51C30]" : "border border-[#A51C30] text-[#A51C30]"} bg-white rounded-xl py-6 px-8 text-center font-medium cursor-pointer transition-all hover:shadow-md flex items-center justify-center h-16`}
+          >
+            <span className="text-lg">International</span>
+          </div>
+        </div>
+      )}
 
       {/* Description Box */}
       <div className="mt-12 p-8 text-center">
