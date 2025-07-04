@@ -33,7 +33,8 @@ export default function Home() {
 
       <GallerySection />
 
-      <WhoSection />
+      {/* Under Construction 
+      <WhoSection /> */}
 
       <SpeakerSection />
 
