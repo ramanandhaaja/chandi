@@ -129,12 +129,13 @@ const SpeakerSection: React.FC = () => {
                     className="object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                    <h3 className="text-white font-medium text-lg">
+                    <h3 className="text-white font-medium text-base sm:text-sm">
                       {speaker.name}
                     </h3>
-                    <p className="text-gray-300 text-sm">{speaker.title}</p>
+                    <p className="text-gray-300 text-xs sm:text-sm">{speaker.title}</p>
                   </div>
                 </div>
+                
               </div>
             ))}
           </div>
