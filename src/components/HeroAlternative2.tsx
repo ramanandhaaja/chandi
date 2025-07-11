@@ -100,7 +100,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
       </div>
     </div>
   ) : (
-    <div className="relative lg:min-h-screen w-full overflow-hidden bg-[#F3F2E8] font-sans">
+    <div className="relative w-full h-auto min-h-[600px] lg:h-screen lg:max-h-[800px] overflow-hidden bg-[#F3F2E8] font-sans">
       {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-[#CD9F00] opacity-70 pointer-events-none" />
       <div className="absolute inset-0 z-10 opacity-70">
@@ -154,7 +154,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Content Container */}
-      <div className="relative flex flex-col lg:h-screen z-40 pt-20 md:pt-10">
+      <div className="relative flex flex-col h-full z-40 pt-20 md:pt-10 lg:pt-0 lg:justify-center">
         <div className="flex flex-1">
           {/* Left: Logo and Texts */}
           <div className="flex flex-col justify-start md:pl-20 pt-14 md:mt-20 w-full md:w-3/5 lg:w-1/2">
