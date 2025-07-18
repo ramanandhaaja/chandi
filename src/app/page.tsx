@@ -14,6 +14,7 @@ import FooterSection from "@/components/FooterSection";
 import HeroSection from "@/components/HeroSection";
 import UnderConstructions from "@/components/UnderConstructions";
 import ResourcesSection from "@/components/ResourcesSection";
+import AbstractSection from "@/components/AbstractSection";
 
 export default function Home() {
   return (
@@ -43,6 +44,8 @@ export default function Home() {
       <VenueSection />
 
       <EventSection />
+
+      <AbstractSection />
 
       {/* Header Section 
       <SponsorSection />

@@ -17,6 +17,12 @@ const resources = [
     size: "1 MB",
     url: "/files/FIN_TOR&AGENDA_CHANDI2025.pdf",
   },
+  {
+    title: "Call for Abstract",
+    subtitle: "Call for Abstract CHANDI SUMMIT 2025.pdf",
+    size: "1 MB",
+    url: "/files/Call for Abstract CHANDI SUMMIT 2025.pdf",
+  },
 ];
 
 const ResourcesSection: React.FC = () => {
