@@ -103,7 +103,7 @@ const AbstractSection: React.FC<AbstractSectionProps> = ({
         {/* Right side - Content */}
         <div className="w-full lg:w-1/2 p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col justify-center z-50">
           {/* Subtitle */}
-          <p className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-center">
+          <p className="text-4xl md:text-5xl font-bold mb-2 mb-8 text-left">
             {displayTitle}
           </p>
 
