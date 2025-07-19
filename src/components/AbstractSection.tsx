@@ -117,7 +117,7 @@ const AbstractSection: React.FC<AbstractSectionProps> = ({
             <a href="/abstract" className="no-underline">
               <button
                 type="button"
-                className="bg-[#FAF9F4] text-[#8B2D20] font-semibold text-xl rounded-full px-16 py-5 focus:outline-none border-none shadow-2xl"
+                className="bg-[#FAF9F4] text-[#8B2D20] font-semibold text-xl rounded-full px-16 py-5 focus:outline-none border-none shadow-2xl hover:bg-[#8B2D20] hover:text-[#FAF9F4] transition-all duration-300 ease-in-out hover:shadow-3xl transform hover:scale-105"
                 style={{ minWidth: '260px' }}
               >
                 Learn More

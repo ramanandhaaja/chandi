@@ -77,6 +77,14 @@ const HeaderSection: React.FC = () => {
               Showcase
             </Link>
             <Link
+              href="/abstract"
+              className={`font-medium hover:text-[#D2AF6D] ${
+                pathname === "/abstract" ? "text-[#D2AF6D]" : "text-gray-800"
+              }`}
+            >
+              Call for Abstract
+            </Link>
+            <Link
               href="/contact_us"
               className={`font-medium hover:text-[#D2AF6D] ${
                 pathname === "/contact_us" ? "text-[#D2AF6D]" : "text-gray-800"
@@ -175,6 +183,12 @@ const HeaderSection: React.FC = () => {
               className="text-gray-800 hover:text-[#D2AF6D] font-medium py-2"
             >
               Showcase
+            </Link>
+            <Link
+              href="/abstract"
+              className="text-gray-800 hover:text-[#D2AF6D] font-medium py-2"
+            >
+              Call for Abstract
             </Link>
             <Link
               href="/contact_us"

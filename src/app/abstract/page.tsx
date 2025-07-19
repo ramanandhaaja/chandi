@@ -15,15 +15,15 @@ export default function ContactUsPage() {
         subtitle='The CHANDI SUMMIT 2025 will convene global leaders in Bali from September 3 to 5, 2025, under the theme "Culture for the Future." It aims to explore cultures role in sustainable development through four panel discussions. The Programme Committee invites abstract submissions for presentations.'
       />
 
-      <div className="container mx-auto px-4 md:px-6 py-12 md:py-24 text-[#4A2E2B]">
-        <div className="space-y-20">
+      <div className="container mx-auto px-4 md:px-6 py-8 md:py-24 text-[#4A2E2B]">
+        <div className="space-y-12 md:space-y-20">
           {/* Background Section */}
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 mb-20">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-16 mb-12 md:mb-20">
             <div className="md:w-1/4">
-              <h2 className="text-4xl font-bold">Background</h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-0">Background</h2>
             </div>
             <div className="md:w-3/4">
-              <p className="text-lg leading-relaxed">
+              <p className="text-base md:text-lg leading-relaxed">
                 The CHANDI SUMMIT 2025 (Culture, Heritage, Art, Narrative,
                 Diplomacy, and Innovation) will convene global leaders,
                 policymakers, scholars, and cultural practitioners under the
@@ -39,12 +39,12 @@ export default function ContactUsPage() {
           </div>
 
           {/* Objectives Section */}
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 mb-20">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-16 mb-12 md:mb-20">
             <div className="md:w-1/4">
-              <h2 className="text-4xl font-bold">Objectives</h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-0">Objectives</h2>
             </div>
             <div className="md:w-3/4">
-              <ol className="list-decimal list-inside space-y-2 text-lg">
+              <ol className="list-decimal list-inside space-y-3 md:space-y-2 text-base md:text-lg">
                 <li>
                   Bridging academic research, policy insights, and practices
                   at the grassroots level.
@@ -58,16 +58,16 @@ export default function ContactUsPage() {
           </div>
 
           {/* Topics Section */}
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 mb-20">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-16 mb-12 md:mb-20">
             <div className="md:w-1/4">
-              <h2 className="text-4xl font-bold">Topics</h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-0">Topics</h2>
             </div>
             <div className="md:w-3/4">
-              <p className="text-lg mb-4">
+              <p className="text-base md:text-lg mb-4">
                 The CHANDI SUMMIT 2025 Program Committee calls on participants
                 to submit abstracts on the following topics:
               </p>
-              <ol className="list-decimal list-inside space-y-2 text-lg">
+              <ol className="list-decimal list-inside space-y-3 md:space-y-2 text-base md:text-lg">
                 <li>
                   Reclaiming History, Restoring Justice: International
                   Cooperation for Repatriation and the Fight Against Illicit
@@ -86,7 +86,7 @@ export default function ContactUsPage() {
                   Culture-Based Climate Action.
                 </li>
               </ol>
-              <p className="text-lg mt-4">
+              <p className="text-base md:text-lg mt-4">
                 Our four topics can be viewed as standalone, but they are also
                 deeply intertwined with one another. The topics may be seen as
                 corollaries complementary to each other. The topics can be
@@ -99,10 +99,10 @@ export default function ContactUsPage() {
         </div>
 
         {/* Submission Guidelines Title */}
-        <div className="mt-24 py-10">
+        <div className="mt-16 md:mt-24 py-8 md:py-10">
           <div className="flex items-center" aria-hidden="true">
             <hr className="flex-1 border-gray-400" />
-            <h1 className="text-5xl font-bold px-6 text-[#4A2E2B] shrink-0">
+            <h1 className="text-2xl md:text-5xl font-bold px-3 md:px-6 text-[#4A2E2B] shrink-0 text-center">
               Submission Guidelines
             </h1>
             <hr className="flex-1 border-gray-400" />
@@ -110,16 +110,16 @@ export default function ContactUsPage() {
         </div>
 
         {/* Abstract Requirements Section */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 mt-20">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-16 mt-12 md:mt-20">
           <div className="md:w-1/4">
-            <h2 className="text-4xl font-bold">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-0">
               Abstract
               <br />
               Requirements
             </h2>
           </div>
           <div className="md:w-3/4">
-            <ol className="list-decimal list-outside pl-5 space-y-4 text-lg">
+            <ol className="list-decimal list-outside pl-4 md:pl-5 space-y-4 md:space-y-4 text-base md:text-lg">
               <li>The abstract submitted must be original work.</li>
               <li>The abstract should be written in English.</li>
               <li>
@@ -149,7 +149,7 @@ export default function ContactUsPage() {
               </li>
               <li>
                 Specific instructions:
-                <ul className="list-disc list-outside pl-6 mt-2 space-y-2">
+                <ul className="list-disc list-outside pl-4 md:pl-6 mt-2 space-y-2 text-sm md:text-base">
                   <li>
                     Title: 14 points, bold, sentence case (capitals for proper
                     nouns only).
