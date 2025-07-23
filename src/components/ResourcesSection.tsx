@@ -5,7 +5,7 @@ import { HiDownload } from "react-icons/hi";
 import { FaFilePdf } from "react-icons/fa";
 
 const resources = [
-  {
+  /*{
     title: "Booklet CHANDI Summit 2025",
     subtitle: "Booklet CHANDI SUMMIT 2025_300625.pdf",
     size: "22.5 MB",
@@ -16,7 +16,7 @@ const resources = [
     subtitle: "FIN_TOR&AGENDA_CHANDI2025.pdf",
     size: "1 MB",
     url: "/files/FIN_TOR&AGENDA_CHANDI2025.pdf",
-  },
+  },*/
   {
     title: "Call for Abstract",
     subtitle: "Call for Abstract CHANDI SUMMIT 2025.pdf",

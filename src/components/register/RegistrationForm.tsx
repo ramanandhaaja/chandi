@@ -170,7 +170,7 @@ function RegistrationForm() {
         {/* Submit Button */}
         <div className="flex justify-center mt-6">
           <div 
-            onClick={!loading && firstName && lastName && email && password ? handleRegister : undefined}
+            //onClick={!loading && firstName && lastName && email && password ? handleRegister : undefined}
             className={`w-full flex justify-center cursor-pointer ${(!firstName || !lastName || !email || !password || loading) ? 'opacity-50' : ''}`}
           >
             <Image
