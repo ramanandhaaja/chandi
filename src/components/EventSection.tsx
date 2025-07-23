@@ -450,7 +450,7 @@ const EventSection: React.FC<EventSectionProps> = ({
     },
     {
       tab: "Day 3 : COLLABORATIVE PROJECTS & STUDY VISITS",
-      session: "4 September 2025 | Bali Beach Convention by The Meru",
+      session: "5 September 2025 | Bali Beach Convention by The Meru",
       items: [
         {
           time: "09.00 - 11.30",
