@@ -1,37 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const PressRelease = () => {
   const images = [
     {
+      id: "cultural-summit-2023",
       src: "/images/press-release/press-release-1.jpg",
       alt: "Press Release 1",
-      title: "Cultural Summit 2023: Uniting Voices for Change",
-    },
-    {
-      src: "/images/press-release/press-release-2.jpg",
-      alt: "Press Release 2",
-      title: "Culture Summit 2025: A Global Celebration of Creativity",
-    },
-    {
-      src: "/images/press-release/press-release-3.jpg",
-      alt: "Press Release 3",
-      title:
-        "Culture Summit 2025: Inspiring Change Through Artistic Expression",
-    },
-    {
-      src: "/images/press-release/press-release-4.jpg",
-      alt: "Press Release 4",
-      title: "Culture Summit 2025: Bridging Cultures Through Art and Dialogue",
-    },
-    {
-      src: "/images/press-release/press-release-5.jpg",
-      alt: "Press Release 5",
-      title: "Join Us at Culture Summit 2025: Where Art Meets Innovation",
-    },
-    {
-      src: "/images/press-release/press-release-6.jpg",
-      alt: "Press Release 6",
-      title: "Experience the Future of Culture at Summit 2025",
+      title: "Indonesia dan Prancis Perkuat Kolaborasi Budaya melalui Kerja Sama Strategis di Bidang Perfilman",
     },
   ];
   return (
@@ -52,11 +28,12 @@ const PressRelease = () => {
           <div className="md:w-3/5 w-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3 sm:gap-6 md:gap-8">
               {images.map((image, idx) => (
-                <div
+                <Link
                   key={idx}
-                  className="flex flex-col gap-2 sm:gap-4 cursor-pointer"
+                  href={`/news_updates/${image.id}`}
+                  className="flex flex-col gap-2 sm:gap-4 cursor-pointer group"
                 >
-                  <div className="relative rounded-2xl overflow-hidden h-36 sm:h-[180px] md:h-[226px] w-full md:w-[372px] hover:scale-110 transition-all">
+                  <div className="relative rounded-2xl overflow-hidden h-36 sm:h-[180px] md:h-[226px] w-full md:w-[372px] group-hover:scale-105 transition-all duration-300">
                     <Image
                       src={image.src}
                       alt={image.alt}
@@ -64,10 +41,10 @@ const PressRelease = () => {
                       className="object-cover rounded-2xl"
                     />
                   </div>
-                  <div className="text-base sm:text-xl md:text-2xl ">
+                  <div className="text-base sm:text-xl md:text-2xl group-hover:text-blue-600 transition-colors">
                     {image.title}
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

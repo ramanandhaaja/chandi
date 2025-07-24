@@ -8,28 +8,16 @@ import GalleryPhoto from "@/components/news_updates/GalleryPhoto";
 // photo gallery mock data
 const photos = [
   {
-    imageUrl: "/images/photo/photo1.jpg",
+    imageUrl: "/images/photo/photo1.jpeg",
     title: "Photo 1",
   },
   {
-    imageUrl: "/images/photo/photo3.jpg",
+    imageUrl: "/images/photo/photo2.jpeg",
     title: "Photo 3",
   },
   {
-    imageUrl: "/images/photo/photo4.jpg",
-    title: "Photo 4",
-  },
-  {
-    imageUrl: "/images/photo/photo5.jpg",
-    title: "Photo 5",
-  },
-  {
-    imageUrl: "/images/photo/photo6.jpg",
-    title: "Photo 6",
-  },
-  {
-    imageUrl: "/images/photo/photo7.jpg",
-    title: "Photo 7",
+    imageUrl: "/images/photo/photo3.jpeg",
+    title: "Photo 3",
   },
 ];
 
