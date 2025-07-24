@@ -1,6 +1,5 @@
 import HeaderSection from "@/components/HeaderSection";
 import FooterSection from "@/components/FooterSection";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 
 interface NewsArticle {
@@ -70,14 +69,10 @@ Whatsapp Channel: Kementerian Kebudayaan
   },
 ];
 
-interface NewsDetailPageProps {
-  params: {
-    id: string;
-  };
-}
 
-export default function NewsDetailPage({ params }: NewsDetailPageProps) {
-  const article = newsArticles.find(article => article.id === params.id);
+export default async function NewsDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const article = newsArticles.find(article => article.id === id);
 
   if (!article) {
     notFound();
