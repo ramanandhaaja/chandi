@@ -14,7 +14,7 @@ const ContactsOption = () => {
                 width={53}
                 height={53}
               />
-              <p className="text-center font-medium text-2xl">08293849224</p>
+              <p className="text-center font-medium text-2xl">+62 811-1711-355.</p>
             </div>
           </div>
         </div>
@@ -25,7 +25,7 @@ const ContactsOption = () => {
               <p className="text-center font-medium">Email</p>
               <Image src="/email.svg" alt="email logo" width={55} height={55} />
               <p className="text-center font-medium text-2xl">
-                hello@kemenkebud.gov
+              secretariatchandisummit2025@kemenbud.go.id
               </p>
             </div>
           </div>

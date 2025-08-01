@@ -15,6 +15,8 @@ import HeroSection from "@/components/HeroSection";
 import UnderConstructions from "@/components/UnderConstructions";
 import ResourcesSection from "@/components/ResourcesSection";
 import AbstractSection from "@/components/AbstractSection";
+import IndependentSection from "@/components/IndependentSection";
+import VideoHeadline from "@/components/VideoHeadline";
 
 export default function Home() {
   return (
@@ -29,8 +31,13 @@ export default function Home() {
      
       <HeroAlternative2 />
 
+      {/* Video Headline Section 
+      <VideoHeadline />
+        */}
    
       <AboutSection />
+
+      <IndependentSection />
 
       <GallerySection />
 

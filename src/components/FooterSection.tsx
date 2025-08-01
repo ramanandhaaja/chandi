@@ -24,6 +24,14 @@ const FooterSection: React.FC = () => {
                       height={86}
                       className="mr-4"
                     />
+                    
+                    <Image
+                      src="/images/footer/logo2.png"
+                      alt="Kementerian Kebudayaan"
+                      width={210}
+                      height={86}
+                      className="mr-4 mt-4"
+                    />
                   </Link>
                 </div>
               </div>
@@ -40,7 +48,7 @@ const FooterSection: React.FC = () => {
                   <a href="#" className=" hover:text-[#6D1A36]">
                     Summit Info
                   </a>
-                  <a href="/register" className=" hover:text-[#6D1A36]">
+                  <a href="https://registration-chandisummit2025.genstix.id/" className=" hover:text-[#6D1A36]">
                     Registration
                   </a>
                 </div>
