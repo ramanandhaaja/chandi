@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { getImageURL, getItems } from "../lib/api";
 import Image from "next/image";
 import { useLanguage } from "../lib/LanguageContext";
+import styles from "./IndependentSection.module.css";
 
 interface IndependenceSectionProps {
   header?: string;
@@ -87,7 +88,7 @@ const IndependentSection: React.FC<IndependenceSectionProps> = ({
   //const displayBackground = abstractData?.background || background;
 
   return (
-    <section className="w-full m-0 p-0">
+    <section className="w-full m-0 p-0 bg-black">
       {/* Top Red Section with Video */}
       <div className="relative w-full  flex items-center justify-center overflow-hidden">
         <video
@@ -101,18 +102,22 @@ const IndependentSection: React.FC<IndependenceSectionProps> = ({
       </div>
       {/* Bottom Section */}
       <div
-  className="relative z-10 flex flex-col lg:flex-row min-h-screen bg-cover bg-center"
-  style={{
-    backgroundImage: `url(${displayImage ? getImageURL(displayImage) : "/images/profile-section/profile-img.png"})`,
-  }}
->
+        className={`relative z-10 flex flex-col lg:flex-row min-h-screen bg-cover bg-center ${styles["mobile-bg-adjust"]}`}
+        style={{
+          backgroundImage: `url(${
+            displayImage
+              ? getImageURL(displayImage)
+              : "/images/profile-section/profile-img.png"
+          })`,
+        }}
+      >
         {/* Left side - Abstract Image */}
         <div
           className={
             "relative w-full lg:w-1/2 overflow-hidden flex flex-col justify-end items-start"
           }
           style={{
-            minHeight: "22rem" // matches h-86
+            minHeight: "34rem", // matches h-86
           }}
         >
           {/* Optionally add overlays/gradients here if needed */}

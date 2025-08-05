@@ -39,7 +39,7 @@ export default function Home() {
 
       <IndependentSection />
 
-      <GallerySection />
+      {/* <GallerySection /> */}
 
       {/* Under Construction 
       <WhoSection /> */}

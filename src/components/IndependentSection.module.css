@@ -1,0 +1,7 @@
+@media (max-width: 640px) {
+  .mobile-bg-adjust {
+    background-position: -10px top !important;
+    background-size: 150% !important;
+    background-repeat: no-repeat !important;
+  }
+}
