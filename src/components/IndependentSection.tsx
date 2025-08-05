@@ -24,7 +24,6 @@ interface IndependenceSectionTranslation {
   background?: string;
 }
 
-
 const IndependentSection: React.FC<IndependenceSectionProps> = ({
   header = "",
   title = "",
@@ -69,20 +68,23 @@ const IndependentSection: React.FC<IndependenceSectionProps> = ({
   }, []);
 
   let translation: IndependenceSectionTranslation | undefined = undefined;
-  if (independenceData?.translations && Array.isArray(independenceData.translations)) {
+  if (
+    independenceData?.translations &&
+    Array.isArray(independenceData.translations)
+  ) {
     translation = independenceData.translations.find(
       (t) => t.languages_code === language
     );
   }
 
   // Use translation if available, otherwise fallback to abstractData or props
-  const displayHeader = translation?.header || independenceData?.header || header;
+  const displayHeader =
+    translation?.header || independenceData?.header || header;
   const displayTitle = translation?.title || independenceData?.title || title;
   const displaySubtitle =
     translation?.subtitle || independenceData?.subtitle || subtitle;
   const displayImage = independenceData?.image || image;
   //const displayBackground = abstractData?.background || background;
-
 
   return (
     <section className="w-full m-0 p-0">
@@ -96,49 +98,45 @@ const IndependentSection: React.FC<IndependenceSectionProps> = ({
           muted
           playsInline
         />
-      </div> 
+      </div>
       {/* Bottom Section */}
-      <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
-              {/* Left side - Abstract Image */}
-              <div className="relative w-full lg:w-1/2 overflow-hidden flex flex-col justify-end items-start">
-                {/* Abstract Image */}
-                <div className="relative w-full h-86 sm:h-64 md:h-80 lg:h-screen bg-white flex items-center justify-center">
-                  <Image
-                    src={
-                      displayImage
-                        ? getImageURL(displayImage)
-                        : "/images/profile-section/profile-img.png"
-                    }
-                    alt="Minister of Culture"
-                    fill
-                    priority
-                    className="object-contain"
-                    style={{ zIndex: 20 }}
-                  />
-                  {/* Bottom transparent gold gradient overlay (only left image section) */}
-                </div>
-              </div>
-      
-              {/* Right side - Content */}
-              <div className="w-full lg:w-1/2 p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col justify-center z-50">
-                {/* Subtitle */}
+      <div
+  className="relative z-10 flex flex-col lg:flex-row min-h-screen bg-cover bg-center"
+  style={{
+    backgroundImage: `url(${displayImage ? getImageURL(displayImage) : "/images/profile-section/profile-img.png"})`,
+  }}
+>
+        {/* Left side - Abstract Image */}
+        <div
+          className={
+            "relative w-full lg:w-1/2 overflow-hidden flex flex-col justify-end items-start"
+          }
+          style={{
+            minHeight: "22rem" // matches h-86
+          }}
+        >
+          {/* Optionally add overlays/gradients here if needed */}
+          {/* You can add overlays/gradients here if needed, or use a pseudo-element in CSS */}
+        </div>
 
-                <p className="text-xl md:text-2xl font-bold mb-2 mb-8 text-left">
-                  {displayHeader}
-                </p>
+        {/* Right side - Content */}
+        <div className="w-full lg:w-1/2 p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col justify-center z-50">
+          {/* Subtitle */}
 
-                <p className="text-4xl md:text-5xl font-bold mb-2 mb-8 text-left">
-                  {displayTitle}
-                </p>
-      
-                {/* Title */}
-                <h2 className="text-m font-medium mb-8 text-left">
-                  <span dangerouslySetInnerHTML={{ __html: displaySubtitle }} />
-                </h2>
-      
-              </div>
-            </div>
-      
+          <p className="text-xl md:text-2xl font-bold mb-2 mb-8 text-left text-white">
+            {displayHeader}
+          </p>
+
+          <p className="text-4xl md:text-5xl font-bold mb-2 mb-8 text-left text-white">
+            {displayTitle}
+          </p>
+
+          {/* Title */}
+          <h2 className="text-m font-medium mb-8 text-left text-white">
+            <span dangerouslySetInnerHTML={{ __html: displaySubtitle }} />
+          </h2>
+        </div>
+      </div>
     </section>
   );
 };
