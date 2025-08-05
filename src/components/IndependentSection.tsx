@@ -117,7 +117,7 @@ const IndependentSection: React.FC<IndependenceSectionProps> = ({
             "relative w-full lg:w-1/2 overflow-hidden flex flex-col justify-end items-start"
           }
           style={{
-            minHeight: "34rem", // matches h-86
+            minHeight: "38rem", // matches h-86
           }}
         >
           {/* Optionally add overlays/gradients here if needed */}
