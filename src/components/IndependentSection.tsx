@@ -5,7 +5,8 @@ import { getImageURL, getItems } from "../lib/api";
 import Image from "next/image";
 import { useLanguage } from "../lib/LanguageContext";
 
-interface AbstractSectionProps {
+interface IndependenceSectionProps {
+  header?: string;
   title?: string;
   subtitle?: string;
   caption?: string;
@@ -13,8 +14,9 @@ interface AbstractSectionProps {
   background?: string;
 }
 
-interface AbstractSectionTranslation {
+interface IndependenceSectionTranslation {
   languages_code: string;
+  header?: string;
   title?: string;
   subtitle?: string;
   //caption?: string;
@@ -23,35 +25,37 @@ interface AbstractSectionTranslation {
 }
 
 
-const IndependentSection: React.FC<AbstractSectionProps> = ({
+const IndependentSection: React.FC<IndependenceSectionProps> = ({
+  header = "",
   title = "",
   subtitle = "",
   //caption = "",
   image = "",
   //background = "",
 }) => {
-  const [abstractData, setAbstractData] = useState<{
+  const [independenceData, setIndependenceData] = useState<{
+    header?: string[];
     title?: string[];
     subtitle?: string;
     caption?: string;
     image?: string;
     background?: string;
-    translations?: AbstractSectionTranslation[];
+    translations?: IndependenceSectionTranslation[];
   } | null>(null);
 
   // Use global language context
   const { language } = useLanguage();
 
   useEffect(() => {
-    async function fetchAbstractData() {
+    async function fetchIndependenceData() {
       try {
-        const items = await getItems("abstract_langdingpage", {
+        const items = await getItems("independence_landingpage", {
           fields: "*,images.*,translations.*",
         });
         console.log(items);
         if (items && items.length > 0) {
           // Assuming the collection fields match the prop names
-          setAbstractData({
+          setIndependenceData({
             image: items[0].image,
             background: items[0].background,
             translations: items[0].translations,
@@ -61,21 +65,22 @@ const IndependentSection: React.FC<AbstractSectionProps> = ({
         console.error("Failed to fetch hero data:", error);
       }
     }
-    fetchAbstractData();
+    fetchIndependenceData();
   }, []);
 
-  let translation: AbstractSectionTranslation | undefined = undefined;
-  if (abstractData?.translations && Array.isArray(abstractData.translations)) {
-    translation = abstractData.translations.find(
+  let translation: IndependenceSectionTranslation | undefined = undefined;
+  if (independenceData?.translations && Array.isArray(independenceData.translations)) {
+    translation = independenceData.translations.find(
       (t) => t.languages_code === language
     );
   }
 
   // Use translation if available, otherwise fallback to abstractData or props
-  const displayTitle = translation?.title || abstractData?.title || title;
+  const displayHeader = translation?.header || independenceData?.header || header;
+  const displayTitle = translation?.title || independenceData?.title || title;
   const displaySubtitle =
-    translation?.subtitle || abstractData?.subtitle || subtitle;
-  const displayImage = abstractData?.image || image;
+    translation?.subtitle || independenceData?.subtitle || subtitle;
+  const displayImage = independenceData?.image || image;
   //const displayBackground = abstractData?.background || background;
 
 
@@ -91,8 +96,48 @@ const IndependentSection: React.FC<AbstractSectionProps> = ({
           muted
           playsInline
         />
-      </div>
+      </div> 
       {/* Bottom Section */}
+      <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
+              {/* Left side - Abstract Image */}
+              <div className="relative w-full lg:w-1/2 overflow-hidden flex flex-col justify-end items-start">
+                {/* Abstract Image */}
+                <div className="relative w-full h-86 sm:h-64 md:h-80 lg:h-screen bg-white flex items-center justify-center">
+                  <Image
+                    src={
+                      displayImage
+                        ? getImageURL(displayImage)
+                        : "/images/profile-section/profile-img.png"
+                    }
+                    alt="Minister of Culture"
+                    fill
+                    priority
+                    className="object-contain"
+                    style={{ zIndex: 20 }}
+                  />
+                  {/* Bottom transparent gold gradient overlay (only left image section) */}
+                </div>
+              </div>
+      
+              {/* Right side - Content */}
+              <div className="w-full lg:w-1/2 p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col justify-center z-50">
+                {/* Subtitle */}
+
+                <p className="text-xl md:text-2xl font-bold mb-2 mb-8 text-left">
+                  {displayHeader}
+                </p>
+
+                <p className="text-4xl md:text-5xl font-bold mb-2 mb-8 text-left">
+                  {displayTitle}
+                </p>
+      
+                {/* Title */}
+                <h2 className="text-m font-medium mb-8 text-left">
+                  <span dangerouslySetInnerHTML={{ __html: displaySubtitle }} />
+                </h2>
+      
+              </div>
+            </div>
       
     </section>
   );
