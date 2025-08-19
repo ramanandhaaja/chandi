@@ -81,10 +81,10 @@ const PressRelease: React.FC = () => {
                     />
                   </div>
                   
-                  <div className="text-base mt-4 sm:text-xl md:text-2xl group-hover:text-blue-600 transition-colors">
+                  <div className="text-base mt-4 sm:text-xl md:text-2xl group-hover:text-black transition-colors">
                     {image.title}
                   </div>
-                  <div className="text-base sm:text-m md:text-m group-hover:text-blue-600 transition-colors">
+                  <div className="text-base sm:text-m md:text-m group-hover:text-black transition-colors">
                     {(image.date || "").split("T")[0]}
                   </div>
                 </Link>
