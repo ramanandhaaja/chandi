@@ -9,6 +9,7 @@ interface NewsItem {
   title?: string;
   header_image?: string;
   images?: { id: number; directus_files_id: string }[];
+  date?: string;
 }
 
 interface DisplayItem {
@@ -16,6 +17,7 @@ interface DisplayItem {
   directus_files_id?: string;
   alt: string;
   title: string;
+  date: string;
 }
 
 const PressRelease: React.FC = () => {
@@ -33,7 +35,8 @@ const PressRelease: React.FC = () => {
           directus_files_id: n.images && n.images.length > 0 ? n.images[0].directus_files_id : undefined,
           alt: n.title || "",
           title: n.title || "",
-        }));
+          date: n.date || "",
+          }));
         setItems(mapped);
       } catch (e) {
         console.error("Failed to fetch news_page items:", e);
@@ -63,7 +66,7 @@ const PressRelease: React.FC = () => {
                 <Link
                   key={image.id}
                   href={`/news_updates/${image.id}`}
-                  className="flex flex-col gap-2 sm:gap-4 cursor-pointer group"
+                  className="flex flex-col gap-2 sm:gap-0 cursor-pointer group"
                 >
                   <div className="relative rounded-2xl overflow-hidden h-36 sm:h-[180px] md:h-[226px] w-full md:w-[372px] group-hover:scale-105 transition-all duration-300">
                     <Image
@@ -77,8 +80,12 @@ const PressRelease: React.FC = () => {
                       className="object-cover rounded-2xl"
                     />
                   </div>
-                  <div className="text-base sm:text-xl md:text-2xl group-hover:text-blue-600 transition-colors">
+                  
+                  <div className="text-base mt-4 sm:text-xl md:text-2xl group-hover:text-blue-600 transition-colors">
                     {image.title}
+                  </div>
+                  <div className="text-base sm:text-m md:text-m group-hover:text-blue-600 transition-colors">
+                    {(image.date || "").split("T")[0]}
                   </div>
                 </Link>
               ))}
