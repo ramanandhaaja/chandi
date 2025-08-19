@@ -131,8 +131,9 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
         />
       )}
 
+      {/*
       {/* Language Switch Button */}
-      <div className="absolute bottom-6 left-6 z-20">
+      {/* <div className="absolute bottom-6 left-6 z-20">
         <div className="flex bg-white rounded-full px-4 py-1 shadow-lg border border-[#E5E5E5]">
           <button
             className={`text-xs md:text-sm font-semibold mr-2 transition-all duration-200 ${
@@ -152,6 +153,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
           </button>
         </div>
       </div>
+      */}
 
       {/* Content Container */}
       <div className="relative flex flex-col h-full z-40 pt-20 md:pt-10 lg:pt-0 lg:justify-center">

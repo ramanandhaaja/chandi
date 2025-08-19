@@ -4,11 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "../styles/header-fixes.css";
+import { useLanguage } from "../lib/LanguageContext";
 
 const HeaderSection: React.FC = () => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [daysLeft, setDaysLeft] = useState(24); // Initial value from the image
+  const { language, setLanguage } = useLanguage();
 
   // Calculate days left until the summit
   useEffect(() => {
@@ -22,9 +24,10 @@ const HeaderSection: React.FC = () => {
   // Handle scroll events to make the header floating/sticky
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 py-2 sm:py-4 bg-transparent`}
-    >
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 py-2 sm:py-4 bg-transparent`}
+      >
       <div className="max-w-8xl mt-2 mx-8 sm:mx-6 px-4 sm:px-4 md:px-6 lg:px-8 bg-[#F8F7F2] rounded-full py-4 sm:py-4 header-container">
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
@@ -228,7 +231,30 @@ const HeaderSection: React.FC = () => {
           </div>
         </div>
       )}
-    </header>
+      </header>
+
+      {/* Language Switch Button - fixed floating bottom-left */}
+      <div className="fixed bottom-6 left-6 z-50">
+        <div className="flex bg-white rounded-full px-4 py-1 shadow-lg border border-[#E5E5E5]">
+          <button
+            className={`text-xs md:text-sm font-semibold mr-2 transition-all duration-200 ${
+              language === "en-US" ? "underline " : "text-[#766C6C]"
+            }`}
+            onClick={() => setLanguage("en-US")}
+          >
+            EN
+          </button>
+          <button
+            className={`text-xs md:text-sm font-semibold transition-all duration-200 ${
+              language === "id-ID" ? "underline " : "text-[#766C6C]"
+            }`}
+            onClick={() => setLanguage("id-ID")}
+          >
+            ID
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 

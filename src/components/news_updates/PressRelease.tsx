@@ -1,15 +1,47 @@
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { getItems, getImageURL } from "../../lib/api";
 
-const PressRelease = () => {
-  const images = [
-    {
-      id: "cultural-summit-2023",
-      src: "/images/press-release/press-release-1.jpg",
-      alt: "Press Release 1",
-      title: "Indonesia dan Prancis Perkuat Kolaborasi Budaya melalui Kerja Sama Strategis di Bidang Perfilman",
-    },
-  ];
+interface NewsItem {
+  id: string | number;
+  title?: string;
+  header_image?: string;
+  images?: { id: number; directus_files_id: string }[];
+}
+
+interface DisplayItem {
+  id: string | number;
+  directus_files_id?: string;
+  alt: string;
+  title: string;
+}
+
+const PressRelease: React.FC = () => {
+  const [items, setItems] = useState<DisplayItem[]>([]);
+
+  useEffect(() => {
+    async function fetchNews() {
+      try {
+        const data: NewsItem[] = await getItems("news_page", {
+          fields: "*,images.*",
+        });
+
+        const mapped: DisplayItem[] = (data || []).map((n) => ({
+          id: n.id,
+          directus_files_id: n.images && n.images.length > 0 ? n.images[0].directus_files_id : undefined,
+          alt: n.title || "",
+          title: n.title || "",
+        }));
+        setItems(mapped);
+      } catch (e) {
+        console.error("Failed to fetch news_page items:", e);
+      }
+    }
+    fetchNews();
+  }, []);
+
   return (
     <section className="py-10 px-2 sm:py-20 sm:px-6 md:px-12 lg:px-24 bg-[#FCFAF5]">
       <div className="max-w-7xl mx-auto">
@@ -27,15 +59,19 @@ const PressRelease = () => {
           {/* Right Column - Custom Host Images Grid */}
           <div className="md:w-3/5 w-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3 sm:gap-6 md:gap-8">
-              {images.map((image, idx) => (
+              {items.map((image) => (
                 <Link
-                  key={idx}
+                  key={image.id}
                   href={`/news_updates/${image.id}`}
                   className="flex flex-col gap-2 sm:gap-4 cursor-pointer group"
                 >
                   <div className="relative rounded-2xl overflow-hidden h-36 sm:h-[180px] md:h-[226px] w-full md:w-[372px] group-hover:scale-105 transition-all duration-300">
                     <Image
-                      src={image.src}
+                      src={
+                        image.directus_files_id
+                          ? getImageURL(image.directus_files_id)
+                          : "/images/placeholder.svg"
+                      }
                       alt={image.alt}
                       fill
                       className="object-cover rounded-2xl"

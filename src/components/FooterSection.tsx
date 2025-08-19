@@ -24,7 +24,7 @@ const FooterSection: React.FC = () => {
                       height={86}
                       className="mr-4"
                     />
-                    
+
                     <Image
                       src="/images/footer/logo2.png"
                       alt="Kementerian Kebudayaan"
@@ -48,7 +48,10 @@ const FooterSection: React.FC = () => {
                   <a href="#" className=" hover:text-[#6D1A36]">
                     Summit Info
                   </a>
-                  <a href="https://registration-chandisummit2025.genstix.id/" className=" hover:text-[#6D1A36]">
+                  <a
+                    href="https://registration-chandisummit2025.genstix.id/"
+                    className=" hover:text-[#6D1A36]"
+                  >
                     Registration
                   </a>
                 </div>
@@ -68,10 +71,19 @@ const FooterSection: React.FC = () => {
                 </div>
                 <div className="flex flex-col gap-3">
                   <h3 className="text-xs font-semibold text-gray-500 mb-3 tracking-widest uppercase">
-                    Contact
+                    Contact & Help Desk
                   </h3>
                   <Link href="/contact_us" className=" hover:text-[#6D1A36]">
-                    Contact & Help Desk
+                    Contact
+                  </Link>
+                  <Link href="/maps" className=" hover:text-[#6D1A36]">
+                    Maps & Legend
+                  </Link>
+                  <Link
+                    href="/meeting_request"
+                    className=" hover:text-[#6D1A36]"
+                  >
+                    Meeting Request
                   </Link>
                 </div>
               </div>
@@ -80,27 +92,14 @@ const FooterSection: React.FC = () => {
             {/* Bottom Row: Social Media and Address */}
             <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mt-4 md:mt-8 w-full">
               {/* Social media icons */}
-              <div className="flex flex-row gap-4 items-center w-full md:w-auto mb-6 md:mb-0">
+              <div className="flex flex-row gap-2 items-center w-full md:w-auto mb-6 md:mb-0">
                 <a
-                  href="#"
+                  href="https://www.whatsapp.com/channel/0029Vav78bk7Noa0QUS0O12g?fbclid=PAZXh0bgNhZW0CMTEAAadz0BQCp_iu86wXVjttAiptgaPb2pmTLXuBgiumi-JDMgea8OWBWrh_MeyVmQ_aem_g4RwmyTrpZGSmFtQYqUKgg"
                   aria-label="Instagram"
                   className="w-10 h-10 rounded-full bg-[#D2AF6D] flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
                   <Image
-                    src="/images/footer/social1.png"
-                    alt="Instagram"
-                    width={40}
-                    height={40}
-                    style={{ objectFit: "contain" }}
-                  />
-                </a>
-                <a
-                  href="#"
-                  aria-label="X/Twitter"
-                  className="w-10 h-10 rounded-full bg-[#D2AF6D] flex items-center justify-center hover:opacity-80 transition-opacity"
-                >
-                  <Image
-                    src="/images/footer/social2.png"
+                    src="/images/footer/whatsapp.png"
                     alt="Whatsapp"
                     width={40}
                     height={40}
@@ -108,18 +107,71 @@ const FooterSection: React.FC = () => {
                   />
                 </a>
                 <a
-                  href="#"
-                  aria-label="WhatsApp"
+                  href="https://www.instagram.com/kemenkebud/"
+                  aria-label="Instagram"
                   className="w-10 h-10 rounded-full bg-[#D2AF6D] flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
                   <Image
-                    src="/images/footer/social3.png"
-                    alt="Facebook"
+                    src="/images/footer/instagram.png"
+                    alt="Instagram"
                     width={40}
                     height={40}
                     style={{ objectFit: "contain" }}
                   />
                 </a>
+                <a
+                  href="https://www.tiktok.com/@kemenbud"
+                  aria-label="Tiktok"
+                  className="w-10 h-10 rounded-full bg-[#D2AF6D] flex items-center justify-center hover:opacity-80 transition-opacity"
+                >
+                  <Image
+                    src="/images/footer/tiktok.png"
+                    alt="Tiktok"
+                    width={40}
+                    height={40}
+                    style={{ objectFit: "contain" }}
+                  />
+                </a>
+                <a
+                  href="https://www.facebook.com/budayasaya/?locale=id_ID"
+                  aria-label="Facebok"
+                  className="w-10 h-10 rounded-full bg-[#D2AF6D] flex items-center justify-center hover:opacity-80 transition-opacity"
+                >
+                  <Image
+                    src="/images/footer/facebook.png"
+                    alt="facebook"
+                    width={40}
+                    height={40}
+                    style={{ objectFit: "contain" }}
+                  />
+                </a>
+                <a
+                  href="https://www.youtube.com/@kemenbud"
+                  aria-label="youtube"
+                  className="w-10 h-10 rounded-full bg-[#D2AF6D] flex items-center justify-center hover:opacity-80 transition-opacity"
+                >
+                  <Image
+                    src="/images/footer/youtube.png"
+                    alt="Youtube"
+                    width={40}
+                    height={40}
+                    style={{ objectFit: "contain" }}
+                  />
+                </a>
+                <a
+                  href="https://x.com/kemenbud"
+                  aria-label="X/Twitter"
+                  className="w-10 h-10 rounded-full bg-[#D2AF6D] flex items-center justify-center hover:opacity-80 transition-opacity"
+                >
+                  <Image
+                    src="/images/footer/x.png"
+                    alt="X/Twitter"
+                    width={40}
+                    height={40}
+                    style={{ objectFit: "contain" }}
+                  />
+                </a>
+                
               </div>
               <p className=" leading-relaxed m-0 md:ml-8">
                 Gedung Kementerian Kebudayaan (Gedung E)

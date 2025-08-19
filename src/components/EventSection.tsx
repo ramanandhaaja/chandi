@@ -39,7 +39,7 @@ const EventSection: React.FC<EventSectionProps> = ({
   const agendaDays: AgendaDay[] = [
     {
       tab: "Welcoming Dinner Ministerial",
-      session: "2 September 2025 : Bali Beach Lawn Area",
+      session: "2 September 2025 : Terrace Garden Bali Beach Lawn Area",
       items: [
         {
           time: "17.00 - 18.00",
@@ -49,8 +49,8 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "18.00 - 18.10",
-          title: "Balinese Parade",
-          description: "Traditional Balinese parade to commence the evening.",
+          title: "Balinese Blessing Ceremony",
+          description: "Balinese Blessing Ceremony with Priest blessing the event.",
         },
         {
           time: "18.10 - 18.15",
@@ -80,7 +80,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "19.25 - 19.55",
           title: "Kecak performance",
           description:
-            "Experience the iconic Balinese Kecak dance performance.",
+            "Experience the iconic Fire Kecak dance performance.",
         },
         {
           time: "19.55 - 20.00",
@@ -91,16 +91,21 @@ const EventSection: React.FC<EventSectionProps> = ({
     },
     {
       tab: "Day 1 : Opening & Ministerial Summit",
-      session: "3 September 2025 : Bali Beach Convention by The Meru",
+      session: "3 September 2025 : Bali Beach Convention Center - The Meru Sanur",
       items: [
         {
-          time: "08.00 - 08.55",
-          title: "Registration",
-          description: "Registration for delegates and participants.",
+          time: "08.00 - 09.00",
+          title: "Registration, Coffee Break",
+          description: "Registration and coffee break for delegates and participants.",
+        },
+        {
+          time: "08.55 - 09.00",
+          title: "President of the Republic of Indonesia Entering Ballroom",
+          description: "Arrival of the President and entrance into the ballroom.",
         },
         {
           time: "09.00 - 09.05",
-          title: "Balinese Welcome Dance",
+          title: "Welcome Balinese Dance",
           description: "Traditional Balinese dance to open the summit.",
         },
         {
@@ -122,6 +127,19 @@ const EventSection: React.FC<EventSectionProps> = ({
           ],
         },
         {
+          time: "09.20 - 09.25",
+          title: "Remark",
+          description: "Opening remark.",
+          speakers: [
+            {
+              name: "Prof. Dr. Pratikno",
+              role: "Coordinating Minister for Human Development and Cultural Affairs of the Republic of Indonesia",
+              image: "/images/event-section/fadli-zon.png",
+            },
+          ],
+        },
+
+        {
           time: "09.20 - 09.35",
           title: "Welcome Speech",
           description:
@@ -135,12 +153,12 @@ const EventSection: React.FC<EventSectionProps> = ({
           ],
         },
         {
-          time: "09.35 - 09.50",
+          time: "09.40 - 09.55",
           title: "Art Performance: Sound of Nusantara",
           description: "Cultural art performance.",
         },
         {
-          time: "09.50 - 10.35",
+          time: "09.55 - 10.40",
           title: "Keynote Speech",
           description:
             "Prabowo Subianto | President of the Republic of Indonesia.",
@@ -153,46 +171,50 @@ const EventSection: React.FC<EventSectionProps> = ({
           ],
         },
         {
-          time: "10.35 - 10.45",
+          time: "10.40 - 10.50",
           title: "Opening Ceremony of CHANDI SUMMIT 2025",
           description: "Opening Ceremony of CHANDI SUMMIT 2025",
         },
         {
-          time: "10.45 - 11.00",
+          time: "10.50 - 10.55",
           title: "Photo Session",
           description:
             "Photo session of all ministers at the Bali Beach Convention Pre-Function Area.",
         },
         {
-          time: "11.00 - 11.05",
+          time: "10.55 - 11.10",
           title: "President & Ministers Proceed",
           description:
             "The President and all Ministers proceed to the opening function.",
         },
         {
-          time: "11.05 - 11.10",
-          title: "Balinese Dance",
-          description: "Balinese dance performance.",
+          time: "10.55 - 11.10",
+          title: "Baris Balinese Dance",
+          description: "Traditional Baris Balinese dance performance.",
         },
         {
-          time: "11.10 - 11.40",
-          title:
-            "Keynote Address: Culture as the Key to Future Global Sustainability",
-          description:
-            "Jacques Attali | Economist, Philosopher and Futurist (*TBC).",
+          time: "11.10 - 11.35",
+          title: "Keynote Address: Culture as the Key to Future Global Sustainability",
+          description: "Aamir Khan | Economist, Philosopher and Futurist (*TBC).",
           speakers: [
             {
-              name: "Jacques Attali",
+              name: "Aamir Khan",
               role: "Economist, Philosopher and Futurist (*TBC)",
-              image: "/images/event-section/jacques-attali.png",
+              image: "/images/event-section/fadli-zon.png",
             },
           ],
         },
         {
-          time: "11.40 - 12.10",
-          title:
-            "Keynote Address: The Role of Youth in Fostering Peace Through Culture",
-          description: "Keynote address on youth and peace through culture.",
+          time: "11.35 - 12.05",
+          title: "Keynote Address: The Role of Youth in Fostering Peace Through Culture",
+          description: "Cinta Laura Kiehl | Composer, Producer, Singer and Actress (*TBC).",
+          speakers: [
+            {
+              name: "Cinta Laura Kiehl",
+              role: "Composer, Producer, Singer and Actress (*TBC)",
+              image: "/images/event-section/fadli-zon.png",
+            },
+          ],
         },
         {
           time: "12.10 - 12.15",
@@ -205,29 +227,49 @@ const EventSection: React.FC<EventSectionProps> = ({
           description: "Lunch break for all participants.",
         },
         {
-          time: "13.00 - 17.00",
+          time: "13.00 - 17.00 \n\n• Coffee Break: 15.30–16.00",
           title: "Ministerial Summit",
-          description: `• Opening Statement by the Minister of Culture of the Republic of Indonesia\n• Country Statement\n• Bali Cultural Declaration\n• Closing Statement by the Minister of Culture of the Republic of Indonesia\n• Coffee Break: 15.30–16.00`,
+          description: `• Opening Statement by the Minister of Culture of the Republic of Indonesia\n• Country Statement by All Ministers\n• Conclusion and Closing\n`,
         },
         {
-          time: "14.00 - 16.00",
-          title: "Panel Discussions",
-          description: `• Panel Discussion 1: Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects\n• Panel Discussion 2: Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post-2030 World\n• Panel Discussion 3: Financing the Future of Culture: Unlocking Investment for Preservation and Innovation\n• Panel Discussion 4: Responding the Climate Risks to Heritage and Fostering Culture-Based Climate Action\n• Coffee Break: 15.30–16.00`,
+          time: "14.00 - 17.00",
+          title: "Panel Discussion 1",
+          description: `• Topic: Reclaiming History, Restoring Justice — International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects\n• Co-Host: International Council of Museums (ICOM) Indonesia\n• Panelists:\n  1) Prof. I Ketut Ardhana, PhD (Professor of Asian History, Udayana University)\n  2) I Gusti Agung Wesaka Puja (Ambassador of the Republic of Indonesia to the Kingdom of Netherlands, 2016–2020)\n• Moderator: Budi Trinovari, Chair of International Council of Museums Indonesia\n• Note: Coffee and snacks will be served during the discussion`,
         },
         {
-          time: "17.00 - 19.00",
-          title: "Break for Dinner",
-          description: "Break for participants to prepare for the Gala Dinner.",
+          time: "14.00 - 17.00",
+          title: "Panel Discussion 2",
+          description: `• Topic: Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post-2030 World\n• Co-Host: International Council on Monuments and Sites (ICOMOS)\n• Panelists:\n  1) Prof.Dr. I Wayan Adnyana, S.Sn., M.Sn. (Rector of the Indonesian Institute of the Arts Bali)\n  2) Dr. Rohit Jigyasu (Programme Manager, Sustainable Urban and Built Heritage Conservation, Disaster and Climate Risk Management & Post Crisis Recovery, ICCROM)\n• Moderator: Dra. Nazrina Zuryani, M.A., Ph.D — Head of Bali Province Branch of Indonesia Sociology Association`,
         },
         {
-          time: "19.00 - 20.00",
-          title: "Gala Dinner",
-          description: "Gala Dinner for all participants.",
+          time: "14.00 - 17.00",
+          title: "Panel Discussion 3",
+          description: `• Topic: Financing the Future of Culture — Unlocking Investment for Preservation and Innovation\n• Co-Host: Indonesian Heritage Trust (BPPI)\n• Panelists:\n  1) Dr. Donovan Rypkema (President of Heritage Strategies International)\n  2) Hasti Tarekat Dipowijoyo (Founder of Heritage Hands-on, Co‑Chair of Advisory Board of the Asian Network for Industrial Heritage)\n• Moderator: Dr. Catrini Pratihari Kubontubuh, M.Arch. — Chairperson of the Indonesian Heritage Trust`,
+        },
+        {
+          time: "14.00 - 17.00",
+          title: "Panel Discussion 4",
+          description: `• Topic: Responding to Climate Risks to Heritage and Fostering Culture‑Based Climate Action\n• Co-Host: Indonesian National Research and Innovation Agency (BRIN)\n• Panelists:\n  1) Professor R. Michael Feener — Professor of Cross‑Regional Studies at the Centre for Southeast Asian Studies, Kyoto University\n  2) TBC\n• Moderator: TBC`,
+        },
+        {
+          time: "17.30 - 18.00",
+          title: "Break for VIP Dinner Preparation",
+          description: "Break for VIP Dinner preparation.",
+        },
+        {
+          time: "18.00 - 19.30",
+          title: "VIP Dinner",
+          description: "VIP Dinner.",
+        },
+        {
+          time: "18.00 - 19.30",
+          title: "The Invitees enter the Bali Beach Convention Ballroom 1 & 2",
+          description: "The Invitees enter the Bali Beach Convention Ballroom 1 & 2.",
         },
         {
           time: "20.00 - 22.00",
-          title: "Music Performance",
-          description: "Music performance.",
+          title: "CHANDI Music Performance",
+          description: `Andi Rianto Band with Judika, Lesti Kejora, Niki, Joey Alexander, Michael Anthony Kwok, Ahmad Dhani, Melly Goeslaw, Once Mekel (TBC)`,
           /*
           speakers: [
             {
@@ -282,12 +324,12 @@ const EventSection: React.FC<EventSectionProps> = ({
     },
     {
       tab: "Musical Performance",
-      session: "3 September 2025 | Bali Beach Convention by The Meru",
+      session: "3 September 2025 | Bali Beach Convention Center - The Meru Sanur",
       items: [
         {
           time: "18.30 - 20.00",
           title: "Registration by Kiosk",
-          description: "Registration by Kiosk (badge meeting pass mandatory)",
+          description: "•Registration by Kiosk (badge meeting pass mandatory)\n•Dinner for Minister and VIP at Roso Restaurant\n•Dinner for Delegates at Foyer BBC 1-2",
         },
         {
           time: "19.30 - 20.00",
@@ -314,7 +356,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "20.15 - 21.55",
           title: "Music Performance",
-          description: "Music Performance.",
+          description: `Andi Rianto Band with Judika, Lesti Kejora, Niki, Joey Alexander, Michael Anthony Kwok, Ahmad Dhani, Melly Goeslaw, Once Mekel (TBC)`,
           /*
           speakers: [
             {
@@ -373,7 +415,7 @@ const EventSection: React.FC<EventSectionProps> = ({
     },
     {
       tab: "Day 2 : CHANDI PLENARY",
-      session: "4 September 2025 | Bali Beach Convention by The Meru",
+      session: "4 September 2025 | Bali Beach Convention Center - The Meru Sanur",
       items: [
         {
           time: "08.00 - 09.00",
@@ -389,7 +431,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "09.00 - 10.45",
           title:
             "PLENARY 1: Culture for the Future: Heritage, Identity, and Innovation",
-          description: `Keynote Speech: Hashim S. Djojohadikusumo | Chairman of the Board of Trustees of Indonesian Heritage Agency (*TBC)\n(15 minutes)\nQ&A Session`,
+          description: `• Keynote Speech: Hashim S. Djojohadikusumo | Chairman of the Board of Trustees of Indonesian Heritage Agency\n• (15 minutes)\n• Panelists:\n  - Gaetan Bruel (French)\n  - Hetifah Sjaifudian (Indonesia)\n• Q&A Session`,
           speakers: [
             {
               name: "Hashim S. Djojohadikusumo",
@@ -402,7 +444,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "10.45 - 12.30",
           title:
             "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
-          description: `Keynote Speech: Sheikha Al Mayassa bint Hamad bin Khalifa Al Thani | Chairperson of Qatar Museums, Doha Film Institute, Reach Out to Asia and Qatar Leadership Centre (*TBC)\n(15 minutes)\nQ&A Session`,
+          description: `• Keynote Speech: Sheikha Al Mayassa bint Hamad bin Khalifa Al Thani | Chairperson of Qatar Museums, Doha Film Institute, Reach Out to Asia and Qatar Leadership Centre (*TBC)\n• (15 minutes)\n• Panelists:\n  - Prof. Xu Liping (China)\n  - Kurosawa Shinya (Japan)\n  - Konrad Ng (USA)\n• Q&A Session`,
           speakers: [
             {
               name: "Sheikha Al Mayassa bint Hamad bin Khalifa Al Thani",
@@ -419,27 +461,27 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "13.30 - 15.00",
           title: "PLENARY 3: Youth Panel",
-          description: `Keynote Speech: Student from Green School Bali\n“Culture, Sustainability and the Future”\n(15 minutes)\nYouth representatives\nQ&A Session`,
+          description: `• Keynote Speech: Student from Green School Bali\n• “Culture, Sustainability and the Future”\n• (15 minutes)\n• Panelists:\n  - Angga Dwimas Sasongko (Indonesia)\n  - Chelsea Islan (Indonesia)\n  - Rahayu Saraswati Djojohadikusumo (Indonesia)\n• Youth representatives\n• Q&A Session`,
         },
         {
           time: "15.00 - 15.30",
           title: "Conclusion and Closing",
-          description: "Conclusion and Closing",
+          description: "",
         },
         {
           time: "15.30 - 16.00",
-          title: "Coffee Break, Transfer Parallel Session",
-          description: "Coffee Break, Transfer Parallel Session",
-        },
+          title: "",
+          description: `• Bali Cultural Initiative Declaration\n• Conclusion and Closing Ceremony by Minister of Culture of the Republic of Indonesia, Mr. Fadli Zon (Attended by all the Ministers and Delegates)`,
+         },
         {
-          time: "16.00 - 17.30",
+          time: "16.30 - 18.00",
           title: "Workshops on Cultural Heritage (parallel session)",
-          description: `• Workshop Batik Making\n• Workshop Traditional Dance\n• Workshop Wood Preservation\n• Workshop Keris Making (Javanese Traditional Dagger)\n• Workshop Making Indonesian Traditional Mask`,
+          description: `• Workshop Batik Making - Batik Solo Laweyan\n• Workshop Traditional Balinese Dance by ISI Bali\n• Workshop Angklung\n• Workshop Keris Making (Javanese Traditional Dagger)\n• Workshop Making Indonesian Balinese Traditional Mask by ISI Bali`,
         },
         {
           time: "17.00 - 19.00",
-          title: "Break",
-          description: "Break",
+          title: "Break for Networking Preparation",
+          description: "Break for Networking Preparation",
         },
         {
           time: "19.00",
@@ -450,7 +492,7 @@ const EventSection: React.FC<EventSectionProps> = ({
     },
     {
       tab: "Day 3 : COLLABORATIVE PROJECTS & STUDY VISITS",
-      session: "5 September 2025 | Bali Beach Convention by The Meru",
+      session: "5 September 2025 | Bali Beach Convention Center - The Meru Sanur",
       items: [
         {
           time: "09.00 - 11.30",
@@ -476,8 +518,9 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "14.00 - 17.00",
           title:
             "Study Visit & Future Collaboration Projects (Afternoon Session)",
-          description: `From ISI Bali, participants may choose a study visit to either Green School Bali or Penglipuran Village\nFrom Udayana University, participants may choose a study visit to either Green School Bali or Penglipuran Village`,
+          description: `• From ISI Bali, participants may choose a study visit to either Green School Bali or Penglipuran Village \n• From Udayana University, participants may choose a study visit to either Green School Bali or Penglipuran Village`,
         },
+        
         {
           time: "17.00",
           title: "Back to the Bali Beach Convention Hotel by The Meru, Sanur",
