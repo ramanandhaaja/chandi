@@ -8,21 +8,7 @@ import GalleryMaps from "@/components/maps/GalleryMaps";
 import HotelCard from "@/components/maps/HotelCard";
 import GoogleMultiMarkerMap from "@/components/maps/GoogleMultiMarkerMap";
 
-// photo gallery mock data
-const photos = [
-  {
-    imageUrl: "/images/photo/photo1.jpeg",
-    title: "Photo 1",
-  },
-  {
-    imageUrl: "/images/photo/photo2.jpeg",
-    title: "Photo 3",
-  },
-  {
-    imageUrl: "/images/photo/photo3.jpeg",
-    title: "Photo 3",
-  },
-];
+// Removed unused photos mock data; GalleryMaps uses hotel lobby images below
 
 const hotels = [
   {
@@ -34,6 +20,7 @@ const hotels = [
       "https://www.hyatt.com/en-US/hotel/indonesia/hyatt-regency-bali/dpsbl?corp_id=G-RRKC",
     promoCode: "CHANDI2025",
     logoSrc: "/images/hotel/hyatt/logo.png",
+    lobby: "/images/hotel/hyatt/lobby.jpg",
   },
   {
     index: 2,
@@ -43,6 +30,7 @@ const hotels = [
     reservationUrl: "https://linktr.ee/segaravillagehotel?fbclid=PAQ0xDSwLUDXhleHRuA2FlbQIxMQABp3_8PjtNJnjXQiiUN_Pr3xT4cVWp_FP00oZmk1xYSYosCYhW_mJiN5e8jE-Q_aem__DjKqLonaZo5_woUxXS8nQ",
     promoCode: "CHANDI2025",
     logoSrc: "/images/hotel/sagara/logo.png",
+    lobby: "/images/hotel/sagara/lobby.jpg",
   },
   {
     index: 3,
@@ -52,6 +40,7 @@ const hotels = [
     reservationUrl: "https://spps.pphotels.com",
     promoCode: "CHANDI2025",
     logoSrc: "/images/hotel/prime/logo.png",
+    lobby: "/images/hotel/prime/lobby.jpg",
   }
 ];
 
@@ -107,7 +96,13 @@ export default function MapsPage() {
                 </div>
               </section>
 
-              {/* GalleryMaps content={photos} */}
+              {hotels[selectedIdx] && (
+                <GalleryMaps
+                  content={[
+                    { title: hotels[selectedIdx].name, imageUrl: hotels[selectedIdx].lobby },
+                  ]}
+                />
+              )}
             </div>
           </div>
         </div>
