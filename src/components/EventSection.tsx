@@ -38,6 +38,251 @@ const EventSection: React.FC<EventSectionProps> = ({
   // Multi-day agenda data
   const agendaDays: AgendaDay[] = [
     {
+      tab: "Program Pesta Rakyat (Day 1)",
+      session: "29 - 30 August 2025 | Art Center Bali",
+      items: [
+        {
+          time: "15.00 - 15.10",
+          title: "Welcoming Speech",
+          description: "- Representative by the Government of Bali Province",
+        },
+        {
+          time: "15.10 - 15.15",
+          title: "Opening Speech",
+          description:
+            "Prof. Bambang Wibawarta | Secretary General of the Ministry of Culture of the Republic of Indonesia",
+          speakers: [
+            {
+              name: "Prof. Bambang Wibawarta",
+              role: "Secretary General of the Ministry of Culture of the Republic of Indonesia",
+              image: "/images/event-section/bambang-wibawarta.png",
+            },
+          ],
+        },
+        {
+          time: "15.15 - 15.20",
+          title: "Opening Remarks by MC & Cultural Blessing",
+          description: "Opening remarks by MC and cultural blessing",
+        },
+        {
+          time: "15.20 - 15.25",
+          title: "Sanggar Budaya Performance: Group 1",
+          description:
+            "Balinese Traditional Pendet Dance as Welcome Dance Performance to open the festives",
+        },
+        {
+          time: "15.25 - 15.35",
+          title: "Interactive Crowd moment & introduction CHANDI",
+          description: "Interactive crowd moment & CHANDI introduction",
+        },
+        {
+          time: "15.35 - 15.40",
+          title: "Sanggar Budaya Performance: Group 2",
+          description: "Sanggar Budaya Performance: Group 2",
+        },
+        {
+          time: "15.40 - 16.00",
+          title: "Audience interaction - Cultural Trivia & Giveaway with MC",
+          description: "Audience interaction - Cultural Trivia & Giveaway with MC",
+        },
+        {
+          time: "16.00 - 16.10",
+          title:
+            "Break & Culinary session (Experience at booth UMKM)",
+          description:
+            "For audiences to explore local handicraft, snacks, drinks, and creative booths",
+        },
+        {
+          time: "16.10 - 16.15",
+          title: "Welcome Remarks by MC",
+          description: "Welcome remarks by MC",
+        },
+        {
+          time: "16.15 - 16.20",
+          title: "Sanggar Budaya Performance: Group 3",
+          description: "Sanggar Budaya Performance: Group 3",
+        },
+        {
+          time: "16.20 - 16.30",
+          title: "Interactive Crowd moment & introduction CHANDI",
+          description: "Interactive crowd moment & CHANDI introduction",
+        },
+        {
+          time: "16.30 - 16.35",
+          title: "Sanggar Budaya Performance: Group 4",
+          description: "Sanggar Budaya Performance: Group 4",
+        },
+        {
+          time: "16.35 - 17.35",
+          title: "Headliner Performance",
+          description: `• Jegeg Bulan\n• Bus Marlet`,
+        },
+        {
+          time: "17.35 - 18.00",
+          title: "Audience Interaction - Cultural Trivia & Giveaway with MC",
+          description: "Audience interaction - Cultural Trivia & Giveaway with MC",
+        },
+        {
+          time: "18.00 - 19.00",
+          title: "Break and Culinary Session (Experience at booth UMKM)",
+          description:
+            "For audiences to explore local handicraft, snacks, drinks, and creative booths",
+        },
+        {
+          time: "19.00 - 19.15",
+          title: "Welcome Remarks by MC",
+          description: "Welcome remarks by MC",
+        },
+        {
+          time: "19.15 - 19.20",
+          title: "Sanggar Budaya Performance: Group 5",
+          description: "Sanggar Budaya Performance: Group 5",
+        },
+        {
+          time: "19.20 - 19.35",
+          title: "Audience Interaction - Cultural Trivia, Giveaway with MC",
+          description: "Audience interaction - Cultural Trivia & Giveaway with MC",
+        },
+        {
+          time: "19.35 - 20.45",
+          title: "Headliner Performance",
+          description: `• Bonbon Skoozy\n• Joni Agung & Double T Band`,
+        },
+        {
+          time: "20.45 - 21.00",
+          title: "Closing Remarks & Countdown to main event of CHANDI Summit",
+          description: "Closing remarks & countdown",
+        },
+        {
+          time: "21.00",
+          title: "End of Program Day 1/2",
+          description: "End of Program Day 1/2",
+        },
+      ],
+    },
+    {
+      tab: "Program Pesta Rakyat (Day 1) — Discovery Mall",
+      session: "29 - 30 August 2025 | Discovery Mall Bali",
+      items: [
+        {
+          time: "16.00 - 16.10",
+          title: "Welcoming Speech",
+          description: "- Representative by the Government of Bali Province",
+        },
+        {
+          time: "16.10 - 16.15",
+          title: "Opening Speech",
+          description:
+            "Prof. Bambang Wibawarta | Secretary General of the Ministry of Culture of the Republic of Indonesia",
+          speakers: [
+            {
+              name: "Prof. Bambang Wibawarta",
+              role: "Secretary General of the Ministry of Culture of the Republic of Indonesia",
+              image: "/images/event-section/bambang-wibawarta.png",
+            },
+          ],
+        },
+        {
+          time: "16.15 - 16.20",
+          title: "Opening Remarks by MC & Cultural Blessing",
+          description: "Opening remarks by MC and cultural blessing",
+        },
+        {
+          time: "16.20 - 16.25",
+          title: "Sanggar Budaya Performance: Group 1",
+          description:
+            "Balinese Traditional Pendet Dance as Welcome Dance Performance to open the festives",
+        },
+        {
+          time: "16.25 - 16.35",
+          title: "Interactive Crowd moment & introduction CHANDI",
+          description: "Interactive crowd moment & CHANDI introduction",
+        },
+        {
+          time: "16.35 - 16.40",
+          title: "Sanggar Budaya Performance: Group 2",
+          description: "Sanggar Budaya Performance: Group 2",
+        },
+        {
+          time: "16.40 - 17.00",
+          title: "Audience interaction - Cultural Trivia & Giveaway with MC",
+          description: "Audience interaction - Cultural Trivia & Giveaway with MC",
+        },
+        {
+          time: "17.00 - 17.10",
+          title: "Break & Culinary session (Experience at booth UMKM)",
+          description:
+            "For audiences to explore local handicraft, snacks, drinks, and creative booths",
+        },
+        {
+          time: "17.10 - 17.15",
+          title: "Welcome Remarks by MC",
+          description: "Welcome remarks by MC",
+        },
+        {
+          time: "17.15 - 17.20",
+          title: "Sanggar Budaya Performance: Group 3",
+          description: "Sanggar Budaya Performance: Group 3",
+        },
+        {
+          time: "17.20 - 17.30",
+          title: "Interactive Crowd moment & introduction CHANDI",
+          description: "Interactive crowd moment & CHANDI introduction",
+        },
+        {
+          time: "17.30 - 17.35",
+          title: "Sanggar Budaya Performance: Group 4",
+          description: "Sanggar Budaya Performance: Group 4",
+        },
+        {
+          time: "17.35 - 18.35",
+          title: "Headliner Performance",
+          description: `• Yessy Diana\n• Agapeea`,
+        },
+        {
+          time: "18.35 - 19.00",
+          title: "Audience Interaction - Cultural Trivia & Giveaway with MC",
+          description: "Audience interaction - Cultural Trivia & Giveaway with MC",
+        },
+        {
+          time: "19.00 - 20.00",
+          title: "Break and Culinary Session (Experience at booth UMKM)",
+          description:
+            "For audiences to explore local handicraft, snacks, drinks, and creative booths",
+        },
+        {
+          time: "20.00 - 20.15",
+          title: "Welcome Remarks by MC",
+          description: "Welcome remarks by MC",
+        },
+        {
+          time: "20.15 - 20.20",
+          title: "Sanggar Budaya Performance: Group 5",
+          description: "Sanggar Budaya Performance: Group 5",
+        },
+        {
+          time: "20.20 - 20.35",
+          title: "Audience Interaction - Cultural Trivia, Giveaway with MC",
+          description: "Audience interaction - Cultural Trivia & Giveaway with MC",
+        },
+        {
+          time: "20.35 - 21.45",
+          title: "Headliner Performance",
+          description: `• Gus Yuda\n• Kecap Asin`,
+        },
+        {
+          time: "21.45 - 22.00",
+          title: "Closing Remarks & Countdown to main event of CHANDI Summit",
+          description: "Closing remarks & countdown",
+        },
+        {
+          time: "22.00",
+          title: "End of Program Day 1/2",
+          description: "End of Program Day 1/2",
+        },
+      ],
+    },
+    {
       tab: "Welcoming Dinner Ministerial",
       session: "2 September 2025 : Terrace Garden Bali Beach Lawn Area",
       items: [
