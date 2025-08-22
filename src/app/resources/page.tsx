@@ -11,7 +11,7 @@ export default function Resources() {
       <HeaderSection />
 
       <HeroAlternative
-        title="Resources"
+        title="Documents"
         subtitle="Download essential resources and PDFs related to the CHANDI 2025 Summit. Access our comprehensive guide, speaker bios, and event schedules to enhance your experience. Stay informed and engaged with the latest updates and materials that will help you make the most of this cultural gathering."      />
 
       <ResourcesSection 

@@ -178,8 +178,7 @@ const HeroAlternative2: React.FC<HeroSectionProps> = ({
               </div>
               {/* Caption */}
               <div className="kunire-grotesk text-lg md:text-[40px] text-[#4A2F1E] font-light max-w-[390px] leading-[1]">
-                CHANDI <br />
-                SUMMIT 2025
+                CHANDI 2025
               </div>
               <div className="h-2"></div>
               <div className="figtree-regular  text-lg md:text-[18px] text-[#4A2F1E] font-light max-w-[300px] leading-[1]">
