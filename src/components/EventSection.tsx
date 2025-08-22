@@ -26,6 +26,8 @@ const EventSection: React.FC<EventSectionProps> = ({
     title: string;
     description: string;
     speakers?: SpeakerProps[];
+    linkHref?: string;
+    linkText?: string;
   }
 
   interface AgendaDay {
@@ -709,9 +711,18 @@ const EventSection: React.FC<EventSectionProps> = ({
           description: "Coffee Break, Transfer to Workshops Session",
         },
         {
-          time: "16.40 - 18.10",
+          time: "16.40 - 18.10 Session 1: 13:00 – 15:00 Session 2: 15:15 – 17:15",
           title: "Workshops on Cultural Heritage (parallel session)",
-          description: `Workshops on Cultural Heritage (Parallel Session):\n• Workshop Batik Making\n• Workshop Traditional Dance\n• Workshop Music (Angklung)\n• Workshop Keris Making (Javanese Traditional Dagger)\n• Workshop Making Indonesian Traditional Mask\n\nSession 1: 13:00 – 15:00\nSession 2: 15:15 – 17:15`,
+          description: `Workshops on Cultural Heritage (Parallel Session):
+• Workshop Batik Making
+• Workshop Traditional Dance
+• Workshop Music (Angklung)
+• Workshop Keris Making (Javanese Traditional Dagger)
+• Workshop Making Indonesian Traditional Mask
+\nFor detail rundown, please download the following schedule: 
+`,
+          linkHref: "/files/Workshop_Rundown.pdf",
+          linkText: "Download Workshop Rundown (PDF)",
         },
         {
           time: "18.10 - 20.10",
@@ -829,7 +840,7 @@ const EventSection: React.FC<EventSectionProps> = ({
                 >
                   {/* Time column */}
                   <div className="md:w-[115px] lg:w-[150px] md:mr-10 mb-4 md:mb-0">
-                    <p className="text-gray-700 text-base md:text-lg font-medium md:text-right">
+                    <p className="text-gray-700 text-base md:text-lg font-medium md:text-right whitespace-pre-line">
                       {item.time}
                     </p>
                   </div>
@@ -838,20 +849,20 @@ const EventSection: React.FC<EventSectionProps> = ({
                     <h3 className="text-lg font-medium text-gray-900 mb-2">
                       {item.title}
                     </h3>
-                    {item.description &&
-                    item.description.trim().startsWith("•") ? (
-                      <div className="text-gray-500 text-sm mb-5 leading-relaxed">
-                        {item.description.split("\n").map((line, idx) => (
-                          <span key={idx}>
-                            {line}
-                            <br />
-                          </span>
-                        ))}
-                      </div>
-                    ) : (
-                      <p className="text-gray-500 text-sm mb-5 leading-relaxed">
+                    {item.description && (
+                      <p className="text-gray-500 text-sm mb-5 leading-relaxed whitespace-pre-line">
                         {item.description}
                       </p>
+                    )}
+                    {item.linkHref && (
+                      <a
+                        href={item.linkHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-[#9D7935] hover:underline font-medium"
+                      >
+                        {item.linkText ?? "Download"}
+                      </a>
                     )}
                     {/* Speakers grid */}
                     {item.speakers && (
