@@ -59,7 +59,7 @@ export default function Home() {
         
       <HostSection />*/}
 
-      <ResourcesSection />
+      <ResourcesSection page="main" />
 
       <FooterSection />
     </>

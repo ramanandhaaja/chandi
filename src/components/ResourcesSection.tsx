@@ -7,10 +7,10 @@ import { FaFilePdf } from "react-icons/fa";
 const resources = [
   
   {
-    title: "Call for Abstract",
-    subtitle: "Call for Abstract CHANDI 2025.pdf",
+    title: "Selected Abstract Announcement",
+    subtitle: "Selected Abstract Announcement.pdf",
     size: "1 MB",
-    url: "/files/Call for Abstract CHANDI SUMMIT 2025.pdf",
+    url: "/files/SelectedAbstract_Announcement.pdf",
   },
 ];
 
@@ -34,7 +34,7 @@ const ResourcesSection = ({ page }: { page: string; }) => {
               </>
             )}
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-600">
-              {page != "main" ? "Resources" : ""}
+             Resources
             </h2>
             {page === "main" && (
             <p className="text-base leading-relaxed">
