@@ -1,5 +1,7 @@
 import HeaderSection from "@/components/HeaderSection";
 import FooterSection from "@/components/FooterSection";
+import TranslatedHtml from "@/components/TranslatedHtml";
+import TranslatedText from "@/components/TranslatedText";
 import { notFound } from "next/navigation";
 import { getItem, getImageURL } from "@/lib/api";
 import Link from "next/link";
@@ -14,13 +16,14 @@ interface NewsArticle {
   category: string;
   tags: string[];
   images?: { id: number; directus_files_id: string }[];
+  translations?: { languages_code: string; content?: string; title?: string }[];
 }
 
 export default async function NewsDetailPage({ params }: { params: { id: string } }) {
   const { id } = params;
 
   // Fetch single news item from Directus using the provided ID
-  const item = await getItem("news_page", id, { fields: "*,images.*" });
+  const item = await getItem("news_page", id, { fields: "*,images.*, translations.*" });
 
   if (!item) {
     notFound();
@@ -36,6 +39,7 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
     category: item.category || "",
     tags: Array.isArray(item.tags) ? item.tags : [],
     images: item.images,
+    translations: item.translations,
   };
 
   return (
@@ -53,7 +57,11 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
           <div className="relative z-10 w-full flex flex-col justify-center items-center">
             <div className="text-center text-white max-w-4xl px-4">
               <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                {article.title}
+                <TranslatedText
+                  defaultText={article.title}
+                  translations={article.translations}
+                  fieldName="title"
+                />
               </h1>
               <div className="flex items-center justify-center gap-4 text-sm md:text-base mb-8">
                 <span>{(article.date || "").split("T")[0]}</span>
@@ -70,9 +78,10 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
         <section className="bg-white py-16">
           <div className="max-w-4xl mx-auto px-4">
             <article className="prose prose-lg max-w-none">
-              <div
+              <TranslatedHtml
                 className="whitespace-pre-line text-gray-700 leading-relaxed text-lg"
-                dangerouslySetInnerHTML={{ __html: article.content || "" }}
+                defaultHtml={article.content || ""}
+                translations={article.translations}
               />
             </article>
 

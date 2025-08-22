@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getItems, getImageURL } from "../../lib/api";
+import { useLanguage } from "@/lib/LanguageContext";
 
 interface NewsItem {
   id: string | number;
@@ -10,6 +11,7 @@ interface NewsItem {
   header_image?: string;
   images?: { id: number; directus_files_id: string }[];
   date?: string;
+  translations?: { languages_code: string; title?: string }[];
 }
 
 interface DisplayItem {
@@ -22,28 +24,39 @@ interface DisplayItem {
 
 const PressRelease: React.FC = () => {
   const [items, setItems] = useState<DisplayItem[]>([]);
+  const { language } = useLanguage();
 
   useEffect(() => {
     async function fetchNews() {
       try {
         const data: NewsItem[] = await getItems("news_page", {
-          fields: "*,images.*",
+          fields: "*,images.*,translations.*",
+          sort: "-date",
         });
 
-        const mapped: DisplayItem[] = (data || []).map((n) => ({
-          id: n.id,
-          directus_files_id: n.images && n.images.length > 0 ? n.images[0].directus_files_id : undefined,
-          alt: n.title || "",
-          title: n.title || "",
-          date: n.date || "",
-          }));
+        const mapped: DisplayItem[] = (data || []).map((n) => {
+          const translatedTitle = Array.isArray(n.translations)
+            ? n.translations.find((t) => t.languages_code === language)?.title
+            : undefined;
+          const title = translatedTitle || n.title || "";
+          return {
+            id: n.id,
+            directus_files_id:
+              n.images && n.images.length > 0
+                ? n.images[0].directus_files_id
+                : undefined,
+            alt: title,
+            title,
+            date: n.date || "",
+          };
+        });
         setItems(mapped);
       } catch (e) {
         console.error("Failed to fetch news_page items:", e);
       }
     }
     fetchNews();
-  }, []);
+  }, [language]);
 
   return (
     <section className="py-10 px-2 sm:py-20 sm:px-6 md:px-12 lg:px-24 bg-[#FCFAF5]">
