@@ -38,7 +38,7 @@ const EventSection: React.FC<EventSectionProps> = ({
   // Multi-day agenda data
   const agendaDays: AgendaDay[] = [
     {
-      tab: "Program Pesta Rakyat (Day 1)",
+      tab: "Program Pesta Rakyat",
       session: "29 - 30 August 2025 | Art Center Bali",
       items: [
         {
@@ -161,7 +161,7 @@ const EventSection: React.FC<EventSectionProps> = ({
       ],
     },
     {
-      tab: "Program Pesta Rakyat (Day 1) — Discovery Mall",
+      tab: "Program Pesta Rakyat — Discovery Mall",
       session: "29 - 30 August 2025 | Discovery Mall Bali",
       items: [
         {
@@ -290,23 +290,22 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "17.00 - 18.00",
           title: "Registration",
           description:
-            "Attendee registration for the Welcoming Dinner Ministerial.",
+            `• Registration\n• Handing over Balinese bamboo fan as souvenir\n• Accompanied by live Rindik music`,
         },
         {
           time: "18.00 - 18.10",
           title: "Balinese Blessing Ceremony",
-          description: "Balinese Blessing Ceremony with Priest blessing the event.",
+          description: "Balinese Blessing Ceremony with Priest blessing the event",
         },
         {
           time: "18.10 - 18.15",
-          title: "Opening",
-          description:
-            "Official opening of the Chandi Summit 2025 Welcoming Dinner Ministerial.",
+          title: "Opening by MC",
+          description: "",
         },
         {
           time: "18.15 - 18.30",
-          title: "Welcome Speech",
-          description: "Welcome address to all attendees.",
+          title: "Welcome speech",
+          description: "Dr. Fadli Zon | The Minister of Culture Republic of Indonesia",
           speakers: [
             {
               name: "Dr. Fadli Zon",
@@ -317,20 +316,19 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "18.30 - 19.25",
-          title: "Dinner accompanied by live Rindik music",
+          title: "Dinner Service",
           description:
-            "Enjoy dinner with the sounds of traditional Balinese Rindik music.",
+            `• Food Parade (Soup Served) accompanied by live Rindik music\n• Dinner set menu style accompanied by Acoustic Music`,
         },
         {
           time: "19.25 - 19.55",
-          title: "Kecak performance",
-          description:
-            "Experience the iconic Fire Kecak dance performance.",
+          title: "Fire Kecak Dance Performance",
+          description: "",
         },
         {
           time: "19.55 - 20.00",
-          title: "Closing",
-          description: "Closing remarks for the evening.",
+          title: "Closing by MC",
+          description: "",
         },
       ],
     },
@@ -400,7 +398,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "09.40 - 09.55",
           title: "Art Performance: Sound of Nusantara",
-          description: "Cultural art performance.",
+          description: "Art Performance Sound of Nusantara : Maha Meredangga Nuswantara Praba Buana Prastawa",
         },
         {
           time: "09.55 - 10.40",
@@ -422,29 +420,28 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "10.50 - 10.55",
-          title: "Photo Session",
-          description:
-            "Photo session of all ministers at the Bali Beach Convention Pre-Function Area.",
+          title: "President and all Ministers Proceed to Pre-Function",
+          description: "President and all Ministers Proceed to Pre-Function",
         },
         {
           time: "10.55 - 11.10",
-          title: "President & Ministers Proceed",
+          title: "Photo Session of All Ministers at BBC Pre-Function Area Doorstop Media",
           description:
-            "The President and all Ministers proceed to the opening function.",
+            "Photo Session of All Ministers at BBC Pre-Function Area Doorstop Media",
         },
         {
           time: "10.55 - 11.10",
-          title: "Baris Balinese Dance",
-          description: "Traditional Baris Balinese dance performance.",
+          title: "Balinese Dance: Abarisan Sudamala Deeang Nusantara",
+          description: "Balinese Dance: Abarisan Sudamala Deeang Nusantara",
         },
         {
           time: "11.10 - 11.35",
           title: "Keynote Address: Culture as the Key to Future Global Sustainability",
-          description: "Aamir Khan | Economist, Philosopher and Futurist (*TBC).",
+          description: "Shilpa Shetty | Indian Actress – Entrepreneur (*TBC)",
           speakers: [
             {
-              name: "Aamir Khan",
-              role: "Economist, Philosopher and Futurist (*TBC)",
+              name: "Shilpa Shetty",
+              role: "Indian Actress – Entrepreneur (*TBC)",
               image: "/images/event-section/fadli-zon.png",
             },
           ],
@@ -452,27 +449,20 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "11.35 - 12.05",
           title: "Keynote Address: The Role of Youth in Fostering Peace Through Culture",
-          description: "Cinta Laura Kiehl | Composer, Producer, Singer and Actress (*TBC).",
-          speakers: [
-            {
-              name: "Cinta Laura Kiehl",
-              role: "Composer, Producer, Singer and Actress (*TBC)",
-              image: "/images/event-section/fadli-zon.png",
-            },
-          ],
+          description: "(*TBA)",
         },
         {
-          time: "12.10 - 12.15",
+          time: "12.05 - 12.10",
           title: "Conclusion of the Opening Session",
           description: "Conclusion and wrap-up of the opening session.",
         },
         {
-          time: "12.15 - 13.15",
+          time: "12.10 - 13.20",
           title: "Lunch",
           description: "Lunch break for all participants.",
         },
         {
-          time: "13.00 - 17.00 \n\n• Coffee Break: 15.30–16.00",
+          time: "13.20 - 17.00 \n\n• Coffee Break: 15.30–16.00",
           title: "Ministerial Summit",
           description: `• Opening Statement by the Minister of Culture of the Republic of Indonesia\n• Country Statement by All Ministers\n• Conclusion and Closing\n`,
         },

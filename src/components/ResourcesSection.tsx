@@ -12,12 +12,6 @@ const resources = [
     url: "/files/chandi_2025_ministerial_summit_order_of_business.pdf",
   },
   {
-    title: "Chandi Program Update (per 21 August 2025)",
-    subtitle: "chandi_program_update.pdf",
-    size: "10 MB",
-    url: "/files/Chandi_program_update.pdf",
-  },
-  {
     title: "Call for Abstract",
     subtitle: "Call for Abstract CHANDI SUMMIT 2025.pdf",
     size: "1 MB",
