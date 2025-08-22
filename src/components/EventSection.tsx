@@ -777,8 +777,14 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "14.00 - 17.00",
           title:
-            "Study Visit & Future Collaboration Projects (Afternoon Session)",
-          description: `• From ISI Bali, participant may choose study visit to Green School or visit Penglipuran Village \n• From Udayana University Bali, participant may choose study visit to Green School or visit Penglipuran Village`,
+            "From ISI Bali, participant may choose study visit to Green School or visit Penglipuran Village",
+          description: `From ISI Bali, participant may choose study visit to Green School or visit Penglipuran Village`,
+        },
+        {
+          time: "14.00 - 17.00",
+          title:
+            "From Udayana University of Bali, participant may choose study visit to Green School or visit Penglipuran Village",
+          description: `From Udayana University of Bali, participant may choose study visit to Green School or visit Penglipuran Village`,
         },
         {
           time: "17.00 - 18.00",
