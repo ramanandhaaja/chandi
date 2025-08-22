@@ -115,7 +115,7 @@ const SpeakerSection: React.FC = () => {
               <div
                 key={speaker.id}
                 className={`flex-shrink-0 w-44 h-64 sm:w-60 sm:h-80 md:w-72 md:h-96${
-                  index === 2 ? " md:w-80 md:h-[28rem]" : ""
+                  index === 0 ? " md:w-80 md:h-[28rem]" : ""
                 }`}
               >
                 <div className="relative w-full h-full rounded-2xl overflow-hidden">
