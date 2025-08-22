@@ -499,7 +499,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "20.00 - 22.00",
           title: "CHANDI Music Performance",
-          description: `Andi Rianto Band with Judika, Lesti Kejora, Niki, Joey Alexander, Michael Anthony Kwok, Ahmad Dhani, Melly Goeslaw, Once Mekel (TBC)`,
+          description: `Andi Rianto's Band with Judika, Lyodra, Bunga Citra Lestari (BCL), Joey Alexander, Michael Anthony Kwok, Ahmad Dhani`,
           /*
           speakers: [
             {
