@@ -17,31 +17,14 @@ export default function ContactUsPage() {
 
       <div className="container mx-auto px-4 md:px-6 py-8 md:py-24 text-[#4A2E2B]">
         <div className="space-y-12 md:space-y-20">
-          {/* Background Section */}
-          <div className="mt-16 md:mt-24 py-8 md:py-10">
-            <div className="flex items-center" aria-hidden="true">
-              <hr className="flex-1 border-gray-400" />
-              <h1 className="text-2xl md:text-5xl font-bold px-3 md:px-6 text-[#4A2E2B] shrink-0 text-center">
-                Selected Abstract Winners
-              </h1>
-              <hr className="flex-1 border-gray-400" />
-            </div>
-          </div>
-
-
+          
 
           
-          <div className="mt-16 md:mt-24 py-8 md:py-10">
-            <div className="flex items-center" aria-hidden="true">
-              <hr className="flex-1 border-gray-400" />
-              <h1 className="text-2xl md:text-5xl font-bold px-3 md:px-6 text-[#4A2E2B] shrink-0 text-center">
-                Congratulations to the Selected Abstracts for the CHANDI 2025 Panel Discussions!
-              </h1>
-              <hr className="flex-1 border-gray-400" />
-            </div>
-          </div>
           {/* Selected Abstracts Announcement Content */}
           <div className="space-y-8 md:space-y-10 text-base md:text-lg leading-relaxed">
+          <h1 className="text-2xl md:text-5xl font-bold px-3 md:px-6 text-[#4A2E2B] shrink-0 text-center">
+                Congratulations to the Selected Abstracts for the CHANDI 2025 Panel Discussions!
+              </h1>
             <p>
               We are delighted to announce the winning abstracts for the CHANDI 2025 Panel Discussions. These abstracts were carefully and objectively
               reviewed by our distinguished Co-Hosts: ICOM (International Council of Museums) Indonesia, ICOMOS (International Council on Monuments and
@@ -124,6 +107,15 @@ export default function ContactUsPage() {
             <p className="mt-4">
               Selected authors are kindly requested to confirm their participation by <span className="font-semibold">23 August 2025</span>, to present at the Panel Discussions during the Summit. We look forward to your contributions and to welcoming you in Bali!
             </p>
+          </div>
+          <div className="mt-16 md:mt-24 py-8 md:py-10">
+            <div className="flex items-center" aria-hidden="true">
+              <hr className="flex-1 border-gray-400" />
+              <h1 className="text-2xl md:text-5xl font-bold px-3 md:px-6 text-[#4A2E2B] shrink-0 text-center">
+                About Abstract
+              </h1>
+              <hr className="flex-1 border-gray-400" />
+            </div>
           </div>
           <div className="flex flex-col md:flex-row gap-6 md:gap-16 mb-12 md:mb-20">
             <div className="md:w-1/4">
