@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CHANDI SUMMIT 2025",
-  description: "The CHANDI 2025 Summit",
+  title: "CHANDI 2025",
+  description: "The CHANDI 2025",
 };
 
 export default function RootLayout({

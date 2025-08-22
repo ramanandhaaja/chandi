@@ -8,7 +8,7 @@ const resources = [
   
   {
     title: "Call for Abstract",
-    subtitle: "Call for Abstract CHANDI SUMMIT 2025.pdf",
+    subtitle: "Call for Abstract CHANDI 2025.pdf",
     size: "1 MB",
     url: "/files/Call for Abstract CHANDI SUMMIT 2025.pdf",
   },
@@ -38,7 +38,7 @@ const ResourcesSection = ({ page }: { page: string; }) => {
             </h2>
             {page === "main" && (
             <p className="text-base leading-relaxed">
-              Download essential resources and PDFs related to the CHANDI 2025 Summit. Access our comprehensive guide, speaker bios, and event schedules to enhance your experience. Stay informed and engaged with the latest updates and materials that will help you make the most of this cultural gathering.
+              Download essential resources and PDFs related to the CHANDI 2025. Access our comprehensive guide, speaker bios, and event schedules to enhance your experience. Stay informed and engaged with the latest updates and materials that will help you make the most of this cultural gathering.
             </p>
             )}
           </div>

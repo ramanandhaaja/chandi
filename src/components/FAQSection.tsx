@@ -17,19 +17,19 @@ const FAQSection: React.FC<FAQSectionProps> = ({
   subtitle = "Questions",
   faqs = [
     {
-      question: "How can I register for the CHANDI 2025 Summit?",
+      question: "How can I register for the CHANDI 2025?",
       answer:
-        'Registration for the CHANDI 2025 Summit can be completed through our official website. Navigate to the "Registration" page and follow the instructions. Early bird registrations receive special discounts. If you encounter any issues during the registration process, feel free to reach out to our support team at support@chandisummit.com.',
+        'Registration for the CHANDI 2025 can be completed through our official website. Navigate to the "Registration" page and follow the instructions. Early bird registrations receive special discounts. If you encounter any issues during the registration process, feel free to reach out to our support team at support@chandisummit.com.',
     },
     {
       question: "Will the summit be available online for remote attendees?",
       answer:
-        "Yes, the CHANDI 2025 Summit will offer a comprehensive virtual experience for remote attendees. All keynote speeches, panel discussions, and selected workshops will be streamed live. Virtual attendees will also have access to networking opportunities through our digital platform.",
+        "Yes, the CHANDI 2025 will offer a comprehensive virtual experience for remote attendees. All keynote speeches, panel discussions, and selected workshops will be streamed live. Virtual attendees will also have access to networking opportunities through our digital platform.",
     },
     {
       question: "What is the dress code for the event?",
       answer:
-        "The dress code for the CHANDI 2025 Summit is business casual. However, for the evening gala on the final day, formal attire is recommended. We encourage attendees to dress comfortably for the workshops and panel discussions.",
+        "The dress code for the CHANDI 2025 is business casual. However, for the evening gala on the final day, formal attire is recommended. We encourage attendees to dress comfortably for the workshops and panel discussions.",
     },
     {
       question: "Can I submit my project or research for the summit?",
@@ -39,12 +39,12 @@ const FAQSection: React.FC<FAQSectionProps> = ({
     {
       question: "How can I become a sponsor or exhibitor at the event?",
       answer:
-        "To become a sponsor or exhibitor at the CHANDI 2025 Summit, please reach out to our partnerships team at partners@chandisummit.com. We offer various sponsorship packages designed to maximize your visibility and engagement with attendees. Our team will work with you to create a tailored partnership that aligns with your objectives.",
+        "To become a sponsor or exhibitor at the CHANDI 2025, please reach out to our partnerships team at partners@chandisummit.com. We offer various sponsorship packages designed to maximize your visibility and engagement with attendees. Our team will work with you to create a tailored partnership that aligns with your objectives.",
     },
     {
       question: "Will there be opportunities for networking at the summit?",
       answer:
-        "Yes, networking is a key focus of the CHANDI 2025 Summit. We have scheduled dedicated networking sessions throughout the event, including a welcome reception, daily networking breaks, roundtable discussions, and an exclusive networking dinner. Our mobile app will also facilitate connections between attendees based on shared interests and goals.",
+        "Yes, networking is a key focus of the CHANDI 2025. We have scheduled dedicated networking sessions throughout the event, including a welcome reception, daily networking breaks, roundtable discussions, and an exclusive networking dinner. Our mobile app will also facilitate connections between attendees based on shared interests and goals.",
     },
   ],
 }) => {

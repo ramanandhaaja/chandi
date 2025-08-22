@@ -53,7 +53,7 @@ export default function MapsPage() {
       <HeaderSection />
       <HeroAlternative
         title="MAPS AND LEGEND"
-        subtitle="Explore the interactive maps for the CHANDI SUMMIT 2025, showcasing key venues and nearby accommodations. Our detailed legend highlights various hotels and lodging options to enhance your stay in Bali. Whether you're looking for luxury resorts or budget-friendly stays, find the perfect place to rest after a day of insightful discussions. Navigate easily with our user-friendly interface and plan your summit experience effectively."
+        subtitle="Explore the interactive maps for the CHANDI 2025, showcasing key venues and nearby accommodations. Our detailed legend highlights various hotels and lodging options to enhance your stay in Bali. Whether you're looking for luxury resorts or budget-friendly stays, find the perfect place to rest after a day of insightful discussions. Navigate easily with our user-friendly interface and plan your summit experience effectively."
       />
       <section className="py-0 px-4 md:pl-0 lg:px-0 bg-white">
         <div className="max-w mx-auto">

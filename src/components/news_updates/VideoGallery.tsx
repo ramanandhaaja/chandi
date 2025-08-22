@@ -4,19 +4,19 @@ const VideoGallery = ({ title = "Videos" }) => {
   const videos = [
     {
       id: "dqteOrebYCc",
-      title: "CHANDI Summit Video 1",
+      title: "CHANDI Video 1",
     },
     {
       id: "vexU_rSSSSM",
-      title: "CHANDI Summit Video 2",
+      title: "CHANDI Video 2",
     },
     {
       id: "gG78Es9ZPa8",
-      title: "CHANDI Summit Video 3",
+      title: "CHANDI Video 3",
     },
     {
       id: "iryrcXxogh8",
-      title: "CHANDI Summit Video 4",
+      title: "CHANDI Video 4",
     },
   ];
   return (

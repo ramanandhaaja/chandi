@@ -150,7 +150,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "20.45 - 21.00",
-          title: "Closing Remarks & Countdown to main event of CHANDI Summit",
+          title: "Closing Remarks & Countdown to main event of CHANDI",
           description: "Closing remarks & countdown",
         },
         {
@@ -272,7 +272,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "21.45 - 22.00",
-          title: "Closing Remarks & Countdown to main event of CHANDI Summit",
+          title: "Closing Remarks & Countdown to main event of CHANDI 2025",
           description: "Closing remarks & countdown",
         },
         {
@@ -354,7 +354,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "09.05 - 09.10",
           title: "Opening",
-          description: "Official opening of the Chandi Summit 2025 Day 1.",
+          description: "Official opening of the Chandi 2025 Day 1.",
         },
         {
           time: "09.10 - 09.20",
@@ -415,8 +415,8 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "10.40 - 10.50",
-          title: "Opening Ceremony of CHANDI SUMMIT 2025",
-          description: "Opening Ceremony of CHANDI SUMMIT 2025",
+          title: "Opening Ceremony of CHANDI 2025",
+          description: "Opening Ceremony of CHANDI 2025",
         },
         {
           time: "10.50 - 10.55",
@@ -490,11 +490,6 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "17.30 - 18.00",
           title: "Break for VIP Dinner Preparation",
           description: "Break for VIP Dinner preparation.",
-        },
-        {
-          time: "18.00 - 19.30",
-          title: "VIP Dinner",
-          description: "VIP Dinner.",
         },
         {
           time: "18.00 - 19.30",

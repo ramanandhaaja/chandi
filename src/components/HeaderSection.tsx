@@ -35,7 +35,7 @@ const HeaderSection: React.FC = () => {
             <Link href="/">
               <Image
                 src="/Chandi_2025_Horizontal.png"
-                alt="CHANDI SUMMIT 2025"
+                alt="CHANDI 2025"
                 width={180}
                 height={40}
                 className="h-8 sm:h-10 w-auto"

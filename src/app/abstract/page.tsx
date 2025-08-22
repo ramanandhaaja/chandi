@@ -12,7 +12,7 @@ export default function ContactUsPage() {
       <HeaderSection />
       <HeroAlternative
         title="CALL FOR ABSTRACT"
-        subtitle='The CHANDI SUMMIT 2025 will convene global leaders in Bali from September 3 to 5, 2025, under the theme "Culture for the Future." It aims to explore cultures role in sustainable development through four panel discussions. The Programme Committee invites abstract submissions for presentations.'
+        subtitle='The CHANDI 2025 will convene global leaders in Bali from September 3 to 5, 2025, under the theme "Culture for the Future." It aims to explore cultures role in sustainable development through four panel discussions. The Programme Committee invites abstract submissions for presentations.'
       />
 
       <div className="container mx-auto px-4 md:px-6 py-8 md:py-24 text-[#4A2E2B]">
@@ -125,14 +125,14 @@ export default function ContactUsPage() {
             </div>
             <div className="md:w-3/4">
               <p className="text-base md:text-lg leading-relaxed">
-                The CHANDI SUMMIT 2025 (Culture, Heritage, Art, Narrative,
+                The CHANDI 2025 (Culture, Heritage, Art, Narrative,
                 Diplomacy, and Innovation) will convene global leaders,
                 policymakers, scholars, and cultural practitioners under the
                 theme “Culture for the Future.” This summit aims to position
                 culture as a catalyst for sustainable development, peace, and
                 innovation. As part of this mission, four high-level panel
                 discussions will explore critical intersections of culture,
-                sustainability, and technology. The CHANDI SUMMIT 2025 Programme
+                sustainability, and technology. The CHANDI 2025 Programme
                 Committee invites abstract submissions for presentations at the
                 conference in Bali, Indonesia, from 3 to 5 September 2025.
               </p>
@@ -169,7 +169,7 @@ export default function ContactUsPage() {
             </div>
             <div className="md:w-3/4">
               <p className="text-base md:text-lg mb-4">
-                The CHANDI SUMMIT 2025 Program Committee calls on participants
+                The CHANDI 2025 Program Committee calls on participants
                 to submit abstracts on the following topics:
               </p>
               <ol className="list-decimal list-inside space-y-3 md:space-y-2 text-base md:text-lg">
@@ -351,7 +351,7 @@ export default function ContactUsPage() {
                 style={{ width: "466px" }}
                 className="font-semibold text-lg w-[466px] flex-shrink-0"
               >
-                CHANDI SUMMIT 2025 day
+                CHANDI 2025 day
               </div>
               <div
                 style={{ width: "266px" }}
