@@ -5,18 +5,18 @@ import { HiDownload } from "react-icons/hi";
 import { FaFilePdf } from "react-icons/fa";
 
 const resources = [
-  /*{
-    title: "Booklet CHANDI Summit 2025",
-    subtitle: "Booklet CHANDI SUMMIT 2025_300625.pdf",
-    size: "22.5 MB",
-    url: "/files/Booklet CHANDI SUMMIT 2025_300625.pdf",
+  {
+    title: "CHANDI 2025 MINISTERIAL SUMMIT Order Of Business",
+    subtitle: "chandi_2025_ministerial_summit_order_of_business.pdf",
+    size: "0.5 MB",
+    url: "/files/chandi_2025_ministerial_summit_order_of_business.pdf",
   },
   {
-    title: "Terms of Reference & Agenda",
-    subtitle: "FIN_TOR&AGENDA_CHANDI2025.pdf",
-    size: "1 MB",
-    url: "/files/FIN_TOR&AGENDA_CHANDI2025.pdf",
-  },*/
+    title: "Chandi Program Update (per 21 August 2025)",
+    subtitle: "chandi_program_update.pdf",
+    size: "10 MB",
+    url: "/files/Chandi_program_update.pdf",
+  },
   {
     title: "Call for Abstract",
     subtitle: "Call for Abstract CHANDI SUMMIT 2025.pdf",
@@ -25,26 +25,33 @@ const resources = [
   },
 ];
 
-const ResourcesSection: React.FC = () => {
+const ResourcesSection = ({ page }: { page: string; }) => {
+
   return (
     <section className="py-20 px-6 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center">
           {/* Left Column - Title and Description */}
           <div className="md:w-2/5 w-full mb-10 md:mb-0">
-            <div className="flex items-center mb-4">
-              <div className="w-10 h-1 bg-black mr-4 rounded-full"></div>
-              <p className="text-sm font-medium">Resources</p>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-2">
-              Access Key
-            </h2>
+            {page === "main" && (
+              <>
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-1 bg-black mr-4 rounded-full"></div>
+                <p className="text-sm font-medium">Resources</p>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-2">
+                Access Key
+              </h2>
+              </>
+            )}
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-600">
-              Resources
+              {page != "main" ? "Resources" : ""}
             </h2>
+            {page === "main" && (
             <p className="text-base leading-relaxed">
               Download essential resources and PDFs related to the CHANDI 2025 Summit. Access our comprehensive guide, speaker bios, and event schedules to enhance your experience. Stay informed and engaged with the latest updates and materials that will help you make the most of this cultural gathering.
             </p>
+            )}
           </div>
           {/* Right Column - Resource List */}
           <div className="md:w-3/5 w-full">

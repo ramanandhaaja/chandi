@@ -95,6 +95,14 @@ const HeaderSection: React.FC = () => {
             >
               Contact
             </Link>
+            <Link
+              href="/resources"
+              className={`font-medium hover:text-[#D2AF6D] ${
+                pathname === "/resources" ? "text-[#D2AF6D]" : "text-gray-800"
+              }`}
+            >
+              Documents
+            </Link>
           </div>
 
           {/* Days Counter and Register Button */}
@@ -199,6 +207,12 @@ const HeaderSection: React.FC = () => {
               className="text-gray-800 hover:text-[#D2AF6D] font-medium py-2"
             >
               Contact
+            </Link>
+            <Link
+              href="/resources"
+              className="text-gray-800 hover:text-[#D2AF6D] font-medium py-2"
+            >
+              Documents
             </Link>
 
             {/* Days Counter and Register Button */}

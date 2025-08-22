@@ -80,7 +80,7 @@ const FooterSection: React.FC = () => {
                     Maps & Legend
                   </Link>
                   <Link
-                    href="/meeting_request"
+                    href="https://forms.gle/Y4BF4fDrkFxajEAP9"
                     className=" hover:text-[#6D1A36]"
                   >
                     Meeting Request
