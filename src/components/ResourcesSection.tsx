@@ -5,12 +5,7 @@ import { HiDownload } from "react-icons/hi";
 import { FaFilePdf } from "react-icons/fa";
 
 const resources = [
-  {
-    title: "CHANDI 2025 MINISTERIAL SUMMIT Order Of Business",
-    subtitle: "chandi_2025_ministerial_summit_order_of_business.pdf",
-    size: "0.5 MB",
-    url: "/files/chandi_2025_ministerial_summit_order_of_business.pdf",
-  },
+  
   {
     title: "Call for Abstract",
     subtitle: "Call for Abstract CHANDI SUMMIT 2025.pdf",

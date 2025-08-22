@@ -83,7 +83,13 @@ const FooterSection: React.FC = () => {
                     href="https://forms.gle/Y4BF4fDrkFxajEAP9"
                     className=" hover:text-[#6D1A36]"
                   >
-                    Meeting Request
+                    Bilateral Meeting Request
+                  </Link>
+                  <Link
+                    href="/resources"
+                    className=" hover:text-[#6D1A36]"
+                  >
+                    Documents
                   </Link>
                 </div>
               </div>
