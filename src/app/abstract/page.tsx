@@ -107,7 +107,17 @@ export default function ContactUsPage() {
             <p className="mt-4">
               Selected authors are kindly requested to confirm their participation by <span className="font-semibold">23 August 2025</span>, to present at the Panel Discussions during the Summit. We look forward to your contributions and to welcoming you in Bali!
             </p>
+
+            <p className="mt-4">
+            We received over 200 abstracts in the very short time frame.  For the  abstract that have not yet been selected to be presented in this Panel Discussion, We appreciate your hard work and and would be very interested to hear from you again in future endeavors.
+<br/><br/>
+Should you be interested to join CHANDI 2025 and become a participant in the panel discussion and the many events we have in store, you are welcome to join us by filling in this link https://registration-chandisummit2025.genstix.id/. We have attached the invitation below, and note that this summit is free and we do not take any fee for the registration. Although we do not cover transport and accommodation participants will be welcome to join our opening ceremony, entertainment, workshops, refreshments and enjoy our booths in our venue.
+<br/><br/>
+Warm regards,
+<br/><br/>
+CHANDI 2025 Secretariat</p>
           </div>
+          
           <div className="mt-16 md:mt-24 py-8 md:py-10">
             <div className="flex items-center" aria-hidden="true">
               <hr className="flex-1 border-gray-400" />
@@ -286,83 +296,47 @@ export default function ContactUsPage() {
             Important Dates
           </h2>
           <div className="space-y-4 max-w-[1200px] mx-auto">
-            <div className="flex justify-between items-center min-h-[82px] bg-[#FCFAF5] rounded-xl border border-gray-200 px-8 py-4">
-              <div
-                style={{ width: "466px" }}
-                className="font-semibold text-lg w-[466px] flex-shrink-0"
-              >
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-1 md:gap-0 min-h-[82px] bg-[#FCFAF5] rounded-xl border border-gray-200 px-6 md:px-8 py-4">
+              <div className="font-semibold text-base md:text-lg md:w-[466px] flex-shrink-0">
                 Opening abstract
               </div>
-              <div
-                style={{ width: "266px" }}
-                className="text-lg w-[266px] flex-shrink-0 flex justify-center"
-              >
+              <div className="text-base md:text-lg md:w-[266px] flex-shrink-0 md:flex md:justify-center">
                 July 08, 2025
               </div>
-              <div
-                style={{ width: "266px" }}
-                className="text-lg w-[266px] flex-shrink-0 flex justify-center"
-              >
+              <div className="text-base md:text-lg md:w-[266px] flex-shrink-0 md:flex md:justify-center">
                 23:59 GMT+7
               </div>
             </div>
-            <div className="flex justify-between items-center min-h-[82px] bg-[#FCFAF5] rounded-xl border border-gray-200 px-8 py-4">
-              <div
-                style={{ width: "466px" }}
-                className="font-semibold text-lg w-[466px] flex-shrink-0"
-              >
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-1 md:gap-0 min-h-[82px] bg-[#FCFAF5] rounded-xl border border-gray-200 px-6 md:px-8 py-4">
+              <div className="font-semibold text-base md:text-lg md:w-[466px] flex-shrink-0">
                 Deadline for Abstract Submission
               </div>
-              <div
-                style={{ width: "266px" }}
-                className="text-lg w-[266px] flex-shrink-0 flex justify-center"
-              >
+              <div className="text-base md:text-lg md:w-[266px] flex-shrink-0 md:flex md:justify-center">
                 August 10, 2025
               </div>
-              <div
-                style={{ width: "266px" }}
-                className="text-lg w-[266px] flex-shrink-0 flex justify-center"
-              >
+              <div className="text-base md:text-lg md:w-[266px] flex-shrink-0 md:flex md:justify-center">
                 23:59 GMT+7
               </div>
             </div>
-            <div className="flex justify-between items-center min-h-[82px] bg-[#FCFAF5] rounded-xl border border-gray-200 px-8 py-4">
-              <div
-                style={{ width: "466px" }}
-                className="font-semibold text-lg w-[466px] flex-shrink-0"
-              >
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-1 md:gap-0 min-h-[82px] bg-[#FCFAF5] rounded-xl border border-gray-200 px-6 md:px-8 py-4">
+              <div className="font-semibold text-base md:text-lg md:w-[466px] flex-shrink-0">
                 Notification of Acceptance of Abstract
               </div>
-              <div
-                style={{ width: "266px" }}
-                className="text-center text-lg w-[266px] flex-shrink-0 flex justify-center"
-              >
+              <div className="text-base md:text-lg md:w-[266px] flex-shrink-0 md:flex md:justify-center">
                 August 20, 2025
               </div>
-              <div
-                style={{ width: "266px" }}
-                className="text-center text-lg w-[266px] flex-shrink-0 flex justify-center"
-              >
+              <div className="text-base md:text-lg md:w-[266px] flex-shrink-0 md:flex md:justify-center">
                 23:59 GMT+7
               </div>
             </div>
-            <div className="flex justify-between items-center min-h-[82px] bg-[#FCFAF5] rounded-xl border border-gray-200 px-8 py-4">
-              <div
-                style={{ width: "466px" }}
-                className="font-semibold text-lg w-[466px] flex-shrink-0"
-              >
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-1 md:gap-0 min-h-[82px] bg-[#FCFAF5] rounded-xl border border-gray-200 px-6 md:px-8 py-4">
+              <div className="font-semibold text-base md:text-lg md:w-[466px] flex-shrink-0">
                 CHANDI 2025 day
               </div>
-              <div
-                style={{ width: "266px" }}
-                className="text-center text-lg w-[266px] flex-shrink-0 flex justify-center"
-              >
+              <div className="text-base md:text-lg md:w-[266px] flex-shrink-0 md:flex md:justify-center">
                 September 03, 2025
               </div>
-              <div
-                style={{ width: "266px" }}
-                className="text-center text-lg w-[266px] flex-shrink-0 flex justify-center"
-              >
+              <div className="text-base md:text-lg md:w-[266px] flex-shrink-0 md:flex md:justify-center">
                 14:00 GMT+7
               </div>
             </div>

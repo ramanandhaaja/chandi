@@ -17,6 +17,7 @@ import ResourcesSection from "@/components/ResourcesSection";
 import AbstractSection from "@/components/AbstractSection";
 import IndependentSection from "@/components/IndependentSection";
 import VideoHeadline from "@/components/VideoHeadline";
+import { FaQ } from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -60,6 +61,8 @@ export default function Home() {
       <HostSection />*/}
 
       <ResourcesSection page="main" />
+
+      <FAQSection />
 
       <FooterSection />
     </>

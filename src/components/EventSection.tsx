@@ -588,7 +588,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "20.15 - 21.55",
           title: "CHANDI Music Performance",
-          description: `Andi Rianto's Band with Judika, Lyodra, Bunga Citra Lestari (BCL), Joey Alexander, Michael Anthony Kwok, Ahmad Dhani, Melly Goeslaw, Once Mekel.`,
+          description: `Andi Rianto's Band with Judika, Lyodra, Bunga Citra Lestari (BCL), Joey Alexander, Michael Anthony Kwok, Ahmad Dhani, Chelsea Islan.`,
           /*
           speakers: [
             {
@@ -672,7 +672,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           speakers: [
             {
               name: "Hashim S. Djojohadikusumo",
-              role: "Chairman of the Board of Trustees of Indonesian Heritage Agency (*TBC)",
+              role: "Chairman of the Board of Trustees of Indonesian Heritage Agency",
               image: "/images/event-section/hashim-djojohadikusumo.png",
             },
           ],
@@ -681,7 +681,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "10.55 - 12.40",
           title:
             "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
-          description: `Keynote Speech: Jean Couteau | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (15 minutes)\n\nPanelists:\n• Franky Raden (Indonesia)\n• Maina Ogawa (Japan)\n• Tiara Jacquelina (Malaysia)\n• Summer Xia (UK)\n\nQ&A`,
+          description: `Keynote Speech: Jean Couteau | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (15 minutes)\n\nPanelists:\n• Giring Ganesha (Deputy Minister of Culture of Indonesia) \n• Franky Raden (Indonesia)\n• Maina Ogawa (Japan)\n• Tiara Jacquelina (Malaysia)\n• Summer Xia (UK)\n\nQ&A`,
           speakers: [
             {
               name: "Jean Couteau",
