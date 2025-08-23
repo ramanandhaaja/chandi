@@ -17,107 +17,198 @@ export default function ContactUsPage() {
 
       <div className="container mx-auto px-4 md:px-6 py-8 md:py-24 text-[#4A2E2B]">
         <div className="space-y-12 md:space-y-20">
-          
-
-          
           {/* Selected Abstracts Announcement Content */}
           <div className="space-y-8 md:space-y-10 text-base md:text-lg leading-relaxed">
-          <h1 className="text-2xl md:text-5xl font-bold px-3 md:px-6 text-[#4A2E2B] shrink-0 text-center">
-                Congratulations to the Selected Abstracts for the CHANDI 2025 Panel Discussions!
-              </h1>
+            <h1 className="text-2xl md:text-5xl font-bold px-3 md:px-6 text-[#4A2E2B] shrink-0 text-center">
+              Congratulations to the Selected Abstracts for the CHANDI 2025
+              Panel Discussions!
+            </h1>
             <p>
-              We are delighted to announce the winning abstracts for the CHANDI 2025 Panel Discussions. These abstracts were carefully and objectively
-              reviewed by our distinguished Co-Hosts: ICOM (International Council of Museums) Indonesia, ICOMOS (International Council on Monuments and
-              Sites) Indonesia, BPPI (Indonesian Heritage Trust), and BRIN (National Research and Innovation Agency), to ensure alignment with the overall
-              theme of the panel and the spirit of CHANDI 2025.
+              We are delighted to announce the winning abstracts for the CHANDI
+              2025 Panel Discussions. These abstracts were carefully and
+              objectively reviewed by our distinguished Co-Hosts: ICOM
+              (International Council of Museums) Indonesia, ICOMOS
+              (International Council on Monuments and Sites) Indonesia, BPPI
+              (Indonesian Heritage Trust), and BRIN (National Research and
+              Innovation Agency), to ensure alignment with the overall theme of
+              the panel and the spirit of CHANDI 2025.
             </p>
 
             <div className="space-y-6">
               <h3 className="text-xl md:text-2xl font-bold">
-                PANEL 1: “Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects”
+                PANEL 1: “Reclaiming History, Restoring Justice: International
+                Cooperation for Repatriation and the Fight Against Illicit
+                Trafficking of Cultural Objects”
               </h3>
               <ol className="list-decimal list-outside pl-6 space-y-4">
                 <li>
                   <p className="font-semibold">Pramudji NF</p>
-                  <p className="text-sm md:text-base">Faculty of Cultural Sciences, Khairun University, Ternate, the Republic of Indonesia</p>
-                  <p className="mt-1"><span className="font-semibold">Title:</span> Diaspora Collections and Multi-layered Claims: A Systematic Literature Review on Negotiation Practices</p>
+                  <p className="text-sm md:text-base">
+                    Faculty of Cultural Sciences, Khairun University, Ternate,
+                    the Republic of Indonesia
+                  </p>
+                  <p className="mt-1">
+                    <span className="font-semibold">Title:</span> Diaspora
+                    Collections and Multi-layered Claims: A Systematic
+                    Literature Review on Negotiation Practices
+                  </p>
                 </li>
                 <li>
-                  <p className="font-semibold">Muhammad Fahmi Reksa Al Farisi</p>
-                  <p className="text-sm md:text-base">SOAS University of London</p>
-                  <p className="mt-1"><span className="font-semibold">Title:</span> Restitution and Responsibility: International Legal Efforts to Fight Illicit Trafficking and Repatriate Cultural Heritage (A United Kingdom–Southeast Asia Case Study)</p>
+                  <p className="font-semibold">
+                    Muhammad Fahmi Reksa Al Farisi
+                  </p>
+                  <p className="text-sm md:text-base">
+                    SOAS University of London
+                  </p>
+                  <p className="mt-1">
+                    <span className="font-semibold">Title:</span> Restitution
+                    and Responsibility: International Legal Efforts to Fight
+                    Illicit Trafficking and Repatriate Cultural Heritage (A
+                    United Kingdom–Southeast Asia Case Study)
+                  </p>
                 </li>
               </ol>
             </div>
 
             <div className="space-y-6">
               <h3 className="text-xl md:text-2xl font-bold">
-                PANEL 2: “Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post-2030 World”
+                PANEL 2: “Traditional Knowledge and Local Practices in Building
+                Resilient and Inclusive Societies in the Post-2030 World”
               </h3>
               <ol className="list-decimal list-outside pl-6 space-y-4">
                 <li>
                   <p className="font-semibold">Fakhriati</p>
-                  <p className="text-sm md:text-base">National Research and Innovation Agency</p>
-                  <p className="mt-1"><span className="font-semibold">Title:</span> Tradition as Infrastructure: Reclaiming local knowledge for resilient futures in the Indonesian archipelago</p>
+                  <p className="text-sm md:text-base">
+                    National Research and Innovation Agency
+                  </p>
+                  <p className="mt-1">
+                    <span className="font-semibold">Title:</span> Tradition as
+                    Infrastructure: Reclaiming local knowledge for resilient
+                    futures in the Indonesian archipelago
+                  </p>
                 </li>
                 <li>
                   <p className="font-semibold">A. Hukmi</p>
-                  <p className="text-sm md:text-base">Makassar Islamic University</p>
-                  <p className="mt-1"><span className="font-semibold">Title:</span> Culture as Infrastructure: Rituals and Oral Traditions of the Hukaea Laea Indigenous Community in Southeast Sulawesi in Building Inclusive and Resilient Societies</p>
+                  <p className="text-sm md:text-base">
+                    Makassar Islamic University
+                  </p>
+                  <p className="mt-1">
+                    <span className="font-semibold">Title:</span> Culture as
+                    Infrastructure: Rituals and Oral Traditions of the Hukaea
+                    Laea Indigenous Community in Southeast Sulawesi in Building
+                    Inclusive and Resilient Societies
+                  </p>
                 </li>
               </ol>
             </div>
 
             <div className="space-y-6">
               <h3 className="text-xl md:text-2xl font-bold">
-                PANEL 3: “Financing the Future of Culture: Unlocking Investment for Preservation and Innovation”
+                PANEL 3: “Financing the Future of Culture: Unlocking Investment
+                for Preservation and Innovation”
               </h3>
               <ol className="list-decimal list-outside pl-6 space-y-4">
                 <li>
                   <p className="font-semibold">Ahmad Saifudin Mutaqi</p>
-                  <p className="text-sm md:text-base">Islamic University of Indonesia (Universitas Islam Indonesia/UII) / Sustainable Inclusive Heritage Economic Community (Komunitas Ekonomi Pusaka Inklusif Berkelanjutan/KEPel)</p>
-                  <p className="mt-1"><span className="font-semibold">Title:</span> Sustainable Cultural Heritage Preservation Strategies through Crowdsourcing and Participatory Funding</p>
+                  <p className="text-sm md:text-base">
+                    Islamic University of Indonesia (Universitas Islam
+                    Indonesia/UII) / Sustainable Inclusive Heritage Economic
+                    Community (Komunitas Ekonomi Pusaka Inklusif
+                    Berkelanjutan/KEPel)
+                  </p>
+                  <p className="mt-1">
+                    <span className="font-semibold">Title:</span> Sustainable
+                    Cultural Heritage Preservation Strategies through
+                    Crowdsourcing and Participatory Funding
+                  </p>
                 </li>
                 <li>
                   <p className="font-semibold">Prasasti S.</p>
-                  <p className="text-sm md:text-base">Maastricht University, Netherlands</p>
-                  <p className="mt-1"><span className="font-semibold">Title:</span> From Tax to Score: Sustainable Funding Strategy to Conserve Indonesian Classical Music</p>
+                  <p className="text-sm md:text-base">
+                    Maastricht University, Netherlands
+                  </p>
+                  <p className="mt-1">
+                    <span className="font-semibold">Title:</span> From Tax to
+                    Score: Sustainable Funding Strategy to Conserve Indonesian
+                    Classical Music
+                  </p>
                 </li>
               </ol>
             </div>
 
             <div className="space-y-6">
               <h3 className="text-xl md:text-2xl font-bold">
-                PANEL 4: “Responding the Climate Risks to Heritage and Fostering Culture-Based Climate Action”
+                PANEL 4: “Responding the Climate Risks to Heritage and Fostering
+                Culture-Based Climate Action”
               </h3>
               <ol className="list-decimal list-outside pl-6 space-y-4">
                 <li>
                   <p className="font-semibold">Dewi D.A.P</p>
-                  <p className="text-sm md:text-base">BALIDOC Film & Documentary Community</p>
-                  <p className="mt-1"><span className="font-semibold">Title:</span> Children’s Documentary as a Cultural Climate Action Tool: The Case of Wana Kerthi – A Celebration for Nature</p>
+                  <p className="text-sm md:text-base">
+                    BALIDOC Film & Documentary Community
+                  </p>
+                  <p className="mt-1">
+                    <span className="font-semibold">Title:</span> Children’s
+                    Documentary as a Cultural Climate Action Tool: The Case of
+                    Wana Kerthi – A Celebration for Nature
+                  </p>
                 </li>
                 <li>
                   <p className="font-semibold">Somya Goel</p>
-                  <p className="text-sm md:text-base">Indian Institute of Heritage</p>
-                  <p className="mt-1"><span className="font-semibold">Title:</span> Echoes of Adaptation: Archaeological Insights from the Meghalayan Age for Climate-Resilient Heritage Management</p>
+                  <p className="text-sm md:text-base">
+                    Indian Institute of Heritage
+                  </p>
+                  <p className="mt-1">
+                    <span className="font-semibold">Title:</span> Echoes of
+                    Adaptation: Archaeological Insights from the Meghalayan Age
+                    for Climate-Resilient Heritage Management
+                  </p>
                 </li>
               </ol>
             </div>
 
             <p className="mt-4">
-              Selected authors are kindly requested to confirm their participation by <span className="font-semibold">23 August 2025</span>, to present at the Panel Discussions during the Summit. We look forward to your contributions and to welcoming you in Bali!
+              Selected authors are kindly requested to confirm their
+              participation by{" "}
+              <span className="font-semibold">23 August 2025</span>, to present
+              at the Panel Discussions during the Summit. We look forward to
+              your contributions and to welcoming you in Bali!
             </p>
 
             <p className="mt-4">
-            We received over 200 abstracts in the very short time frame.  For the  abstract that have not yet been selected to be presented in this Panel Discussion, We appreciate your hard work and and would be very interested to hear from you again in future endeavors.
-<br/><br/>
-Should you be interested to join CHANDI 2025 and become a participant in the panel discussion and the many events we have in store, you are welcome to join us by following <b><u><a href="https://registration-chandisummit2025.genstix.id/" className="underline">this link</a></u></b>. We have attached the invitation below, and note that this summit is free and we do not take any fee for the registration. Although we do not cover transport and accommodation participants will be welcome to join our opening ceremony, entertainment, workshops, refreshments and enjoy our booths in our venue.
-<br/><br/>
-Warm regards,
-<br/><br/>
-CHANDI 2025 Secretariat</p>
+              We received over 200 abstracts in the very short time frame. For
+              the abstract that have not yet been selected to be presented in
+              this Panel Discussion, We appreciate your hard work and and would
+              be very interested to hear from you again in future endeavors.
+              <br />
+              <br />
+              Should you be interested to join CHANDI 2025 and become a
+              participant in the panel discussion and the many events we have in
+              store, you are welcome to join us by following{" "}
+              <b>
+                <u>
+                  <a
+                    href="https://registration-chandisummit2025.genstix.id/"
+                    className="underline"
+                  >
+                    this link
+                  </a>
+                </u>
+              </b>
+              . We have attached the invitation below, and note that this summit
+              is free and we do not take any fee for the registration. Although
+              we do not cover transport and accommodation participants will be
+              welcome to join our opening ceremony, entertainment, workshops,
+              refreshments and enjoy our booths in our venue.
+              <br />
+              <br />
+              Warm regards,
+              <br />
+              <br />
+              CHANDI 2025 Secretariat
+            </p>
           </div>
-          
+
           <div className="mt-16 md:mt-24 py-8 md:py-10">
             <div className="flex items-center" aria-hidden="true">
               <hr className="flex-1 border-gray-400" />
@@ -135,16 +226,16 @@ CHANDI 2025 Secretariat</p>
             </div>
             <div className="md:w-3/4">
               <p className="text-base md:text-lg leading-relaxed">
-                The CHANDI 2025 (Culture, Heritage, Art, Narrative,
-                Diplomacy, and Innovation) will convene global leaders,
-                policymakers, scholars, and cultural practitioners under the
-                theme “Culture for the Future.” This summit aims to position
-                culture as a catalyst for sustainable development, peace, and
-                innovation. As part of this mission, four high-level panel
-                discussions will explore critical intersections of culture,
-                sustainability, and technology. The CHANDI 2025 Programme
-                Committee invites abstract submissions for presentations at the
-                conference in Bali, Indonesia, from 3 to 5 September 2025.
+                The CHANDI 2025 (Culture, Heritage, Art, Narrative, Diplomacy,
+                and Innovation) will convene global leaders, policymakers,
+                scholars, and cultural practitioners under the theme “Culture
+                for the Future.” This summit aims to position culture as a
+                catalyst for sustainable development, peace, and innovation. As
+                part of this mission, four high-level panel discussions will
+                explore critical intersections of culture, sustainability, and
+                technology. The CHANDI 2025 Programme Committee invites abstract
+                submissions for presentations at the conference in Bali,
+                Indonesia, from 3 to 5 September 2025.
               </p>
             </div>
           </div>
@@ -179,8 +270,8 @@ CHANDI 2025 Secretariat</p>
             </div>
             <div className="md:w-3/4">
               <p className="text-base md:text-lg mb-4">
-                The CHANDI 2025 Program Committee calls on participants
-                to submit abstracts on the following topics:
+                The CHANDI 2025 Program Committee calls on participants to
+                submit abstracts on the following topics:
               </p>
               <ol className="list-decimal list-inside space-y-3 md:space-y-2 text-base md:text-lg">
                 <li>
