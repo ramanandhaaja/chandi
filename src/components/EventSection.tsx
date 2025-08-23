@@ -760,11 +760,15 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "09.00 - 11.30",
           title: "Seminar at ISI Bali:",
           description: `"Future of Intangible Cultural Heritage”\nInvolvement of UNESCO and Academics to discuss the preservation of non‑physical cultural assets (music, dance, cuisine, and rituals).`,
+          linkHref: "/files/Rundown_seminar_ISI.pdf",
+          linkText: "Download Rundown Seminar ISI (PDF)",
         },
         {
           time: "09.00 - 11.30",
           title: "Seminar, Udayana University of Bali :",
           description: `"Digital Heritage & AI for Culture”\nExploring AI technology for documenting and digitizing cultural Heritage.`,
+          linkHref: "/files/Rundown_seminar_Udayana.pdf",
+          linkText: "Download Rundown Seminar Udayana (PDF)",
         },
         {
           time: "11.30 - 13.00",

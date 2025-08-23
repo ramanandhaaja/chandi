@@ -12,6 +12,12 @@ const resources = [
     size: "1 MB",
     url: "/files/SelectedAbstracts_Announcement.pdf",
   },
+  {
+    title: "Poster Publikasi",
+    subtitle: "Poster_Publikasi.pdf",
+    size: "55 MB",
+    url: "/files/Poster_Publikasi.pdf",
+  },
 ];
 
 const ResourcesSection = ({ page }: { page: string; }) => {
