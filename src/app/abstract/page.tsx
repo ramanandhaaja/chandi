@@ -111,7 +111,7 @@ export default function ContactUsPage() {
             <p className="mt-4">
             We received over 200 abstracts in the very short time frame.  For the  abstract that have not yet been selected to be presented in this Panel Discussion, We appreciate your hard work and and would be very interested to hear from you again in future endeavors.
 <br/><br/>
-Should you be interested to join CHANDI 2025 and become a participant in the panel discussion and the many events we have in store, you are welcome to join us by following <b> <a href="https://registration-chandisummit2025.genstix.id/">this link</a></b>. We have attached the invitation below, and note that this summit is free and we do not take any fee for the registration. Although we do not cover transport and accommodation participants will be welcome to join our opening ceremony, entertainment, workshops, refreshments and enjoy our booths in our venue.
+Should you be interested to join CHANDI 2025 and become a participant in the panel discussion and the many events we have in store, you are welcome to join us by following <b><u><a href="https://registration-chandisummit2025.genstix.id/" className="underline">this link</a></u></b>. We have attached the invitation below, and note that this summit is free and we do not take any fee for the registration. Although we do not cover transport and accommodation participants will be welcome to join our opening ceremony, entertainment, workshops, refreshments and enjoy our booths in our venue.
 <br/><br/>
 Warm regards,
 <br/><br/>
