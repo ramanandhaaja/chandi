@@ -473,26 +473,26 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
           title: "Panel Discussion 1",
           description: `• Topic: “Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects”\n• Co-Host: ICOM\n• Panelists:\n  1) Prof. I Ketut Ardhana, PhD (Udayana Univ, President of International)\n  2) I Gusti Agung Wesaka Puja (Diplomat)\n• Moderator: Budi Trinovari, Ketua Pelaksana Harian ICOM Indonesia\n• Q&A Session\n• Note: Coffee and snacks will be served during the discussion`,
-          top_right_image: "/images/event-section/panel1.jpeg",
+          top_right_image: "/images/event-section/panel3.jpeg",
         },
         {
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
           title: "Panel Discussion 2",
           description: `• Topic: “Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post-2030 World”\n• Co Host: ICOMOS\n• Panelists:\n  1) Prof.Dr. I Wayan Adnyana, S.Sn., M.Sn. (Rector of the Indonesian Institute of the Arts Bali)\n  2) Dr. Rohit Jigyasu (Programme Manager, Sustainable Urban and Built Heritage Conservation, Disaster and Climate Risk Management & Post Crisis Recovery, Program Unit, International Centre for the Study of the Preservation and Restoration of Cultural Property)\n• Moderator: Dra. Nazrina Zuryani, M.A., Ph.D, Head of Bali Province branch of Indonesia Sociology Association\n• Q&A Session`,
-          top_right_image: "/images/event-section/panel2.jpeg",
+          top_right_image: "/images/event-section/panel1.jpeg",
         },
         {
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
           title: "Panel Discussion 3",
           description: `• Topic: “Financing the Future of Culture: Unlocking Investment for Preservation and Innovation”\n• CO HOST: Indonesian Heritage Trust (BPPI)\n• Panelists:\n  1) Dr. Donovan Rypkema (President of Heritage Strategies International)\n  2) Hasti Tarekat Dipowijoyo (Founder of Heritage Hands-on in Amsterdam and Co‑Chair of Advisory Board of the Asian Network for Industrial Heritage)\n• Moderator: Catrini Pratihari Kubontubuh, M.Arch. (Chairperson of the Indonesian Heritage Trust)\n• Q&A Session`,
-          top_right_image: "/images/event-section/panel3.jpeg",
+          top_right_image: "/images/event-section/panel4.jpeg",
         
         },
         {
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
           title: "Panel Discussion 4",
           description: `• Topic: “Responding the Climate Risks to Heritage and Fostering Culture‑Based Climate Action”\n• Co Host: BRIN\n• Panelists:\n  1) Professor R. Michael Feener — Professor of Cross‑Regional Studies at the Centre for Southeast Asian Studies at Kyoto University\n  2) Dr. Wengki Ariando — Indonesian activist‑researcher and postdoctoral fellow at the Royal Netherlands Institute of Southeast Asian and Caribbean Studies (KITLV) in Leiden\n• Moderator: Marlon Ririmasse — Head of Research Center Archaeology of Environmental, Maritime and Sustainable Culture\n• Q&A Session`,
-          top_right_image: "/images/event-section/panel4.jpeg",
+          top_right_image: "/images/event-section/panel2.jpeg",
         },
         {
           time: "17.30 - 18.00",
