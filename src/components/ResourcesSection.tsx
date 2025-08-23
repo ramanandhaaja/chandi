@@ -10,7 +10,7 @@ const resources = [
     title: "Selected Abstract Announcement",
     subtitle: "Selected Abstract Announcement.pdf",
     size: "1 MB",
-    url: "/files/SelectedAbstract_Announcement.pdf",
+    url: "/files/SelectedAbstracts_Announcement.pdf",
   },
 ];
 
