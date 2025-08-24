@@ -58,7 +58,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Prof. Bambang Wibawarta",
               role: "Secretary General of the Ministry of Culture of the Republic of Indonesia",
-              image: "/images/event-section/bambang-wibawarta.png",
+              image: "/images/event-section/bambang.png",
             },
           ],
         },
@@ -181,7 +181,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Prof. Bambang Wibawarta",
               role: "Secretary General of the Ministry of Culture of the Republic of Indonesia",
-              image: "/images/event-section/bambang-wibawarta.png",
+              image: "/images/event-section/bambang.png",
             },
           ],
         },
@@ -313,7 +313,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Dr. Fadli Zon",
               role: "Minister of Culture of the Republic of Indonesia",
-              image: "/images/event-section/fadli-zon.png", // Update this path if you have a different profile image
+              image: "/images/event-section/fadli.jpeg", // Update this path if you have a different profile image
             },
           ],
         },
@@ -368,7 +368,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Prof. Bambang Wibawarta",
               role: "Secretary General of the Ministry of Culture of the Republic of Indonesia",
-              image: "/images/event-section/bambang-wibawarta.png",
+              image: "/images/event-section/bambang.png",
             },
           ],
         },
@@ -380,7 +380,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Prof. Dr. Pratikno",
               role: "Coordinating Minister for Human Development and Cultural Affairs of the Republic of Indonesia",
-              image: "/images/event-section/fadli-zon.png",
+              image: "/images/event-section/pratikno.png",
             },
           ],
         },
@@ -394,7 +394,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Dr. Fadli Zon",
               role: "Minister of Culture of the Republic of Indonesia",
-              image: "/images/event-section/fadli-zon.png",
+              image: "/images/event-section/fadli.jpeg",
             },
           ],
         },
@@ -412,7 +412,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Prabowo Subianto",
               role: "President of the Republic of Indonesia",
-              image: "/images/event-section/prabowo-subianto.png",
+              image: "/images/event-section/prabowo.jpg",
             },
           ],
         },
@@ -445,7 +445,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Shilpa Shetty",
               role: "Indian Actress – Entrepreneur (*TBC)",
-              image: "/images/event-section/fadli-zon.png",
+              image: "/images/event-section/silpha.png",
             },
           ],
         },
@@ -587,7 +587,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Dr. Fadli Zon",
               role: "Minister of Culture of the Republic of Indonesia",
-              image: "/images/event-section/fadli-zon.png",
+              image: "/images/event-section/fadli.jpeg",
             },
           ],
         },
@@ -679,7 +679,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Hashim S. Djojohadikusumo",
               role: "Chairman of the Board of Trustees of Indonesian Heritage Agency",
-              image: "/images/event-section/hashim-djojohadikusumo.png",
+              image: "/images/event-section/hashim.jpg",
             },
           ],
         },
@@ -692,7 +692,7 @@ const EventSection: React.FC<EventSectionProps> = ({
             {
               name: "Jean Couteau",
               role: "Art Historian, Curator, Writer, and Bali Cultural Observer",
-              image: "/images/event-section/jean-couteau.png",
+              image: "/images/event-section/jean.jpeg",
             },
           ],
         },
