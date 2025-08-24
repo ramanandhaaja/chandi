@@ -674,7 +674,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "09.10 - 10.55",
           title:
             "PLENARY 1: Culture for the Future: Heritage, Identity, and Innovation",
-          description: `Keynote Speech: <b>Hashim S. Djojohadikusumo</b> | Chairman of the Board of Trustees of Indonesian Heritage Agency\n“Culture for The Future” (15 minutes)\n\nPanelists:\n• <b>He Lu</b> (China)\n• <b>Yannai Kadamani</b> (Colombia)\n• <b>Hetifah Sjaifudian</b> (Indonesia)\n• <b>Prof. dr. Wim van den Doel</b> (Netherland)\n• <b>Ella Weiner</b> (USA)\n\nQ&A`,
+          description: `Keynote Speech: <b>Hashim S. Djojohadikusumo</b> | Chairman of the Board of Trustees of Indonesian Heritage Agency\n“Culture for The Future” (15 minutes)\n\nPanelists:\n• <b>He Lu</b> (China)\n• <b>Yannai Kadamani</b> (Colombia)\n• <b>Janet DeNefee</b> (Indonesia)\n• <b>Prof. dr. Wim van den Doel</b> (Netherland)\n• <b>Ella Weiner</b> (USA)\n\nQ&A`,
           speakers: [
             {
               name: "Hashim S. Djojohadikusumo",
@@ -687,7 +687,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "10.55 - 12.40",
           title:
             "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
-          description: `Keynote Speech: <b>Jean Couteau</b> | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (15 minutes)\n\nPanelists:\n• <b>Giring Ganesha</b> (Deputy Minister of Culture of Indonesia) \n• <b>Franky Raden</b> (Indonesia)\n• <b>Maina Ogawa</b> (Japan)\n• <b>Tiara Jacquelina</b> (Malaysia)\n• <b>Summer Xia</b> (UK)\n\nQ&A`,
+          description: `Keynote Speech: <b>Jean Couteau</b> | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (15 minutes)\n\nPanelists:\n• <b>Giring Ganesha</b> (Deputy Minister of Culture of Indonesia) \n• <b>Franky Raden</b> (Indonesia)\n• <b>Maina Ogawa</b> (Japan)\n• <b>Tiara Jacquelina</b> (Malaysia)\n• <b>Summer Xia</b> (UK)\n• <b>Evelise Bruneau </b> (France) \n\nQ&A`,
           speakers: [
             {
               name: "Jean Couteau",
