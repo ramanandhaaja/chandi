@@ -50,8 +50,8 @@ const SpeakersGrid = () => {
     <div className="py-20 mx-auto bg-[#FCFAF5]">
       <div className="max-w-7xl mx-auto space-y-12">
         {Object.entries(groupedSpeakers).map(([groupName, speakers]) => (
-          <section key={groupName}>
-            <h2 className="text-2xl font-bold mb-6">{groupName}</h2>
+          <section key={groupName} className="px-12 sm:px-8">
+            <h2 className="text-2xl sm:text-4xl font-bold mb-6">{groupName}</h2>
             {speakers[0]?.sub_group && (
               <h2 className="text-2xl font-bold mb-6">{speakers[0].sub_group}</h2>
             )}
