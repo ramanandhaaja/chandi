@@ -472,7 +472,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
           title: "Panel Discussion 1",
-          description: `• Topic: “Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects”\n• Co-Host: ICOM\n• Panelists:\n  1) <b>Prof. I Ketut Ardhana, PhD (Udayana Univ, President of International)</b>\n  2) <b>I Gusti Agung Wesaka Puja (Diplomat)</b>\n• Moderator: <b>Budi Trinovari</b>, Ketua Pelaksana Harian ICOM Indonesia</b>\n• Q&A Session\n• Note: Coffee and snacks will be served during the discussion`,
+          description: `• Topic: “Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects”\n• Co-Host: ICOM\n• Panelists:\n  1) <b>Prof. I Ketut Ardhana, PhD (Professor of Asian History, Udayana University)</b>\n  2) <b>I Gusti Agung Wesaka Puja (Diplomat)</b>\n• Moderator: <b>Budi Trinovari</b>, Ketua Pelaksana Harian ICOM Indonesia</b>\n• Q&A Session\n• Note: Coffee and snacks will be served during the discussion`,
           top_right_image: "/images/event-section/panel3.jpeg",
         },
         {

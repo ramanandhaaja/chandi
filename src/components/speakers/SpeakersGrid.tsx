@@ -10,6 +10,7 @@ interface SpeakerSectionData {
     group: string;
     sub_group: string;
     image: string;
+    order: number;
   }[];
 }
 
@@ -39,11 +40,19 @@ const SpeakersGrid = () => {
   const groupedSpeakers = useMemo(() => {
     const groups: Record<string, NonNullable<SpeakerSectionData["speakers"]>> = {};
     const list = speakerData?.speakers ?? [];
+    
+    // First group the speakers
     for (const sp of list) {
       const key = sp.group || "Others";
       if (!groups[key]) groups[key] = [];
       groups[key].push(sp);
     }
+    
+    // Then sort speakers within each group by their order
+    Object.keys(groups).forEach(group => {
+      groups[group].sort((a, b) => (a.order || 0) - (b.order || 0));
+    });
+    
     return groups;
   }, [speakerData]);
   return (
