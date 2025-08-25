@@ -674,7 +674,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "09.10 - 10.55",
           title:
             "PLENARY 1: Culture for the Future: Heritage, Identity, and Innovation",
-          description: `Keynote Speech: <b>Hashim S. Djojohadikusumo</b> | Chairman of the Board of Trustees of Indonesian Heritage Agency\n“Culture for The Future” (15 minutes)\n\nPanelists:\n• <b>He Lu</b> (China)\n• <b>Yannai Kadamani</b> (Colombia)\n• <b>Janet DeNefee</b> (Indonesia)\n• <b>Prof. dr. Wim van den Doel</b> (Netherland)\n• <b>Ella Weiner</b> (USA)\n\nQ&A`,
+          description: `Keynote Speech: <b>Hashim S. Djojohadikusumo</b> | Chairman of the Board of Trustees of Indonesian Heritage Agency\n“Culture for The Future” (15 minutes)\n\nPanelists:\n• <b>Prof. dr. Wim van den Doel</b> (Netherland)\n Dean Leiden-Delft-Erasmus Universities\n• <b>Ella Weiner</b> (USA)\n Global Affairs Specialist, Smithsonian’s National Museum of Asian Art\n• <b>Janet DeNeefe</b> (Indonesia)\n Founder Yayasan Mudra Swari and Director of Ubud Food Festival\n• <b>He Lu</b> (China)\n Associate Professor of School of Arts of Nanfang College•Guangzhou\n• <b>Evelise Bruneau</b> (France)\n Conservatrice en charge des collections Asie du Sud- Est\n\nQ&A`,
           speakers: [
             {
               name: "Hashim S. Djojohadikusumo",
@@ -687,7 +687,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "10.55 - 12.40",
           title:
             "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
-          description: `Keynote Speech: <b>Jean Couteau</b> | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (15 minutes)\n\nPanelists:\n• <b>Giring Ganesha</b> (Deputy Minister of Culture of Indonesia) \n• <b>Franky Raden</b> (Indonesia)\n• <b>Maina Ogawa</b> (Japan)\n• <b>Tiara Jacquelina</b> (Malaysia)\n• <b>Summer Xia</b> (UK)\n• <b>Evelise Bruneau </b> (France) \n\nQ&A`,
+          description: `Keynote Speech: <b>Jean Couteau</b> | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (15 minutes)\n\nPanelists:\n• <b>Giring Ganesha Djumaryo</b> (Indonesia) \nDeputy Minister of Culture of Indonesia\n• <b>Maina Ogawa</b> (Japan)\n Japanese Actress, Voice Actress and Singer\n• <b>Summer Xia</b> (UK)\n British Council Country Director Indonesia & Southeast Asia\n• <b>Tiara Jacquelina</b> (Malaysia)\nActress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n• <b>Franky Raden</b> (Indonesia)\nFounder & Director of Indonesian National Orchestra)\n• <b>Kazembe Kazembe</b> (Zimbabwe) \nMinister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe\n\nQ&A`,
           speakers: [
             {
               name: "Jean Couteau",
@@ -704,7 +704,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "14.10 - 15.40",
           title: "PLENARY 3: Youth Panel",
-          description: `Keynote Speaker: <b>Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (15 minutes)\n\nPanelists:\n• <b>Angga Dwimas Sasongko</b> (Indonesia)\n• <b>Chelsea Islan</b> (Indonesia)\n• <b>Fauzi Ismail</b> (Singapore)\n\nQ&A`,
+          description: `Keynote Speaker: <b>Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (15 minutes)\n\nPanelists:\n• <b>Angga Dwimas Sasongko</b> (Indonesia)\nFilm Director \n• <b>Chelsea Islan</b> (Indonesia)\n Actress\n• <b>Fauzi Ismail</b> (Singapore)\n President of Singapore Heritage Society\n\nQ&A`,
         },
         {
           time: "15.30 - 16.00",
