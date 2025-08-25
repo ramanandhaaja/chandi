@@ -64,9 +64,9 @@ const SpeakersGrid = () => {
             {speakers[0]?.sub_group && (
               <h2 className="text-2xl font-bold mb-6">{speakers[0].sub_group}</h2>
             )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={`grid ${groupName === 'Opening' ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'}`}>
               {speakers.map((speaker) => (
-                <div key={speaker.id} className="flex flex-col items-center">
+                <div key={speaker.id} className={`flex flex-col ${groupName === 'Opening' ? 'items-start' : 'items-center'}`}>
                   <div className="relative w-64 h-80 md:w-[380px] md:h-[427px] rounded-2xl overflow-hidden ">
                     <Image
                       src={
