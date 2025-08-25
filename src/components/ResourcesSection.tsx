@@ -36,6 +36,20 @@ const resources = [
     size: "0.5 MB",
     url: "/files/CHANDI2025_Ministerial_Summit_Session_Guidelines.pdf",
   },
+
+  {
+    title: "Bali Cultural Initiative Declaration 2025",
+    subtitle: "Bali_Cultural_Initiative_Declaration_2025.pdf",
+    size: "0.5 MB",
+    url: "/files/Bali_Cultural_Initiative_Declaration_2025.pdf",
+  },
+
+  {
+    title: "CHANDI2025 Ministerial Summit Order of Business",
+    subtitle: "CHANDI2025_Ministerial_Summit_Order_of_Business.pdf",
+    size: "0.5 MB",
+    url: "/files/CHANDI2025_Ministerial_Summit_Order_of_Business.pdf",
+  },
   
 ];
 
