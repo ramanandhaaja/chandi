@@ -18,7 +18,7 @@ export default function StreamPage() {
         setIsLive(false);
         setIsLoading(false);
       }
-    }, 10000); // 10 second timeout
+    }, 5000); // 5 second timeout
 
     return () => clearTimeout(timeoutId);
   }, [isLoading]);
