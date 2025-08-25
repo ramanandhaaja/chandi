@@ -662,7 +662,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "09.00 - 09.10",
-          title: "Special Opening Performance by <b>Mina Mind - Japan</b>",
+          title: "Special Opening Performance by Mina Mind - Japan",
           description: "Special Opening Performance by <b>Mina Mind - Japan</b>",
         },
         {
