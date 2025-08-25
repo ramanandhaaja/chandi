@@ -4,48 +4,25 @@ import FooterSection from "@/components/FooterSection";
 import HeaderSection from "@/components/HeaderSection";
 
 const YOUTUBE_CHANNEL_ID = "UC8Py24MpKOp_mekZW0CLx_w";
-const CHECK_INTERVAL = 30000; // Check every 30 seconds
 
 export default function StreamPage() {
   const [isLive, setIsLive] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [isCopied, setIsCopied] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  // This is a fallback check that runs if the iframe method fails
-  const checkStreamStatus = async () => {
-    try {
-      // Try to load the live stream
-      const response = await fetch(`https://www.youtube.com/channel/${YOUTUBE_CHANNEL_ID}/live`);
-      const html = await response.text();
-      // If YouTube returns a 200 and the page contains "LIVE NOW" text, the stream is live
-      const isStreamLive = html.includes('"isLive":true') || html.includes('LIVE NOW');
-      setIsLive(isStreamLive);
-      console.log('Stream status check:', isStreamLive ? 'Live' : 'Offline');
-    } catch (error) {
-      console.error('Error checking stream status:', error);
-      setIsLive(false);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   useEffect(() => {
-    // Check immediately
-    checkStreamStatus();
-    
-    // Then check periodically
-    const intervalId = setInterval(checkStreamStatus, CHECK_INTERVAL);
-    
-    // Cleanup interval on component unmount
-    return () => clearInterval(intervalId);
-  }, []);
+    // Set a timeout to handle cases where iframe doesn't load properly
+    const timeoutId = setTimeout(() => {
+      if (isLoading) {
+        console.log('Stream load timeout - assuming offline');
+        setIsLive(false);
+        setIsLoading(false);
+      }
+    }, 10000); // 10 second timeout
 
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-    setIsCopied(true);
-    setTimeout(() => setIsCopied(false), 2000);
-  };
+    return () => clearTimeout(timeoutId);
+  }, [isLoading]);
+
 
   return (
     <div className="bg-[#5B5630] min-h-screen">
@@ -75,18 +52,25 @@ export default function StreamPage() {
                     ref={iframeRef}
                     width="100%"
                     height="100%"
-                    src={`https://www.youtube.com/embed/live_stream?channel=${YOUTUBE_CHANNEL_ID}&autoplay=1&mute=0`}
+                    src={`https://www.youtube.com/embed/live_stream?channel=${YOUTUBE_CHANNEL_ID}&autoplay=1&mute=0&rel=0&modestbranding=1`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"
                     onLoad={() => {
-                      if (!isLive) {
-                        setIsLive(true);
-                        setIsLoading(false);
-                      }
+                      console.log('Iframe loaded');
+                      // If we're still loading after 2 seconds, assume the stream is live
+                      // This handles cases where YouTube doesn't fire the onError event
+                      setTimeout(() => {
+                        if (isLoading) {
+                          console.log('Assuming stream is live (timeout)');
+                          setIsLive(true);
+                          setIsLoading(false);
+                        }
+                      }, 2000);
                     }}
                     onError={() => {
+                      console.log('Iframe error - stream likely offline');
                       setIsLive(false);
                       setIsLoading(false);
                     }}
