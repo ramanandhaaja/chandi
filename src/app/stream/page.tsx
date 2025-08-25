@@ -9,8 +9,6 @@ const CHECK_INTERVAL = 30000; // Check every 30 seconds
 export default function StreamPage() {
   const [isLive, setIsLive] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [streamKey] = useState("qcez-se5d-8w9x-pp4b-0qtc");
-  const [streamUrl] = useState("rtmp://a.rtmp.youtube.com/live2");
   const [isCopied, setIsCopied] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -52,50 +50,60 @@ export default function StreamPage() {
   return (
     <div className="bg-[#5B5630] min-h-screen">
       <HeaderSection />
-      <main className="w-full min-h-screen flex flex-col items-center overflow-auto pt-24 pb-16 px-4">
-        <div className="w-full max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-white text-center mb-8">
+      <main className="w-full min-h-screen flex flex-col items-center overflow-auto pt-16 md:pt-24 pb-8 md:pb-16 px-2 sm:px-4">
+        <div className="w-full max-w-6xl mx-auto px-2 sm:px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4 sm:mb-6 md:mb-8">
             Live Streaming
           </h1>
           
-          {/* Stream Player */}
-          <div className="bg-black w-full aspect-video max-w-6xl mx-auto mb-8 rounded-lg overflow-hidden shadow-2xl">
+          {/* Stream Container */}
+          <div className="relative w-full pb-[56.25%] h-0 bg-black rounded-lg overflow-hidden shadow-2xl mb-6 md:mb-8">
             {isLoading ? (
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="animate-pulse text-white">Checking stream status...</div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="animate-pulse text-white text-sm sm:text-base">Checking stream status...</div>
               </div>
             ) : (
-              <div className="w-full h-full flex flex-col">
+              <>
                 {isLive && (
-                  <div className="bg-red-600 text-white py-1 px-4 flex items-center justify-center">
-                    <div className="w-3 h-3 bg-white rounded-full animate-pulse mr-2"></div>
+                  <div className="absolute top-0 left-0 right-0 bg-red-600 text-white py-1 px-2 sm:px-4 flex items-center justify-center text-xs sm:text-sm z-10">
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full animate-pulse mr-1 sm:mr-2"></div>
                     <span className="font-semibold">LIVE NOW</span>
                   </div>
                 )}
-                <iframe
-                  ref={iframeRef}
-                  width="100%"
-                  height="100%"
-                  src={`https://www.youtube.com/embed/live_stream?channel=${YOUTUBE_CHANNEL_ID}&autoplay=1&mute=0`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full flex-1"
-                  onLoad={() => {
-                    // Once iframe loads, we'll assume the stream is available
-                    // YouTube will show its own "offline" message if needed
-                    if (!isLive) {
-                      setIsLive(true);
+                <div className="absolute inset-0 w-full h-full">
+                  <iframe
+                    ref={iframeRef}
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/live_stream?channel=${YOUTUBE_CHANNEL_ID}&autoplay=1&mute=0`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                    onLoad={() => {
+                      if (!isLive) {
+                        setIsLive(true);
+                        setIsLoading(false);
+                      }
+                    }}
+                    onError={() => {
+                      setIsLive(false);
                       setIsLoading(false);
-                    }
-                  }}
-                  onError={() => {
-                    setIsLive(false);
-                    setIsLoading(false);
-                  }}
-                ></iframe>
-              </div>
+                    }}
+                  />
+                </div>
+              </>
             )}
+          </div>
+          
+          {/* Stream Info (for mobile) */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:hidden">
+            <h2 className="text-white text-lg font-semibold mb-2">Stream Information</h2>
+            <p className="text-gray-300 text-sm">
+              {isLive 
+                ? "The stream is currently live. Enjoy the broadcast!"
+                : "The stream is currently offline. Please check back later."}
+            </p>
           </div>
         </div>
         <FooterSection />
