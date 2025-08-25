@@ -662,8 +662,8 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "09.00 - 09.10",
-          title: "Special Opening Performance by Maina Mind - Japan",
-          description: "Born to a guitarist father and a dancer mother, she began taking various dance lessons from the age of three. She also earned the title of Natori in the Fujima school of traditional Japanese dance. In 2012, she began her career as part of a group, which she left in April 2022. The following month, in May 2022, she launched her solo career as Maina Mind. \n\n With roots in 1990s African American music, R&B, and soul, her unique sense of rhythm blends Japanese and Western styles. Her powerful vocals, talented dance, and soulful, expressive performances captivate and energize audiences in any venue. She writes her own lyrics, creates her own tracks, and produces all of her costumes and stage effects for her live performances. Through her art, she shares her core theme: 'Love' to the world.",
+          title: "Special Opening Performance by Mainamind - Japan",
+          description: "Born to a guitarist father and a dancer mother, she began taking various dance lessons from the age of three. She also earned the title of Natori in the Fujima school of traditional Japanese dance. In 2012, she began her career as part of a group, which she left in April 2022. The following month, in May 2022, she launched her solo career as Mainamind. \n\n With roots in 1990s African American music, R&B, and soul, her unique sense of rhythm blends Japanese and Western styles. Her powerful vocals, talented dance, and soulful, expressive performances captivate and energize audiences in any venue. She writes her own lyrics, creates her own tracks, and produces all of her costumes and stage effects for her live performances. Through her art, she shares her core theme: 'Love' to the world.",
         },
         {
           time: "09.10 - 12.00",
