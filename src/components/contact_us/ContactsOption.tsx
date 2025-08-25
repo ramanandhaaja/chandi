@@ -24,7 +24,7 @@ const ContactsOption = () => {
             <div className="flex flex-col space-y-4 justify-center items-center text-[#9D7935]">
               <p className="text-center font-medium">Email</p>
               <Image src="/email.svg" alt="email logo" width={55} height={55} />
-              <p className="text-center font-medium text-2xl">
+              <p className="text-center font-medium text-l sm:text-2xl">
               secretariatchandisummit2025@kemenbud.go.id
               </p>
             </div>
