@@ -18,12 +18,12 @@ const resources = [
     size: "55 MB",
     url: "/files/Poster_Publikasi.pdf",
   },
-  {
-    title: "Concept Note - Agenda Panel Discussion",
-    subtitle: "Concept_Note_Agenda_Panel_Discussion.pdf",
-    size: "0.5 MB",
-    url: "/files/Concept_Note_Agenda_Panel_Discussion.pdf",
-  },
+  // {
+  //   title: "Concept Note - Agenda Panel Discussion",
+  //   subtitle: "Concept_Note_Agenda_Panel_Discussion.pdf",
+  //   size: "0.5 MB",
+  //   url: "/files/Concept_Note_Agenda_Panel_Discussion.pdf",
+  // },
   {
     title: "CHANDI2025 Ministerial Summit Concept Note",
     subtitle: "CHANDI2025 Ministerial Summit Concept Note.pdf",
