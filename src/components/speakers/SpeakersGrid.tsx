@@ -66,7 +66,7 @@ const SpeakersGrid = () => {
             )}
             <div className={`grid ${groupName === 'Opening' ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'}`}>
               {speakers.map((speaker) => (
-                <div key={speaker.id} className={`flex flex-col ${groupName === 'Opening' ? 'items-start' : 'items-center'}`}>
+                <div key={speaker.id} className={`flex flex-col ${groupName === 'Opening' ? 'items-center md:items-start' : 'items-center'}`}>
                   <div className="relative w-64 h-80 md:w-[380px] md:h-[427px] rounded-2xl overflow-hidden ">
                     <Image
                       src={
@@ -79,7 +79,7 @@ const SpeakersGrid = () => {
                       className="object-cover"
                     />
                   </div>
-                  <div className="text-center py-4 pb-6">
+                  <div className={`${groupName === 'Opening' ? 'w-64 md:w-[380px] text-center' : 'text-center'} py-4 pb-6`}>
                     <h3 className="text-xl font-semibold">{speaker.name}</h3>
                     <p>{speaker.title}</p>
                   </div>

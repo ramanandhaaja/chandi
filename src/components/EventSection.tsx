@@ -407,11 +407,11 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "09.55 - 10.40",
           title: "Keynote Speech",
           description:
-            "<b>Prabowo Subianto</b> | President of the Republic of Indonesia.",
+            "<b>Prabowo Subianto</b> | President of Republic of Indonesia.",
           speakers: [
             {
               name: "Prabowo Subianto",
-              role: "President of the Republic of Indonesia",
+              role: "President of Republic of Indonesia",
               image: "/images/event-section/prabowo.jpg",
             },
           ],
@@ -687,7 +687,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "10.55 - 12.40",
           title:
             "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
-          description: `Keynote Speech: <b>Jean Couteau</b> | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (15 minutes)\n\nPanelists:\n• <b>Giring Ganesha Djumaryo</b> (Indonesia) \nDeputy Minister of Culture of Indonesia\n• <b>Maina Ogawa</b> (Japan)\n Japanese Actress, Voice Actress and Singer\n• <b>Summer Xia</b> (UK)\n British Council Country Director Indonesia & Southeast Asia\n• <b>Tiara Jacquelina</b> (Malaysia)\nActress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n• <b>Franky Raden</b> (Indonesia)\nFounder & Director of Indonesian National Orchestra)\n• <b>Kazembe Kazembe</b> (Zimbabwe) \nMinister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe\n\nQ&A`,
+          description: `Keynote Speech: <b>Jean Couteau</b> | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (15 minutes)\n\nPanelists:\n• <b>Giring Ganesha Djumaryo</b> (Indonesia) \nDeputy Minister Of Culture Of The Republic Of Indonesia\n• <b>Maina Ogawa</b> (Japan)\n Japanese Actress, Voice Actress and Singer\n• <b>Summer Xia</b> (UK)\n British Council Country Director Indonesia & Southeast Asia\n• <b>Tiara Jacquelina</b> (Malaysia)\nActress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n• <b>Franky Raden</b> (Indonesia)\nFounder & Director of Indonesian National Orchestra)\n• <b>Kazembe Kazembe</b> (Zimbabwe) \nMinister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe\n\nQ&A`,
           speakers: [
             {
               name: "Jean Couteau",
