@@ -50,6 +50,12 @@ const resources = [
     size: "0.5 MB",
     url: "/files/CHANDI2025_Ministerial_Summit_Order_of_Business.pdf",
   },
+  {
+    title: "Concept Note - Agenda Panel Discussion",
+    subtitle: "ConceptNote_Agenda_PanelDiscussion.pdf",
+    size: "0.5 MB",
+    url: "/files/ConceptNote_Agenda_PanelDiscussion.pdf",
+  },
   
 ];
 
