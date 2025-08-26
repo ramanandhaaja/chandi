@@ -19,25 +19,48 @@ interface GoogleMultiMarkerMapProps {
   onMarkerClick?: (index: number, location: MapLocation) => void;
 }
 
-// Dynamically load Google Maps JS API
+// Dynamically load Google Maps JS API (idempotent, re-usable promise)
 function loadGoogleMaps(apiKey: string): Promise<void> {
   if (typeof window === "undefined") return Promise.resolve();
 
-  const existing = document.getElementById("google-maps-script") as HTMLScriptElement | null;
-  if (existing && (window as any).google?.maps) {
-    return Promise.resolve();
+  const w = window as any;
+  // Reuse an in-flight or completed promise to avoid double-including the script
+  if (w.__googleMapsLoadPromise) {
+    return w.__googleMapsLoadPromise;
   }
 
-  return new Promise((resolve, reject) => {
+  // If Google Maps already available, resolve immediately
+  if (w.google?.maps) {
+    w.__googleMapsLoadPromise = Promise.resolve();
+    return w.__googleMapsLoadPromise;
+  }
+
+  const existing = document.getElementById("google-maps-script") as HTMLScriptElement | null;
+
+  w.__googleMapsLoadPromise = new Promise<void>((resolve, reject) => {
+    // If a script tag exists but maps not yet ready, hook into its events
+    if (existing) {
+      if (w.google?.maps) {
+        resolve();
+      } else {
+        existing.addEventListener("load", () => resolve());
+        existing.addEventListener("error", () => reject(new Error("Failed to load Google Maps script")));
+      }
+      return;
+    }
+
+    // Create the script only once
     const script = document.createElement("script");
     script.id = "google-maps-script";
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&v=weekly`;
     script.async = true;
     script.defer = true;
     script.onload = () => resolve();
     script.onerror = () => reject(new Error("Failed to load Google Maps script"));
     document.head.appendChild(script);
   });
+
+  return w.__googleMapsLoadPromise;
 }
 
 export default function GoogleMultiMarkerMap({
