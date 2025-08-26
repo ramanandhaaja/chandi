@@ -59,7 +59,7 @@ const SpeakersGrid = () => {
     <div className="py-20 mx-auto bg-[#FCFAF5]">
       <div className="max-w-7xl mx-auto space-y-12">
         {Object.entries(groupedSpeakers).map(([groupName, speakers]) => (
-          <section key={groupName} className="px-12 sm:px-8">
+          <section key={groupName} className={`${groupName === 'Opening' ? 'pl-12 pr-12 sm:pr-8' : 'px-12 sm:px-8'}`}>
             <h2 className="text-2xl sm:text-4xl font-bold mb-6">{groupName}</h2>
             {speakers[0]?.sub_group && (
               <h2 className="text-2xl font-bold mb-6">{speakers[0].sub_group}</h2>
@@ -79,7 +79,7 @@ const SpeakersGrid = () => {
                       className="object-cover"
                     />
                   </div>
-                  <div className={`${groupName === 'Opening' ? 'w-64 md:w-[380px] text-center' : 'text-center'} py-4 pb-6`}>
+                  <div className={`${groupName === 'Opening' ? 'w-64 md:w-[380px] text-center' : 'w-64 md:w-[380px] text-center'} py-4 pb-6`}>
                     <h3 className="text-xl font-semibold">{speaker.name}</h3>
                     <p>{speaker.title}</p>
                   </div>
