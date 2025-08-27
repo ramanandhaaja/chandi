@@ -507,7 +507,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "20.00 - 22.00",
           title: "CHANDI Music Performance",
-          description: `Andi Rianto's Band with <b>Judika, Lyodra, Bunga Citra Lestari (BCL), Joey Alexander, Michael Anthony Kwok, Ahmad Dhani</b>`,
+          description: `Andi Rianto's Band with <b>Judika, Lyodra, Bunga Citra Lestari (BCL), Joey Alexander, Michael Anthony Kwok, Ahmad Dhani, Chelsea Islan</b>`,
           /*
           speakers: [
             {
