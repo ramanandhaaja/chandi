@@ -440,11 +440,11 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "11.10 - 11.35",
           title: "Keynote Address: Culture as the Key to Future Global Sustainability",
-          description: "<b>Shilpa Shetty</b> | Indian Actress – Entrepreneur (*TBC)",
+          description: "<b>Shilpa Shetty</b> | Indian Actress, Model, Producer, Entrepreneur, and Author",
           speakers: [
             {
               name: "Shilpa Shetty",
-              role: "Indian Actress – Entrepreneur (*TBC)",
+              role: "Indian Actress, Model, Producer, Entrepreneur, and Author",
               image: "/images/event-section/silpha.png",
             },
           ],
