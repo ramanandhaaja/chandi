@@ -472,13 +472,13 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
           title: "Panel Discussion 1",
-          description: `• Topic: “Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects”\n• Co-Host: ICOM\n• Panelists:\n  1) <b>Prof. I Ketut Ardhana, PhD (Professor of Asian History, Udayana University)</b>\n  2) <b>I Gusti Agung Wesaka Puja (Diplomat)</b>\n• Moderator: <b>Budi Trinovari</b>, Ketua Pelaksana Harian ICOM Indonesia</b>\n• Q&A Session\n• Note: Coffee and snacks will be served during the discussion`,
+          description: `• Topic: “Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects”\n• Co-Host: ICOM\n• Panelists:\n  1) <b>Prof. I Ketut Ardhana, PhD (Professor of Asian History, Udayana University)</b>\n  2) <b>I Gusti Agung Wesaka Puja (Diplomat)</b>\n• Moderator: <b>Budi Trinovari</b>, Chair of ICOM Indonesia</b>\n• Q&A Session\n• Note: Coffee and snacks will be served during the discussion`,
           top_right_image: "/images/event-section/panel3.jpeg",
         },
         {
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
           title: "Panel Discussion 2",
-          description: `• Topic: “Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post-2030 World”\n• Co Host: ICOMOS\n• Panelists:\n  1) <b>Prof.Dr. I Wayan Adnyana, S.Sn., M.Sn.</b> (Rector of the Indonesian Institute of the Arts Bali)\n  2) <b>Dr. Rohit Jigyasu</b> (Programme Manager, Sustainable Urban and Built Heritage Conservation, Disaster and Climate Risk Management & Post Crisis Recovery, Program Unit, International Centre for the Study of the Preservation and Restoration of Cultural Property)\n• Moderator: <b>Dra. Nazrina Zuryani, M.A., Ph.D</b>, Head of Bali Province branch of Indonesia Sociology Association\n• Q&A Session`,
+          description: `• Topic: “Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post-2030 World”\n• Co Host: ICOMOS\n• Panelists:\n  1) <b>Prof.Dr. I Wayan Adnyana, S.Sn., M.Sn.</b> (Rector of the Indonesian Institute of the Arts Bali)\n  2) <b>Mr. Zou Yi Qing</b> Member of Scientific Committe of Cultural Resiliency, ICOMOS China \n• Moderator: <b>Dra. Nazrina Zuryani, M.A., Ph.D</b>, Head of Bali Province branch of Indonesia Sociology Association\n• Q&A Session`,
           top_right_image: "/images/event-section/panel1.jpeg",
         },
         {
