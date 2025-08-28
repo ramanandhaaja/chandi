@@ -52,9 +52,9 @@ const resources = [
   },
   {
     title: "Concept Note - Agenda Panel Discussion",
-    subtitle: "ConceptNote_Agenda_PanelDiscussion26August.pdf",
+    subtitle: "ConceptNote_Agenda_PanelDiscussion27August.pdf",
     size: "0.5 MB",
-    url: "/files/ConceptNote_Agenda_PanelDiscussion26August.pdf",
+    url: "/files/ConceptNote_Agenda_PanelDiscussion27August.pdf",
   },
   
 ];
