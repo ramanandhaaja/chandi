@@ -661,20 +661,20 @@ const EventSection: React.FC<EventSectionProps> = ({
           description: "Registration, Coffee Break",
         },
         {
-          time: "09.00 - 09.10",
+          time: "09.50 - 18.55",
+          title: "OPENING MC",
+          description: "Opening by MC",
+        },
+        {
+          time: "05.55 - 09.00",
           title: "Special Opening Performance by Mainamind - Japan",
-          description: "Born to a guitarist father and a dancer mother, she began taking various dance lessons from the age of three. She also earned the title of Natori in the Fujima school of traditional Japanese dance. In 2012, she began her career as part of a group, which she left in April 2022. The following month, in May 2022, she launched her solo career as Mainamind. \n\n With roots in 1990s African American music, R&B, and soul, her unique sense of rhythm blends Japanese and Western styles. Her powerful vocals, talented dance, and soulful, expressive performances captivate and energize audiences in any venue. She writes her own lyrics, creates her own tracks, and produces all of her costumes and stage effects for her live performances. Through her art, she shares her core theme: 'Love' to the world.",
+          description: "Born to a guitarist father and a dancer mother, she began taking various dance lessons from the age of three. She also earned the title of Natori in the Fujima school of traditional Japanese dance. In 2012, she began her career as part of a group, which she left in April 2022. The following month, in May 2022, she launched her solo career as Maina Mind.",
         },
         {
-          time: "09.10 - 12.00",
-          title: "CHANDI Plenary 2025",
-          description: "",
-        },
-        {
-          time: "09.10 - 10.55",
+          time: "09.08 - 10.40",
           title:
             "PLENARY 1: Culture for the Future: Heritage, Identity, and Innovation",
-          description: `Keynote Speech: <b>Hashim S. Djojohadikusumo</b> | Chairman of the Board of Trustees of Indonesian Heritage Agency\n“Culture for The Future” (15 minutes)\n\nPanelists:\n• <b>Prof. dr. Wim van den Doel</b> (Netherland)\n Dean Leiden-Delft-Erasmus Universities\n• <b>Ella Weiner</b> (USA)\n Global Affairs Specialist, Smithsonian’s National Museum of Asian Art\n• <b>Janet DeNeefe</b> (Indonesia)\n Founder Yayasan Mudra Swari and Director of Ubud Food Festival\n• <b>He Lu</b> (China)\n Associate Professor of School of Arts of Nanfang College•Guangzhou\n• <b>Evelise Bruneau</b> (France)\n Conservatrice en charge des collections Asie du Sud- Est\n\nQ&A`,
+          description: `Keynote Speech: <b>Hashim S. Djojohadikusumo</b> | Chairman of the Board of Trustees of Indonesian Heritage Agency\n“Culture for The Future” (15 minutes)\n\nModerator:\n<b>Dr. Luh Gede Saraswati Putri</b> Lecturer at the Faculty of Philosophy, University of Indonesia\n \nPanelists:\n• <b>Kazembe Kazembe</b> (Zimbabwe) \nMinister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe\n• <b>He Lu</b> (China)\n Associate Professor of School of Arts of Nanfang College•Guangzhou\n• <b>Evelise Bruneau</b> (France)\n Conservatrice en charge des collections Asie du Sud- Est\n• <b>Prof. dr. Wim van den Doel</b> (Netherland)\n Dean Leiden-Delft-Erasmus Universities\n• <b>Janet DeNeefe</b> (Indonesia)\n Founder Yayasan Mudra Swari and Director of Ubud Food Festival\n\nQ&A`,
           speakers: [
             {
               name: "Hashim S. Djojohadikusumo",
@@ -684,10 +684,10 @@ const EventSection: React.FC<EventSectionProps> = ({
           ],
         },
         {
-          time: "10.55 - 12.40",
+          time: "10.40 - 12.50",
           title:
             "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
-          description: `Keynote Speech: <b>Jean Couteau</b> | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (15 minutes)\n\nPanelists:\n• <b>Giring Ganesha Djumaryo</b> (Indonesia) \nDeputy Minister Of Culture Of The Republic Of Indonesia\n• <b>Maina Ogawa</b> (Japan)\n Japanese Actress, Voice Actress and Singer\n• <b>Summer Xia</b> (UK)\n British Council Country Director Indonesia & Southeast Asia\n• <b>Tiara Jacquelina</b> (Malaysia)\nActress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n• <b>Franky Raden</b> (Indonesia)\nFounder & Director of Indonesian National Orchestra)\n• <b>Kazembe Kazembe</b> (Zimbabwe) \nMinister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe\n\nQ&A`,
+          description: `Keynote Speech: <b>Jean Couteau</b> | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (15 minutes)\n\nModerator:\n<b>Mr. Bre Redana </b> Indonesian Writer\n \nPanelists:\n• <b>Giring Ganesha Djumaryo</b> (Indonesia) \nDeputy Minister Of Culture Of The Republic Of Indonesia\n• <b>Ella Weiner</b> (USA)\n Global Affairs Specialist, Smithsonian’s National Museum of Asian Art\n• <b>Franky Raden</b> (Indonesia)\nFounder & Director of Indonesian National Orchestra)\n• <b>Tiara Jacquelina</b> (Malaysia)\nActress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n• <b>Summer Xia</b> (UK)\n British Council Country Director Indonesia & Southeast Asia\n•<b> Mr. Jules Irrmann</b> (France) \nDirector of Institut Français d'Indonésie (IFI)\n\nQ&A`,
           speakers: [
             {
               name: "Jean Couteau",
@@ -697,17 +697,17 @@ const EventSection: React.FC<EventSectionProps> = ({
           ],
         },
         {
-          time: "12.40 - 14.10",
+          time: "12.50 - 14.00",
           title: "Lunch",
           description: "Lunch",
         },
         {
-          time: "14.10 - 15.40",
+          time: "14.10 - 15.50",
           title: "PLENARY 3: Youth Panel",
-          description: `Keynote Speaker: <b>Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (15 minutes)\n\nPanelists:\n• <b>Angga Dwimas Sasongko</b> (Indonesia)\nFilm Director \n• <b>Chelsea Islan</b> (Indonesia)\n Actress\n• <b>Fauzi Ismail</b> (Singapore)\n President of Singapore Heritage Society\n\nQ&A`,
+          description: `Keynote Speaker: <b>Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (15 minutes)\n\nPanelists:\n• <b>Angga Dwimas Sasongko</b> (Indonesia)\nFilm Director \n• <b>Chelsea Islan</b> (Indonesia)\n Actress\n• <b>Fauzi Ismail</b> (Singapore)\n President of Singapore Heritage Society\n• <b>Maina Ogawa</b> (Japan)\n Japanese Actress, Voice Actress and Singer\n\nQ&A`,
         },
         {
-          time: "15.30 - 16.00",
+          time: "15.50 - 16.10",
           title: "",
           description: `• Bali Cultural Initiative Declaration\n• Conclusion and Closing Ceremony by Minister of Culture of the Republic of Indonesia, <b>Mr. Fadli Zon</b> (Attended by all the Ministers and Delegates)`,
          },
