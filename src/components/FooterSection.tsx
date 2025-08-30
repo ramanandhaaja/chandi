@@ -48,12 +48,12 @@ const FooterSection: React.FC = () => {
                   <a href="#" className=" hover:text-[#6D1A36]">
                     Summit Info
                   </a>
-                  <a
+                  {/* <a
                     href="https://registration-chandisummit2025.genstix.id/"
                     className=" hover:text-[#6D1A36]"
                   >
                     Registration
-                  </a>
+                  </a> */}
                 </div>
                 <div className="flex flex-col gap-3">
                   <h3 className="text-xs font-semibold text-gray-500 mb-3 tracking-widest uppercase">
