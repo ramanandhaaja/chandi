@@ -862,8 +862,8 @@ const EventSection: React.FC<EventSectionProps> = ({
                           src={item.top_right_image}
                           alt={`${item.title} thumbnail`}
                           width={100}
-                          height={40}
-                          className="object-contain"
+                          height={20}
+                          className="w-auto h-auto max-h-10 object-contain"
                         />
                       </div>
                     )}
