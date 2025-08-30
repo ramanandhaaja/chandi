@@ -41,9 +41,9 @@ export default function RegisterPage() {
           />
         </div>
         <div className="relative z-10">
-          <RegisterOption />
-          {/* Registration Form */}
-          <RegistrationForm />
+           {/* <RegisterOption />
+         Registration Form 
+          <RegistrationForm />*/}
         </div>
       </div>
 

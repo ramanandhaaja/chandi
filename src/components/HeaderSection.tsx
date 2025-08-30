@@ -112,6 +112,7 @@ const HeaderSection: React.FC = () => {
               <span className="ml-1 text-gray-700">Left</span>
             </div>
             
+            {/* 
             <Link
               href="https://registration-chandisummit2025.genstix.id/"
               className="bg-[#D2AF6D] text-white px-5 py-2 rounded-full font-medium hover:bg-[#C19A58] transition-colors flex items-center"
@@ -132,6 +133,7 @@ const HeaderSection: React.FC = () => {
                 />
               </svg>
             </Link>
+            */}
           </div>
           
           {/* Mobile Menu Button */}
@@ -221,6 +223,7 @@ const HeaderSection: React.FC = () => {
                 <span className="text-[#D2AF6D]">{daysLeft} Days</span>
                 <span className="ml-1 text-gray-700">Left</span>
               </div>
+              {/* 
               <Link
                 href="https://registration-chandisummit2025.genstix.id/"
                 className="bg-[#D2AF6D] text-white px-5 py-2 rounded-full font-medium hover:bg-[#C19A58] transition-colors inline-flex items-center self-start"
@@ -241,6 +244,7 @@ const HeaderSection: React.FC = () => {
                   />
                 </svg>
               </Link>
+              */}
             </div>
           </div>
         </div>
