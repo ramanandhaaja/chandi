@@ -5,7 +5,12 @@ import { HiDownload } from "react-icons/hi";
 import { FaFilePdf } from "react-icons/fa";
 
 const resources = [
-  
+  {
+    title: "Rundown CHANDI 2025",
+    subtitle: "Rundown_CHANDI_2025.pdf",
+    size: "0.5 MB",
+    url: "/files/Rundown_CHANDI_2025.pdf",
+  },
   {
     title: "Selected Abstract Announcement",
     subtitle: "Selected Abstract Announcement.pdf",
@@ -56,6 +61,7 @@ const resources = [
     size: "0.5 MB",
     url: "/files/ConceptNote_Agenda_PanelDiscussion31August.pdf",
   },
+  
   
 ];
 
