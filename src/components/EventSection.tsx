@@ -321,7 +321,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "18.30 - 19.25",
           title: "Dinner Service",
           description:
-            `• Food Parade (Soup Served) accompanied by live Rindik music\n• Dinner set menu style accompanied by Acoustic Music`,
+            `• Food Parade (Appetizers) accompanied by live Rindik music\n• Dinner set menu style accompanied by Acoustic Music`,
         },
         {
           time: "19.25 - 19.55",
@@ -340,24 +340,29 @@ const EventSection: React.FC<EventSectionProps> = ({
       session: "3 September 2025 : Bali Beach Convention Center - The Meru Sanur",
       items: [
         {
-          time: "08.00 - 09.00",
+          time: "08.00 - 08.55",
           title: "Registration, Coffee Break",
           description: "Registration and coffee break for delegates and participants.",
         },
         {
-          time: "08.55 - 09.00",
+          time: "08.55 - 08.58",
           title: "President of the Republic of Indonesia Entering Ballroom",
           description: "Arrival of the President and entrance into the ballroom.",
         },
         {
+          time: "08.58 - 09.00",
+          title: "Opening Video CHANDI 2025",
+          description: "Opening video of CHANDI 2025.",
+        },
+        {
           time: "09.00 - 09.05",
           title: "Welcome Balinese Dance",
-          description: "Traditional Balinese dance to open the summit.",
+          description: "Cancala Bhuwana Chandika",
         },
         {
           time: "09.05 - 09.10",
-          title: "Opening",
-          description: "Official opening of the Chandi 2025 Day 1.",
+          title: "Opening by Master of Ceremony (MC)",
+          description: "Opening by MC.",
         },
         {
           time: "09.10 - 09.20",
@@ -374,8 +379,8 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "09.20 - 09.25",
-          title: "Remark",
-          description: "Opening remark.",
+          title: "Remarks",
+          description: "Opening remarks.",
           speakers: [
             {
               name: "Prof. Dr. Pratikno",
@@ -386,7 +391,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
 
         {
-          time: "09.20 - 09.35",
+          time: "09.25 - 09.40",
           title: "Welcome Speech",
           description:
             "Welcome speech by <b>Dr. Fadli Zon</b>, Minister of Culture of the Republic of Indonesia.",
@@ -401,7 +406,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "09.40 - 09.55",
           title: "Art Performance: Sound of Nusantara",
-          description: "Art Performance Sound of Nusantara : Maha Meredangga Nuswantara Praba Buana Prastawa",
+          description: "Art Performance Sound of Nusantara: Maha Mredangga Nuswantara Music",
         },
         {
           time: "09.55 - 10.40",
@@ -417,9 +422,19 @@ const EventSection: React.FC<EventSectionProps> = ({
           ],
         },
         {
-          time: "10.40 - 10.50",
+          time: "10.40 - 10.45",
           title: "Opening Ceremony of CHANDI 2025",
-          description: "Opening Ceremony of CHANDI 2025",
+          description: "",
+        },
+        {
+          time: "10.40 - 10.45",
+          title: "President of the Republic of Indonesia and all Minister photo session",
+          description: "",
+        },
+        {
+          time: "11.05 - 12.45",
+          title: "Minister Lunch",
+          description: "",
         },
         {
           time: "10.50 - 10.55",
@@ -433,130 +448,97 @@ const EventSection: React.FC<EventSectionProps> = ({
             "Photo Session of All Ministers at BBC Pre-Function Area Doorstop Media",
         },
         {
-          time: "10.55 - 11.10",
-          title: "Balinese Dance: Abarisan Sudamala Deeang Nusantara",
-          description: "Balinese Dance: Abarisan Sudamala Deeang Nusantara",
+          time: "10.50 - 11.00",
+          title: "Balinese Dance: Kakuwung Ranu",
+          description: "",
         },
         {
-          time: "11.10 - 11.35",
+          time: "11.00 - 11.20",
           title: "Keynote Address: Culture as the Key to Future Global Sustainability",
-          description: "<b>H.E. Kazembe Kazembe</b> | Minister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe",
+          description: "<b>H.E. Mr. Kazembe</b> | Minister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe",
           speakers: [
             {
-              name: "H.E. Kazembe Kazembe",
+              name: "H.E. Mr. Kazembe",
               role: "Minister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe",
               image: "/images/event-section/kazembe.jpeg",
             },
           ],
         },
         {
-          time: "11.35 - 12.05",
-          title: "Keynote Address: The Role of Youth in Fostering Peace Through Culture",
-          description: "(*TBA)",
+          time: "11.20 - 11.40",
+          title: "Keynote Address: The Role of Youth in Fostering Peace through Culture",
+          description: "<b>Jana Mohammadmasoud Abdullatif Abusalha</b> | Medical Student",
+          speakers: [
+            {
+              name: "Jana Mohammadmasoud Abdullatif Abusalha",
+              role: "Medical Student",
+              image: "/images/event-section/jana.jpeg",
+            },
+          ],
         },
         {
-          time: "12.05 - 12.10",
+          time: "11.40 - 11.45",
           title: "Conclusion of the Opening Session",
-          description: "Conclusion and wrap-up of the opening session.",
+          description: "",
         },
         {
-          time: "12.10 - 13.20",
+          time: "11.45 - 13.30",
           title: "Lunch",
           description: "Lunch break for all participants.",
         },
         {
           time: "13.00 - 17.00",
           title: "Ministerial Summit",
-          description: `• Opening Statement by The Minister of Culture of RI\n• Country Statement\n• Conclusion and closing by The Minister of Culture of RI\n`,
+          description: `• Opening Statement by The Minister of Culture of RI, <b>Dr. Fadli Zon</b>\n• Country Statement\n• Conclusion and closing by The Minister of Culture of RI, <b>Dr. Fadli Zon</b>\n`,
         },
         {
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
           title: "Panel Discussion 1",
-          description: `• Topic: “Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects”\n• Co-Host: ICOM\n• Panelists:\n  1) <b>Prof. I Ketut Ardhana, PhD (Professor of Asian History, Udayana University)</b>\n  2) <b>I Gusti Agung Wesaka Puja (Diplomat)</b>\n3) <b>Abstract Presentation – Noor Fahmi Pramuji </b>(Khairun University, Ternate, the Republic of Indonesia) \n4) <b>Abstract Presentation – Muhammad Fahmi Reksa Al Farisi</b> (SOAS University of London, United Kingdom)\n• Moderator: <b>Budi Trinovari</b>, Chair of ICOM Indonesia</b>\n• Q&A Session\n• Note: Coffee and snacks will be served during the discussion`,
+          description: `• Topic: “Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects”\n\n• Co-Host: <b>International Council on Museums (ICOM) Indonesia</b>\n\n<b>• Panelists:</b>\n  1) <b>Prof. I Ketut Ardhana, PhD</b> — Professor of Asian History, Udayana University.\n 2) <b>Mr. I Gusti Agung Wesaka Puja</b> — Ambassador of the Republic of Indonesia to the Kingdom of Netherlands, 2016 – 2020\n\n• <b>Special Presentation:</b> <b>Prof. Ismunandar, Ph.D</b> — Senior Advisor to the Minister of Culture and Chair of the Expert Panel of Indonesia's Cultural Heritage Repatriation Team\n\n• <b>Moderator:</b> <b>Mr. Budi Trinovari</b> — Chair of International Council of Museums Indonesia\n\n<b>• Call for Paper:</b>\n  1) <b>Ms. Noor Fahmi Pramuji</b> — Faculty of Cultural Sciences, Khairun University, Ternate, The Republic of Indonesia\n  2) <b>Mr. Muhammad Fahmi Reksa Al Farisi</b> — SOAS University of London\n\n• Q&A Session`,
           top_right_image: "/images/event-section/panel3.jpeg",
         },
         {
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
           title: "Panel Discussion 2",
-          description: `• Topic: “Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post-2030 World”\n• Co Host: ICOMOS\n• Panelists:\n  1) <b>Prof.Dr. I Wayan Adnyana, S.Sn., M.Sn.</b> (Rector of the Indonesian Institute of the Arts Bali)\n  2) <b>Mr. Zou Yi Qing</b> Member of Scientific Committe of Cultural Resiliency, ICOMOS China\n3) <b>Abstract Presentation – Elvira Rufriani B. Kawaliong </b>(Padjadjaran University, Bandung, The Republic of Indonesia) \n4) <b>Abstract Presentation – Arif Hukmi</b> (Makassar Islamic University, Makassar, The Republic of Indonesia) \n• Moderator: <b>Dra. Nazrina Zuryani, M.A., Ph.D</b>, Head of Bali Province branch of Indonesia Sociology Association\n• Q&A Session`,
+          description: `• Topic: “Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post‑2030 World”\n\n• Co-Host: <b>International Council on Monuments and Sites (ICOMOS) Indonesia</b>\n\n<b>• Panelists:</b>\n  1) <b>Prof. Dr. I Wayan Adnyana, S.Sn., M.Sn.,</b> — Rector of the Indonesian Institute of the Arts Bali\n  2) <b>Ms. Zou Yi Qing</b> — Vice President of ICOMOS China Scientific Committee on Cultural Route\n\n• <b>Moderator:</b> <b>Dra. Nazrina Zuryani, M.A., Ph.D,</b> — Head of Bali Province Branch of Indonesia Sociology Association\n\n<b>• Call for Paper:</b>\n  1) <b>Ms. Elvira Rufriani B. Kawaliong</b> — Padjajaran University, Indonesia\n  2) <b>Mr. Arif Hukmi</b> — Makassar Islamic University\n\n• Q&A Session`,
           top_right_image: "/images/event-section/panel1.jpeg",
         },
         {
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
           title: "Panel Discussion 3",
-          description: `• Topic: “Financing the Future of Culture: Unlocking Investment for Preservation and Innovation”\n• CO HOST: Indonesian Heritage Trust (BPPI)\n• Panelists:\n  1) <b>Dr. Donovan Rypkema</b> (President of Heritage Strategies International)\n  2) <b>Hasti Tarekat Dipowijoyo</b> (Founder of Heritage Hands-on in Amsterdam and Co‑Chair of Advisory Board of the Asian Network for Industrial Heritage)\n3)<b>Abstract Presentation – Ahmad Saifudin Mutaqi</b> (Islamic University of Indonesia, Yogyakarta & Sustainable Inclusive Heritage Economic Community/KEPel) \n4) <b>Abstract Presentation – Sultan Prasasti </b>(Maastricht University, Netherlands)\n• Moderator: <b>Catrini Pratihari Kubontubuh, M.Arch.</b> (Chairperson of the Indonesian Heritage Trust)\n• Q&A Session`,
+          description: `• Topic: “Financing the Future of Culture: Unlocking Investment for Preservation and Innovation”\n\n• Co-Host: <b>Indonesian Heritage Trust (Bumi Pelestarian Pusaka Indonesia)</b>\n\n<b>• Panelists:</b>\n  1) <b>Dr. Donovan Rypkema</b> — President of Heritage Strategies International.\n  2) <b>Ms. Hasti Tarekat Dipowijoyo</b> — Founder of Heritage Hands-on in Amsterdam and Co‑Chair of Advisory Board of the Asian Network for Industrial Heritage.\n\n• <b>Moderator:</b> <b>Dr. Catrini Pratihari Kubontubuh</b> — Chair of the Indonesian Heritage Trust\n\n<b>• Call for Paper:</b>\n  1) <b>Mr. Ahmad Saifudin Mutaqi</b> — Islamic University of Indonesia (Universitas Islam Indonesia/UII)\n  2) <b>Mr. Sultan Prasasti</b> — Maastricht University, Netherlands\n\n• Q&A Session`,
           top_right_image: "/images/event-section/panel4.jpeg",
-        
         },
         {
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
           title: "Panel Discussion 4",
-          description: `• Topic: “Responding the Climate Risks to Heritage and Fostering Culture‑Based Climate Action”\n• Co Host: BRIN\n• Panelists:\n  1) <b>Professor R. Michael Feener</b> — Professor of Cross‑Regional Studies at the Centre for Southeast Asian Studies at Kyoto University\n  2) <b>Dr. Wengki Ariando</b> — Indonesian activist‑researcher and postdoctoral fellow at the Royal Netherlands Institute of Southeast Asian and Caribbean Studies (KITLV) in Leiden\n3) <b>Abstract Presentation – Dewa Ayu Prisma Dewi </b>(BALIDOC Film & Documentary Community \n4) <b>Abstract Presentation – Bima Maulana Putra </b>(Centre for Research in Psychology and Human Well-being, Faculty of Social Sciences and Humanities, Universiti Kebangsaan Malaysia, Selangor, Malaysia)\n• Moderator: <b>Marlon Ririmasse</b> — Head of Research Center Archaeology of Environmental, Maritime and Sustainable Culture\n• Q&A Session`,
+          description: `• Topic: “Responding the Climate Risks to Heritage and Fostering Culture‑Based Climate Action”\n\n• Co-Host: <b>Indonesian National Research and Innovation Agency (Badan Riset dan Inovasi Nasional)</b>\n\n<b>• Panelists:</b>\n  1) <b>Professor R. Michael Feener</b> — Professor of Cross‑Regional Studies at the Centre for Southeast Asian Studies at Kyoto University.\n  2) <b>Dr. Wengki Ariando</b> — Postdoctoral researcher at KITLV/the Royal Netherlands Institute of Southeast Asian and Caribbean Studies.\n\n• <b>Moderator:</b> <b>Mr. Marlon Nicolay Ramon Ririmasse S.S., M.A.</b> — Head of the Research Center for Environmental Archaeology, Maritime Archaeology, and Cultural Sustainability of the National Research and Innovation Agency\n\n<b>• Call for Paper:</b>\n  1) <b>Ms. Dewa Ayu Prisma Dewi</b> — BALIDOC Film & Documentary Community\n  2) <b>Mr. Bima Maulana Putra</b> — Centre for Research in Psychology and Human Well‑being, Faculty of Social Sciences and Humanities, Universiti Kebangsaan Malaysia, Selangor, Malaysia\n\n• Q&A Session`,
           top_right_image: "/images/event-section/panel2.jpeg",
         },
         {
-          time: "17.30 - 18.00",
-          title: "Break for VIP Dinner Preparation",
-          description: "Break for VIP Dinner preparation.",
+          time: "17.00 - 17.30",
+          title: "Medal Appreciation Ceremony for All Minister",
+          description: "",
+        },
+        {
+          time: "17.00 - 18.00",
+          title: "Break for all HoD",
+          description: "",
         },
         {
           time: "18.00 - 19.30",
-          title: "The Invitees enter the Bali Beach Convention Ballroom 1 & 2",
-          description: "The Invitees enter the Bali Beach Convention Ballroom 1 & 2.",
+          title: "VIP Dinner hosted by Minister of Culture of the Republic of Indonesia",
+          description: "VIP Dinner hosted by Minister of Culture of the Republic of Indonesia, <b>Dr. Fadli Zon</b>",
+        },
+        {
+          time: "19.30 - 20.00",
+          title: "All VIP proceed to Ballroom BBC 1&2",
+          description: "",
         },
         {
           time: "20.00 - 22.00",
           title: "CHANDI Music Performance",
-          description: `Andi Rianto's Band with <b>Judika, Lyodra, Bunga Citra Lestari (BCL), Joey Alexander, Michael Anthony Kwok, Chelsea Islan</b>`,
-          /*
-          speakers: [
-            {
-              name: "Andi Rianto Band",
-              role: "Performer",
-              image: "/images/event-section/andi-rianto.png",
-            },
-            {
-              name: "Judika",
-              role: "Performer",
-              image: "/images/event-section/judika.png",
-            },
-            {
-              name: "Lesti Kejora",
-              role: "Performer",
-              image: "/images/event-section/lesti-kejora.png",
-            },
-            {
-              name: "Niki",
-              role: "Performer",
-              image: "/images/event-section/niki.png",
-            },
-            {
-              name: "Joey Alexander",
-              role: "Performer",
-              image: "/images/event-section/joey-alexander.png",
-            },
-            {
-              name: "Michael Anthony Kwok",
-              role: "Performer",
-              image: "/images/event-section/michael-kwok.png",
-            },
-            {
-              name: "Ahmad Dhani",
-              role: "Performer",
-              image: "/images/event-section/ahmad-dhani.png",
-            },
-            {
-              name: "Melly Goeslaw",
-              role: "Performer",
-              image: "/images/event-section/melly-goeslaw.png",
-            },
-            {
-              name: "Once Mekel (TBC)",
-              role: "Performer",
-              image: "/images/event-section/once-mekel.png",
-            },
-          ],
-          */
+          description: `CHANDI Music Performance:\n\n<i>Bunga Citra Lestari (BCL), Joey Alexander, Judika, Lyodra, Michael Anthony Kwok, and accompanied by Andi Rianto's Band.</i>\n\nMonologue by <b>Chelsea Islan</b>`,
         },
       ],
     },
@@ -595,54 +577,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "20.15 - 21.55",
           title: "CHANDI Music Performance",
           description: `<b>Andi Rianto's Band with Judika, Lyodra, Bunga Citra Lestari (BCL), Joey Alexander, Michael Anthony Kwok, Chelsea Islan</b>.`,
-          /*
-          speakers: [
-            {
-              name: "Andi Rianto Band",
-              role: "Performer",
-              image: "/images/event-section/andi-rianto.png",
-            },
-            {
-              name: "Judika",
-              role: "Performer",
-              image: "/images/event-section/judika.png",
-            },
-            {
-              name: "Lesti Kejora",
-              role: "Performer",
-              image: "/images/event-section/lesti-kejora.png",
-            },
-            {
-              name: "Niki",
-              role: "Performer",
-              image: "/images/event-section/niki.png",
-            },
-            {
-              name: "Joey Alexander",
-              role: "Performer",
-              image: "/images/event-section/joey-alexander.png",
-            },
-            {
-              name: "Michael Anthony Kwok",
-              role: "Performer",
-              image: "/images/event-section/michael-kwok.png",
-            },
-            {
-              name: "Ahmad Dhani",
-              role: "Performer",
-              image: "/images/event-section/ahmad-dhani.png",
-            },
-            {
-              name: "Melly Goeslaw",
-              role: "Performer",
-              image: "/images/event-section/melly-goeslaw.png",
-            },
-            {
-              name: "Once Mekel (TBC)",
-              role: "Performer",
-              image: "/images/event-section/once-mekel.png",
-            },
-          ],*/
+          
         },
         {
           time: "21.55 - 22.00",
@@ -656,25 +591,25 @@ const EventSection: React.FC<EventSectionProps> = ({
       session: "4 September 2025 | Bali Beach Convention Center - The Meru Sanur",
       items: [
         {
-          time: "08.00 - 09.00",
+          time: "08.00 - 08.50",
           title: "Registration",
           description: "Registration, Coffee Break",
         },
         {
-          time: "09.50 - 18.55",
-          title: "OPENING MC",
-          description: "Opening by MC",
+          time: "08.50 - 09.00",
+          title: "Opening Segment",
+          description: `• Opening MC\n• Special Performance by MINAMIND - Japan\n• MC invite keynote speaker`,
         },
         {
-          time: "05.55 - 09.00",
-          title: "Special Opening Performance by Mainamind - Japan",
-          description: "Born to a guitarist father and a dancer mother, she began taking various dance lessons from the age of three. She also earned the title of Natori in the Fujima school of traditional Japanese dance. In 2012, she began her career as part of a group, which she left in April 2022. The following month, in May 2022, she launched her solo career as Maina Mind.",
+          time: "09.00 - 12.00",
+          title: "CHANDI 2025 – Plenary",
+          description: "",
         },
         {
-          time: "09.08 - 10.40",
+          time: "09.00 - 10.40",
           title:
             "PLENARY 1: Culture for the Future: Heritage, Identity, and Innovation",
-          description: `Keynote Speech: <b>Hashim S. Djojohadikusumo</b> | Chairman of the Board of Trustees of Indonesian Heritage Agency\n“Culture for The Future” (15 minutes)\n\nModerator:\n<b>Dr. Luh Gede Saraswati Putri</b> Lecturer at the Faculty of Philosophy, University of Indonesia\n \nPanelists:\n• <b>H.E. Kazembe Kazembe</b> (Zimbabwe) \nMinister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe\n• <b>He Lu</b> (China)\n Associate Professor of School of Arts of Nanfang College•Guangzhou\n• <b>Evelise Bruneau</b> (France)\n Conservatrice en charge des collections Asie du Sud- Est\n• <b>Prof. dr. Wim van den Doel</b> (Netherland)\n Dean Leiden-Delft-Erasmus Universities\n• <b>Janet DeNeefe</b> (Indonesia)\n Founder Yayasan Mudra Swari and Director of Ubud Food Festival\n\nQ&A`,
+          description: `Keynote Speech: <b>Mr. Hashim S. Djojohadikusumo</b> | Chairman of the Board of Trustees of Indonesian Heritage Agency\n“Culture for The Future” (<i>10 minutes</i>)\n\nPanelists:\n  1) <b>Ms. He Lu</b> — Associate Professor of School of Arts of Nanfang College•Guangzhou\n  2) <b>Ms. Evelise Bruneau</b> — Conservator of the Southeast Asian collections at Musée Guimet, France\n  3) <b>Prof. dr. Wim van den Doel</b> — Professor of Contemporary History and Dean of Leiden-Delft-Erasmus Universities\n  4) <b>Ms. Janet DeNeefe</b> — Director of Ubud Writers & Readers Festival\n\nModerator: <b>Dr. Luh Gede Saraswati Putri</b> — Lecturer at the Faculty of Philosophy, University of Indonesia\n\nQ&A`,
           speakers: [
             {
               name: "Hashim S. Djojohadikusumo",
@@ -684,10 +619,10 @@ const EventSection: React.FC<EventSectionProps> = ({
           ],
         },
         {
-          time: "10.40 - 12.50",
+          time: "10.40 - 12.40",
           title:
             "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
-          description: `Keynote Speech: <b>Jean Couteau</b> | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (15 minutes)\n\nModerator:\n<b>Mr. Bre Redana </b> Indonesian Writer\n \nPanelists:\n• <b>Giring Ganesha Djumaryo</b> (Indonesia) \nDeputy Minister Of Culture Of The Republic Of Indonesia\n• <b>Ella Weiner</b> (USA)\n Global Affairs Specialist, Smithsonian’s National Museum of Asian Art\n• <b>Franky Raden</b> (Indonesia)\nFounder & Director of Indonesian National Orchestra)\n• <b>Tiara Jacquelina</b> (Malaysia)\nActress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n• <b>Summer Xia</b> (UK)\n British Council Country Director Indonesia & Southeast Asia\n•<b> Mr. Jules Irrmann</b> (France) \nDirector of Institut Français d'Indonésie (IFI)\n\nQ&A`,
+          description: `Keynote Speech: <b>Mr. Jean Couteau</b> | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (<i>10 minutes</i>)\n\nPanelists:\n  1) <b>Mr. Giring Ganesha Djumaryo</b> — Vice Minister of Culture of the Republic of Indonesia\n  2) <b>Ms. Ella Weiner</b> — Global Affairs Specialist, Smithsonian’s National Museum of Asian Art\n  3) <b>Mr. Franki Raden</b> — Founder & Director of Indonesian National Orchestra\n  4) <b>Ms. Tiara Jacquelina</b> — Actress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n  5) <b>Mr. Summer Xia</b> — British Council Country Director Indonesia & Southeast Asia\n  6) <b>Mr. Jules Irmann</b> — Director of Institut Français d'Indonésie (IFI)\n\n<b>Moderator: Mr. Bre Redana</b> — Indonesian Writer\n\nQ&A`,
           speakers: [
             {
               name: "Jean Couteau",
@@ -702,38 +637,36 @@ const EventSection: React.FC<EventSectionProps> = ({
           description: "Lunch",
         },
         {
-          time: "14.10 - 15.50",
-          title: "PLENARY 3: Youth Panel",
-          description: `Keynote Speaker: <b>Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (15 minutes)\n\nPanelists:\n• <b>Angga Dwimas Sasongko</b> (Indonesia)\nFilm Director \n• <b>Chelsea Islan</b> (Indonesia)\n Actress\n• <b>Fauzi Ismail</b> (Singapore)\n President of Singapore Heritage Society\n• <b>Maina Ogawa</b> (Japan)\n Japanese Actress, Voice Actress and Singer\n\nQ&A`,
+          time: "13.40 - 14.00",
+          title: "Delegates enter ballroom accompanied by Kolintang, Traditional music from East Sulawesi (Manado)",
+          description: "",
         },
         {
-          time: "15.50 - 16.10",
-          title: "",
-          description: `• Bali Cultural Initiative Declaration\n• Conclusion and Closing Ceremony by Minister of Culture of the Republic of Indonesia, <b>Mr. Fadli Zon</b> (Attended by all the Ministers and Delegates)`,
-         },
+          time: "14.10 - 15.30",
+          title: "Plenary 3: Youth Panel",
+          description: `Keynote Speaker: <b>Ms. Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (<i>10 minutes</i>)\n\nPanelists:\n  1) <b>Mr. Angga Dwimas Sasongko</b> — Indonesia Film Director\n  2) <b>Ms. Chelsea Islan</b> — Indonesia Actress\n  3) <b>Mr. Fauzi Ismail</b> — President of Singapore Heritage Society\n  4) <b>Ms. MINAMIND</b>\n\nModerator: <b>Ms. Putri F. W. Shafiyyah</b> — (<b>*TBC</b>)\n\nQ&A`,
+        },
+        {
+          time: "15.30 - 16.00",
+          title: "Conclusion and Closing Remarks by <b>Dr. Fadli Zon</b> — Minister of Culture of the Republic of Indonesia",
+          description: "(Attended by all the Ministers and Delegates)",
+        },
         {
           time: "16.10 - 16.40",
           title: "Coffee Break, Transfer to Workshops Session",
           description: "Coffee Break, Transfer to Workshops Session",
         },
         {
-          time: "16.40 - 18.10 Session 1: 13:00 – 15:00 Session 2: 15:15 – 17:15",
+          time: "16.40 - 18.10",
           title: "Workshops on Cultural Heritage (parallel session)",
-          description: `Workshops on Cultural Heritage (Parallel Session):
-• Workshop Batik Making
-• Workshop Traditional Dance
-• Workshop Music (Angklung)
-• Workshop Keris Making (Javanese Traditional Dagger)
-• Workshop Making Indonesian Traditional Mask
-\nFor detail rundown, please download the following schedule: 
-`,
+          description: `Session 1: <b>13:00 – 15:00</b>\nSession 2: <b>15:15 – 17:15</b>\n\nWorkshops on Cultural Heritage (Parallel Session):\n• Workshop Batik Making — Batik Solo Laweyan\n• Workshop Traditional Dance by ISI Bali\n• Workshop Music (Angklung)\n• Workshop Keris Making (Javanese Traditional Dagger)\n• Workshop Making Indonesian Traditional Mask by ISI Bali\n\nFor detailed rundown, please download the following schedule:`,
           linkHref: "/files/Workshop_Rundown.pdf",
           linkText: "Download Workshop Rundown (PDF)",
         },
         {
           time: "18.10 - 20.10",
-          title: "Break for Networking Preparation",
-          description: "Break for Networking Preparation",
+          title: "Break for Networking Event Preparation",
+          description: "Break for Networking Event Preparation",
         },
         {
           time: "20.10 - 22.10",
@@ -757,16 +690,16 @@ const EventSection: React.FC<EventSectionProps> = ({
           description: "Transfer to ISI Bali and Udayana University of Bali",
         },
         {
-          time: "09.00 - 11.30",
+          time: "09.30 - 11.15",
           title: "Seminar at ISI Bali:",
-          description: `"Future of Intangible Cultural Heritage”\nInvolvement of UNESCO and Academics to discuss the preservation of non‑physical cultural assets (music, dance, cuisine, and rituals).`,
+          description: `"Future of Intangible Cultural Heritage: Involvement of UNESCO and Academics to Discuss the Preservation of Non-physical Cultural Assets (Music, Dance, Cuisine, and Rituals)"\n\n<b>Welcome Speech:</b> Prof. Dr. I Komang Sudirga, S.Sn., M.Hum – Vice Chancellor for Planning and Cooperation (5’)\n<b>Remarks:</b> Dr. Fadli Zon – Minister of Culture of the Republic of Indonesia (5’)\n\n<b>Keynote Speaker:</b> Mrs. Moe Chiba – Section Chief and Programme Specialist for Culture at UNESCO Jakarta Office (15’)\n\n<b>Speakers:</b>\n  1) <b>Prof. Dr. A.A. Gde Bagus Udayana, S.Sn., M.Hum</b> — Professor at the Indonesian Institute of the Arts, Denpasar (10’)\n  2) <b>Dr. I Gede Yudarta</b> — Associate Professor, Indonesian Institute of the Arts (10’)\n  3) <b>Mr. Yudil Chatim</b> — Education and Cultural Attaché, Embassy of the Republic of Indonesia in Beijing (Atdikbud) (10’)\n\n<b>Moderator:</b> Dr. I Made Jodog, M.F.A — Faculty Member, The Indonesian Institute of the Arts Bali`,
           linkHref: "/files/Rundown_seminar_ISI.pdf",
           linkText: "Download Rundown Seminar ISI (PDF)",
         },
         {
-          time: "09.00 - 11.30",
+          time: "09.30 - 11.15",
           title: "Seminar, Udayana University of Bali :",
-          description: `"Digital Heritage & AI for Culture”\nExploring AI technology for documenting and digitizing cultural Heritage.`,
+          description: `"Digital Heritage & AI for Culture: Exploring AI Technology for Documenting and Digitizing Cultural Heritage"\n\n<b>Welcome Speech:</b> Dr. Restu Gunawan, M.Hum — Directorate General of Protection of Culture and Traditions, Ministry of Culture of the Republic of Indonesia (5’)\n\n<b>Keynote Speaker:</b> Mr. Joe Sidek — Chairman of Art Penang Council UNESCO (15’)\n\n<b>Speakers:</b>\n  1) <b>Mr. Giring Ganesha Djumaryo</b> — Vice Minister of Culture of the Republic of Indonesia (10’)\n  2) <b>Mrs. Laksmi DeNeefe</b> — Co‑founder of Ubud Writers and Readers Festival (10 minutes)\n  3) <b>Mr. I Putu Ardiyasa</b> — Lecturer on Traditional Theater and Deaf Community Management (10 minutes)\n  4) <b>Mr. Kristiawan</b> — Lecturer of Archeology (10 minutes)\n  5) <b>Mr. I Made Bagus Ari</b> — Lontar Practitioner & <b>Mr. Ida Bagus Anom</b> — Lontar Unit (10 minutes)\n  6) <b>Mrs. Lita Rahmiati, S.Sos., M.P.P</b> — Head of Cultural Preservation Office Region VIII (10’)\n\n<b>Moderator:</b> Mr. Galuh Febri Putra, S.Pd., M.A. — Lecturer at the Faculty of Cultural Sciences, Udayana University`,
           linkHref: "/files/Rundown_seminar_Udayana.pdf",
           linkText: "Download Rundown Seminar Udayana (PDF)",
         },
@@ -791,6 +724,11 @@ const EventSection: React.FC<EventSectionProps> = ({
           description: "From Udayana University of Bali Transfer to Penglipuran Village or Green School Bali",
         },
         {
+          time: "",
+          title: "STUDY VISITS & FUTURE COLLABORATION PROJECTS",
+          description: "<i>AFTERNOON SESSION</i>",
+        },
+        {
           time: "14.00 - 17.00",
           title:
             "From ISI Bali, participant may choose study visit to Green School or visit Penglipuran Village",
@@ -800,7 +738,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "14.00 - 17.00",
           title:
             "From Udayana University of Bali, participant may choose study visit to Green School or visit Penglipuran Village",
-          description: `From Udayana University of Bali, participant may choose study visit to Green School or visit Penglipuran Village`,
+          description: `From Udayana University of Bali,\nParticipant may choose study visit to Green School or visit Penglipuran\nVillage`,
         },
         {
           time: "17.00 - 18.00",
