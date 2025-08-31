@@ -46,7 +46,11 @@ export default function Home() {
               <button
                 type="button"
                 aria-label="Close announcement"
-                className="absolute right-3 top-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-gray-700 shadow hover:bg-white"
+                className={`absolute ${
+                  typeof window !== "undefined" && window.innerWidth < 768
+                    ? "right-2 top-2"
+                    : "right-3 top-4"
+                } inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-gray-700 shadow hover:bg-white`}
                 onClick={() => setShowAnnouncement(false)}
               >
                 <span className="text-2xl leading-none">×</span>
