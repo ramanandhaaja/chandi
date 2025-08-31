@@ -454,7 +454,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "11.00 - 11.20",
-          title: "Keynote Address: Culture as the Key to Future Global Sustainability",
+          title: "Keynote Address: Culture for the Future: A Bridge to Building Peace and Prosperity",
           description: "<b>H.E. Mr. Kazembe</b> | Minister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe",
           speakers: [
             {
