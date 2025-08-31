@@ -2,7 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['directus.codefoundry.online'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'directus.codefoundry.online', pathname: '/**' },
+      // Google Drive / Google Photos hosting domains
+      { protocol: 'https', hostname: 'drive.google.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'googleusercontent.com', pathname: '/**' },
+    ],
   },
   // Ignore TypeScript errors during build for Vercel deployment
   typescript: {
@@ -17,12 +23,8 @@ const nextConfig: NextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  // Exclude API routes that require environment variables not available during build
-  experimental: {
-    // Skip building the create-stream API route during deployment
-    // This prevents build failures due to missing environment variables
-    serverComponentsExternalPackages: ['@mux/mux-node'],
-  },
+  // Server external packages setting (moved from experimental.serverComponentsExternalPackages)
+  serverExternalPackages: ['@mux/mux-node'],
 };
 
 export default nextConfig;

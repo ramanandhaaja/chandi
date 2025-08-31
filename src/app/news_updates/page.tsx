@@ -3,7 +3,9 @@ import FooterSection from "@/components/FooterSection";
 import PressReleaseSection from "@/components/news_updates/PressRelease";
 import VideoGallerySection from "@/components/news_updates/VideoGallery";
 import HeaderSection from "@/components/HeaderSection";
+import GalleryPhotoDrive from "@/components/news_updates/GalleryPhotoDrive";
 import GalleryPhoto from "@/components/news_updates/GalleryPhoto";
+
 
 // photo gallery mock data
 const photos = [
@@ -34,8 +36,10 @@ export default function NewsAndUpdatesPage() {
       />
       {/* Press Release  Section*/}
       <PressReleaseSection />
-      {/* Photo section*/}
-      <GalleryPhoto content={photos} />
+      <GalleryPhoto content={photos}/>
+
+      {/* Photo section - Google Drive-backed gallery (Day 1/2/3) 
+      <GalleryPhotoDrive parentFolderId="1xC5u5q6rfFZfqYZVQqQUZbrW8sEGjC7v" />*/}
       {/* Videos section*/}
       <VideoGallerySection />
       {/* Footer Section */}
