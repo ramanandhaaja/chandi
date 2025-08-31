@@ -21,9 +21,11 @@ import IndependentSection from "@/components/IndependentSection";
 import VideoHeadline from "@/components/VideoHeadline";
 import { FaQ } from "react-icons/fa6";
 import Image from "next/image";
+import { useLanguage } from "../lib/LanguageContext";
 
 export default function Home() {
   const [showAnnouncement, setShowAnnouncement] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     // Open the announcement modal on initial page load
@@ -36,7 +38,7 @@ export default function Home() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/60"
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm md:backdrop-blur"
             onClick={() => setShowAnnouncement(false)}
             aria-hidden="true"
           />
@@ -56,7 +58,7 @@ export default function Home() {
                 <span className="text-2xl leading-none">×</span>
               </button>
               <Image
-                src="/images/announcement.png"
+                src={language === "id-ID" ? "/images/announcement-id.png" : "/images/announcement.png"}
                 alt="Announcement"
                 width={1600}
                 height={900}
