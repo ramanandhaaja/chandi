@@ -440,12 +440,12 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "11.10 - 11.35",
           title: "Keynote Address: Culture as the Key to Future Global Sustainability",
-          description: "<b>Shilpa Shetty</b> | Indian Actress, Model, Producer, Entrepreneur, and Author",
+          description: "<b>H.E. Kazembe Kazembe</b> | Minister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe",
           speakers: [
             {
-              name: "Shilpa Shetty",
-              role: "Indian Actress, Model, Producer, Entrepreneur, and Author",
-              image: "/images/event-section/silpha.png",
+              name: "H.E. Kazembe Kazembe",
+              role: "Minister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe",
+              image: "/images/event-section/kazembe.jpeg",
             },
           ],
         },
@@ -674,7 +674,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "09.08 - 10.40",
           title:
             "PLENARY 1: Culture for the Future: Heritage, Identity, and Innovation",
-          description: `Keynote Speech: <b>Hashim S. Djojohadikusumo</b> | Chairman of the Board of Trustees of Indonesian Heritage Agency\n“Culture for The Future” (15 minutes)\n\nModerator:\n<b>Dr. Luh Gede Saraswati Putri</b> Lecturer at the Faculty of Philosophy, University of Indonesia\n \nPanelists:\n• <b>Kazembe Kazembe</b> (Zimbabwe) \nMinister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe\n• <b>He Lu</b> (China)\n Associate Professor of School of Arts of Nanfang College•Guangzhou\n• <b>Evelise Bruneau</b> (France)\n Conservatrice en charge des collections Asie du Sud- Est\n• <b>Prof. dr. Wim van den Doel</b> (Netherland)\n Dean Leiden-Delft-Erasmus Universities\n• <b>Janet DeNeefe</b> (Indonesia)\n Founder Yayasan Mudra Swari and Director of Ubud Food Festival\n\nQ&A`,
+          description: `Keynote Speech: <b>Hashim S. Djojohadikusumo</b> | Chairman of the Board of Trustees of Indonesian Heritage Agency\n“Culture for The Future” (15 minutes)\n\nModerator:\n<b>Dr. Luh Gede Saraswati Putri</b> Lecturer at the Faculty of Philosophy, University of Indonesia\n \nPanelists:\n• <b>H.E. Kazembe Kazembe</b> (Zimbabwe) \nMinister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe\n• <b>He Lu</b> (China)\n Associate Professor of School of Arts of Nanfang College•Guangzhou\n• <b>Evelise Bruneau</b> (France)\n Conservatrice en charge des collections Asie du Sud- Est\n• <b>Prof. dr. Wim van den Doel</b> (Netherland)\n Dean Leiden-Delft-Erasmus Universities\n• <b>Janet DeNeefe</b> (Indonesia)\n Founder Yayasan Mudra Swari and Director of Ubud Food Festival\n\nQ&A`,
           speakers: [
             {
               name: "Hashim S. Djojohadikusumo",
