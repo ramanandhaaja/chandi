@@ -16,14 +16,21 @@ interface ContentItem {
   imageUrl: string;
 }
 
+interface DriveFolder {
+  id: string;
+  name: string;
+}
+
 const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFolderId }) => {
-  const [activeDay, setActiveDay] = useState(1);
+  const [activeFolderIndex, setActiveFolderIndex] = useState(0);
   const [activeTitle, setActiveTitle] = useState(0);
   const [isGridView, setIsGridView] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [driveItems, setDriveItems] = useState<ContentItem[] | null>(null);
+  const [availableFolders, setAvailableFolders] = useState<DriveFolder[]>([]);
   const [loading, setLoading] = useState(false);
+  const [foldersLoading, setFoldersLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   // Simplified loading states
   const [imageLoadingStates, setImageLoadingStates] = useState<Record<number, boolean>>({});
@@ -35,12 +42,24 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
     const fetchDrive = async () => {
       // If neither Drive option provided, do nothing
       if (!folderId && !parentFolderId) return;
+      
+      // If parentFolderId is used but folders haven't loaded yet, wait
+      if (parentFolderId && availableFolders.length === 0 && !foldersLoading) return;
+      
       setLoading(true);
       setError(null);
       try {
         let url = "";
-        if (parentFolderId) {
-          url = `/api/drive-images?parentFolderId=${encodeURIComponent(parentFolderId)}&day=${activeDay}`;
+        if (parentFolderId && availableFolders.length > 0) {
+          // Use the actual folder name from the available folders
+          const selectedFolder = availableFolders[activeFolderIndex];
+          if (!selectedFolder) {
+            throw new Error("No folder selected");
+          }
+          // Extract day number from folder name for compatibility with existing API
+          const dayMatch = selectedFolder.name.match(/day\s*(\d+)/i);
+          const dayNumber = dayMatch ? dayMatch[1] : activeFolderIndex + 1;
+          url = `/api/drive-images?parentFolderId=${encodeURIComponent(parentFolderId)}&day=${dayNumber}`;
         } else if (folderId) {
           url = `/api/drive-images?folderId=${encodeURIComponent(folderId)}`;
         }
@@ -57,12 +76,36 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
       }
     };
     fetchDrive();
-  }, [folderId, parentFolderId, activeDay]);
+  }, [folderId, parentFolderId, activeFolderIndex, availableFolders, foldersLoading]);
 
-  // Reset image loading states when day or folder changes
+  // Fetch available folders when parentFolderId is provided
+  useEffect(() => {
+    const fetchFolders = async () => {
+      if (!parentFolderId) return;
+      setFoldersLoading(true);
+      try {
+        const url = `/api/drive-images?parentFolderId=${encodeURIComponent(parentFolderId)}&list=folders`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`Failed to load folders (${res.status})`);
+        const data = await res.json() as { folders: DriveFolder[] };
+        const sortedFolders = (data.folders || []).sort((a, b) => a.name.localeCompare(b.name));
+        setAvailableFolders(sortedFolders);
+        setActiveFolderIndex(0); // Reset to first folder
+      } catch (e: unknown) {
+        const msg = e instanceof Error ? e.message : "Unable to load folders from Google Drive";
+        setError(msg);
+        setAvailableFolders([]);
+      } finally {
+        setFoldersLoading(false);
+      }
+    };
+    fetchFolders();
+  }, [parentFolderId]);
+
+  // Reset image loading states when folder changes
   useEffect(() => {
     setImageLoadingStates({});
-  }, [activeDay, folderId, parentFolderId]);
+  }, [activeFolderIndex, folderId, parentFolderId]);
 
   // Helper function to handle image load completion
   const handleImageLoad = (index: number) => {
@@ -157,20 +200,28 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
               Gallery
             </h2>
 
-            {/* Day selection tabs */}
-            <div className="flex justify-center md:justify-start gap-4 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0">
-              {[1, 2, 3].map((day) => (
-                <button
-                  key={day}
-                  onClick={() => setActiveDay(day)}
-                  className={`whitespace-nowrap text-lg py-2 px-3 text-white transition-all ${
-                    activeDay === day ? "font-bold underline" : "opacity-70"
-                  }`}
-                >
-                  Day {day}
-                </button>
-              ))}
-            </div>
+            {/* Folder selection tabs */}
+            {parentFolderId && (
+              <div className="flex justify-center md:justify-start gap-4 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0">
+                {foldersLoading ? (
+                  <div className="text-white/70 text-sm">Loading folders...</div>
+                ) : availableFolders.length > 0 ? (
+                  availableFolders.map((folder, index) => (
+                    <button
+                      key={folder.id}
+                      onClick={() => setActiveFolderIndex(index)}
+                      className={`whitespace-nowrap text-lg py-2 px-3 text-white transition-all ${
+                        activeFolderIndex === index ? "font-bold underline" : "opacity-70"
+                      }`}
+                    >
+                      {folder.name}
+                    </button>
+                  ))
+                ) : (
+                  <div className="text-white/70 text-sm">No folders found</div>
+                )}
+              </div>
+            )}
             <div className="border-b border-white/30"></div>
           </div>
 
