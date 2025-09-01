@@ -355,17 +355,17 @@ const EventSection: React.FC<EventSectionProps> = ({
           description: "Opening video of CHANDI 2025.",
         },
         {
-          time: "09.00 - 09.05",
-          title: "Welcome Balinese Dance",
-          description: "Cancala Bhuwana Chandika",
+          time: "09.00 - 09.08",
+          title: "Opening Dance Sound of Nusantara",
+          description: "Maha Mredangga Nuswantara Music",
         },
         {
-          time: "09.05 - 09.10",
+          time: "09.08 - 09.13",
           title: "Opening by Master of Ceremony (MC)",
           description: "Opening by MC.",
         },
         {
-          time: "09.10 - 09.20",
+          time: "09.13 - 09.23",
           title: "Chairman’s Report",
           description:
             "<b>Prof. Bambang Wibawarta</b> | Secretary General of the Ministry of Culture of the Republic of Indonesia.",
@@ -378,20 +378,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           ],
         },
         {
-          time: "09.20 - 09.25",
-          title: "Remarks",
-          description: "Opening remarks.",
-          speakers: [
-            {
-              name: "Prof. Dr. Pratikno",
-              role: "Coordinating Minister for Human Development and Cultural Affairs of the Republic of Indonesia",
-              image: "/images/event-section/pratikno.png",
-            },
-          ],
-        },
-
-        {
-          time: "09.25 - 09.40",
+          time: "09.23 - 09.28",
           title: "Welcome Speech",
           description:
             "Welcome speech by <b>Dr. Fadli Zon</b>, Minister of Culture of the Republic of Indonesia.",
@@ -403,13 +390,26 @@ const EventSection: React.FC<EventSectionProps> = ({
             },
           ],
         },
+
         {
-          time: "09.40 - 09.55",
-          title: "Art Performance: Sound of Nusantara",
-          description: "Art Performance Sound of Nusantara: Maha Mredangga Nuswantara Music",
+          time: "09.28 - 09.43",
+          title: "Remarks",
+          description: "Opening remarks.",
+          speakers: [
+            {
+              name: "Prof. Dr. Pratikno",
+              role: "Coordinating Minister for Human Development and Cultural Affairs of the Republic of Indonesia",
+              image: "/images/event-section/pratikno.png",
+            },
+          ],
         },
         {
-          time: "09.55 - 10.40",
+          time: "09.43 - 09.50",
+          title: "Art Performance",
+          description: "Cancala Bhuwana Chandika",
+        },
+        {
+          time: "09.50 - 10.35",
           title: "Keynote Speech",
           description:
             "<b>Prabowo Subianto</b> | President of Republic of Indonesia.",
@@ -422,12 +422,12 @@ const EventSection: React.FC<EventSectionProps> = ({
           ],
         },
         {
-          time: "10.40 - 10.45",
+          time: "10.35 - 10.45",
           title: "Opening Ceremony of CHANDI 2025",
           description: "",
         },
         {
-          time: "10.40 - 10.45",
+          time: "10.45 - 10.50",
           title: "President of the Republic of Indonesia and all Minister photo session",
           description: "",
         },
@@ -442,20 +442,20 @@ const EventSection: React.FC<EventSectionProps> = ({
           description: "President and all Ministers Proceed to Pre-Function",
         },
         {
-          time: "10.55 - 11.10",
+          time: "10.55 - 11.05",
           title: "Photo Session of All Ministers at BBC Pre-Function Area Doorstop Media",
           description:
             "Photo Session of All Ministers at BBC Pre-Function Area Doorstop Media",
         },
         {
           time: "10.50 - 11.00",
-          title: "Balinese Dance: Kakuwung Ranu",
-          description: "",
+          title: "Balinese Dance",
+          description: "<b>Kakuwung Ranu</b>",
         },
         {
           time: "11.00 - 11.20",
-          title: "Keynote Address: Culture for the Future: A Bridge to Building Peace and Prosperity",
-          description: "<b>H.E. Mr. Kazembe</b> | Minister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe",
+          title: "Keynote Address:",
+          description: "Culture for the Future: A Bridge to Building Peace and Prosperity<br/><b>H. E. Mr. Kazembe</b> – Minister of Home Affairs and Cultural Heritage of The Republic of Zimbabwe",
           speakers: [
             {
               name: "H.E. Mr. Kazembe",
@@ -466,12 +466,12 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "11.20 - 11.40",
-          title: "Keynote Address: The Role of Youth in Fostering Peace through Culture",
-          description: "<b>Jana Mohammadmasoud Abdullatif Abusalha</b> | Medical Student",
+          title: "Keynote Address:",
+          description: "The Role of Youth in Fostering Peace through Culture<br/><b>Jana Abusalha</b> — Youth Representative",
           speakers: [
             {
-              name: "Jana Mohammadmasoud Abdullatif Abusalha",
-              role: "Medical Student",
+              name: "Jana Abusalha",
+              role: "Youth Representative",
               image: "/images/event-section/jana.jpeg",
             },
           ],
@@ -483,13 +483,25 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "11.45 - 13.30",
-          title: "Lunch",
-          description: "Lunch break for all participants.",
+          title: "Delegate Lunch",
+          description: "",
         },
         {
           time: "13.00 - 17.00",
           title: "Ministerial Summit",
-          description: `• Opening Statement by The Minister of Culture of RI, <b>Dr. Fadli Zon</b>\n• Country Statement\n• Conclusion and closing by The Minister of Culture of RI, <b>Dr. Fadli Zon</b>\n`,
+          description: `
+<b>“Culture Beyond 2030: Safeguarding Heritage, Building Peace, and Advancing CCIs in a Digital Future” - <i>Closed Session</i></b>\n\n
+• Opening by the Chair of the Ministerial Summit, Dr. Fadli Zon – Minister of Culture of the Republic of Indonesia\n
+• Country Statements by Heads of Delegation.\n
+• Summit Conclusion by the Rapporteur\n
+• Closing remarks by Dr. Fadli Zon – Minister of Culture of the Republic of Indonesia\n\n
+<i>Note: All relevant documents—including the Concept Note, Session Guidelines, Order of Business, and the Draft Declaration—are available under the Documents menu in the website’s main toolbar.</i>
+`,
+        },
+        {
+          time: "17.00 - 17.30",
+          title: "Medal Appreciation Ceremony for All Minister ",
+          description: "",
         },
         {
           time: "14.00 - 17.30\n\n• Coffee Break: 15.30–16.00\n• Sesi 1: 14.00–15.30\n• Sesi 2: 16.00–17.30",
