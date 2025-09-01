@@ -23,14 +23,16 @@ interface DriveFolder {
 
 const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFolderId }) => {
   const [activeFolderIndex, setActiveFolderIndex] = useState(0);
-  const [activeTitle, setActiveTitle] = useState(0);
+  const [activeSubfolderIndex, setActiveSubfolderIndex] = useState(0);
   const [isGridView, setIsGridView] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [driveItems, setDriveItems] = useState<ContentItem[] | null>(null);
   const [availableFolders, setAvailableFolders] = useState<DriveFolder[]>([]);
+  const [availableSubfolders, setAvailableSubfolders] = useState<DriveFolder[]>([]);
   const [loading, setLoading] = useState(false);
   const [foldersLoading, setFoldersLoading] = useState(false);
+  const [subfoldersLoading, setSubfoldersLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   // Simplified loading states
   const [imageLoadingStates, setImageLoadingStates] = useState<Record<number, boolean>>({});
@@ -43,23 +45,20 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
       // If neither Drive option provided, do nothing
       if (!folderId && !parentFolderId) return;
       
-      // If parentFolderId is used but folders haven't loaded yet, wait
-      if (parentFolderId && availableFolders.length === 0 && !foldersLoading) return;
+      // If parentFolderId is used but subfolders haven't loaded yet, wait
+      if (parentFolderId && availableSubfolders.length === 0 && !subfoldersLoading) return;
       
       setLoading(true);
       setError(null);
       try {
         let url = "";
-        if (parentFolderId && availableFolders.length > 0) {
-          // Use the actual folder name from the available folders
-          const selectedFolder = availableFolders[activeFolderIndex];
-          if (!selectedFolder) {
-            throw new Error("No folder selected");
+        if (parentFolderId && availableSubfolders.length > 0) {
+          // Use the selected subfolder directly
+          const selectedSubfolder = availableSubfolders[activeSubfolderIndex];
+          if (!selectedSubfolder) {
+            throw new Error("No subfolder selected");
           }
-          // Extract day number from folder name for compatibility with existing API
-          const dayMatch = selectedFolder.name.match(/day\s*(\d+)/i);
-          const dayNumber = dayMatch ? dayMatch[1] : activeFolderIndex + 1;
-          url = `/api/drive-images?parentFolderId=${encodeURIComponent(parentFolderId)}&day=${dayNumber}`;
+          url = `/api/drive-images?folderId=${encodeURIComponent(selectedSubfolder.id)}`;
         } else if (folderId) {
           url = `/api/drive-images?folderId=${encodeURIComponent(folderId)}`;
         }
@@ -67,7 +66,6 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
         if (!res?.ok) throw new Error(`Failed to load Google Drive images (${res?.status})`);
         const data = (await res.json()) as { title: string; imageUrl: string }[];
         setDriveItems(data);
-        setActiveTitle(0);
       } catch (e: unknown) {
         const msg = e instanceof Error ? e.message : "Unable to load images from Google Drive";
         setError(msg);
@@ -76,7 +74,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
       }
     };
     fetchDrive();
-  }, [folderId, parentFolderId, activeFolderIndex, availableFolders, foldersLoading]);
+  }, [folderId, parentFolderId, activeSubfolderIndex, availableSubfolders, subfoldersLoading]);
 
   // Fetch available folders when parentFolderId is provided
   useEffect(() => {
@@ -102,10 +100,46 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
     fetchFolders();
   }, [parentFolderId]);
 
-  // Reset image loading states when folder changes
+  // Fetch subfolders within the selected day folder
+  useEffect(() => {
+    const fetchSubfolders = async () => {
+      if (!parentFolderId || availableFolders.length === 0) return;
+      
+      const selectedDayFolder = availableFolders[activeFolderIndex];
+      if (!selectedDayFolder) return;
+      
+      setSubfoldersLoading(true);
+      setError(null);
+      try {
+        const url = `/api/drive-images?parentFolderId=${encodeURIComponent(selectedDayFolder.id)}&list=folders`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`Failed to load subfolders (${res.status})`);
+        const data = await res.json() as { folders: DriveFolder[] };
+        const sortedSubfolders = (data.folders || []).sort((a, b) => a.name.localeCompare(b.name));
+        
+        if (sortedSubfolders.length === 0) {
+          // If no subfolders, use the day folder itself as the "subfolder"
+          setAvailableSubfolders([selectedDayFolder]);
+        } else {
+          setAvailableSubfolders(sortedSubfolders);
+        }
+        setActiveSubfolderIndex(0); // Reset to first subfolder
+      } catch (e: unknown) {
+        const msg = e instanceof Error ? e.message : "Unable to load subfolders from Google Drive";
+        setError(msg);
+        // Fallback to using the day folder itself
+        setAvailableSubfolders([selectedDayFolder]);
+      } finally {
+        setSubfoldersLoading(false);
+      }
+    };
+    fetchSubfolders();
+  }, [parentFolderId, availableFolders, activeFolderIndex]);
+
+  // Reset image loading states when folder or subfolder changes
   useEffect(() => {
     setImageLoadingStates({});
-  }, [activeFolderIndex, folderId, parentFolderId]);
+  }, [activeFolderIndex, activeSubfolderIndex, folderId, parentFolderId]);
 
   // Helper function to handle image load completion
   const handleImageLoad = (index: number) => {
@@ -117,35 +151,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
     setImageLoadingStates(prev => ({ ...prev, [index]: true }));
   };
 
-  const mobileStyles = {
-    navButton: "p-3 min-w-[44px] min-h-[44px] flex items-center justify-center",
-    activeNavItem: "bg-[#8A6A2F] text-white",
-    navItem: "text-white hover:bg-[#8A6A2F]/70",
-  };
 
-  const NavButton = ({
-    direction,
-    onClick,
-    disabled,
-  }: {
-    direction: "left" | "right";
-    onClick: () => void;
-    disabled?: boolean;
-  }) => (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      className={`${mobileStyles.navButton} ${disabled ? "opacity-50" : ""}`}
-      aria-label={direction === "left" ? "Previous" : "Next"}
-    >
-      <Image
-        src={`/${direction}-arrow.svg`}
-        alt={`${direction} arrow`}
-        width={24}
-        height={24}
-      />
-    </button>
-  );
 
   const ViewOptionBtn = ({
     showControlsBtn = true,
@@ -226,55 +232,63 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
           </div>
 
           {/* Dropdown Menu - Mobile Only */}
-          <div className="md:hidden px-4 mb-4 ">
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="w-full flex justify-between items-center bg-[#4A2F1E] text-white py-3 px-4 rounded-lg border border-white/30"
-            >
-              <span>{items[activeTitle]?.title || "Select Image"}</span>
-              <span className="transform transition-transform duration-200">
-                {isDropdownOpen ? "▲" : "▼"}
-              </span>
-            </button>
+          {availableSubfolders.length > 0 && (
+            <div className="md:hidden px-4 mb-4 ">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="w-full flex justify-between items-center bg-[#4A2F1E] text-white py-3 px-4 rounded-lg border border-white/30"
+              >
+                <span>{availableSubfolders[activeSubfolderIndex]?.name || "Select Folder"}</span>
+                <span className="transform transition-transform duration-200">
+                  {isDropdownOpen ? "▲" : "▼"}
+                </span>
+              </button>
 
-            {/* Dropdown Content */}
-            {isDropdownOpen && (
-              <div className="absolute z-10 w-[calc(100%-2rem)] mt-1 bg-[#4A2F1E] border border-[#8A6A2F] rounded-lg shadow-lg max-h-60 overflow-y-auto">
-                {items.map((item, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      setActiveTitle(index);
-                      setIsDropdownOpen(false);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                    className={`w-full text-left py-3 px-4 text-white transition-all ${
-                      activeTitle === index
-                        ? "bg-black/30 font-semibold"
-                        : "hover:bg-black/30"
-                    }`}
-                  >
-                    {item.title}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+              {/* Dropdown Content */}
+              {isDropdownOpen && (
+                <div className="absolute z-10 w-[calc(100%-2rem)] mt-1 bg-[#4A2F1E] border border-[#8A6A2F] rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                  {availableSubfolders.map((subfolder, index) => (
+                    <button
+                      key={subfolder.id}
+                      onClick={() => {
+                        setActiveSubfolderIndex(index);
+                        setIsDropdownOpen(false);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className={`w-full text-left py-3 px-4 text-white transition-all ${
+                        activeSubfolderIndex === index
+                          ? "bg-black/30 font-semibold"
+                          : "hover:bg-black/30"
+                      }`}
+                    >
+                      {subfolder.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
           {/* Desktop Navigation List - Hidden on mobile */}
           <div className="hidden md:block space-y-2">
-            {items.map((item, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTitle(index)}
-                className={`w-full text-left py-3 px-4 text-white transition-all ${
-                  activeTitle === index
-                    ? "bg-black/30 font-semibold rounded-lg"
-                    : "opacity-70 hover:opacity-100"
-                }`}
-              >
-                {item.title}
-              </button>
-            ))}
+            {subfoldersLoading ? (
+              <div className="text-white/70 text-sm py-3 px-4">Loading subfolders...</div>
+            ) : availableSubfolders.length > 0 ? (
+              availableSubfolders.map((subfolder, index) => (
+                <button
+                  key={subfolder.id}
+                  onClick={() => setActiveSubfolderIndex(index)}
+                  className={`w-full text-left py-3 px-4 text-white transition-all ${
+                    activeSubfolderIndex === index
+                      ? "bg-black/30 font-semibold rounded-lg"
+                      : "opacity-70 hover:opacity-100"
+                  }`}
+                >
+                  {subfolder.name}
+                </button>
+              ))
+            ) : (
+              <div className="text-white/70 text-sm py-3 px-4">No folders found</div>
+            )}
           </div>
         </div>
 
@@ -382,49 +396,50 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                 </div>
               </div>
 
-              {/* Desktop - Single Image with Navigation */}
-              <div className="hidden md:block relative w-full aspect-video rounded-lg overflow-hidden">
-                {items[activeTitle]?.imageUrl && (
-                  <Image
-                    src={items[activeTitle]!.imageUrl}
-                    alt={items[activeTitle]!.title}
-                    fill
-                    style={{
-                      objectFit: "cover",
-                      objectPosition: "center",
-                    }}
-                    sizes="80vw"
-                    priority
-                    onLoadStart={() => handleImageLoadStart(activeTitle)}
-                    onLoad={() => handleImageLoad(activeTitle)}
-                    onError={() => handleImageLoad(activeTitle)}
-                  />
-                )}
+              {/* Desktop - Grid View (since left menu now shows subfolders) */}
+              <div className="hidden md:block">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+                  {items.map((item, index) => (
+                    <div
+                      key={index}
+                      className="group aspect-video bg-black rounded-lg overflow-hidden relative hover:shadow-lg transition-all duration-300"
+                    >
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.title}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="transition-transform duration-300 group-hover:scale-105"
+                        onLoadStart={() => handleImageLoadStart(index)}
+                        onLoad={() => handleImageLoad(index)}
+                        onError={() => handleImageLoad(index)}
+                      />
 
-                {/* Loading overlay for active image */}
-                {imageLoadingStates[activeTitle] && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/60">
-                    <div className="h-10 w-10 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  </div>
-                )}
-              </div>
+                      {/* Loading overlay for individual images */}
+                      {imageLoadingStates[index] && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+                          <div className="h-8 w-8 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        </div>
+                      )}
 
-              {/* Desktop Navigation Controls */}
-              <div className="hidden md:flex absolute bottom-4 left-1/2 -translate-x-1/2">
-                <div className="flex items-center gap-2 bg-[#4A2F1E]/80 px-4 py-2 rounded-full">
-                  <NavButton
-                    direction="left"
-                    onClick={() => setActiveTitle(activeTitle - 1)}
-                    disabled={activeTitle === 0}
-                  />
-                  <span className="text-white text-sm">
-                    {items.length > 0 ? `${activeTitle + 1} / ${items.length}` : "0 / 0"}
-                  </span>
-                  <NavButton
-                    direction="right"
-                    onClick={() => setActiveTitle(activeTitle + 1)}
-                    disabled={items.length === 0 || activeTitle === items.length - 1}
-                  />
+                      {/* Overlay on hover */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex flex-col justify-between p-4">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-right"></div>
+
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <h3 className="text-white font-medium text-sm md:text-base truncate">
+                            {item.title}
+                          </h3>
+                          <p className="text-white/80 text-xs">
+                            {index + 1} / {items.length}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex justify-end pt-2">
                   <ViewOptionBtn isGridView={isGridView} />
                 </div>
               </div>
