@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { getImageURL } from "@/lib/api";
 
 interface Props {
-  content: ContentItem[];
+  content?: Array<ContentItem | DirectusItem>;
 }
 
 interface ContentItem {
@@ -12,8 +13,13 @@ interface ContentItem {
   imageUrl: string;
 }
 
-const GalleryPhoto: React.FC<Props> = ({ content }) => {
-  const [activeDay, setActiveDay] = useState(1);
+// Supports Directus relational field like: { id, directus_files_id }
+interface DirectusItem {
+  id?: number;
+  directus_files_id: string;
+}
+
+const GalleryPhoto: React.FC<Props> = ({ content = [] }) => {
   const [activeTitle, setActiveTitle] = useState(0);
   const [isGridView, setIsGridView] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,6 +30,18 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
     activeNavItem: "bg-[#8A6A2F] text-white",
     navItem: "text-white hover:bg-[#8A6A2F]/70",
   };
+
+  // Normalize incoming content: if items are Directus references, convert to { title, imageUrl }
+  const normalizedContent: ContentItem[] = content.map((item, idx) => {
+    if (item && typeof item === "object" && "directus_files_id" in item) {
+      const fileId = (item as DirectusItem).directus_files_id;
+      return {
+        title: `Image ${idx + 1}`,
+        imageUrl: getImageURL(fileId),
+      };
+    }
+    return item as ContentItem;
+  });
 
   const NavButton = ({
     direction,
@@ -102,20 +120,7 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
               Gallery
             </h2>
 
-            {/* Day selection tabs */}
-            <div className="flex justify-center md:justify-start gap-4 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0">
-              {[1, 2, 3].map((day) => (
-                <button
-                  key={day}
-                  onClick={() => setActiveDay(day)}
-                  className={`whitespace-nowrap text-lg py-2 px-3 text-white transition-all ${
-                    activeDay === day ? "font-bold underline" : "opacity-70"
-                  }`}
-                >
-                  Day {day}
-                </button>
-              ))}
-            </div>
+            {/* Removed Day selection tabs */}
             <div className="border-b border-white/30"></div>
           </div>
 
@@ -125,7 +130,7 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="w-full flex justify-between items-center bg-[#4A2F1E] text-white py-3 px-4 rounded-lg border border-white/30"
             >
-              <span>{content[activeTitle]?.title || "Select Image"}</span>
+              <span>{normalizedContent[activeTitle]?.title || "Select Image"}</span>
               <span className="transform transition-transform duration-200">
                 {isDropdownOpen ? "▲" : "▼"}
               </span>
@@ -134,7 +139,7 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
             {/* Dropdown Content */}
             {isDropdownOpen && (
               <div className="absolute z-10 w-[calc(100%-2rem)] mt-1 bg-[#4A2F1E] border border-[#8A6A2F] rounded-lg shadow-lg max-h-60 overflow-y-auto">
-                {content.map((item, index) => (
+                {normalizedContent.map((item, index) => (
                   <button
                     key={index}
                     onClick={() => {
@@ -157,7 +162,7 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
 
           {/* Desktop Navigation List - Hidden on mobile */}
           <div className="hidden md:block space-y-2">
-            {content.map((item, index) => (
+            {normalizedContent.map((item, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTitle(index)}
@@ -179,7 +184,7 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
             // Grid View
             <>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-                {content.map((item, index) => (
+                {normalizedContent.map((item, index) => (
                   <div
                     key={index}
                     className="group aspect-video bg-black rounded-lg overflow-hidden relative hover:shadow-lg transition-all duration-300"
@@ -202,7 +207,7 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
                           {item.title}
                         </h3>
                         <p className="text-white/80 text-xs">
-                          {index + 1} / {content.length}
+                          {index + 1} / {normalizedContent.length}
                         </p>
                       </div>
                     </div>
@@ -218,7 +223,7 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
             <div className="relative w-full">
               {/* Mobile - Horizontal Scroll */}
               <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory h-[70vh] no-scrollbar">
-                {content.map((item, index) => (
+                {normalizedContent.map((item, index) => (
                   <div
                     key={index}
                     className="w-full flex-shrink-0 snap-start relative aspect-video"
@@ -244,8 +249,8 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
               {/* Desktop - Single Image with Navigation */}
               <div className="hidden md:block relative w-full aspect-video rounded-lg overflow-hidden">
                 <Image
-                  src={content[activeTitle]?.imageUrl || ""}
-                  alt={content[activeTitle]?.title || ""}
+                  src={normalizedContent[activeTitle]?.imageUrl || ""}
+                  alt={normalizedContent[activeTitle]?.title || ""}
                   fill
                   style={{
                     objectFit: "cover",
@@ -265,12 +270,12 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
                     disabled={activeTitle === 0}
                   />
                   <span className="text-white text-sm">
-                    {activeTitle + 1} / {content.length}
+                    {activeTitle + 1} / {normalizedContent.length}
                   </span>
                   <NavButton
                     direction="right"
                     onClick={() => setActiveTitle(activeTitle + 1)}
-                    disabled={activeTitle === content.length - 1}
+                    disabled={activeTitle === normalizedContent.length - 1}
                   />
                   <ViewOptionBtn isGridView={isGridView} />
                 </div>
@@ -284,3 +289,4 @@ const GalleryPhoto: React.FC<Props> = ({ content }) => {
 };
 
 export default GalleryPhoto;
+

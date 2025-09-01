@@ -102,21 +102,11 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
                 </div>
               </div>
             )}
-
-            <GalleryPhoto content=/>
-
-            {/* Back Button */}
-            <div className="mt-16 pt-8 border-t border-gray-200">
-              <Link
-                href="/news_updates"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-              >
-                ← Back to News & Updates
-              </Link>
-            </div>
           </div>
         </section>
+        
       </main>
+      <GalleryPhoto content={article.images}/>
       <FooterSection />
     </>
   );
