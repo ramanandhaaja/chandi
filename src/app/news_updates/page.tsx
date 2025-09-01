@@ -36,10 +36,12 @@ export default function NewsAndUpdatesPage() {
       />
       {/* Press Release  Section*/}
       <PressReleaseSection />
+      {/* 
       <GalleryPhoto content={photos}/>
 
-      {/* Photo section - Google Drive-backed gallery (Day 1/2/3) 
+      Photo section - Google Drive-backed gallery (Day 1/2/3) 
       <GalleryPhotoDrive parentFolderId="1xC5u5q6rfFZfqYZVQqQUZbrW8sEGjC7v" />*/}
+      <GalleryPhotoDrive parentFolderId="1QWmL8wjrp82_hXLpg6kRF0FfvZTd6_wd" />
       {/* Videos section*/}
       <VideoGallerySection />
       {/* Footer Section */}

@@ -25,13 +25,11 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
   const [driveItems, setDriveItems] = useState<ContentItem[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  // Image loading states
-  const [loadedIndices, setLoadedIndices] = useState<Record<number, boolean>>({});
-  const [imageLoading, setImageLoading] = useState<boolean>(true);
+  // Simplified loading states
+  const [imageLoadingStates, setImageLoadingStates] = useState<Record<number, boolean>>({});
 
   // Decide the data source: Drive (if folderId provided) or the provided content prop
   const items: ContentItem[] = driveItems ?? content;
-  const allLoaded = items.length > 0 && Object.keys(loadedIndices).length === items.length;
 
   useEffect(() => {
     const fetchDrive = async () => {
@@ -61,17 +59,20 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
     fetchDrive();
   }, [folderId, parentFolderId, activeDay]);
 
-  // Reset per-image loaded flags when day or folder changes
+  // Reset image loading states when day or folder changes
   useEffect(() => {
-    setLoadedIndices({});
+    setImageLoadingStates({});
   }, [activeDay, folderId, parentFolderId]);
 
-  // When active image changes, show loading until it completes
-  useEffect(() => {
-    if (items[activeTitle]?.imageUrl) {
-      setImageLoading(true);
-    }
-  }, [activeTitle, items]);
+  // Helper function to handle image load completion
+  const handleImageLoad = (index: number) => {
+    setImageLoadingStates(prev => ({ ...prev, [index]: false }));
+  };
+
+  // Helper function to handle image load start
+  const handleImageLoadStart = (index: number) => {
+    setImageLoadingStates(prev => ({ ...prev, [index]: true }));
+  };
 
   const mobileStyles = {
     navButton: "p-3 min-w-[44px] min-h-[44px] flex items-center justify-center",
@@ -238,72 +239,59 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
             </div>
           )}
 
-          {isGridView ? (
+          {items.length === 0 ? (
+            // No images state
+            <div className="flex flex-col items-center justify-center h-[50vh] text-center">
+              <p className="text-white/80 text-lg mb-2">No images available</p>
+              <p className="text-white/60 text-sm">Please check back later</p>
+            </div>
+          ) : isGridView ? (
             // Grid View
             <div className="relative">
-              {/* Hidden preloaders to allow allLoaded to flip while grid is hidden */}
-              <div className="absolute opacity-0 pointer-events-none -z-10">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
                 {items.map((item, index) => (
-                  <Image
-                    key={`preload-${index}`}
-                    src={item.imageUrl}
-                    alt=""
-                    width={1}
-                    height={1}
-                    loading="eager"
-                    sizes="1px"
-                    onLoadingComplete={() =>
-                      setLoadedIndices((prev) => ({ ...prev, [index]: true }))
-                    }
-                    onError={() =>
-                      setLoadedIndices((prev) => ({ ...prev, [index]: true }))
-                    }
-                  />
-                ))}
-              </div>
-              {allLoaded && (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-                  {items.map((item, index) => (
-                    <div
-                      key={index}
-                      className="group aspect-video bg-black rounded-lg overflow-hidden relative hover:shadow-lg transition-all duration-300"
-                    >
-                      {loadedIndices[index] && (
-                        <Image
-                          src={item.imageUrl}
-                          alt={item.title}
-                          fill
-                          style={{ objectFit: "cover" }}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="transition-transform duration-300 group-hover:scale-105"
-                        />
-                      )}
+                  <div
+                    key={index}
+                    className="group aspect-video bg-black rounded-lg overflow-hidden relative hover:shadow-lg transition-all duration-300"
+                  >
+                    <Image
+                      src={item.imageUrl}
+                      alt={item.title}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="transition-transform duration-300 group-hover:scale-105"
+                      onLoadStart={() => handleImageLoadStart(index)}
+                      onLoad={() => handleImageLoad(index)}
+                      onError={() => handleImageLoad(index)}
+                    />
 
-                      {/* Overlay on hover */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex flex-col justify-between p-4">
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-right"></div>
+                    {/* Loading overlay for individual images */}
+                    {imageLoadingStates[index] && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+                        <div className="h-8 w-8 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      </div>
+                    )}
 
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <h3 className="text-white font-medium text-sm md:text-base truncate">
-                            {item.title}
-                          </h3>
-                          <p className="text-white/80 text-xs">
-                            {index + 1} / {items.length}
-                          </p>
-                        </div>
+                    {/* Overlay on hover */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex flex-col justify-between p-4">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-right"></div>
+
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 className="text-white font-medium text-sm md:text-base truncate">
+                          {item.title}
+                        </h3>
+                        <p className="text-white/80 text-xs">
+                          {index + 1} / {items.length}
+                        </p>
                       </div>
                     </div>
-                  ))}
-                </div>
-              )}
+                  </div>
+                ))}
+              </div>
               <div className="flex justify-end pt-2">
                 <ViewOptionBtn isGridView={isGridView} />
               </div>
-              {!allLoaded && (
-                <div className="absolute inset-0 h-[70vh] flex items-center justify-center bg-black/40">
-                  <div className="h-10 w-10 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                </div>
-              )}
             </div>
           ) : (
             // Single View
@@ -315,46 +303,37 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                     key={index}
                     className="w-full flex-shrink-0 snap-start relative aspect-video"
                   >
-                    {loadedIndices[index] && (
-                      <Image
-                        src={item.imageUrl}
-                        alt={item.title}
-                        fill
-                        style={{
-                          objectFit: "cover",
-                          objectPosition: "center",
-                        }}
-                        sizes="100vw"
-                        priority={index === 0}
-                      />
-                    )}
-
-                    {/* Preload image invisibly to detect load completion */}
                     <Image
                       src={item.imageUrl}
-                      alt=""
+                      alt={item.title}
                       fill
-                      style={{ objectFit: "cover", opacity: 0, pointerEvents: "none" }}
-                      sizes="1px"
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: "center",
+                      }}
+                      sizes="100vw"
                       priority={index === 0}
-                      onLoadingComplete={() =>
-                        setLoadedIndices((prev) => ({ ...prev, [index]: true }))
-                      }
-                      onError={() =>
-                        setLoadedIndices((prev) => ({ ...prev, [index]: true }))
-                      }
+                      onLoadStart={() => handleImageLoadStart(index)}
+                      onLoad={() => handleImageLoad(index)}
+                      onError={() => handleImageLoad(index)}
                     />
+
+                    {/* Loading overlay for individual images */}
+                    {imageLoadingStates[index] && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+                        <div className="h-10 w-10 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      </div>
+                    )}
                   </div>
                 ))}
                 <div className="bg-[#4A2F1E]/30 p-2 absolute bottom-2 right-2">
                   <ViewOptionBtn isGridView={isGridView} />
                 </div>
-                
               </div>
 
               {/* Desktop - Single Image with Navigation */}
               <div className="hidden md:block relative w-full aspect-video rounded-lg overflow-hidden">
-                {items[activeTitle]?.imageUrl && !imageLoading ? (
+                {items[activeTitle]?.imageUrl && (
                   <Image
                     src={items[activeTitle]!.imageUrl}
                     alt={items[activeTitle]!.title}
@@ -365,24 +344,17 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                     }}
                     sizes="80vw"
                     priority
+                    onLoadStart={() => handleImageLoadStart(activeTitle)}
+                    onLoad={() => handleImageLoad(activeTitle)}
+                    onError={() => handleImageLoad(activeTitle)}
                   />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="h-10 w-10 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  </div>
                 )}
 
-                {/* Preload active image invisibly to detect when it completes */}
-                {items[activeTitle]?.imageUrl && (
-                  <Image
-                    src={items[activeTitle]!.imageUrl}
-                    alt=""
-                    fill
-                    style={{ objectFit: "cover", opacity: 0, pointerEvents: "none" }}
-                    sizes="1px"
-                    priority
-                    onLoadingComplete={() => setImageLoading(false)}
-                  />
+                {/* Loading overlay for active image */}
+                {imageLoadingStates[activeTitle] && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+                    <div className="h-10 w-10 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  </div>
                 )}
               </div>
 
@@ -406,12 +378,6 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                 </div>
               </div>
 
-              {/* Full overlay while desktop image loads */}
-              {imageLoading && (
-                <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/40">
-                  <div className="h-10 w-10 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                </div>
-              )}
             </div>
           )}
         </div>
