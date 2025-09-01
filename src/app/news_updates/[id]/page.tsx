@@ -5,6 +5,7 @@ import TranslatedText from "@/components/TranslatedText";
 import { notFound } from "next/navigation";
 import { getItem, getImageURL } from "@/lib/api";
 import Link from "next/link";
+import GalleryPhoto from "@/components/news_updates/GalleryPhoto";
 
 interface NewsArticle {
   id: string;
@@ -101,6 +102,8 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
                 </div>
               </div>
             )}
+
+            <GalleryPhoto content=/>
 
             {/* Back Button */}
             <div className="mt-16 pt-8 border-t border-gray-200">
