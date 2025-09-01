@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { getImageURL } from "@/lib/api";
 
@@ -42,6 +42,10 @@ const GalleryPhoto: React.FC<Props> = ({ content = [] }) => {
     }
     return item as ContentItem;
   });
+
+  // Refs for mobile horizontal scrolling to selected image
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   const NavButton = ({
     direction,
@@ -145,7 +149,14 @@ const GalleryPhoto: React.FC<Props> = ({ content = [] }) => {
                     onClick={() => {
                       setActiveTitle(index);
                       setIsDropdownOpen(false);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      // Scroll the mobile horizontal list to the selected image
+                      requestAnimationFrame(() => {
+                        itemRefs.current[index]?.scrollIntoView({
+                          behavior: "smooth",
+                          inline: "start",
+                          block: "nearest",
+                        });
+                      });
                     }}
                     className={`w-full text-left py-3 px-4 text-white transition-all ${
                       activeTitle === index
@@ -222,10 +233,13 @@ const GalleryPhoto: React.FC<Props> = ({ content = [] }) => {
             // Single View
             <div className="relative w-full">
               {/* Mobile - Horizontal Scroll */}
-              <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory h-[70vh] no-scrollbar">
+              <div ref={scrollContainerRef} className="md:hidden flex overflow-x-auto snap-x snap-mandatory h-[70vh] no-scrollbar">
                 {normalizedContent.map((item, index) => (
                   <div
                     key={index}
+                    ref={(el) => {
+                      itemRefs.current[index] = el;
+                    }}
                     className="w-full flex-shrink-0 snap-start relative aspect-video"
                   >
                     <Image
