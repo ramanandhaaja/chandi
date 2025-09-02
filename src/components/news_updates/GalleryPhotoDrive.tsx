@@ -36,6 +36,10 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
   const [error, setError] = useState<string | null>(null);
   // Simplified loading states
   const [imageLoadingStates, setImageLoadingStates] = useState<Record<number, boolean>>({});
+  // Single view active image index
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  // Caption text from Google Docs
+  const [caption, setCaption] = useState<string | null>(null);
 
   // Decide the data source: Drive (if folderId provided) or the provided content prop
   const allItems: ContentItem[] = driveItems ?? content;
@@ -149,11 +153,12 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
           url = `/api/drive-images?folderId=${encodeURIComponent(folderId)}`;
         }
         const res = await fetch(url);
-        if (!res?.ok) throw new Error(`Failed to load Google Drive images (${res?.status})`);
-        const data = (await res.json()) as { title: string; imageUrl: string }[];
-        setDriveItems(data);
+        if (!res?.ok) throw new Error(`Failed to load images (${res?.status})`);
+        const data = (await res.json()) as { items: { title: string; imageUrl: string }[]; caption?: string | null };
+        setDriveItems(data.items || []);
+        setCaption(data.caption || null);
       } catch (e: unknown) {
-        const msg = e instanceof Error ? e.message : "Unable to load images from Google Drive";
+        const msg = e instanceof Error ? e.message : "Unable to load images";
         setError(msg);
       } finally {
         setLoading(false);
@@ -176,7 +181,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
         setAvailableFolders(sortedFolders);
         setActiveFolderIndex(0); // Reset to first folder
       } catch (e: unknown) {
-        const msg = e instanceof Error ? e.message : "Unable to load folders from Google Drive";
+        const msg = e instanceof Error ? e.message : "Unable to load folders";
         setError(msg);
         setAvailableFolders([]);
       } finally {
@@ -211,7 +216,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
         }
         setActiveSubfolderIndex(0); // Reset to first subfolder
       } catch (e: unknown) {
-        const msg = e instanceof Error ? e.message : "Unable to load subfolders from Google Drive";
+        const msg = e instanceof Error ? e.message : "Unable to load subfolders";
         setError(msg);
         // Fallback to using the day folder itself
         setAvailableSubfolders([selectedDayFolder]);
@@ -225,6 +230,8 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
   // Reset image loading states when folder or subfolder changes
   useEffect(() => {
     setImageLoadingStates({});
+    setActiveImageIndex(0);
+    setCaption(null);
   }, [activeFolderIndex, activeSubfolderIndex, folderId, parentFolderId]);
 
   // Helper function to handle image load completion
@@ -382,12 +389,21 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
         {/* Right Column - Content Area */}
         <div className="md:w-3/4 w-full ">
           {/* Loading / Error States (when using Google Drive) */}
-          {folderId && (
+          {(folderId || parentFolderId) && (
             <div className="mb-4">
-              {loading && <p className="text-white/80 text-sm">Loading images from Google Drive…</p>}
+              {loading && <p className="text-white/80 text-sm">Loading images...</p>}
               {error && (
                 <p className="text-red-300 text-sm">{error}</p>
               )}
+            </div>
+          )}
+
+          {/* Caption from Google Docs */}
+          {caption && caption.trim().length > 0 && (
+            <div className="mb-6 p-4 bg-black/20 rounded-lg">
+              <div className="text-white whitespace-pre-wrap text-sm md:text-base">
+                {caption.trim()}
+              </div>
             </div>
           )}
 
@@ -539,75 +555,106 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                 </div>
               </div>
 
-              {/* Desktop - Grid View (since left menu now shows subfolders) */}
+              {/* Desktop - Single image view with navigation */}
               <div className="hidden md:block">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-                  {items.map((item, index) => (
-                    <div
-                      key={index}
-                      className="group aspect-video bg-black rounded-lg overflow-hidden relative hover:shadow-lg transition-all duration-300"
-                    >
-                      <Image
-                        src={item.imageUrl}
-                        alt={item.title}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="transition-transform duration-300 group-hover:scale-105"
-                        onLoadStart={() => handleImageLoadStart(index)}
-                        onLoad={() => handleImageLoad(index)}
-                        onError={() => handleImageLoad(index)}
-                      />
+                <div className="flex flex-col items-center space-y-4">
+                  {/* Single large image display */}
+                  <div className="w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden relative">
+                    <Image
+                      src={items[activeImageIndex]?.imageUrl || ""}
+                      alt={items[activeImageIndex]?.title || ""}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      sizes="100vw"
+                      priority
+                      onLoadStart={() => handleImageLoadStart(activeImageIndex)}
+                      onLoad={() => handleImageLoad(activeImageIndex)}
+                      onError={() => handleImageLoad(activeImageIndex)}
+                    />
 
-                      {/* Loading overlay for individual images */}
-                      {imageLoadingStates[index] && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-black/60">
-                          <div className="h-8 w-8 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        </div>
-                      )}
-
-                      {/* Overlay on hover */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex flex-col justify-between p-4">
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-right"></div>
-
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <h3 className="text-white font-medium text-sm md:text-base truncate">
-                            {/* item.title */}
-                          </h3>
-                          <p className="text-white/80 text-xs mb-2">
-                            {index + 1} / {items.length}
-                          </p>
-                          <div className="flex gap-2">
-                            <a
-                              href={item.imageUrl}
-                              download
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="bg-white/20 hover:bg-white/30 text-white text-xs px-2 py-1 rounded transition-colors"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              Download
-                            </a>
-                            {(() => {
-                              const highResImage = findHighResImage(item);
-                              return highResImage ? (
-                                <a
-                                  href={highResImage.imageUrl}
-                                  download
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="bg-white/20 hover:bg-white/30 text-white text-xs px-2 py-1 rounded transition-colors"
-                                  onClick={(e) => e.stopPropagation()}
-                                >
-                                  High-Res
-                                </a>
-                              ) : null;
-                            })()}
-                          </div>
-                        </div>
+                    {/* Loading overlay */}
+                    {imageLoadingStates[activeImageIndex] && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+                        <div className="h-12 w-12 border-2 border-white border-t-transparent rounded-full animate-spin" />
                       </div>
+                    )}
+
+                    {/* Navigation arrows */}
+                    {items.length > 1 && (
+                      <>
+                        <button
+                          onClick={() => setActiveImageIndex(prev => prev > 0 ? prev - 1 : items.length - 1)}
+                          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+                        >
+                          ←
+                        </button>
+                        <button
+                          onClick={() => setActiveImageIndex(prev => prev < items.length - 1 ? prev + 1 : 0)}
+                          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+                        >
+                          →
+                        </button>
+                      </>
+                    )}
+
+                    {/* Download buttons */}
+                    <div className="absolute bottom-4 right-4 flex gap-2">
+                      <a
+                        href={items[activeImageIndex]?.imageUrl || ""}
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-black/60 hover:bg-black/80 text-white text-sm px-3 py-2 rounded transition-colors shadow-lg"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Download
+                      </a>
+                      {(() => {
+                        const highResImage = items[activeImageIndex] ? findHighResImage(items[activeImageIndex]) : null;
+                        return highResImage ? (
+                          <a
+                            href={highResImage.imageUrl}
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-black/60 hover:bg-black/80 text-white text-sm px-3 py-2 rounded transition-colors shadow-lg"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            High-Res
+                          </a>
+                        ) : null;
+                      })()}
                     </div>
-                  ))}
+
+                    {/* Image counter */}
+                    <div className="absolute bottom-4 left-4 bg-black/50 text-white text-sm px-3 py-2 rounded">
+                      {activeImageIndex + 1} / {items.length}
+                    </div>
+                  </div>
+
+                  {/* Thumbnail navigation */}
+                  <div className="flex gap-2 overflow-x-auto pb-2 max-w-4xl w-full justify-center">
+                    {items.map((item, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setActiveImageIndex(index)}
+                        className={`flex-shrink-0 w-20 h-14 bg-black rounded overflow-hidden cursor-pointer transition-all ${
+                          index === activeImageIndex
+                            ? "opacity-100 ring-2 ring-white"
+                            : "opacity-60 hover:opacity-100"
+                        }`}
+                      >
+                        <Image
+                          src={item.imageUrl}
+                          alt={item.title}
+                          width={80}
+                          height={56}
+                          style={{ objectFit: "cover" }}
+                          className="w-full h-full"
+                        />
+                      </button>
+                    ))}
+                  </div>
                 </div>
                 <div className="flex justify-end pt-2">
                   <ViewOptionBtn isGridView={isGridView} />

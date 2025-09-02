@@ -81,7 +81,35 @@ export async function GET(req: Request) {
       imageUrl: `https://drive.google.com/uc?export=view&id=${f.id}`,
     }));
 
-    return NextResponse.json(items, { status: 200 });
+    // Also fetch caption from Google Docs file named "caption" in the same folder
+    let caption = null;
+    try {
+      const captionQuery = encodeURIComponent(
+        `'${targetFolderId}' in parents and name = 'caption' and mimeType = 'application/vnd.google-apps.document' and trashed = false`
+      );
+      const captionUrl = `https://www.googleapis.com/drive/v3/files?q=${captionQuery}&fields=${fields}&key=${apiKey}`;
+      
+      const captionRes = await fetch(captionUrl, { cache: "no-store" });
+      if (captionRes.ok) {
+        const captionData = (await captionRes.json()) as { files?: Array<{ id: string; name: string }> };
+        const captionFiles = captionData.files ?? [];
+        
+        if (captionFiles.length > 0) {
+          const captionFileId = captionFiles[0].id;
+          // Export Google Doc as plain text
+          const exportUrl = `https://www.googleapis.com/drive/v3/files/${captionFileId}/export?mimeType=text/plain&key=${apiKey}`;
+          const exportRes = await fetch(exportUrl, { cache: "no-store" });
+          if (exportRes.ok) {
+            caption = await exportRes.text();
+          }
+        }
+      }
+    } catch (captionError) {
+      console.log("[drive-images] Failed to fetch caption:", captionError);
+      // Don't fail the whole request if caption fails
+    }
+
+    return NextResponse.json({ items, caption }, { status: 200 });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
     return NextResponse.json({ error: message }, { status: 500 });
