@@ -666,9 +666,9 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "13:00  - 17:15",
           title: "Workshops on Cultural Heritage (parallel session)",
-          description: `Session 1: <b>13:00 – 15:00</b>\nSession 2: <b>15:15 – 17:15</b>\n\nWorkshops on Cultural Heritage (Parallel Session):\n• Workshop Batik Making — Batik Solo Laweyan\n• Workshop Traditional Dance by ISI Bali\n• Workshop Music (Angklung)\n• Workshop Keris Making (Javanese Traditional Dagger)\n• Workshop Making Indonesian Traditional Mask by ISI Bali\n\nFor detailed rundown, please download the following schedule:`,
-          linkHref: "/files/Workshop_Rundown.pdf",
-          linkText: "Download Workshop Rundown (PDF)",
+          description: `Session 1: <b>13:00 – 15:00</b>\nSession 2: <b>15:15 – 17:15</b>\n\nWorkshops on Cultural Heritage (Parallel Session):\n• Workshop Batik Making — Batik Solo Laweyan\n• Workshop Traditional Dance by ISI Bali\n• Workshop Music (Angklung)\n• Workshop Keris Making (Javanese Traditional Dagger)\n• Workshop Making Indonesian Traditional Mask by ISI Bali\n\n<b>Workshop Venue:</b>\nAgoong Room \n5,6,7 & 8 \n\nBatoor Room\n1,2,3,5,8,9,10,11 & 12`,
+          // linkHref: "/files/Workshop_Rundown.pdf",
+          // linkText: "Download Workshop Rundown (PDF)",
         },
         {
           time: "18.10 - 20.10",
@@ -700,15 +700,15 @@ const EventSection: React.FC<EventSectionProps> = ({
           time: "09.30 - 11.15",
           title: "Seminar at ISI Bali:",
           description: `“Future of Intangible Culture Heritage”\n\n<b>Involvement of UNESCO and Academics to Discuss The Preservation of Non-physical Cultural Assets (Music, Dance, Cuisine, and Rituals)</b>\n\n<b>Welcome Speech:</b> Prof. Dr. I Wayan 'Kun' Adnyana, S.Sn., M.Sn — Rector of the Indonesian Institute of the Arts, Bali (5’)\n<b>Remarks:</b> Dr. Fadli Zon — Minister of Culture of the Republic of Indonesia (5’)\n\n<b>Keynote Speaker:</b> Mrs. Moe Chiba — Section Chief and Programme Specialist for Culture at UNESCO Jakarta office (15’)\n\n<b>Speakers:</b>\n  1) <b>Prof. Dr. A.A. Gde Bagus Udayana, S.Sn., M.Hum</b> — Professor at the Indonesian Institute of the Arts, Bali (10’)\n  2) <b>Prof. Dr. I Komang Sudirga, S.Sn., M.Hum</b> — Vice Chancellor for Planning and Cooperation (10’)\n  3) <b>Dr. I Gede Yudarta</b> — Associate Professor, Indonesian Institute of the Arts, Bali (10’)\n  4) <b>Mr. Yudil Chatim</b> — Education and Cultural Attaché, Embassy of the Republic of Indonesia in Beijing (Atdikbud) (10’)\n  5) <b>Mrs. I Nyoman Febriani, Ph.D</b> — Faculty Members of The Indonesian Institute of the Arts Bali (10’)\n\n<b>Moderator:</b> Dr. I Made Jodog, M.F.A — Faculty Members of The Indonesian Institute of the Arts Bali\n\n<b>Q&A Session</b> (30’)`,
-          linkHref: "/files/Rundown_seminar_ISI.pdf",
-          linkText: "Download Rundown Seminar ISI (PDF)",
+          //linkHref: "/files/Rundown_seminar_ISI.pdf",
+          //linkText: "Download Rundown Seminar ISI (PDF)",
         },
         {
           time: "09.30 - 11.15",
           title: "Seminar, Udayana University of Bali :",
           description: `“Digital Heritage & AI for Culture”\n\n<b>Exploring AI Technology for Documenting and Digitizing Cultural Heritage</b>\n\n<b>Welcome Speech:</b> Dr. Restu Gunawan, M.Hum — Directorate General of Protection of Culture and Traditions Ministry of Culture of the Republic of Indonesia (5’)\n\n<b>Keynote Speaker:</b> Mr. Joe Sidek — Chairman of Art Penang Council UNESCO (15’)\n\n<b>Speakers:</b>\n  1) <b>Mr. Giring Ganesha Djumaryo</b> — Vice Minister of Culture of the Republic of Indonesia (10’)\n  2) <b>Mrs. Laksmi DeNeefe Suardana</b> — Brand Ambassador Ubud Writers & Readers Festival (10’)\n  3) <b>Mrs. Lita Rahmiati, S.Sos., M.P.P</b> — Head of Cultural Preservation Office Region VIII (10’)\n  4) <b>Mr. Ida Bagus Ari Segara</b> — Lontar Practitioner & <b>Mr. Ida Bagus Anom</b> — Lontar Unit (10’)\n  5) <b>Mr. I Putu Ardiyasa</b> — Lecturer on Traditional Theater and Deaf Community Management (10’)\n  6) <b>Mr. Kristiawan</b> — Lecturer of Archeology (10’)\n\n<b>Moderator:</b> Galuh Febri Putra, S.Pd., M.A. — Lecturer at the Faculty of Cultural Sciences, Udayana University\n\n<b>Q&A Session</b> (30’)`,
-          linkHref: "/files/Rundown_seminar_Udayana.pdf",
-          linkText: "Download Rundown Seminar Udayana (PDF)",
+          //linkHref: "/files/Rundown_seminar_Udayana.pdf",
+          //linkText: "Download Rundown Seminar Udayana (PDF)",
         },
         {
           time: "11.30 - 13.00",
