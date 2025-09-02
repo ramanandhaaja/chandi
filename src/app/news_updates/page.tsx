@@ -5,6 +5,7 @@ import VideoGallerySection from "@/components/news_updates/VideoGallery";
 import HeaderSection from "@/components/HeaderSection";
 import GalleryPhotoDrive from "@/components/news_updates/GalleryPhotoDrive";
 import GalleryPhoto from "@/components/news_updates/GalleryPhoto";
+import VideoGalleryDrive from "@/components/news_updates/VideoGalleryDrive";
 
 
 // photo gallery mock data
@@ -42,8 +43,9 @@ export default function NewsAndUpdatesPage() {
       Photo section - Google Drive-backed gallery (Day 1/2/3) 
       <GalleryPhotoDrive parentFolderId="1xC5u5q6rfFZfqYZVQqQUZbrW8sEGjC7v" />*/}
       <GalleryPhotoDrive parentFolderId="1QWmL8wjrp82_hXLpg6kRF0FfvZTd6_wd" />
-      {/* Videos section*/}
-      <VideoGallerySection />
+      {/* Videos section
+      <VideoGallerySection />*/}
+      <VideoGalleryDrive parentFolderId="1-cDnj9WGPjZ7v-p_yCvzHPqU-q_meWge" />
       {/* Footer Section */}
       <FooterSection />
     </>
