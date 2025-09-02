@@ -272,7 +272,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
         <div className="flex items-center gap-4">
           <button
             onClick={() => setIsGridView(!isGridView)}
-            className=" text-white hover:bg-[#8A6A2F] cursor-pointer p-2"
+            className="text-white hover:bg-[#8A6A2F] cursor-pointer p-2 rounded"
           >
             {isGridView ? (
               <Image
@@ -449,7 +449,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
             </div>
           ) : isGridView ? (
             // Grid View
-            <div className="relative">
+            <>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
                 {items.map((item, index) => (
                   <div
@@ -521,7 +521,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
               <div className="flex justify-end pt-2">
                 <ViewOptionBtn isGridView={isGridView} />
               </div>
-            </div>
+            </>
           ) : (
             // Single View
             <div className="relative w-full">
@@ -590,108 +590,91 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
               </div>
 
               {/* Desktop - Single image view with navigation */}
-              <div className="hidden md:block">
-                <div className="flex flex-col items-center space-y-4">
-                  {/* Single large image display */}
-                  <div className="w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden relative">
-                    <Image
-                      src={items[activeImageIndex]?.imageUrl || ""}
-                      alt={items[activeImageIndex]?.title || ""}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="100vw"
-                      priority
-                      onLoadStart={() => handleImageLoadStart(activeImageIndex)}
-                      onLoad={() => handleImageLoad(activeImageIndex)}
-                      onError={() => handleImageLoad(activeImageIndex)}
-                    />
+              <div className="hidden md:block relative w-full">
+                <div className="aspect-video bg-black rounded-lg overflow-hidden relative">
+                  <Image
+                    src={items[activeImageIndex]?.imageUrl || ""}
+                    alt={items[activeImageIndex]?.title || ""}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="80vw"
+                    priority
+                    onLoadStart={() => handleImageLoadStart(activeImageIndex)}
+                    onLoad={() => handleImageLoad(activeImageIndex)}
+                    onError={() => handleImageLoad(activeImageIndex)}
+                  />
 
-                    {/* Loading overlay */}
-                    {imageLoadingStates[activeImageIndex] && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/60">
-                        <div className="h-12 w-12 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      </div>
-                    )}
-
-                    {/* Navigation arrows */}
-                    {items.length > 1 && (
-                      <>
-                        <button
-                          onClick={() => setActiveImageIndex(prev => prev > 0 ? prev - 1 : items.length - 1)}
-                          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-12 h-12 rounded-full flex items-center justify-center transition-colors"
-                        >
-                          ←
-                        </button>
-                        <button
-                          onClick={() => setActiveImageIndex(prev => prev < items.length - 1 ? prev + 1 : 0)}
-                          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-12 h-12 rounded-full flex items-center justify-center transition-colors"
-                        >
-                          →
-                        </button>
-                      </>
-                    )}
-
-                    {/* Download buttons */}
-                    <div className="absolute bottom-4 right-4 flex gap-2">
-                      <a
-                        href={items[activeImageIndex]?.imageUrl || ""}
-                        download
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-black/60 hover:bg-black/80 text-white text-sm px-3 py-2 rounded transition-colors shadow-lg"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        Download
-                      </a>
-                      {(() => {
-                        const highResImage = items[activeImageIndex] ? findHighResImage(items[activeImageIndex]) : null;
-                        return highResImage ? (
-                          <a
-                            href={highResImage.imageUrl}
-                            download
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-black/60 hover:bg-black/80 text-white text-sm px-3 py-2 rounded transition-colors shadow-lg"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            High-Res
-                          </a>
-                        ) : null;
-                      })()}
+                  {/* Loading overlay */}
+                  {imageLoadingStates[activeImageIndex] && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+                      <div className="h-12 w-12 border-2 border-white border-t-transparent rounded-full animate-spin" />
                     </div>
+                  )}
 
-                    {/* Image counter */}
-                    <div className="absolute bottom-4 left-4 bg-black/50 text-white text-sm px-3 py-2 rounded">
-                      {activeImageIndex + 1} / {items.length}
-                    </div>
-                  </div>
-
-                  {/* Thumbnail navigation */}
-                  <div className="flex gap-2 overflow-x-auto pb-2 max-w-4xl w-full justify-center">
-                    {items.map((item, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setActiveImageIndex(index)}
-                        className={`flex-shrink-0 w-20 h-14 bg-black rounded overflow-hidden cursor-pointer transition-all ${
-                          index === activeImageIndex
-                            ? "opacity-100 ring-2 ring-white"
-                            : "opacity-60 hover:opacity-100"
-                        }`}
-                      >
-                        <Image
-                          src={item.imageUrl}
-                          alt={item.title}
-                          width={80}
-                          height={56}
-                          style={{ objectFit: "cover" }}
-                          className="w-full h-full"
-                        />
-                      </button>
-                    ))}
+                  {/* Download buttons */}
+                  <div className="absolute bottom-4 right-4 flex gap-2">
+                    <a
+                      href={items[activeImageIndex]?.imageUrl || ""}
+                      download
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-black/60 hover:bg-black/80 text-white text-sm px-3 py-2 rounded transition-colors shadow-lg"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Download
+                    </a>
+                    {(() => {
+                      const highResImage = items[activeImageIndex] ? findHighResImage(items[activeImageIndex]) : null;
+                      return highResImage ? (
+                        <a
+                          href={highResImage.imageUrl}
+                          download
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-black/60 hover:bg-black/80 text-white text-sm px-3 py-2 rounded transition-colors shadow-lg"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          High-Res
+                        </a>
+                      ) : null;
+                    })()}
                   </div>
                 </div>
-                <div className="flex justify-end pt-2">
-                  <ViewOptionBtn isGridView={isGridView} />
+
+                {/* Desktop Navigation Controls */}
+                <div className="flex justify-center mt-4">
+                  <div className="flex items-center gap-2 bg-[#4A2F1E]/80 px-4 py-2 rounded-full">
+                    <button
+                      onClick={() => setActiveImageIndex(prev => prev > 0 ? prev - 1 : items.length - 1)}
+                      disabled={items.length <= 1}
+                      className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-white disabled:opacity-50"
+                      aria-label="Previous"
+                    >
+                      <Image
+                        src="/left-arrow.svg"
+                        alt="left arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </button>
+                    <span className="text-white text-sm">
+                      {activeImageIndex + 1} / {items.length}
+                    </span>
+                    <button
+                      onClick={() => setActiveImageIndex(prev => prev < items.length - 1 ? prev + 1 : 0)}
+                      disabled={items.length <= 1}
+                      className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-white disabled:opacity-50"
+                      aria-label="Next"
+                    >
+                      <Image
+                        src="/right-arrow.svg"
+                        alt="right arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </button>
+                    <ViewOptionBtn isGridView={isGridView} />
+                  </div>
                 </div>
               </div>
 

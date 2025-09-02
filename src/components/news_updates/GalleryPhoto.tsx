@@ -301,13 +301,13 @@ const GalleryPhoto: React.FC<Props> = ({ content = [] }) => {
                 />
 
                 {/* Download button for desktop single view */}
-                <div className="absolute top-4 right-4">
+                <div className="absolute bottom-4 right-4">
                   <a
                     href={normalizedContent[activeTitle]?.imageUrl || ""}
                     download
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-black/50 hover:bg-black/70 text-white text-sm px-3 py-2 rounded transition-colors shadow-lg"
+                    className="bg-black/60 hover:bg-black/80 text-white text-sm px-3 py-2 rounded transition-colors shadow-lg"
                     onClick={(e) => e.stopPropagation()}
                   >
                     Download
