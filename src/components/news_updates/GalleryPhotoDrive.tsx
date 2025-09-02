@@ -360,7 +360,6 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                       onClick={() => {
                         setActiveSubfolderIndex(index);
                         setIsDropdownOpen(false);
-                        window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                       className={`w-full text-left py-3 px-4 text-white transition-all ${
                         activeSubfolderIndex === index
@@ -427,11 +426,11 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                 
                 return (
                   <div className="space-y-4">
-                    <h3 className="text-white font-bold text-lg md:text-xl lg:text-2xl leading-tight">
+                    <h3 className="text-white font-bold text-lg md:text-xl lg:text-2xl leading-relaxed">
                       {title}
                     </h3>
                     {remainingText && (
-                      <div className="text-white/90 whitespace-pre-wrap text-sm md:text-base leading-relaxed">
+                      <div className="text-white/90 whitespace-pre-wrap text-sm md:text-base leading-none">
                         {remainingText}
                       </div>
                     )}
