@@ -545,7 +545,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "20.00 - 22.00",
           title: "CHANDI Music Performance",
-          description: `CHANDI Music Performance:\n\n<i>Bunga Citra Lestari (BCL), Joey Alexander, Judika, Lyodra, Michael Anthony Kwok, and accompanied by Andi Rianto's Band.</i>\n\nMonologue by <b>Marcella Zalianty, S.Sos., M.H., M.P.P</b> \n\nSpecial performance by <b>MAINAMIND (Japan)</b> at September 4, 2025`,
+          description: `CHANDI Music Performance:\n\n<i>Bunga Citra Lestari (BCL), Joey Alexander, Judika, Lyodra, Michael Anthony Kwok, and accompanied by Andi Rianto's Band.</i>\n\Host-Monologue by <b>Marcella Zalianty, S.Sos., M.H., M.P.P</b> \n\nSpecial performance by <b>MAINAMIND (Japan)</b> at September 4, 2025`,
         },
       ],
     },
@@ -583,7 +583,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "20.15 - 21.55",
           title: "CHANDI Music Performance",
-          description: `<b>Andi Rianto's Band with Judika, Lyodra, Bunga Citra Lestari (BCL), Joey Alexander, Michael Anthony Kwok, Marcella Zalianty, S.Sos., M.H., M.P.P</b>.`,
+          description: `<b>Andi Rianto's Band with Judika, Lyodra, Bunga Citra Lestari (BCL), Joey Alexander, Michael Anthony Kwok\n Host: Marcella Zalianty, S.Sos., M.H., M.P.P</b>`,
           
         },
         {
