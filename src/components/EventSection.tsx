@@ -528,11 +528,6 @@ const EventSection: React.FC<EventSectionProps> = ({
           top_right_image: "/images/event-section/panel2.jpeg",
         },
         {
-          time: "17.00 - 17.30",
-          title: "Medal Appreciation Ceremony for All Minister",
-          description: "",
-        },
-        {
           time: "17.00 - 18.00",
           title: "Break for all HoD",
           description: "",
@@ -644,7 +639,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           ],
         },
         {
-          time: "12.50 - 14.00",
+          time: "12.40 - 14.00",
           title: "Lunch",
           description: "Lunch",
         },
@@ -660,7 +655,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         },
         {
           time: "15.30 - 16.00",
-          title: "Conclusion and Closing Remarks by <b>Dr. Fadli Zon</b> — Minister of Culture of the Republic of Indonesia",
+          title: "Conclusion and Closing Remarks by Dr. Fadli Zon — Minister of Culture of the Republic of Indonesia",
           description: "(Attended by all the Ministers and Delegates)",
         },
         {
