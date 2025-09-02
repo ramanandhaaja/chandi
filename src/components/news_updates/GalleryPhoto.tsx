@@ -217,9 +217,21 @@ const GalleryPhoto: React.FC<Props> = ({ content = [] }) => {
                         <h3 className="text-white font-medium text-sm md:text-base truncate">
                           {item.title}
                         </h3>
-                        <p className="text-white/80 text-xs">
+                        <p className="text-white/80 text-xs mb-2">
                           {index + 1} / {normalizedContent.length}
                         </p>
+                        <div className="flex gap-2">
+                          <a
+                            href={item.imageUrl}
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/20 hover:bg-white/30 text-white text-xs px-2 py-1 rounded transition-colors"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Download
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -253,6 +265,20 @@ const GalleryPhoto: React.FC<Props> = ({ content = [] }) => {
                       sizes="100vw"
                       priority={index === 0}
                     />
+
+                    {/* Download button for mobile */}
+                    <div className="absolute top-2 left-2">
+                      <a
+                        href={item.imageUrl}
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-black/50 hover:bg-black/70 text-white text-xs px-2 py-1 rounded transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Download
+                      </a>
+                    </div>
                   </div>
                 ))}
                 <div className="bg-[#4A2F1E]/30 p-2 absolute bottom-2 right-2">
@@ -273,6 +299,20 @@ const GalleryPhoto: React.FC<Props> = ({ content = [] }) => {
                   sizes="80vw"
                   priority
                 />
+
+                {/* Download button for desktop single view */}
+                <div className="absolute top-4 right-4">
+                  <a
+                    href={normalizedContent[activeTitle]?.imageUrl || ""}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-black/50 hover:bg-black/70 text-white text-sm px-3 py-2 rounded transition-colors shadow-lg"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Download
+                  </a>
+                </div>
               </div>
 
               {/* Desktop Navigation Controls */}

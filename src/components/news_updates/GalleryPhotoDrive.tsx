@@ -400,10 +400,31 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
 
           {/* Caption from Google Docs */}
           {caption && caption.trim().length > 0 && (
-            <div className="mb-6 p-4 bg-black/20 rounded-lg">
-              <div className="text-white whitespace-pre-wrap text-sm md:text-base">
-                {caption.trim()}
-              </div>
+            <div className="mb-8 p-6 bg-black/20 rounded-lg">
+              {(() => {
+                const trimmedCaption = caption.trim();
+                const lines = trimmedCaption.split('\n');
+                
+                if (lines.length === 0) return null;
+                
+                const title = lines[0].trim();
+                const remainingText = lines.length > 1 
+                  ? lines.slice(1).join('\n').trim()
+                  : '';
+                
+                return (
+                  <div className="space-y-4">
+                    <h3 className="text-white font-bold text-lg md:text-xl lg:text-2xl leading-tight">
+                      {title}
+                    </h3>
+                    {remainingText && (
+                      <div className="text-white/90 whitespace-pre-wrap text-sm md:text-base leading-relaxed">
+                        {remainingText}
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
             </div>
           )}
 
