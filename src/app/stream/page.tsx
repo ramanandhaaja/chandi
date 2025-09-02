@@ -5,11 +5,19 @@ import HeaderSection from "@/components/HeaderSection";
 
 
 const streamOptions = [
-  { id: 'main', name: 'Main Venue', videoId: 'ohE2G5q8ABg', allowsEmbedding: true },
-  { id: 'room1', name: 'Room 1', videoId: 'NSxxjImWYBo', allowsEmbedding: false },
-  { id: 'room2', name: 'Room 2', videoId: 'kSZYRJsE9sA', allowsEmbedding: false },
-  { id: 'room3', name: 'Room 3', videoId: 'qoAs1iAv5g4', allowsEmbedding: false },
+  { id: 'main', name: 'Main Venue', videoId: '', allowsEmbedding: true },
+  { id: 'room1', name: 'Room 1', videoId: '', allowsEmbedding: true },
+  { id: 'room2', name: 'Room 2', videoId: '', allowsEmbedding: true },
+  { id: 'room3', name: 'Room 3', videoId: '', allowsEmbedding: true },
 ];
+
+/*
+const streamOptions = [
+  { id: 'main', name: 'Main Venue', videoId: 'ohE2G5q8ABg', allowsEmbedding: true },
+  { id: 'room1', name: 'Room 1', videoId: 'NSxxjImWYBo', allowsEmbedding: true },
+  { id: 'room2', name: 'Room 2', videoId: 'kSZYRJsE9sA', allowsEmbedding: true },
+  { id: 'room3', name: 'Room 3', videoId: 'qoAs1iAv5g4', allowsEmbedding: true },
+];*/
 
 export default function StreamPage() {
   const [isLive, setIsLive] = useState(false);
