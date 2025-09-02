@@ -16,7 +16,7 @@ const streamOptions = [
   { id: 'main', name: 'Main Venue', videoId: 'ohE2G5q8ABg', allowsEmbedding: true },
   { id: 'room1', name: 'Room 1', videoId: 'NSxxjImWYBo', allowsEmbedding: true },
   { id: 'room2', name: 'Room 2', videoId: 'kSZYRJsE9sA', allowsEmbedding: true },
-  { id: 'room3', name: 'Room 3', videoId: 'qoAs1iAv5g4', allowsEmbedding: true },
+  { id: 'room3', name: 'Room 3', videoId: 'Yo8bdBP8LYw', allowsEmbedding: true },
 ];*/
 
 export default function StreamPage() {
