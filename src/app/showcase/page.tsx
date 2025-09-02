@@ -20,7 +20,7 @@ export default function Home() {
       {/* Videos section*/}
       <VideoGallerySection title="Pameran Inovasi Budaya" />
 
-      <Gallery title="Virtual Tour Cagar Budaya" />
+      {/* <Gallery title="Virtual Tour Cagar Budaya" /> */}
 
       {/* Footer Section */}
       <FooterSection />
