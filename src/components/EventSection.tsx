@@ -545,7 +545,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "20.00 - 22.00",
           title: "CHANDI Music Performance",
-          description: `CHANDI Music Performance:\n\n<i>Bunga Citra Lestari (BCL), Joey Alexander, Judika, Lyodra, Michael Anthony Kwok, and accompanied by Andi Rianto's Band.</i>\n\nMonologue by <b>Chelsea Islan</b> \n\nSpecial performance by <b>MAINAMIND (Japan)</b> at September 4, 2025`,
+          description: `CHANDI Music Performance:\n\n<i>Bunga Citra Lestari (BCL), Joey Alexander, Judika, Lyodra, Michael Anthony Kwok, and accompanied by Andi Rianto's Band.</i>\n\nMonologue by <b>Marcella Zalianty, S.Sos., M.H., M.P.P</b> \n\nSpecial performance by <b>MAINAMIND (Japan)</b> at September 4, 2025`,
         },
       ],
     },
@@ -583,7 +583,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "20.15 - 21.55",
           title: "CHANDI Music Performance",
-          description: `<b>Andi Rianto's Band with Judika, Lyodra, Bunga Citra Lestari (BCL), Joey Alexander, Michael Anthony Kwok, Chelsea Islan</b>.`,
+          description: `<b>Andi Rianto's Band with Judika, Lyodra, Bunga Citra Lestari (BCL), Joey Alexander, Michael Anthony Kwok, Marcella Zalianty, S.Sos., M.H., M.P.P</b>.`,
           
         },
         {
@@ -651,7 +651,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "14.10 - 15.30",
           title: "Plenary 3: Youth Panel",
-          description: `Keynote Speaker: <b>Ms. Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (<i>10 minutes</i>)\n\nPanelists:\n  1) <b>Mr. Angga Dwimas Sasongko</b> — Indonesia Film Director\n  2) <b>Ms. Chelsea Islan</b> — Indonesia Actress\n  3) <b>Mr. Fauzi Ismail</b> — President of Singapore Heritage Society\n  4) <b>Ms. MINAMIND</b>\n\nModerator: <b>Ms. Putri F. W. Shafiyyah</b> — (<b>*TBC</b>)\n\nQ&A`,
+          description: `Keynote Speaker: <b>Ms. Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (<i>10 minutes</i>)\n\nPanelists:\n  1) <b>Mr. Angga Dwimas Sasongko</b> — Indonesia Film Director\n  2) <b>Marcella Zalianty, S.Sos., M.H., M.P.P</b> — Indonesia Actress\n  3) <b>Mr. Fauzi Ismail</b> — President of Singapore Heritage Society\n  4) <b>Ms. MINAMIND</b>\n\nModerator: <b>Ms. Putri F. W. Shafiyyah</b> — (<b>*TBC</b>)\n\nQ&A`,
         },
         {
           time: "15.30 - 16.00",
