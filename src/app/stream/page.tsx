@@ -85,33 +85,42 @@ export default function StreamPage() {
                   </div>
                 )}
                 <div className="absolute inset-0 w-full h-full">
-                  <iframe
-                    ref={iframeRef}
-                    width="100%"
-                    height="100%"
-                    src={`https://www.youtube.com/embed/${currentStream?.videoId}?autoplay=1&mute=1&rel=0&modestbranding=1&enablejsapi=1`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
-                    onLoad={() => {
-                      console.log('Iframe loaded');
-                      // If we're still loading after 2 seconds, assume the stream is live
-                      // This handles cases where YouTube doesn't fire the onError event
-                      setTimeout(() => {
-                        if (isLoading) {
-                          console.log('Assuming stream is live (timeout)');
-                          setIsLive(true);
-                          setIsLoading(false);
-                        }
-                      }, 2000);
-                    }}
-                    onError={() => {
-                      console.log('Iframe error - stream likely offline');
-                      setIsLive(false);
-                      setIsLoading(false);
-                    }}
-                  />
+                  {currentStream?.videoId ? (
+                    <iframe
+                      ref={iframeRef}
+                      width="100%"
+                      height="100%"
+                      src={`https://www.youtube.com/embed/${currentStream?.videoId}?autoplay=1&mute=1&rel=0&modestbranding=1&enablejsapi=1`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      onLoad={() => {
+                        console.log('Iframe loaded');
+                        // If we're still loading after 2 seconds, assume the stream is live
+                        // This handles cases where YouTube doesn't fire the onError event
+                        setTimeout(() => {
+                          if (isLoading) {
+                            console.log('Assuming stream is live (timeout)');
+                            setIsLive(true);
+                            setIsLoading(false);
+                          }
+                        }, 2000);
+                      }}
+                      onError={() => {
+                        console.log('Iframe error - stream likely offline');
+                        setIsLive(false);
+                        setIsLoading(false);
+                      }}
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center bg-gray-900 h-full">
+                      <div className="text-center p-8">
+                        <div className="text-white text-xl mb-4">📺 {currentStream?.name}</div>
+                        <p className="text-gray-300 text-lg">There are no live session at the moment</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </>
             )}
