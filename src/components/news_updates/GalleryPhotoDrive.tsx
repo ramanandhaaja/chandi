@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { useLanguage } from "@/lib/LanguageContext";
 
 interface Props {
   content?: ContentItem[];
@@ -23,6 +24,7 @@ interface DriveFolder {
 }
 
 const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFolderId }) => {
+  const { language } = useLanguage();
   const [activeFolderIndex, setActiveFolderIndex] = useState(0);
   const [activeSubfolderIndex, setActiveSubfolderIndex] = useState(0);
   const [isGridView, setIsGridView] = useState(false);
@@ -149,9 +151,9 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
           if (!selectedSubfolder) {
             throw new Error("No subfolder selected");
           }
-          url = `/api/drive-images?folderId=${encodeURIComponent(selectedSubfolder.id)}`;
+          url = `/api/drive-images?folderId=${encodeURIComponent(selectedSubfolder.id)}&language=${encodeURIComponent(language)}`;
         } else if (folderId) {
-          url = `/api/drive-images?folderId=${encodeURIComponent(folderId)}`;
+          url = `/api/drive-images?folderId=${encodeURIComponent(folderId)}&language=${encodeURIComponent(language)}`;
         }
         const res = await fetch(url);
         if (!res?.ok) throw new Error(`Failed to load images (${res?.status})`);
@@ -166,7 +168,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
       }
     };
     fetchDrive();
-  }, [folderId, parentFolderId, activeSubfolderIndex, availableSubfolders, subfoldersLoading]);
+  }, [folderId, parentFolderId, activeSubfolderIndex, availableSubfolders, subfoldersLoading, language]);
 
   // Fetch available folders when parentFolderId is provided
   useEffect(() => {
@@ -245,7 +247,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
     setImageLoadingStates({});
     setActiveImageIndex(0);
     setCaption(null);
-  }, [activeFolderIndex, activeSubfolderIndex, folderId, parentFolderId]);
+  }, [activeFolderIndex, activeSubfolderIndex, folderId, parentFolderId, language]);
 
   // Helper function to handle image load completion
   const handleImageLoad = (index: number) => {

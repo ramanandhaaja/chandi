@@ -9,6 +9,7 @@ export async function GET(req: Request) {
     const parentFolderId = searchParams.get("parentFolderId");
     const dayParam = searchParams.get("day");
     const debugList = searchParams.get("list"); // when "folders", list subfolders under parent
+    const language = searchParams.get("language") || "id-ID"; // Default to Indonesian
 
     const apiKey = process.env.GOOGLE_DRIVE_API_KEY;
     if (!apiKey) {
@@ -81,28 +82,44 @@ export async function GET(req: Request) {
       imageUrl: `https://drive.google.com/uc?export=view&id=${f.id}`,
     }));
 
-    // Also fetch caption from Google Docs file named "caption" in the same folder
+    // Also fetch caption from Google Docs file with fallback logic
     let caption = null;
     try {
-      const captionQuery = encodeURIComponent(
-        `'${targetFolderId}' in parents and name = 'caption' and mimeType = 'application/vnd.google-apps.document' and trashed = false`
-      );
-      const captionUrl = `https://www.googleapis.com/drive/v3/files?q=${captionQuery}&fields=${fields}&key=${apiKey}`;
+      // Try language-specific caption first, then fallback to the other language
+      const primaryCaption = language === "en-US" ? "Caption-en" : "Caption";
+      const fallbackCaption = language === "en-US" ? "Caption" : "Caption-en";
       
-      const captionRes = await fetch(captionUrl, { cache: "no-store" });
-      if (captionRes.ok) {
-        const captionData = (await captionRes.json()) as { files?: Array<{ id: string; name: string }> };
-        const captionFiles = captionData.files ?? [];
+      // Helper function to fetch caption by filename
+      const fetchCaptionByName = async (captionFilename: string) => {
+        const captionQuery = encodeURIComponent(
+          `'${targetFolderId}' in parents and name = '${captionFilename}' and mimeType = 'application/vnd.google-apps.document' and trashed = false`
+        );
+        const captionUrl = `https://www.googleapis.com/drive/v3/files?q=${captionQuery}&fields=${fields}&key=${apiKey}`;
         
-        if (captionFiles.length > 0) {
-          const captionFileId = captionFiles[0].id;
-          // Export Google Doc as plain text
-          const exportUrl = `https://www.googleapis.com/drive/v3/files/${captionFileId}/export?mimeType=text/plain&key=${apiKey}`;
-          const exportRes = await fetch(exportUrl, { cache: "no-store" });
-          if (exportRes.ok) {
-            caption = await exportRes.text();
+        const captionRes = await fetch(captionUrl, { cache: "no-store" });
+        if (captionRes.ok) {
+          const captionData = (await captionRes.json()) as { files?: Array<{ id: string; name: string }> };
+          const captionFiles = captionData.files ?? [];
+          
+          if (captionFiles.length > 0) {
+            const captionFileId = captionFiles[0].id;
+            // Export Google Doc as plain text
+            const exportUrl = `https://www.googleapis.com/drive/v3/files/${captionFileId}/export?mimeType=text/plain&key=${apiKey}`;
+            const exportRes = await fetch(exportUrl, { cache: "no-store" });
+            if (exportRes.ok) {
+              return await exportRes.text();
+            }
           }
         }
+        return null;
+      };
+
+      // First try the language-specific caption
+      caption = await fetchCaptionByName(primaryCaption);
+      
+      // If not found, try the fallback caption
+      if (!caption) {
+        caption = await fetchCaptionByName(fallbackCaption);
       }
     } catch (captionError) {
       console.log("[drive-images] Failed to fetch caption:", captionError);
