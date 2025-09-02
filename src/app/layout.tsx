@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "./fonts.css";
 import { LanguageProvider } from "../lib/LanguageContext";
+import { Analytics } from "@vercel/analytics/next"
 
 
 const geistSans = Geist({
@@ -36,6 +37,7 @@ export default function RootLayout({
       <LanguageProvider>
       {children}
     </LanguageProvider>
+    <Analytics/>
       </body>
     </html>
   );

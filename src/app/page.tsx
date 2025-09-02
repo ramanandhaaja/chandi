@@ -22,6 +22,7 @@ import VideoHeadline from "@/components/VideoHeadline";
 import { FaQ } from "react-icons/fa6";
 import Image from "next/image";
 import { useLanguage } from "../lib/LanguageContext";
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   const [showAnnouncement, setShowAnnouncement] = useState(false);
