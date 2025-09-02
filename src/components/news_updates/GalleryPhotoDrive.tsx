@@ -38,7 +38,93 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
   const [imageLoadingStates, setImageLoadingStates] = useState<Record<number, boolean>>({});
 
   // Decide the data source: Drive (if folderId provided) or the provided content prop
-  const items: ContentItem[] = driveItems ?? content;
+  const allItems: ContentItem[] = driveItems ?? content;
+  
+  // Filter out images with "-highres" in their filename for display, but keep all for reference
+  const items: ContentItem[] = allItems.filter(item => {
+    // Check multiple places where "-highres" might appear
+    const imageUrl = item.imageUrl || '';
+    const title = item.title || '';
+    
+    // Extract filename from URL (handle various URL formats)
+    let filename = '';
+    try {
+      const urlParts = imageUrl.split('/');
+      filename = urlParts[urlParts.length - 1].split('?')[0];
+    } catch {
+      filename = '';
+    }
+    
+    // Filter out if "-highres" appears in filename, title, or URL (case insensitive)
+    const hasHighres = filename.toLowerCase().includes('-highres') || 
+                      title.toLowerCase().includes('-highres') ||
+                      imageUrl.toLowerCase().includes('-highres');
+    
+    return !hasHighres;
+  });
+
+  // Helper function to find the corresponding high-res image from the full dataset
+  const findHighResImage = (regularItem: ContentItem): ContentItem | null => {
+    // Generate the expected high-res filename
+    const regularUrl = regularItem.imageUrl || '';
+    const regularTitle = regularItem.title || '';
+    let expectedHighResFilename = '';
+    
+    try {
+      // For Google Drive URLs, use the title field which contains the actual filename
+      let filename = regularTitle || '';
+      
+      // Fallback to URL parsing only if title is not available
+      if (!filename && regularUrl) {
+        const urlParts = regularUrl.split('/');
+        filename = urlParts[urlParts.length - 1].split('?')[0];
+      }
+      
+      const lastDotIndex = filename.lastIndexOf('.');
+      if (lastDotIndex === -1) {
+        expectedHighResFilename = filename + '-highres';
+      } else {
+        const name = filename.substring(0, lastDotIndex);
+        const extension = filename.substring(lastDotIndex);
+        expectedHighResFilename = name + '-highres' + extension;
+      }
+      
+      console.log('Looking for high-res version of:');
+      console.log('- regularFilename:', filename);
+      console.log('- expectedHighResFilename:', expectedHighResFilename);
+      console.log('- regularUrl:', regularUrl);
+      console.log('- regularTitle:', regularTitle);
+    } catch {
+      return null;
+    }
+    
+    // Find the high-res image in the full dataset
+    console.log('All available items:', allItems.length);
+    allItems.forEach((item, index) => {
+      console.log(`Item ${index}:`, item.title, '|', item.imageUrl);
+    });
+    
+    const foundItem = allItems.find(item => {
+      const itemUrl = item.imageUrl || '';
+      const itemTitle = item.title || '';
+      
+      // Check both URL and title for matches
+      const urlMatch = itemUrl.toLowerCase().includes(expectedHighResFilename.toLowerCase());
+      const titleMatch = itemTitle.toLowerCase().includes(expectedHighResFilename.toLowerCase());
+      
+      console.log('Checking item:');
+      console.log('- itemUrl:', itemUrl);
+      console.log('- itemTitle:', itemTitle);
+      console.log('- expectedHighResFilename:', expectedHighResFilename);
+      console.log('- urlMatch:', urlMatch);
+      console.log('- titleMatch:', titleMatch);
+      
+      return urlMatch || titleMatch;
+    });
+    
+    console.log('Found high-res image:', foundItem);
+    return foundItem || null;
+  };
 
   useEffect(() => {
     const fetchDrive = async () => {
@@ -150,6 +236,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
   const handleImageLoadStart = (index: number) => {
     setImageLoadingStates(prev => ({ ...prev, [index]: true }));
   };
+
 
 
 
@@ -360,16 +447,21 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                           >
                             Download
                           </a>
-                          <a
-                            href={item.imageUrl.replace('=w800', '=w2000')}
-                            download
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-white/20 hover:bg-white/30 text-white text-xs px-2 py-1 rounded transition-colors"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            High-Res
-                          </a>
+                          {(() => {
+                            const highResImage = findHighResImage(item);
+                            return highResImage ? (
+                              <a
+                                href={highResImage.imageUrl}
+                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-white/20 hover:bg-white/30 text-white text-xs px-2 py-1 rounded transition-colors"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                High-Res
+                              </a>
+                            ) : null;
+                          })()}
                         </div>
                       </div>
                     </div>
@@ -424,16 +516,21 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                       >
                         Download
                       </a>
-                      <a
-                        href={item.imageUrl.replace('=w800', '=w2000')}
-                        download
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-black/50 hover:bg-black/70 text-white text-xs px-2 py-1 rounded transition-colors"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        High-Res
-                      </a>
+                      {(() => {
+                        const highResImage = findHighResImage(item);
+                        return highResImage ? (
+                          <a
+                            href={highResImage.imageUrl}
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-black/50 hover:bg-black/70 text-white text-xs px-2 py-1 rounded transition-colors"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            High-Res
+                          </a>
+                        ) : null;
+                      })()}
                     </div>
                   </div>
                 ))}
@@ -491,16 +588,21 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                             >
                               Download
                             </a>
-                            <a
-                              href={item.imageUrl.replace('=w800', '=w2000')}
-                              download
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="bg-white/20 hover:bg-white/30 text-white text-xs px-2 py-1 rounded transition-colors"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              High-Res
-                            </a>
+                            {(() => {
+                              const highResImage = findHighResImage(item);
+                              return highResImage ? (
+                                <a
+                                  href={highResImage.imageUrl}
+                                  download
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="bg-white/20 hover:bg-white/30 text-white text-xs px-2 py-1 rounded transition-colors"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  High-Res
+                                </a>
+                              ) : null;
+                            })()}
                           </div>
                         </div>
                       </div>

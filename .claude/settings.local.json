@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(sed:*)",
-      "WebSearch"
+      "WebSearch",
+      "Read(/var/folders/cw/p_zc0tx14216n3mzjj0djm540000gn/T/TemporaryItems/NSIRD_screencaptureui_qkOOPq/**)",
+      "Read(/var/folders/cw/p_zc0tx14216n3mzjj0djm540000gn/T/TemporaryItems/NSIRD_screencaptureui_kAcs3d/**)",
+      "Read(/var/folders/cw/p_zc0tx14216n3mzjj0djm540000gn/T/TemporaryItems/NSIRD_screencaptureui_aHoveo/**)"
     ],
     "deny": [],
     "ask": []

@@ -664,7 +664,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           description: "Coffee Break, Transfer to Workshops Session",
         },
         {
-          time: "16.40 - 18.10",
+          time: "13:00  - 17:15",
           title: "Workshops on Cultural Heritage (parallel session)",
           description: `Session 1: <b>13:00 – 15:00</b>\nSession 2: <b>15:15 – 17:15</b>\n\nWorkshops on Cultural Heritage (Parallel Session):\n• Workshop Batik Making — Batik Solo Laweyan\n• Workshop Traditional Dance by ISI Bali\n• Workshop Music (Angklung)\n• Workshop Keris Making (Javanese Traditional Dagger)\n• Workshop Making Indonesian Traditional Mask by ISI Bali\n\nFor detailed rundown, please download the following schedule:`,
           linkHref: "/files/Workshop_Rundown.pdf",
