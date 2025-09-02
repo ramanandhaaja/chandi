@@ -4,10 +4,20 @@ import FooterSection from "@/components/FooterSection";
 import HeaderSection from "@/components/HeaderSection";
 
 
+const streamOptions = [
+  { id: 'main', name: 'Main Venue', videoId: 'ohE2G5q8ABg', allowsEmbedding: true },
+  { id: 'room1', name: 'Room 1', videoId: 'NSxxjImWYBo', allowsEmbedding: false },
+  { id: 'room2', name: 'Room 2', videoId: 'kSZYRJsE9sA', allowsEmbedding: false },
+  { id: 'room3', name: 'Room 3', videoId: 'qoAs1iAv5g4', allowsEmbedding: false },
+];
+
 export default function StreamPage() {
   const [isLive, setIsLive] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeStream, setActiveStream] = useState('main');
   const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const currentStream = streamOptions.find(stream => stream.id === activeStream);
 
   useEffect(() => {
     // Set a timeout to handle cases where iframe doesn't load properly
@@ -17,7 +27,7 @@ export default function StreamPage() {
         setIsLive(false);
         setIsLoading(false);
       }
-    }, 5000); // 5 second timeout
+    }, 3000); // 5 second timeout
 
     return () => clearTimeout(timeoutId);
   }, [isLoading]);
@@ -31,6 +41,26 @@ export default function StreamPage() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4 sm:mb-6 md:mb-8 mt-8">
             Live Streaming
           </h1>
+          
+          {/* Stream Navigation Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            {streamOptions.map((stream) => (
+              <button
+                key={stream.id}
+                onClick={() => {
+                  setActiveStream(stream.id);
+                  setIsLoading(true);
+                }}
+                className={`px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
+                  activeStream === stream.id
+                    ? 'bg-red-600 text-white shadow-lg'
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                }`}
+              >
+                {stream.name}
+              </button>
+            ))}
+          </div>
           
           {/* Stream Container */}
           <div className="relative w-full pb-[56.25%] h-0 bg-black rounded-lg overflow-hidden shadow-2xl mb-6 md:mb-8">
@@ -51,7 +81,7 @@ export default function StreamPage() {
                     ref={iframeRef}
                     width="100%"
                     height="100%"
-                    src={`https://www.youtube.com/embed/ohE2G5q8ABg?autoplay=1&mute=1&rel=0&modestbranding=1&enablejsapi=1`}
+                    src={`https://www.youtube.com/embed/${currentStream?.videoId}?autoplay=1&mute=1&rel=0&modestbranding=1&enablejsapi=1`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
