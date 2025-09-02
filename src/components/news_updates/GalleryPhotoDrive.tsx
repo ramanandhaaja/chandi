@@ -19,6 +19,7 @@ interface ContentItem {
 interface DriveFolder {
   id: string;
   name: string;
+  createdTime?: string;
 }
 
 const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFolderId }) => {
@@ -177,7 +178,13 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
         const res = await fetch(url);
         if (!res.ok) throw new Error(`Failed to load folders (${res.status})`);
         const data = await res.json() as { folders: DriveFolder[] };
-        const sortedFolders = (data.folders || []).sort((a, b) => a.name.localeCompare(b.name));
+        const sortedFolders = (data.folders || []).sort((a, b) => {
+          // Sort by creation time (newest first), fallback to name if no createdTime
+          if (a.createdTime && b.createdTime) {
+            return new Date(b.createdTime).getTime() - new Date(a.createdTime).getTime();
+          }
+          return a.name.localeCompare(b.name);
+        });
         setAvailableFolders(sortedFolders);
         setActiveFolderIndex(0); // Reset to first folder
       } catch (e: unknown) {
@@ -206,7 +213,13 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
         const res = await fetch(url);
         if (!res.ok) throw new Error(`Failed to load subfolders (${res.status})`);
         const data = await res.json() as { folders: DriveFolder[] };
-        const sortedSubfolders = (data.folders || []).sort((a, b) => a.name.localeCompare(b.name));
+        const sortedSubfolders = (data.folders || []).sort((a, b) => {
+          // Sort by creation time (newest first for subfolders), fallback to name if no createdTime
+          if (a.createdTime && b.createdTime) {
+            return new Date(b.createdTime).getTime() - new Date(a.createdTime).getTime();
+          }
+          return a.name.localeCompare(b.name);
+        });
         
         if (sortedSubfolders.length === 0) {
           // If no subfolders, use the day folder itself as the "subfolder"

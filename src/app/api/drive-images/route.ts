@@ -23,14 +23,14 @@ export async function GET(req: Request) {
       const subQuery = encodeURIComponent(
         `'${parentFolderId}' in parents and mimeType = 'application/vnd.google-apps.folder' and trashed = false`
       );
-      const fieldsFolder = encodeURIComponent("files(id,name)");
-      const findFolderUrl = `https://www.googleapis.com/drive/v3/files?q=${subQuery}&fields=${fieldsFolder}&pageSize=1000&key=${apiKey}`;
+      const fieldsFolder = encodeURIComponent("files(id,name,createdTime)");
+      const findFolderUrl = `https://www.googleapis.com/drive/v3/files?q=${subQuery}&fields=${fieldsFolder}&orderBy=createdTime&pageSize=1000&key=${apiKey}`;
       const subRes = await fetch(findFolderUrl, { cache: "no-store" });
       if (!subRes.ok) {
         const text = await subRes.text();
         return NextResponse.json({ error: `Drive API error (list subfolders): ${subRes.status} ${text}` }, { status: 502 });
       }
-      const subData = (await subRes.json()) as { files?: Array<{ id: string; name: string }> };
+      const subData = (await subRes.json()) as { files?: Array<{ id: string; name: string; createdTime?: string }> };
       const folders = subData.files ?? [];
 
       // Debug mode: return folders list directly and log to server console
