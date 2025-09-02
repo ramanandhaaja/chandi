@@ -346,9 +346,31 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                         <h3 className="text-white font-medium text-sm md:text-base truncate">
                           {/* {item.title} */}
                         </h3>
-                        <p className="text-white/80 text-xs">
+                        <p className="text-white/80 text-xs mb-2">
                           {index + 1} / {items.length}
                         </p>
+                        <div className="flex gap-2">
+                          <a
+                            href={item.imageUrl}
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/20 hover:bg-white/30 text-white text-xs px-2 py-1 rounded transition-colors"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Download
+                          </a>
+                          <a
+                            href={item.imageUrl.replace('=w800', '=w2000')}
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/20 hover:bg-white/30 text-white text-xs px-2 py-1 rounded transition-colors"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            High-Res
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -389,6 +411,30 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                         <div className="h-10 w-10 border-2 border-white border-t-transparent rounded-full animate-spin" />
                       </div>
                     )}
+
+                    {/* Download buttons for mobile */}
+                    <div className="absolute top-2 left-2 flex gap-2">
+                      <a
+                        href={item.imageUrl}
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-black/50 hover:bg-black/70 text-white text-xs px-2 py-1 rounded transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Download
+                      </a>
+                      <a
+                        href={item.imageUrl.replace('=w800', '=w2000')}
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-black/50 hover:bg-black/70 text-white text-xs px-2 py-1 rounded transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        High-Res
+                      </a>
+                    </div>
                   </div>
                 ))}
                 <div className="bg-[#4A2F1E]/30 p-2 absolute bottom-2 right-2">
@@ -431,9 +477,31 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                           <h3 className="text-white font-medium text-sm md:text-base truncate">
                             {/* item.title */}
                           </h3>
-                          <p className="text-white/80 text-xs">
+                          <p className="text-white/80 text-xs mb-2">
                             {index + 1} / {items.length}
                           </p>
+                          <div className="flex gap-2">
+                            <a
+                              href={item.imageUrl}
+                              download
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-white/20 hover:bg-white/30 text-white text-xs px-2 py-1 rounded transition-colors"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              Download
+                            </a>
+                            <a
+                              href={item.imageUrl.replace('=w800', '=w2000')}
+                              download
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-white/20 hover:bg-white/30 text-white text-xs px-2 py-1 rounded transition-colors"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              High-Res
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
