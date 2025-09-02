@@ -649,7 +649,7 @@ const VideoGalleryDrive: React.FC<Props> = ({ content = [], folderId, parentFold
 
                 {/* Desktop Navigation Controls */}
                 <div className="flex justify-center mt-4">
-                  <div className="flex items-center gap-2 bg-black/80 px-4 py-2 rounded-full">
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full">
                     <button
                       onClick={() => setActiveVideoIndex(prev => prev > 0 ? prev - 1 : items.length - 1)}
                       disabled={items.length <= 1}
