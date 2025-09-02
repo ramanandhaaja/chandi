@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import FooterSection from "@/components/FooterSection";
 import HeaderSection from "@/components/HeaderSection";
 
-const YOUTUBE_CHANNEL_ID = "UCDYAEwyQlVaSMUkflfY84Aw";
 
 export default function StreamPage() {
   const [isLive, setIsLive] = useState(false);
@@ -52,7 +51,7 @@ export default function StreamPage() {
                     ref={iframeRef}
                     width="100%"
                     height="100%"
-                    src={`https://www.youtube.com/embed/live_stream?channel=${YOUTUBE_CHANNEL_ID}&autoplay=1&mute=0&rel=0&modestbranding=1`}
+                    src={`https://www.youtube.com/embed/ohE2G5q8ABg?autoplay=1&mute=0&rel=0&modestbranding=1`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
