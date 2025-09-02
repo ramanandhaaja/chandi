@@ -509,7 +509,7 @@ const VideoGalleryDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                               e.stopPropagation();
                               handleVideoDownload(item);
                             }}
-                            className="bg-black/20 hover:bg-black/30 text-black text-xs px-2 py-1 rounded transition-colors"
+                            className="bg-black/20 hover:bg-black/30 text-white text-xs px-2 py-1 rounded transition-colors"
                           >
                             Download
                           </button>
@@ -570,7 +570,7 @@ const VideoGalleryDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                           e.stopPropagation();
                           handleVideoDownload(item);
                         }}
-                        className="bg-black/50 hover:bg-black/70 text-black text-xs px-2 py-1 rounded transition-colors"
+                        className="bg-black/50 hover:bg-black/70 text-white text-xs px-2 py-1 rounded transition-colors"
                       >
                         Download
                       </button>
@@ -582,7 +582,7 @@ const VideoGalleryDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                               e.stopPropagation();
                               handleVideoDownload(item, true);
                             }}
-                            className="bg-black/50 hover:bg-black/70 text-black text-xs px-2 py-1 rounded transition-colors"
+                            className="bg-black/50 hover:bg-black/70 text-white text-xs px-2 py-1 rounded transition-colors"
                           >
                             High-Res
                           </button>
@@ -624,7 +624,7 @@ const VideoGalleryDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                           handleVideoDownload(items[activeVideoIndex]);
                         }
                       }}
-                      className="bg-black/60 hover:bg-black/80 text-black text-sm px-3 py-2 rounded transition-colors shadow-lg"
+                      className="bg-black/60 hover:bg-black/80 text-white text-sm px-3 py-2 rounded transition-colors shadow-lg"
                     >
                       Download
                     </button>
@@ -638,7 +638,7 @@ const VideoGalleryDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                               handleVideoDownload(items[activeVideoIndex], true);
                             }
                           }}
-                          className="bg-black/60 hover:bg-black/80 text-black text-sm px-3 py-2 rounded transition-colors shadow-lg"
+                          className="bg-black/60 hover:bg-black/80 text-white text-sm px-3 py-2 rounded transition-colors shadow-lg"
                         >
                           High-Res
                         </button>
