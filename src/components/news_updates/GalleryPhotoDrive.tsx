@@ -344,7 +344,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
 
                       <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <h3 className="text-white font-medium text-sm md:text-base truncate">
-                          {item.title}
+                          {/* {item.title} */}
                         </h3>
                         <p className="text-white/80 text-xs">
                           {index + 1} / {items.length}
@@ -429,7 +429,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
 
                         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <h3 className="text-white font-medium text-sm md:text-base truncate">
-                            {item.title}
+                            {/* item.title */}
                           </h3>
                           <p className="text-white/80 text-xs">
                             {index + 1} / {items.length}
