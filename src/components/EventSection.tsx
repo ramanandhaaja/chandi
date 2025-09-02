@@ -651,7 +651,7 @@ const EventSection: React.FC<EventSectionProps> = ({
         {
           time: "14.10 - 15.30",
           title: "Plenary 3: Youth Panel",
-          description: `Keynote Speaker: <b>Ms. Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (<i>10 minutes</i>)\n\nPanelists:\n  1) <b>Mr. Angga Dwimas Sasongko</b> — Indonesia Film Director\n  2) <b>Marcella Zalianty, S.Sos., M.H., M.P.P</b> — Indonesia Actress\n  3) <b>Mr. Fauzi Ismail</b> — President of Singapore Heritage Society\n  4) <b>Ms. MINAMIND</b>\n\nModerator: <b>Ms. Putri F. W. Shafiyyah</b> — (<b>*TBC</b>)\n\nQ&A`,
+          description: `Keynote Speaker: <b>Ms. Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (<i>10 minutes</i>)\n\nPanelists:\n  1) <b>Mr. Angga Dwimas Sasongko</b> — Indonesia Film Director\n  2) <b>Mr. Fauzi Ismail</b> — President of Singapore Heritage Society\n  3) <b>Ms. MINAMIND</b>\n\nModerator: <b>Ms. Putri F. W. Shafiyyah</b> — (<b>*TBC</b>)\n\nQ&A`,
         },
         {
           time: "15.30 - 16.00",
