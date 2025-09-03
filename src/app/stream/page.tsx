@@ -6,7 +6,7 @@ import HeaderSection from "@/components/HeaderSection";
 
 const streamOptions = [
   { id: 'main', name: 'Main Venue', videoId: '', allowsEmbedding: true },
-  { id: 'room1', name: 'Room 1', videoId: '', allowsEmbedding: true },
+  { id: 'room1', name: 'Room 1', videoId: '6iv5oFtpfJ4', allowsEmbedding: true },
   { id: 'room2', name: 'Room 2', videoId: '', allowsEmbedding: true },
   { id: 'room3', name: 'Room 3', videoId: '', allowsEmbedding: true },
 ];
