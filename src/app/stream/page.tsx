@@ -23,7 +23,7 @@ const streamOptions = [
   },
   {
     id: "room2",
-    name: "Panel Discussion 3",
+    name: "Room 2",
     videoId: "rn77v5JOQZ4",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel4.jpeg",
@@ -31,7 +31,7 @@ const streamOptions = [
   },
   {
     id: "room3",
-    name: "Panel Discussion 4",
+    name: "Room 3",
     videoId: "2Uxx-XVopkg",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel2.jpeg",
