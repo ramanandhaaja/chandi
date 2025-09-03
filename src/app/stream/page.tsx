@@ -7,7 +7,7 @@ import Image from "next/image";
 const streamOptions = [
   {
     id: "main",
-    name: "Panel Discussion 1",
+    name: "Main Venue",
     videoId: "7cfXLzlixnc",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel3.jpeg",
@@ -15,7 +15,7 @@ const streamOptions = [
   },
   {
     id: "room1",
-    name: "Panel Discussion 2",
+    name: "Room 1",
     videoId: "T48DYY9Q9iU",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel1.jpeg",
