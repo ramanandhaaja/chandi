@@ -8,7 +8,7 @@ const streamOptions = [
   {
     id: "main",
     name: "Main Venue",
-    videoId: "7cfXLzlixnc",
+    videoId: "",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel3.jpeg",
     description: ``,
@@ -16,7 +16,7 @@ const streamOptions = [
   {
     id: "room1",
     name: "Room 1",
-    videoId: "T48DYY9Q9iU",
+    videoId: "",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel1.jpeg",
     description: ``,
@@ -24,7 +24,7 @@ const streamOptions = [
   {
     id: "room2",
     name: "Room 2",
-    videoId: "rn77v5JOQZ4",
+    videoId: "",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel4.jpeg",
     description: ``,
@@ -32,7 +32,7 @@ const streamOptions = [
   {
     id: "room3",
     name: "Room 3",
-    videoId: "2Uxx-XVopkg",
+    videoId: "",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel2.jpeg",
     description: ``,
