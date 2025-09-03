@@ -107,12 +107,12 @@ const HeaderSection: React.FC = () => {
 
           {/* Days Counter and Register Button */}
           <div className="hidden md:flex items-center space-x-2">
-            <div className="bg-[#F8F7F2] px-3 py-1 rounded-full text-sm font-medium flex items-center">
+            {/* <div className="bg-[#F8F7F2] px-3 py-1 rounded-full text-sm font-medium flex items-center">
               <span className="text-[#D2AF6D]">{daysLeft} Days</span>
               <span className="ml-1 text-gray-700">Left</span>
             </div>
             
-            {/* 
+            
             <Link
               href="https://registration-chandisummit2025.genstix.id/"
               className="bg-[#D2AF6D] text-white px-5 py-2 rounded-full font-medium hover:bg-[#C19A58] transition-colors flex items-center"
