@@ -8,7 +8,7 @@ const streamOptions = [
   {
     id: "main",
     name: "Panel Discussion 1",
-    videoId: "d1_1r-7_cBw",
+    videoId: "7cfXLzlixnc",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel3.jpeg",
     description: `• Topic: "Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects"
