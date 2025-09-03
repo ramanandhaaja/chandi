@@ -2,14 +2,15 @@
 import { useState, useEffect, useRef } from "react";
 import FooterSection from "@/components/FooterSection";
 import HeaderSection from "@/components/HeaderSection";
-
+import Image from "next/image";
 
 const streamOptions = [
-  { 
-    id: 'main', 
-    name: 'Panel Discussion 1', 
-    videoId: 'qjdTHi78KE4', 
-    allowsEmbedding: true, 
+  {
+    id: "main",
+    name: "Panel Discussion 1",
+    videoId: "qjdTHi78KE4",
+    allowsEmbedding: true,
+    top_right_image: "/images/event-section/panel3.jpeg",
     description: `• Topic: "Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects"
 
 • Co-Host: International Council on Museums (ICOM) Indonesia
@@ -26,13 +27,14 @@ const streamOptions = [
   1) Ms. Noor Fahmi Pramuji — Faculty of Cultural Sciences, Khairun University, Ternate, The Republic of Indonesia
   2) Mr. Muhammad Fahmi Reksa Al Farisi — SOAS University of London
 
-• Q&A Session` 
+• Q&A Session`,
   },
-  { 
-    id: 'room1', 
-    name: 'Panel Discussion 2', 
-    videoId: 'qjdTHi78KE4', 
-    allowsEmbedding: true, 
+  {
+    id: "room1",
+    name: "Panel Discussion 2",
+    videoId: "qjdTHi78KE4",
+    allowsEmbedding: true,
+    top_right_image: "/images/event-section/panel1.jpeg",
     description: `• Topic: "Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post‑2030 World"
 
 • Co-Host: International Council on Monuments and Sites (ICOMOS) Indonesia
@@ -47,13 +49,14 @@ const streamOptions = [
   1) Ms. Elvira Rufriani B. Kawaliong — Padjajaran University, Indonesia
   2) Mr. Arif Hukmi — Makassar Islamic University
 
-• Q&A Session` 
+• Q&A Session`,
   },
-  { 
-    id: 'room2', 
-    name: 'Panel Discussion 3', 
-    videoId: 'qjdTHi78KE4', 
-    allowsEmbedding: true, 
+  {
+    id: "room2",
+    name: "Panel Discussion 3",
+    videoId: "qjdTHi78KE4",
+    allowsEmbedding: true,
+    top_right_image: "/images/event-section/panel4.jpeg",
     description: `• Topic: "Financing the Future of Culture: Unlocking Investment for Preservation and Innovation"
 
 • Co-Host: Indonesian Heritage Trust (Bumi Pelestarian Pusaka Indonesia)
@@ -68,13 +71,14 @@ const streamOptions = [
   1) Mr. Ahmad Saifudin Mutaqi — Islamic University of Indonesia (Universitas Islam Indonesia/UII)
   2) Mr. Sultan Prasasti — Maastricht University, Netherlands
 
-• Q&A Session` 
+• Q&A Session`,
   },
-  { 
-    id: 'room3', 
-    name: 'Panel Discussion 4', 
-    videoId: 'qjdTHi78KE4', 
-    allowsEmbedding: true, 
+  {
+    id: "room3",
+    name: "Panel Discussion 4",
+    videoId: "qjdTHi78KE4",
+    allowsEmbedding: true,
+    top_right_image: "/images/event-section/panel2.jpeg",
     description: `• Topic: "Responding the Climate Risks to Heritage and Fostering Culture‑Based Climate Action"
 
 • Co-Host: Indonesian National Research and Innovation Agency (Badan Riset dan Inovasi Nasional)
@@ -89,8 +93,8 @@ const streamOptions = [
   1) Ms. Dewa Ayu Prisma Dewi — BALIDOC Film & Documentary Community
   2) Mr. Bima Maulana Putra — Centre for Research in Psychology and Human Well‑being, Faculty of Social Sciences and Humanities, Universiti Kebangsaan Malaysia, Selangor, Malaysia
 
-• Q&A Session` 
-  }
+• Q&A Session`,
+  },
 ];
 
 /*
@@ -104,16 +108,18 @@ const streamOptions = [
 export default function StreamPage() {
   const [isLive, setIsLive] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeStream, setActiveStream] = useState('main');
+  const [activeStream, setActiveStream] = useState("main");
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  const currentStream = streamOptions.find(stream => stream.id === activeStream);
+  const currentStream = streamOptions.find(
+    (stream) => stream.id === activeStream
+  );
 
   useEffect(() => {
     // Set a timeout to handle cases where iframe doesn't load properly
     const timeoutId = setTimeout(() => {
       if (isLoading) {
-        console.log('Stream load timeout - assuming offline');
+        console.log("Stream load timeout - assuming offline");
         setIsLive(false);
         setIsLoading(false);
       }
@@ -121,7 +127,6 @@ export default function StreamPage() {
 
     return () => clearTimeout(timeoutId);
   }, [isLoading]);
-
 
   return (
     <div className="bg-[#5B5630] min-h-screen">
@@ -131,7 +136,7 @@ export default function StreamPage() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4 sm:mb-6 md:mb-8 mt-8">
             Live Streaming
           </h1>
-          
+
           {/* Stream Navigation Tabs */}
           <div className="flex flex-wrap justify-center gap-2 mb-6">
             {streamOptions.map((stream) => (
@@ -143,20 +148,22 @@ export default function StreamPage() {
                 }}
                 className={`px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
                   activeStream === stream.id
-                    ? 'bg-red-600 text-white shadow-lg'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                    ? "bg-red-600 text-white shadow-lg"
+                    : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white"
                 }`}
               >
                 {stream.name}
               </button>
             ))}
           </div>
-          
+
           {/* Stream Container */}
           <div className="relative w-full pb-[56.25%] h-0 bg-black rounded-lg overflow-hidden shadow-2xl mb-6 md:mb-8">
             {isLoading ? (
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="animate-pulse text-white text-sm sm:text-base">Checking stream status...</div>
+                <div className="animate-pulse text-white text-sm sm:text-base">
+                  Checking stream status...
+                </div>
               </div>
             ) : (
               <>
@@ -178,19 +185,19 @@ export default function StreamPage() {
                       allowFullScreen
                       className="w-full h-full"
                       onLoad={() => {
-                        console.log('Iframe loaded');
+                        console.log("Iframe loaded");
                         // If we're still loading after 2 seconds, assume the stream is live
                         // This handles cases where YouTube doesn't fire the onError event
                         setTimeout(() => {
                           if (isLoading) {
-                            console.log('Assuming stream is live (timeout)');
+                            console.log("Assuming stream is live (timeout)");
                             setIsLive(true);
                             setIsLoading(false);
                           }
                         }, 2000);
                       }}
                       onError={() => {
-                        console.log('Iframe error - stream likely offline');
+                        console.log("Iframe error - stream likely offline");
                         setIsLive(false);
                         setIsLoading(false);
                       }}
@@ -198,8 +205,12 @@ export default function StreamPage() {
                   ) : (
                     <div className="flex items-center justify-center bg-gray-900 h-full">
                       <div className="text-center p-8">
-                        <div className="text-white text-xl mb-4">📺 {currentStream?.name}</div>
-                        <p className="text-gray-300 text-lg">There are no live session at the moment</p>
+                        <div className="text-white text-xl mb-4">
+                          📺 {currentStream?.name}
+                        </div>
+                        <p className="text-gray-300 text-lg">
+                          There are no live session at the moment
+                        </p>
                       </div>
                     </div>
                   )}
@@ -207,19 +218,29 @@ export default function StreamPage() {
               </>
             )}
           </div>
-          
+
           {/* Stream Description */}
           {currentStream?.description && (
-            <div className="w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 mb-6">
+            <div className="w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 mb-6 relative">
+              <div className="flex items-center gap-4 top-4 left-4 pb-2">
+                <Image
+                  src={currentStream.top_right_image}
+                  alt={`${currentStream.name} panel image`}
+                  width={150}
+                  height={67}
+                  className="w-[100px] h-auto object-cover shadow-lg p-2 bg-white rounded-lg"
+                />
+              </div>
               <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">
                 {currentStream.name}
               </h2>
-              <div className="text-gray-200 text-sm sm:text-base leading-relaxed whitespace-pre-line">
-                {currentStream.description}
+              <div className="flex flex-col lg:flex-row gap-4">
+                <div className="flex-1 text-gray-200 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                  {currentStream.description}
+                </div>
               </div>
             </div>
           )}
-          
         </div>
         <FooterSection />
       </main>
