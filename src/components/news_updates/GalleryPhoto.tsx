@@ -204,7 +204,7 @@ const GalleryPhoto: React.FC<Props> = ({ content = [] }) => {
                       src={item.imageUrl}
                       alt={item.title}
                       fill
-                      style={{ objectFit: "cover" }}
+                      style={{ objectFit: "contain" }}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="transition-transform duration-300 group-hover:scale-105"
                     />
@@ -259,7 +259,7 @@ const GalleryPhoto: React.FC<Props> = ({ content = [] }) => {
                       alt={item.title}
                       fill
                       style={{
-                        objectFit: "cover",
+                        objectFit: "contain",
                         objectPosition: "center",
                       }}
                       sizes="100vw"
@@ -293,7 +293,7 @@ const GalleryPhoto: React.FC<Props> = ({ content = [] }) => {
                   alt={normalizedContent[activeTitle]?.title || ""}
                   fill
                   style={{
-                    objectFit: "cover",
+                    objectFit: "contain",
                     objectPosition: "center",
                   }}
                   sizes="80vw"
