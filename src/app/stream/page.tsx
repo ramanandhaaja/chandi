@@ -5,18 +5,100 @@ import HeaderSection from "@/components/HeaderSection";
 
 
 const streamOptions = [
-  { id: 'main', name: 'Main Venue', videoId: 'wM_Fcmt7c6k', allowsEmbedding: true },
-  { id: 'room1', name: 'Room 1', videoId: '6iv5oFtpfJ4', allowsEmbedding: true },
-  { id: 'room2', name: 'Room 2', videoId: 'U_BGNbW19fE', allowsEmbedding: true },
-  { id: 'room3', name: 'Room 3', videoId: 'LTXxxDonrTw', allowsEmbedding: true },
+  { 
+    id: 'main', 
+    name: 'Panel Discussion 1', 
+    videoId: '', 
+    allowsEmbedding: true, 
+    description: `• Topic: "Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects"
+
+• Co-Host: International Council on Museums (ICOM) Indonesia
+
+• Panelists:
+  1) Prof. I Ketut Ardhana, PhD — Professor of Asian History, Udayana University.
+  2) Mr. I Gusti Agung Wesaka Puja — Ambassador of the Republic of Indonesia to the Kingdom of Netherlands, 2016 – 2020
+
+• Special Presentation: Prof. Ismunandar, Ph.D — Senior Advisor to the Minister of Culture and Chair of the Expert Panel of Indonesia's Cultural Heritage Repatriation Team
+
+• Moderator: Mr. Budi Trinovari — Chair of International Council of Museums Indonesia
+
+• Call for Paper:
+  1) Ms. Noor Fahmi Pramuji — Faculty of Cultural Sciences, Khairun University, Ternate, The Republic of Indonesia
+  2) Mr. Muhammad Fahmi Reksa Al Farisi — SOAS University of London
+
+• Q&A Session` 
+  },
+  { 
+    id: 'room1', 
+    name: 'Panel Discussion 2', 
+    videoId: '', 
+    allowsEmbedding: true, 
+    description: `• Topic: "Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post‑2030 World"
+
+• Co-Host: International Council on Monuments and Sites (ICOMOS) Indonesia
+
+• Panelists:
+  1) Prof. Dr. I Wayan Adnyana, S.Sn., M.Sn., — Rector of the Indonesian Institute of the Arts Bali
+  2) Ms. Zou Yi Qing — Vice President of ICOMOS China Scientific Committee on Cultural Route
+
+• Moderator: Dra. Nazrina Zuryani, M.A., Ph.D, — Head of Bali Province Branch of Indonesia Sociology Association
+
+• Call for Paper:
+  1) Ms. Elvira Rufriani B. Kawaliong — Padjajaran University, Indonesia
+  2) Mr. Arif Hukmi — Makassar Islamic University
+
+• Q&A Session` 
+  },
+  { 
+    id: 'room2', 
+    name: 'Panel Discussion 3', 
+    videoId: '', 
+    allowsEmbedding: true, 
+    description: `• Topic: "Financing the Future of Culture: Unlocking Investment for Preservation and Innovation"
+
+• Co-Host: Indonesian Heritage Trust (Bumi Pelestarian Pusaka Indonesia)
+
+• Panelists:
+  1) Dr. Donovan Rypkema — President of Heritage Strategies International.
+  2) Ms. Hasti Tarekat Dipowijoyo — Founder of Heritage Hands-on in Amsterdam and Co‑Chair of Advisory Board of the Asian Network for Industrial Heritage.
+
+• Moderator: Dr. Catrini Pratihari Kubontubuh — Chair of the Indonesian Heritage Trust
+
+• Call for Paper:
+  1) Mr. Ahmad Saifudin Mutaqi — Islamic University of Indonesia (Universitas Islam Indonesia/UII)
+  2) Mr. Sultan Prasasti — Maastricht University, Netherlands
+
+• Q&A Session` 
+  },
+  { 
+    id: 'room3', 
+    name: 'Panel Discussion 4', 
+    videoId: '', 
+    allowsEmbedding: true, 
+    description: `• Topic: "Responding the Climate Risks to Heritage and Fostering Culture‑Based Climate Action"
+
+• Co-Host: Indonesian National Research and Innovation Agency (Badan Riset dan Inovasi Nasional)
+
+• Panelists:
+  1) Professor R. Michael Feener — Professor of Cross‑Regional Studies at the Centre for Southeast Asian Studies at Kyoto University.
+  2) Dr. Wengki Ariando — Postdoctoral researcher at KITLV/the Royal Netherlands Institute of Southeast Asian and Caribbean Studies.
+
+• Moderator: Mr. Marlon Nicolay Ramon Ririmasse S.S., M.A. — Head of the Research Center for Environmental Archaeology, Maritime Archaeology, and Cultural Sustainability of the National Research and Innovation Agency
+
+• Call for Paper:
+  1) Ms. Dewa Ayu Prisma Dewi — BALIDOC Film & Documentary Community
+  2) Mr. Bima Maulana Putra — Centre for Research in Psychology and Human Well‑being, Faculty of Social Sciences and Humanities, Universiti Kebangsaan Malaysia, Selangor, Malaysia
+
+• Q&A Session` 
+  }
 ];
 
 /*
 const streamOptions = [
-  { id: 'main', name: 'Main Venue', videoId: 'ohE2G5q8ABg', allowsEmbedding: true },
-  { id: 'room1', name: 'Room 1', videoId: 'NSxxjImWYBo', allowsEmbedding: true },
-  { id: 'room2', name: 'Room 2', videoId: 'kSZYRJsE9sA', allowsEmbedding: true },
-  { id: 'room3', name: 'Room 3', videoId: 'Yo8bdBP8LYw', allowsEmbedding: true },
+  { id: 'main', name: 'Panel 1', videoId: 'ohE2G5q8ABg', allowsEmbedding: true },
+  { id: 'room1', name: 'Panel 2', videoId: 'NSxxjImWYBo', allowsEmbedding: true },
+  { id: 'room2', name: 'Panel 3', videoId: 'kSZYRJsE9sA', allowsEmbedding: true },
+  { id: 'room3', name: 'Panel 4', videoId: 'Yo8bdBP8LYw', allowsEmbedding: true },
 ];*/
 
 export default function StreamPage() {
@@ -126,6 +208,17 @@ export default function StreamPage() {
             )}
           </div>
           
+          {/* Stream Description */}
+          {currentStream?.description && (
+            <div className="w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 mb-6">
+              <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">
+                {currentStream.name}
+              </h2>
+              <div className="text-gray-200 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                {currentStream.description}
+              </div>
+            </div>
+          )}
           
         </div>
         <FooterSection />
