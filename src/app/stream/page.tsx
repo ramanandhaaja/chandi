@@ -11,23 +11,7 @@ const streamOptions = [
     videoId: "7cfXLzlixnc",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel3.jpeg",
-    description: `• Topic: "Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects"
-
-• Co-Host: International Council on Museums (ICOM) Indonesia
-
-• Panelists:
-  1) Prof. I Ketut Ardhana, PhD — Professor of Asian History, Udayana University.
-  2) Mr. I Gusti Agung Wesaka Puja — Ambassador of the Republic of Indonesia to the Kingdom of Netherlands, 2016 – 2020
-
-• Special Presentation: Prof. Ismunandar, Ph.D — Senior Advisor to the Minister of Culture and Chair of the Expert Panel of Indonesia's Cultural Heritage Repatriation Team
-
-• Moderator: Mr. Budi Trinovari — Chair of International Council of Museums Indonesia
-
-• Call for Paper:
-  1) Ms. Noor Fahmi Pramuji — Faculty of Cultural Sciences, Khairun University, Ternate, The Republic of Indonesia
-  2) Mr. Muhammad Fahmi Reksa Al Farisi — SOAS University of London
-
-• Q&A Session`,
+    description: ``,
   },
   {
     id: "room1",
@@ -35,21 +19,7 @@ const streamOptions = [
     videoId: "T48DYY9Q9iU",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel1.jpeg",
-    description: `• Topic: "Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post‑2030 World"
-
-• Co-Host: International Council on Monuments and Sites (ICOMOS) Indonesia
-
-• Panelists:
-  1) Prof. Dr. I Wayan Adnyana, S.Sn., M.Sn., — Rector of the Indonesian Institute of the Arts Bali
-  2) Ms. Zou Yi Qing — Vice President of ICOMOS China Scientific Committee on Cultural Route
-
-• Moderator: Dra. Nazrina Zuryani, M.A., Ph.D, — Head of Bali Province Branch of Indonesia Sociology Association
-
-• Call for Paper:
-  1) Ms. Elvira Rufriani B. Kawaliong — Padjajaran University, Indonesia
-  2) Mr. Arif Hukmi — Makassar Islamic University
-
-• Q&A Session`,
+    description: ``,
   },
   {
     id: "room2",
@@ -57,21 +27,7 @@ const streamOptions = [
     videoId: "rn77v5JOQZ4",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel4.jpeg",
-    description: `• Topic: "Financing the Future of Culture: Unlocking Investment for Preservation and Innovation"
-
-• Co-Host: Indonesian Heritage Trust (Bumi Pelestarian Pusaka Indonesia)
-
-• Panelists:
-  1) Dr. Donovan Rypkema — President of Heritage Strategies International.
-  2) Ms. Hasti Tarekat Dipowijoyo — Founder of Heritage Hands-on in Amsterdam and Co‑Chair of Advisory Board of the Asian Network for Industrial Heritage.
-
-• Moderator: Dr. Catrini Pratihari Kubontubuh — Chair of the Indonesian Heritage Trust
-
-• Call for Paper:
-  1) Mr. Ahmad Saifudin Mutaqi — Islamic University of Indonesia (Universitas Islam Indonesia/UII)
-  2) Mr. Sultan Prasasti — Maastricht University, Netherlands
-
-• Q&A Session`,
+    description: ``,
   },
   {
     id: "room3",
@@ -79,21 +35,7 @@ const streamOptions = [
     videoId: "2Uxx-XVopkg",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel2.jpeg",
-    description: `• Topic: "Responding the Climate Risks to Heritage and Fostering Culture‑Based Climate Action"
-
-• Co-Host: Indonesian National Research and Innovation Agency (Badan Riset dan Inovasi Nasional)
-
-• Panelists:
-  1) Professor R. Michael Feener — Professor of Cross‑Regional Studies at the Centre for Southeast Asian Studies at Kyoto University.
-  2) Dr. Wengki Ariando — Postdoctoral researcher at KITLV/the Royal Netherlands Institute of Southeast Asian and Caribbean Studies.
-
-• Moderator: Mr. Marlon Nicolay Ramon Ririmasse S.S., M.A. — Head of the Research Center for Environmental Archaeology, Maritime Archaeology, and Cultural Sustainability of the National Research and Innovation Agency
-
-• Call for Paper:
-  1) Ms. Dewa Ayu Prisma Dewi — BALIDOC Film & Documentary Community
-  2) Mr. Bima Maulana Putra — Centre for Research in Psychology and Human Well‑being, Faculty of Social Sciences and Humanities, Universiti Kebangsaan Malaysia, Selangor, Malaysia
-
-• Q&A Session`,
+    description: ``,
   },
 ];
 
