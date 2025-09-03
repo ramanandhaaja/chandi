@@ -461,7 +461,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                       src={item.imageUrl}
                       alt={item.title}
                       fill
-                      style={{ objectFit: "cover" }}
+                      style={{ objectFit: "contain" }}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="transition-transform duration-300 group-hover:scale-105"
                       onLoadStart={() => handleImageLoadStart(index)}
@@ -538,7 +538,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                       alt={item.title}
                       fill
                       style={{
-                        objectFit: "cover",
+                        objectFit: "contain",
                         objectPosition: "center",
                       }}
                       sizes="100vw"
@@ -597,7 +597,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
                     src={items[activeImageIndex]?.imageUrl || ""}
                     alt={items[activeImageIndex]?.title || ""}
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "contain" }}
                     sizes="80vw"
                     priority
                     onLoadStart={() => handleImageLoadStart(activeImageIndex)}
