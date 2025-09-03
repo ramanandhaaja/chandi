@@ -77,38 +77,8 @@ export default function Home() {
       {/* Header Section */}
       <HeaderSection />
 
-     
+  
       <HeroAlternative2 />
-
-      {/* Video Headline Section 
-      <VideoHeadline />
-        */}
-
-      {/*
-      Responsive Registration Banner
-      <div>
-        {/* Desktop/Tablet (md and up): horizontal image */}
-        {/* <div className="hidden md:block">
-          <Image
-            src="/images/web_regis_horizontal.png"
-            alt="Registration banner"
-            width={1920}
-            height={1080}
-            className="w-full h-auto shadow"
-            priority
-          />
-        </div> */}
-        {/* Mobile (below md): vertical image */}
-        {/* <div className="md:hidden">
-          <Image
-            src="/images/web_regis_vertical.png"
-            alt="Registration banner mobile"
-            width={1080}
-            height={1920}
-            className="w-full h-auto shadow"
-          />
-        </div> 
-      </div>*/}
 
       <AboutSection />
 
