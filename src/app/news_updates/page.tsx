@@ -6,7 +6,7 @@ import HeaderSection from "@/components/HeaderSection";
 import GalleryPhotoDrive from "@/components/news_updates/GalleryPhotoDrive";
 import GalleryPhoto from "@/components/news_updates/GalleryPhoto";
 import VideoGalleryDrive from "@/components/news_updates/VideoGalleryDrive";
-
+import VideoClipsDrive from "@/components/news_updates/VideoClipsDrive";
 
 // photo gallery mock data
 const photos = [
@@ -46,6 +46,7 @@ export default function NewsAndUpdatesPage() {
       {/* Videos section
       <VideoGallerySection />*/}
       <VideoGalleryDrive parentFolderId="1-cDnj9WGPjZ7v-p_yCvzHPqU-q_meWge" />
+      <VideoClipsDrive parentFolderId="1rvCosDoK7gK2gBUAirXQoyCRMAaIe3h1" />
       {/* Footer Section */}
       <FooterSection />
     </>
