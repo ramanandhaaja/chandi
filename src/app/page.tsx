@@ -84,10 +84,11 @@ export default function Home() {
       <VideoHeadline />
         */}
 
-      {/* Responsive Registration Banner */}
+      {/*
+      Responsive Registration Banner
       <div>
         {/* Desktop/Tablet (md and up): horizontal image */}
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <Image
             src="/images/web_regis_horizontal.png"
             alt="Registration banner"
@@ -96,9 +97,9 @@ export default function Home() {
             className="w-full h-auto shadow"
             priority
           />
-        </div>
+        </div> */}
         {/* Mobile (below md): vertical image */}
-        <div className="md:hidden">
+        {/* <div className="md:hidden">
           <Image
             src="/images/web_regis_vertical.png"
             alt="Registration banner mobile"
@@ -106,8 +107,8 @@ export default function Home() {
             height={1920}
             className="w-full h-auto shadow"
           />
-        </div>
-      </div>
+        </div> 
+      </div>*/}
 
       <AboutSection />
 
