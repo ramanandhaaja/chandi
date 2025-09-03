@@ -27,7 +27,7 @@ const GalleryPhotoDrive: React.FC<Props> = ({ content = [], folderId, parentFold
   const { language } = useLanguage();
   const [activeFolderIndex, setActiveFolderIndex] = useState(0);
   const [activeSubfolderIndex, setActiveSubfolderIndex] = useState(0);
-  const [isGridView, setIsGridView] = useState(false);
+  const [isGridView, setIsGridView] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [driveItems, setDriveItems] = useState<ContentItem[] | null>(null);
