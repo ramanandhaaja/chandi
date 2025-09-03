@@ -8,7 +8,7 @@ const streamOptions = [
   { 
     id: 'main', 
     name: 'Panel Discussion 1', 
-    videoId: '', 
+    videoId: 'qjdTHi78KE4', 
     allowsEmbedding: true, 
     description: `• Topic: "Reclaiming History, Restoring Justice: International Cooperation for Repatriation and the Fight Against Illicit Trafficking of Cultural Objects"
 
@@ -31,7 +31,7 @@ const streamOptions = [
   { 
     id: 'room1', 
     name: 'Panel Discussion 2', 
-    videoId: '', 
+    videoId: 'qjdTHi78KE4', 
     allowsEmbedding: true, 
     description: `• Topic: "Traditional Knowledge and Local Practices in Building Resilient and Inclusive Societies in the Post‑2030 World"
 
@@ -52,7 +52,7 @@ const streamOptions = [
   { 
     id: 'room2', 
     name: 'Panel Discussion 3', 
-    videoId: '', 
+    videoId: 'qjdTHi78KE4', 
     allowsEmbedding: true, 
     description: `• Topic: "Financing the Future of Culture: Unlocking Investment for Preservation and Innovation"
 
@@ -73,7 +73,7 @@ const streamOptions = [
   { 
     id: 'room3', 
     name: 'Panel Discussion 4', 
-    videoId: '', 
+    videoId: 'qjdTHi78KE4', 
     allowsEmbedding: true, 
     description: `• Topic: "Responding the Climate Risks to Heritage and Fostering Culture‑Based Climate Action"
 
