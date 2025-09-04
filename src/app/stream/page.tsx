@@ -40,7 +40,7 @@ const streamOptions = [
   },
   {
     id: "room4",
-    name: "Keris",
+    name: "Mask",
     videoId: "MeZ4vvqNkhI",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel2.jpeg",
@@ -48,7 +48,7 @@ const streamOptions = [
   },
   {
     id: "room5",
-    name: "Mask",
+    name: "Keris",
     videoId: "Rh0uVBX4BIU",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel2.jpeg",
