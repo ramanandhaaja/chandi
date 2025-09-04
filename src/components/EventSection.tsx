@@ -626,7 +626,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           ],
         },
         {
-          time: "10.40 - 12.40",
+          time: "13.15 - 14.50",
           title:
             "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
           description: `Keynote Speech: <b>Mr. Jean Couteau</b> | Art Historian, Curator, Writer, and Bali Cultural Observer\n“The Power of Culture” (<i>10 minutes</i>)\n\nPanelists:\n  1) <b>Mr. Giring Ganesha Djumaryo</b> — Vice Minister of Culture of the Republic of Indonesia\n  2) <b>Ms. Ella Weiner</b> — Global Affairs Specialist, Smithsonian’s National Museum of Asian Art\n  3) <b>Mr. Franki Raden</b> — Founder & Director of Indonesian National Orchestra\n  4) <b>Ms. Tiara Jacquelina</b> — Actress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n  5) <b>Mr. Summer Xia</b> — British Council Country Director Indonesia & Southeast Asia\n  6) <b>Mr. Jules Irmann</b> — Director of Institut Français d'Indonésie (IFI)\n\n<b>Moderator: Mr. Bre Redana</b> — Indonesian Writer\n\nQ&A`,
@@ -644,12 +644,12 @@ const EventSection: React.FC<EventSectionProps> = ({
           description: "Lunch",
         },
         {
-          time: "13.40 - 14.00",
+          time: "Start at 13.40",
           title: "Delegates enter ballroom accompanied by Kolintang, Traditional music from East Sulawesi (Manado)",
           description: "",
         },
         {
-          time: "14.10 - 15.30",
+          time: "Start at 14.50",
           title: "Plenary 3: Youth Panel",
           description: `Keynote Speaker: <b>Ms. Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (<i>10 minutes</i>)\n\nPanelists:\n  1) <b>Mr. Angga Dwimas Sasongko</b> — Indonesia Film Director\n  2) <b>Mr. Fauzi Ismail</b> — President of Singapore Heritage Society\n  3) <b>Ms. MINAMIND</b>\n\nModerator: <b>Ms. Putri F. W. Shafiyyah</b> — (<b>*TBC</b>)\n\nQ&A`,
         },
