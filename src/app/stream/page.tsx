@@ -7,7 +7,7 @@ import Image from "next/image";
 const streamOptions = [
   {
     id: "main",
-    name: "Plenary 1",
+    name: "PLENARY 1: Culture for the Future: Heritage, Identity, and Innovation",
     videoId: "gvJQd39la0M",
     allowsEmbedding: true,
     top_right_image: "",
@@ -164,6 +164,7 @@ export default function StreamPage() {
           {/* Stream Description */}
           {currentStream?.description && (
             <div className="w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 mb-6 relative">
+              {/* 
               <div className="flex items-center gap-4 top-4 left-4 pb-2">
                 <Image
                   src={currentStream.top_right_image}
@@ -173,6 +174,7 @@ export default function StreamPage() {
                   className="w-[100px] h-auto object-cover shadow-lg p-2 bg-white rounded-lg"
                 />
               </div>
+              */}
               <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">
                 {currentStream.name}
               </h2>
