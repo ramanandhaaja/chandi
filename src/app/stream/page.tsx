@@ -115,7 +115,8 @@ export default function StreamPage() {
                 >
                   {stream.name}
                 </button>
-                {index === 0 && <br />}
+                {index === 0 && <div className="w-full"></div>}
+                
               </>
             ))}
           </div>
