@@ -654,7 +654,7 @@ const EventSection: React.FC<EventSectionProps> = ({
           description: `Keynote Speaker: <b>Ms. Ni Putu Pradnya Lalita Nara</b>, Student from Green School Bali\n“Culture, Sustainability and the Future” (<i>10 minutes</i>)\n\nPanelists:\n  1) <b>Mr. Angga Dwimas Sasongko</b> — Indonesia Film Director\n  2) <b>Mr. Fauzi Ismail</b> — President of Singapore Heritage Society\n  3) <b>Ms. MINAMIND</b>\n\nModerator: <b>Ms. Putri F. W. Shafiyyah</b> — (<b>*TBC</b>)\n\nQ&A`,
         },
         {
-          time: "15.30 - 16.00",
+          time: "16.00 - 16.30",
           title: "Conclusion and Closing Remarks by Dr. Fadli Zon — Minister of Culture of the Republic of Indonesia",
           description: "(Attended by all the Ministers and Delegates)",
         },
