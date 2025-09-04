@@ -7,15 +7,16 @@ import Image from "next/image";
 const streamOptions = [
   {
     id: "main",
-    name: "PLENARY 1: Culture for the Future: Heritage, Identity, and Innovation",
+    name: "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
     videoId: "gvJQd39la0M",
     allowsEmbedding: true,
     top_right_image: "",
-    description: `Keynote Speech: Mr. Hashim S. Djojohadikusumo | Chairman of the Board of Trustees of Indonesian Heritage Agency\n"Culture for The Future" (10 minutes)\n\nPanelists:\n  1) Ms. He Lu — Associate Professor of School of Arts of Nanfang College•Guangzhou\n  2) Ms. Evelise Bruneau — Conservator of the Southeast Asian collections at Musée Guimet, France\n  3) Prof. dr. Wim van den Doel — Professor of Contemporary History and Dean of Leiden-Delft-Erasmus Universities\n  4) Ms. Janet DeNeefe — Director of Ubud Writers & Readers Festival\n\nModerator: Dr. Luh Gede Saraswati Putri — Lecturer at the Faculty of Philosophy, University of Indonesia\n\nQ&A`,
+    description: `Keynote Speech: Mr. Jean Couteau | Art Historian, Curator, Writer, and Bali Cultural Observer\n"The Power of Culture" (10 minutes)\n\nPanelists:\n  1) Mr. Giring Ganesha Djumaryo — Vice Minister of Culture of the Republic of Indonesia\n  2) Ms. Ella Weiner — Global Affairs Specialist, Smithsonian's National Museum of Asian Art\n  3) Mr. Franki Raden — Founder & Director of Indonesian National Orchestra\n  4) Ms. Tiara Jacquelina — Actress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n  5) Mr. Summer Xia — British Council Country Director Indonesia & Southeast Asia\n  6) Mr. Jules Irmann — Director of Institut Français d'Indonésie (IFI)\n\n<b>Moderator: Mr. Bre Redana</b> — Indonesian Writer\n\nQ&A`,
   },
+  /*
   {
     id: "room1",
-    name: "Room 1",
+    name: "Angklung",
     videoId: "",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel1.jpeg",
@@ -23,7 +24,7 @@ const streamOptions = [
   },
   {
     id: "room2",
-    name: "Room 2",
+    name: "Batik",
     videoId: "",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel4.jpeg",
@@ -31,12 +32,21 @@ const streamOptions = [
   },
   {
     id: "room3",
-    name: "Room 3",
+    name: "Dance",
     videoId: "",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel2.jpeg",
     description: ``,
   },
+  {
+    id: "room3",
+    name: "Keris",
+    videoId: "",
+    allowsEmbedding: true,
+    top_right_image: "/images/event-section/panel2.jpeg",
+    description: ``,
+  },
+  */
 ];
 
 /*
