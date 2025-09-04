@@ -11,13 +11,13 @@ const streamOptions = [
     videoId: "gvJQd39la0M",
     allowsEmbedding: true,
     top_right_image: "",
-    description: `Keynote Speech: Mr. Jean Couteau | Art Historian, Curator, Writer, and Bali Cultural Observer\n"The Power of Culture" (10 minutes)\n\nPanelists:\n  1) Mr. Giring Ganesha Djumaryo — Vice Minister of Culture of the Republic of Indonesia\n  2) Ms. Ella Weiner — Global Affairs Specialist, Smithsonian's National Museum of Asian Art\n  3) Mr. Franki Raden — Founder & Director of Indonesian National Orchestra\n  4) Ms. Tiara Jacquelina — Actress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n  5) Mr. Summer Xia — British Council Country Director Indonesia & Southeast Asia\n  6) Mr. Jules Irmann — Director of Institut Français d'Indonésie (IFI)\n\n<b>Moderator: Mr. Bre Redana</b> — Indonesian Writer\n\nQ&A`,
+    description: `Keynote Speech: Mr. Jean Couteau | Art Historian, Curator, Writer, and Bali Cultural Observer\n"The Power of Culture" (10 minutes)\n\nPanelists:\n  1) Mr. Giring Ganesha Djumaryo — Vice Minister of Culture of the Republic of Indonesia\n  2) Ms. Ella Weiner — Global Affairs Specialist, Smithsonian's National Museum of Asian Art\n  3) Mr. Franki Raden — Founder & Director of Indonesian National Orchestra\n  4) Ms. Tiara Jacquelina — Actress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n  5) Mr. Summer Xia — British Council Country Director Indonesia & Southeast Asia\n  6) Mr. Jules Irmann — Director of Institut Français d'Indonésie (IFI)\n\nModerator: Mr. Bre Redana — Indonesian Writer\n\nQ&A`,
   },
-  /*
+  
   {
     id: "room1",
     name: "Angklung",
-    videoId: "",
+    videoId: "vxbTppwQEzc",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel1.jpeg",
     description: ``,
@@ -25,7 +25,7 @@ const streamOptions = [
   {
     id: "room2",
     name: "Batik",
-    videoId: "",
+    videoId: "eVXe2l8ug9E",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel4.jpeg",
     description: ``,
@@ -33,20 +33,28 @@ const streamOptions = [
   {
     id: "room3",
     name: "Dance",
-    videoId: "",
+    videoId: "aCx2_9eg3bk",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel2.jpeg",
     description: ``,
   },
   {
-    id: "room3",
+    id: "room4",
     name: "Keris",
-    videoId: "",
+    videoId: "MeZ4vvqNkhI",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel2.jpeg",
     description: ``,
   },
-  */
+  {
+    id: "room5",
+    name: "Mask",
+    videoId: "Rh0uVBX4BIU",
+    allowsEmbedding: true,
+    top_right_image: "/images/event-section/panel2.jpeg",
+    description: ``,
+  },
+  
 ];
 
 /*
@@ -91,21 +99,24 @@ export default function StreamPage() {
 
           {/* Stream Navigation Tabs */}
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {streamOptions.map((stream) => (
-              <button
-                key={stream.id}
-                onClick={() => {
-                  setActiveStream(stream.id);
-                  setIsLoading(true);
-                }}
-                className={`px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
-                  activeStream === stream.id
-                    ? "bg-red-600 text-white shadow-lg"
-                    : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white"
-                }`}
-              >
-                {stream.name}
-              </button>
+            {streamOptions.map((stream, index) => (
+              <>
+                <button
+                  key={stream.id}
+                  onClick={() => {
+                    setActiveStream(stream.id);
+                    setIsLoading(true);
+                  }}
+                  className={`px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
+                    activeStream === stream.id
+                      ? "bg-red-600 text-white shadow-lg"
+                      : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white"
+                  }`}
+                >
+                  {stream.name}
+                </button>
+                {index === 0 && <br />}
+              </>
             ))}
           </div>
 
