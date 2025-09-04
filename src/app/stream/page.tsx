@@ -16,7 +16,7 @@ const streamOptions = [
   
   {
     id: "room1",
-    name: "Angklung",
+    name: "Batik",
     videoId: "vxbTppwQEzc",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel1.jpeg",
@@ -24,7 +24,7 @@ const streamOptions = [
   },
   {
     id: "room2",
-    name: "Batik",
+    name: "Mask",
     videoId: "eVXe2l8ug9E",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel4.jpeg",
@@ -40,7 +40,7 @@ const streamOptions = [
   },
   {
     id: "room4",
-    name: "Mask",
+    name: "Angklung",
     videoId: "MeZ4vvqNkhI",
     allowsEmbedding: true,
     top_right_image: "/images/event-section/panel2.jpeg",
