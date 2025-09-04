@@ -7,11 +7,11 @@ import Image from "next/image";
 const streamOptions = [
   {
     id: "main",
-    name: "PLENARY 2: Tradition Meets Modernity: The Power of Culture to Build Bridges Across Nations and Promote Global Cultural Leadership",
+    name: "Plenary 3: Youth Panel",
     videoId: "gvJQd39la0M",
     allowsEmbedding: true,
     top_right_image: "",
-    description: `Keynote Speech: Mr. Jean Couteau | Art Historian, Curator, Writer, and Bali Cultural Observer\n"The Power of Culture" (10 minutes)\n\nPanelists:\n  1) Mr. Giring Ganesha Djumaryo — Vice Minister of Culture of the Republic of Indonesia\n  2) Ms. Ella Weiner — Global Affairs Specialist, Smithsonian's National Museum of Asian Art\n  3) Mr. Franki Raden — Founder & Director of Indonesian National Orchestra\n  4) Ms. Tiara Jacquelina — Actress, Film Producer, Musical Theater Producer, Singer, and Founder of The Enfiniti Academy of Musical Theatre and Performing Arts\n  5) Mr. Summer Xia — British Council Country Director Indonesia & Southeast Asia\n  6) Mr. Jules Irmann — Director of Institut Français d'Indonésie (IFI)\n\nModerator: Mr. Bre Redana — Indonesian Writer\n\nQ&A`,
+    description: `Keynote Speaker: Ms. Ni Putu Pradnya Lalita Nara, Student from Green School Bali\n"Culture, Sustainability and the Future" (10 minutes)\n\nPanelists:\n  1) Mr. Angga Dwimas Sasongko — Indonesia Film Director\n  2) Mr. Fauzi Ismail — President of Singapore Heritage Society\n  3) Ms. MINAMIND\n\nModerator: Ms. Putri F. W. Shafiyyah \n\nQ&A`,
   },
   
   {
