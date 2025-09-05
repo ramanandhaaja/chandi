@@ -8,9 +8,28 @@ const resources = [
   {
     title: "Rundown CHANDI 2025",
     subtitle: "Rundown_CHANDI_2025.pdf",
-    size: "0.5 MB",
+    size: "1 MB",
     url: "/files/Rundown_CHANDI_2025.pdf",
   },
+  {
+    title: "Presentation from Minister of Culture of the Republic of Indonesia",
+    subtitle: "Paparan_PAK_MENTERI_CHANDI_2025_V2_(complete).pdf",
+    size: "9.5 MB",
+    url: "/files/Paparan_PAK_MENTERI_CHANDI_2025_V2_(complete).pdf",
+  },
+  {
+    title: "Presentation from Coordinator Minister of Human Development and Cultural Affairs of the Republic of Indonesia",
+    subtitle: "Paparan_MENKO_PMK.pdf",
+    size: "0.5 MB",
+    url: "/files/Paparan_MENKO_PMK.pdf",
+  },
+  {
+    title: "Presentation from Jana Abusalha",
+    subtitle: "Paparan_by_Jana_Abusalha_20250901_000657_0000.pdf",
+    size: "31 MB",
+    url: "/files/Paparan_by_Jana_Abusalha_20250901_000657_0000.pdf",
+  },
+
   {
     title: "Bali Cultural Initiative Declaration 2025",
     subtitle: "BALI_CULTURAL_INITIATIVE_DECLARATION_2SEPT2025_2241.pdf",
