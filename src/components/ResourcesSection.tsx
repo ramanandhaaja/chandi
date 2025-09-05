@@ -171,9 +171,9 @@ const ResourcesSection = ({ page }: { page: string; }) => {
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-600">
              Opening Presentations
             </h2>
-            <p className="text-base leading-relaxed">
+            {/* <p className="text-base leading-relaxed">
               
-            </p>
+            </p> */}
           </div>
           {/* Right Column - Resource List */}
           <div className="md:w-3/5 w-full">
