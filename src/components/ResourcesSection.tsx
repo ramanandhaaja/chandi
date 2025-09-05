@@ -143,7 +143,7 @@ const ResourcesSection = ({ page }: { page: string; }) => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-8">
+      <div className="max-w-7xl mx-auto mt-12">
         <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center">
           {/* Left Column - Title and Description */}
           <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
