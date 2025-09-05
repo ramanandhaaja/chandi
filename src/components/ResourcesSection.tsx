@@ -29,7 +29,7 @@ const resources = [
     size: "55 MB",
     url: "/files/Poster_Publikasi.pdf",
   },
-  
+
   {
     title: "CHANDI2025 Ministerial Summit Concept Note",
     subtitle: "CHANDI2025 Ministerial Summit Concept Note.pdf",
@@ -62,10 +62,7 @@ const resources = [
     size: "0.5 MB",
     url: "/files/ConceptNote_Agenda_PanelDiscussion31August.pdf",
   },
-  
-  
 ];
-
 
 const opening_presentation = [
   {
@@ -75,7 +72,8 @@ const opening_presentation = [
     url: "/files/Paparan_PAK_MENTERI_CHANDI_2025_V2_(complete).pdf",
   },
   {
-    title: "Presentation from Coordinator Minister of Human Development and Cultural Affairs of the Republic of Indonesia",
+    title:
+      "Presentation from Coordinator Minister of Human Development and Cultural Affairs of the Republic of Indonesia",
     subtitle: "Paparan_MENKO_PMK.pdf",
     size: "0.5 MB",
     url: "/files/Paparan_MENKO_PMK.pdf",
@@ -86,20 +84,51 @@ const opening_presentation = [
     size: "31 MB",
     url: "/files/Paparan_by_Jana_Abusalha_20250901_000657_0000.pdf",
   },
-]
+];
 
-  const panel_presentation = [
-    {
-      title: "Presentation from Evelise Bruneau",
-      subtitle: "Presentation_on_Museums_Evelise_Bruneau.pdf",
-      size: "0.5 MB",
-      url: "/files/Presentation_on_Museums_Evelise_Bruneau.pdf",
-    },
+const panel_presentation = [
+  {
+    title: "Panel Discussion 2 - Zou Yi Qing, Vice President of ICOMOS China Scientific Committee on Cultural Route",
+    subtitle: "Panel_Discussion_2-ZOUYQ.pdf",
+    size: "19.5 MB",
+    url: "/files/Panel_Discussion_2-ZOUYQ.pdf",
+  },
+];
 
-]
+const plenary_presentation = [
+  {
+    title: "Plenary 1 - Evelise Bruneau, Conservator of the Southeast Asian collections at Musée Guimet, France",
+    subtitle: "Presentation_on_Museums_Evelise_Bruneau.pdf",
+    size: "0.5 MB",
+    url: "/files/Presentation_on_Museums_Evelise_Bruneau.pdf",
+  },
+  {
+    title: "Plenary 2 - Giring Ganesha, Vice Minister of Culture of Indonesia",
+    subtitle: "PLENARY_2-VICE MINISTER_OF_CULTURE-Giring_Ganesha.pdf",
+    size: "4.1 MB",
+    url: "/files/PLENARY_2-VICE MINISTER_OF_CULTURE-Giring_Ganesha.pdf",
+  },
+  {
+    title: "Plenary 2 - Jean Couteau, Art Historian, Curator, Writer, and Bali Cultural Observer",
+    subtitle: "Plenary_2_Jean-FIX-FINAL Chandi.pdf",
+    size: "0.5 MB",
+    url: "/files/Plenary_2_Jean-FIX-FINAL Chandi.pdf",
+  },
+  {
+    title: "Plenary 3 - Ni Putu Pradnya Lalita Nara, Student from Green School Bali",
+    subtitle: "Plenary_3_Chandi_Summit-Lalita.pdf",
+    size: "70.1 MB",
+    url: "/files/Plenary_3_Chandi_Summit-Lalita.pdf",
+  },
+  {
+    title: "Plenary 3 - Fauzi Ismail, President of Singapore Heritage Society",
+    subtitle: "Plenary_3_Fauzi_Ismail.pdf",
+    size: "4.5 MB",
+    url: "/files/Plenary_3_Fauzi_Ismail.pdf",
+  },
+];
 
-const ResourcesSection = ({ page }: { page: string; }) => {
-
+const ResourcesSection = ({ page }: { page: string }) => {
   return (
     <section className="py-20 px-6 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -110,14 +139,16 @@ const ResourcesSection = ({ page }: { page: string; }) => {
               <div className="w-10 h-1 bg-black mr-4 rounded-full"></div>
               <p className="text-sm font-medium">Resources</p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-2">
-              Access Key
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-2">Access Key</h2>
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-600">
-             Resources
+              Resources
             </h2>
             <p className="text-base leading-relaxed">
-              Download essential resources and PDFs related to the CHANDI 2025. Access our comprehensive guide, speaker bios, and event schedules to enhance your experience. Stay informed and engaged with the latest updates and materials that will help you make the most of this cultural gathering.
+              Download essential resources and PDFs related to the CHANDI 2025.
+              Access our comprehensive guide, speaker bios, and event schedules
+              to enhance your experience. Stay informed and engaged with the
+              latest updates and materials that will help you make the most of
+              this cultural gathering.
             </p>
           </div>
           {/* Right Column - Resource List */}
@@ -133,7 +164,9 @@ const ResourcesSection = ({ page }: { page: string; }) => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-semibold truncate">{res.title}</div>
-                    <div className="text-xs text-neutral-500 truncate">{res.subtitle}</div>
+                    <div className="text-xs text-neutral-500 truncate">
+                      {res.subtitle}
+                    </div>
                   </div>
                   <div className="mx-4 text-sm font-medium text-neutral-600 whitespace-nowrap">
                     {res.size}
@@ -157,19 +190,19 @@ const ResourcesSection = ({ page }: { page: string; }) => {
         <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center lg:mb-10">
           {/* Left Column - Title and Description */}
           <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
-            
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-600">
-             Presentations
+              Presentations
             </h2>
             <p className="text-base leading-relaxed">
-              Download presentations from key speakers and dignitaries. Access presentations from the Minister of Culture, Coordinator Minister, and other distinguished guests to gain insights into the cultural initiatives and discussions that shaped CHANDI 2025.
+              Download presentations from key speakers and dignitaries. Access
+              presentations from the Minister of Culture, Coordinator Minister,
+              and other distinguished guests to gain insights into the cultural
+              initiatives and discussions that shaped CHANDI 2025.
             </p>
           </div>
           {/* Right Column - Resource List */}
           <div className="md:w-3/5 w-full">
-            <div className="flex flex-col gap-4">
-              
-            </div>
+            <div className="flex flex-col gap-4"></div>
           </div>
         </div>
       </div>
@@ -177,13 +210,10 @@ const ResourcesSection = ({ page }: { page: string; }) => {
         <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center mb-8">
           {/* Left Column - Title and Description */}
           <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
-            
             <h2 className="text-4xl md:text-5xl font-bold mb-0 text-yellow-600">
-             Opening Presentations
+              Opening Presentations
             </h2>
-            <p className="text-base leading-relaxed">
-              
-            </p>
+            <p className="text-base leading-relaxed"></p>
           </div>
           {/* Right Column - Resource List */}
           <div className="md:w-3/5 w-full">
@@ -198,7 +228,53 @@ const ResourcesSection = ({ page }: { page: string; }) => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-semibold truncate">{res.title}</div>
-                    <div className="text-xs text-neutral-500 truncate">{res.subtitle}</div>
+                    <div className="text-xs text-neutral-500 truncate">
+                      {res.subtitle}
+                    </div>
+                  </div>
+                  <div className="mx-4 text-sm font-medium text-neutral-600 whitespace-nowrap">
+                    {res.size}
+                  </div>
+                  <a
+                    href={res.url}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-200 hover:bg-yellow-400 transition"
+                  >
+                    <HiDownload className="text-xl text-neutral-700 group-hover:text-white" />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center mb-8">
+          {/* Left Column - Title and Description */}
+          <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
+            <h2 className="text-4xl md:text-5xl font-bold mb-0 text-yellow-600">
+              Panel Discussion
+            </h2>
+            <p className="text-base leading-relaxed"></p>
+          </div>
+          {/* Right Column - Resource List */}
+          <div className="md:w-3/5 w-full">
+            <div className="flex flex-col gap-4">
+              {panel_presentation.map((res, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center bg-neutral-50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition group"
+                >
+                  <div className="flex items-center justify-center w-12 h-12 bg-red-100 rounded-xl mr-4">
+                    <FaFilePdf className="text-red-500 text-2xl" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="font-semibold truncate">{res.title}</div>
+                    <div className="text-xs text-neutral-500 truncate">
+                      {res.subtitle}
+                    </div>
                   </div>
                   <div className="mx-4 text-sm font-medium text-neutral-600 whitespace-nowrap">
                     {res.size}
@@ -222,18 +298,15 @@ const ResourcesSection = ({ page }: { page: string; }) => {
         <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center">
           {/* Left Column - Title and Description */}
           <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
-            
             <h2 className="text-4xl md:text-5xl font-bold mb-0 text-yellow-600">
-             Panel Presentations
+              Plenary Discussion
             </h2>
-            <p className="text-base leading-relaxed">
-              
-            </p>
+            <p className="text-base leading-relaxed"></p>
           </div>
           {/* Right Column - Resource List */}
           <div className="md:w-3/5 w-full">
             <div className="flex flex-col gap-4">
-              {panel_presentation.map((res, idx) => (
+              {plenary_presentation.map((res, idx) => (
                 <div
                   key={idx}
                   className="flex items-center bg-neutral-50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition group"
@@ -243,7 +316,9 @@ const ResourcesSection = ({ page }: { page: string; }) => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-semibold truncate">{res.title}</div>
-                    <div className="text-xs text-neutral-500 truncate">{res.subtitle}</div>
+                    <div className="text-xs text-neutral-500 truncate">
+                      {res.subtitle}
+                    </div>
                   </div>
                   <div className="mx-4 text-sm font-medium text-neutral-600 whitespace-nowrap">
                     {res.size}
