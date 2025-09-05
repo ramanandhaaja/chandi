@@ -152,7 +152,7 @@ const ResourcesSection = ({ page }: { page: string; }) => {
              Presentations
             </h2>
             <p className="text-base leading-relaxed">
-              Download opening presentations from key speakers and dignitaries. Access presentations from the Minister of Culture, Coordinator Minister, and other distinguished guests to gain insights into the cultural initiatives and discussions that shaped CHANDI 2025.
+              Download presentations from key speakers and dignitaries. Access presentations from the Minister of Culture, Coordinator Minister, and other distinguished guests to gain insights into the cultural initiatives and discussions that shaped CHANDI 2025.
             </p>
           </div>
           {/* Right Column - Resource List */}
@@ -163,7 +163,7 @@ const ResourcesSection = ({ page }: { page: string; }) => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-12">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center">
           {/* Left Column - Title and Description */}
           <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
