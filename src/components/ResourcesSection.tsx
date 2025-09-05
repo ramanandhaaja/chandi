@@ -299,7 +299,7 @@ const ResourcesSection = ({ page }: { page: string }) => {
           {/* Left Column - Title and Description */}
           <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
             <h2 className="text-4xl md:text-5xl font-bold mb-0 text-yellow-600">
-              Plenary Discussion
+              Plenary
             </h2>
             <p className="text-base leading-relaxed"></p>
           </div>
