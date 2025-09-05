@@ -144,7 +144,7 @@ const ResourcesSection = ({ page }: { page: string; }) => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-12">
-        <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center">
+        <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center lg:mb-10">
           {/* Left Column - Title and Description */}
           <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
             
@@ -168,12 +168,12 @@ const ResourcesSection = ({ page }: { page: string; }) => {
           {/* Left Column - Title and Description */}
           <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-yellow-600">
+            <h2 className="text-4xl md:text-5xl font-bold mb-0 text-yellow-600">
              Opening Presentations
             </h2>
-            {/* <p className="text-base leading-relaxed">
+            <p className="text-base leading-relaxed">
               
-            </p> */}
+            </p>
           </div>
           {/* Right Column - Resource List */}
           <div className="md:w-3/5 w-full">
