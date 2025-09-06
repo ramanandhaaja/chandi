@@ -449,16 +449,16 @@ const ResourcesSection = ({ page }: { page: string }) => {
           </div>
         </div>
       </div>
+      {/*
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center mb-8">
-          {/* Left Column - Title and Description */}
+          
           <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
             <h2 className="text-4xl md:text-5xl font-bold mb-0 text-yellow-600">
               Workshop
             </h2>
             <p className="text-base leading-relaxed"></p>
           </div>
-          {/* Right Column - Resource List */}
           <div className="md:w-3/5 w-full">
             <div className="flex flex-col gap-4">
               {workshop_presentation.map((res, idx) => (
@@ -493,6 +493,7 @@ const ResourcesSection = ({ page }: { page: string }) => {
           </div>
         </div>
       </div>
+      */}
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center mb-8">
           {/* Left Column - Title and Description */}
