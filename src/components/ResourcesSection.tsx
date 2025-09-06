@@ -220,12 +220,6 @@ const seminar_udayana_presentation = [
     url: "/files/Seminar Udayana - Kristiawan 1.pdf",
   },
   {
-    title: "Seminar ISI - Nyoman Dewi Pebryani",
-    subtitle: "Seminar ISI - Nyoman Dewi Pebryani.pdf",
-    size: "3.3 MB",
-    url: "/files/Seminar ISI - Nyoman Dewi Pebryani.pdf",
-  },
-  {
     title: "Seminar Udayana - Laksmi De Neefe Suardana",
     subtitle: "Seminar Udayana - Laksmi De Neefe Suardana.pdf",
     size: "1.5 MB",
@@ -548,7 +542,7 @@ const ResourcesSection = ({ page }: { page: string }) => {
           {/* Left Column - Title and Description */}
           <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
             <h2 className="text-4xl md:text-5xl font-bold mb-0 text-yellow-600">
-              Seminar Universitas Udayana
+              Seminar Udayana
             </h2>
             <p className="text-base leading-relaxed"></p>
           </div>
