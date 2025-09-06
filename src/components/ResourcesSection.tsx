@@ -196,28 +196,28 @@ const seminar_isi_presentation = [
 
 const seminar_udayana_presentation = [
   {
-    title: "Seminar ISI - ANAK AGUNG GDE BAGUS UDAYANA",
-    subtitle: "Seminar ISI - ANAK AGUNG GDE BAGUS UDAYANA.pdf",
+    title: "Seminar Udayana  - Joe Sidek",
+    subtitle: "Seminar Udayana - Joe Sidek.pdf",
     size: "2.0 MB",
-    url: "/files/Seminar ISI - ANAK AGUNG GDE BAGUS UDAYANA.pdf",
+    url: "/files/Seminar Udayana - Joe Sidek.pdf",
   },
   {
-    title: "Seminar ISI - I Gede Yudarta",
-    subtitle: "Seminar ISI - I Gede Yudarta.pdf",
+    title: "Seminar Udayana - Ida Bagus Made Ari Segara + Ida Bagus Anom Wisnu Pujana",
+    subtitle: "Seminar Udayana - Ida Bagus Made Ari Segara + Ida Bagus Anom Wisnu Pujana.pdf",
     size: "19.0 MB",
-    url: "/files/Seminar ISI - I Gede Yudarta.pdf",
+    url: "/files/Seminar Udayana - Ida Bagus Made Ari Segara + Ida Bagus Anom Wisnu Pujana.pdf",
   },
   {
-    title: "Seminar ISI - I Komang Sudirga",
-    subtitle: "Seminar ISI - I Komang Sudirga.pdf",
+    title: "Seminar Udayana - kristiawan",
+    subtitle: "Seminar Udayana - kristiawan.pdf",
     size: "3.6 MB",
-    url: "/files/Seminar ISI - I Komang Sudirga.pdf",
+    url: "/files/Seminar Udayana - kristiawan.pdf",
   },
   {
-    title: "Seminar ISI - Moe Chiba",
-    subtitle: "Seminar ISI - Moe Chiba.pdf",
+    title: "Seminar Udayana - kristiawan PPT",
+    subtitle: "Seminar Udayana - Kristiawan 1.pdf",
     size: "4.4 MB",
-    url: "/files/Seminar ISI - Moe Chiba.pdf",
+    url: "/files/Seminar Udayana - Kristiawan 1.pdf",
   },
   {
     title: "Seminar ISI - Nyoman Dewi Pebryani",
@@ -226,10 +226,22 @@ const seminar_udayana_presentation = [
     url: "/files/Seminar ISI - Nyoman Dewi Pebryani.pdf",
   },
   {
-    title: "Seminar ISI - Yudil Chatim",
-    subtitle: "Seminar ISI - Yudil Chatim.pdf",
+    title: "Seminar Udayana - Laksmi De Neefe Suardana",
+    subtitle: "Seminar Udayana - Laksmi De Neefe Suardana.pdf",
     size: "1.5 MB",
-    url: "/files/Seminar ISI - Yudil Chatim.pdf",
+    url: "/files/Seminar Udayana - Laksmi De Neefe Suardana.pdf",
+  },
+  {
+    title: "Seminar Udayana - Lita Rahmiati",
+    subtitle: "Seminar Udayana - Lita Rahmiati.pdf",
+    size: "1.5 MB",
+    url: "/files/Seminar Udayana - Lita Rahmiati.pdf",
+  },
+  {
+    title: "Seminar Udayana - Putu Ardiyasa Presentation",
+    subtitle: "Seminar Udayana - Putu Ardiyasa Presentation.pdf",
+    size: "1.5 MB",
+    url: "/files/Seminar Udayana - Putu Ardiyasa Presentation.pdf",
   },
 ];
 
@@ -500,6 +512,50 @@ const ResourcesSection = ({ page }: { page: string }) => {
           <div className="md:w-3/5 w-full">
             <div className="flex flex-col gap-4">
               {seminar_isi_presentation.map((res, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center bg-neutral-50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition group"
+                >
+                  <div className="flex items-center justify-center w-12 h-12 bg-red-100 rounded-xl mr-4">
+                    <FaFilePdf className="text-red-500 text-2xl" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="font-semibold truncate">{res.title}</div>
+                    <div className="text-xs text-neutral-500 truncate">
+                      {res.subtitle}
+                    </div>
+                  </div>
+                  <div className="mx-4 text-sm font-medium text-neutral-600 whitespace-nowrap">
+                    {res.size}
+                  </div>
+                  <a
+                    href={res.url}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-200 hover:bg-yellow-400 transition"
+                  >
+                    <HiDownload className="text-xl text-neutral-700 group-hover:text-white" />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:gap-16 items-start md:items-center mb-8">
+          {/* Left Column - Title and Description */}
+          <div className="md:w-2/5 w-full mb-10 md:mb-0 self-start md:min-w-[320px] md:max-w-[400px]">
+            <h2 className="text-4xl md:text-5xl font-bold mb-0 text-yellow-600">
+              Seminar Universitas Udayana
+            </h2>
+            <p className="text-base leading-relaxed"></p>
+          </div>
+          {/* Right Column - Resource List */}
+          <div className="md:w-3/5 w-full">
+            <div className="flex flex-col gap-4">
+              {seminar_udayana_presentation.map((res, idx) => (
                 <div
                   key={idx}
                   className="flex items-center bg-neutral-50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition group"
